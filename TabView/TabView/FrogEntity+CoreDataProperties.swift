@@ -23,7 +23,10 @@ extension FrogEntity {
     @NSManaged public var latitude: Double
     @NSManaged public var longitude: Double
     @NSManaged public var sname: String?
+    @NSManaged public var desc: String?
     @NSManaged public var threatnedStatus: String?
     @NSManaged public var uncertainty: Int16
+    @NSManaged public var frogcount: Int16
+
 
 }

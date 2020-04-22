@@ -11,42 +11,46 @@ import CoreData
 
 class FirstViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    //UI outlets
     @IBOutlet weak var tableView: UITableView!
     
+    // Variable to fold all the frog recored of Frog entity type
     var frogs: [FrogEntity] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Setting deligates for TabelView
         tableView.delegate = self
         tableView.dataSource = self
+        
+        //MARK: -  coreData fetch
         frogs = CoreDataHandler.fetchObject()
-        print(frogs.count)
+        // If the appliation is opened for the first time then the records are added to the database
+        if(frogs.count == 0) {
+            CoreDataHandler.addAllRecords()
+            frogs = CoreDataHandler.fetchObject()
+        }
+        // Reloads the table with all the records
         tableView.reloadData()
-        
-//        frogs = CoreDataHandler.fetchObject()
-//        CoreDataHandler.updateFrog(frog: frogs[0], sname: "Changed", cname: "Changed", latitude: 987.08, longitude: 987.987, uncertainty: 10001, threatnedStatus: "No", isVisited: true, isFavourite: true)
-        
-        //MARK: - Testing coreData fetch
-//        for i in frogs {
-//            print(i.sname)
-//        }
-        // Do any additional setup after loading the view.
     }
     
-    
+    //MARK: - TableView methods
+    // Returns the number of frog records in the database
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return frogs.count
     }
     
+    // Setting the values to the cell in the TableView
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "frogCell", for: indexPath)
         cell.textLabel?.text = frogs[indexPath.row].sname
         return cell
     }
     
+    //
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //let selectedTrail = trails[indexPath.row]
         
+        //
         if let viewController = storyboard?.instantiateViewController(identifier: "frogDetails") as? FrogDetailsViewController {
             let frog = frogs[indexPath.row]
             viewController.receivedFrog = frog
@@ -55,12 +59,8 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
         }
     }
     
-    @IBAction func addButton(_ sender: Any) {
-        CoreDataHandler.saveFrog(sname: "sgigcfgjhgname", cname: "cname", latitude: 1213.121, longitude: 12.123, uncertainty: 123, threatnedStatus: "Danger", isVisited: false, isFavourite: false)
-        frogs = CoreDataHandler.fetchObject()
-        tableView.reloadData()
-    }
     
+    //MARK: - Testing coreData fetch
     @IBAction func favButton(_ sender: Any) {
         frogs = CoreDataHandler.fetchObject()
         tableView.reloadData()

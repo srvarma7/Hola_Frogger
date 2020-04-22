@@ -2,6 +2,14 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Grant location permission to show your location</string>
+	<key>NSLocationUsageDescription</key>
+	<string>Grant location permission to show your location</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Grant location permission to show your location</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Grant location permission to show your location</string>
 	<key>NSCameraUsageDescription</key>
 	<string>Give access to use camera for classification</string>
 	<key>CFBundleDevelopmentRegion</key>

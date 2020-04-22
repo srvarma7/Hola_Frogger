@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		574A3C2A24505E850022CCB3 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574A3C2924505E840022CCB3 /* MapViewController.swift */; };
+		574A3C2C245066060022CCB3 /* FrogAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574A3C2B245066060022CCB3 /* FrogAnnotation.swift */; };
+		574A3C2F245072E70022CCB3 /* Crinia parinsignifera.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 574A3C2E245072E70022CCB3 /* Crinia parinsignifera.gpx */; };
+		574A3C31245074BF0022CCB3 /* Eastern Dwarf Tree Frog.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 574A3C30245074BF0022CCB3 /* Eastern Dwarf Tree Frog.gpx */; };
 		579B45472447084200EACA4B /* CoreDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579B45462447084200EACA4B /* CoreDataHandler.swift */; };
 		579B45512447460900EACA4B /* FrogEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579B454F2447460900EACA4B /* FrogEntity+CoreDataClass.swift */; };
 		579B45522447460900EACA4B /* FrogEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579B45502447460900EACA4B /* FrogEntity+CoreDataProperties.swift */; };
@@ -25,6 +29,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		574A3C2924505E840022CCB3 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		574A3C2B245066060022CCB3 /* FrogAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrogAnnotation.swift; sourceTree = "<group>"; };
+		574A3C2E245072E70022CCB3 /* Crinia parinsignifera.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Crinia parinsignifera.gpx"; sourceTree = "<group>"; };
+		574A3C30245074BF0022CCB3 /* Eastern Dwarf Tree Frog.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Eastern Dwarf Tree Frog.gpx"; sourceTree = "<group>"; };
 		579B45462447084200EACA4B /* CoreDataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHandler.swift; sourceTree = "<group>"; };
 		579B454F2447460900EACA4B /* FrogEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "FrogEntity+CoreDataClass.swift"; path = "TabView/FrogEntity+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		579B45502447460900EACA4B /* FrogEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "FrogEntity+CoreDataProperties.swift"; path = "TabView/FrogEntity+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
@@ -55,6 +63,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		574A3C2D245072D10022CCB3 /* GPX files */ = {
+			isa = PBXGroup;
+			children = (
+				574A3C30245074BF0022CCB3 /* Eastern Dwarf Tree Frog.gpx */,
+				574A3C2E245072E70022CCB3 /* Crinia parinsignifera.gpx */,
+			);
+			path = "GPX files";
+			sourceTree = "<group>";
+		};
 		579B4548244743E100EACA4B /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
@@ -69,11 +86,13 @@
 		579B45492447441200EACA4B /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				574A3C2924505E840022CCB3 /* MapViewController.swift */,
 				57A3B8A0244315230011F674 /* FirstViewController.swift */,
 				579EE7AE2444D96A00321C7E /* FrogDetailsViewController.swift */,
 				57A3B8A2244315230011F674 /* SecondViewController.swift */,
 				579EE7A82444763000321C7E /* NewsViewController.swift */,
 				579EE7AC2444CB2D00321C7E /* DetailsViewController.swift */,
+				574A3C2B245066060022CCB3 /* FrogAnnotation.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -114,6 +133,7 @@
 		57A3B89B244315230011F674 /* TabView */ = {
 			isa = PBXGroup;
 			children = (
+				574A3C2D245072D10022CCB3 /* GPX files */,
 				57A3B89C244315230011F674 /* AppDelegate.swift */,
 				57A3B89E244315230011F674 /* SceneDelegate.swift */,
 				579B455324477DF300EACA4B /* Inferface */,
@@ -185,7 +205,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				57A3B8AE244315270011F674 /* LaunchScreen.storyboard in Resources */,
+				574A3C31245074BF0022CCB3 /* Eastern Dwarf Tree Frog.gpx in Resources */,
 				57A3B8AB244315270011F674 /* Assets.xcassets in Resources */,
+				574A3C2F245072E70022CCB3 /* Crinia parinsignifera.gpx in Resources */,
 				57A3B8A6244315230011F674 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -201,8 +223,10 @@
 				579B45472447084200EACA4B /* CoreDataHandler.swift in Sources */,
 				579EE7A724433BCC00321C7E /* ImageClassifier2 1.mlmodel in Sources */,
 				57A3B8A1244315230011F674 /* FirstViewController.swift in Sources */,
+				574A3C2C245066060022CCB3 /* FrogAnnotation.swift in Sources */,
 				579EE7AD2444CB2D00321C7E /* DetailsViewController.swift in Sources */,
 				579EE7AF2444D96A00321C7E /* FrogDetailsViewController.swift in Sources */,
+				574A3C2A24505E850022CCB3 /* MapViewController.swift in Sources */,
 				57A3B89D244315230011F674 /* AppDelegate.swift in Sources */,
 				579EE7A92444763000321C7E /* NewsViewController.swift in Sources */,
 				579B45522447460900EACA4B /* FrogEntity+CoreDataProperties.swift in Sources */,
