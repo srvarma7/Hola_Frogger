@@ -55,7 +55,7 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
             let frog = frogs[indexPath.row]
             viewController.receivedFrog = frog
             //viewController.trail = selectedTrail
-            navigationController?.pushViewController(viewController, animated: true)
+            navigationController?.present(viewController, animated: true)
         }
     }
     

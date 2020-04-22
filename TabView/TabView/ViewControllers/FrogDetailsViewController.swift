@@ -39,7 +39,10 @@ class FrogDetailsViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func dismissButton(_ sender: Any) {
+        dismiss(animated: true)
+    }
+    
     /*
     // MARK: - Navigation
 
