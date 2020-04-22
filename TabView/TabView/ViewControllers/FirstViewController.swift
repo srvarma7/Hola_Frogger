@@ -43,7 +43,7 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
     // Setting the values to the cell in the TableView
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "frogCell", for: indexPath)
-        cell.textLabel?.text = frogs[indexPath.row].sname
+        cell.textLabel?.text = frogs[indexPath.row].cname
         return cell
     }
     
