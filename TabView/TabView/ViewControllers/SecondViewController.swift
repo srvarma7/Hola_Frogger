@@ -13,6 +13,7 @@ import Vision
 class SecondViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate {
 
     
+    @IBOutlet weak var messageLabel: UILabel!
     
     @IBOutlet weak var bgImage: UIImageView!
     @IBOutlet weak var textlabel: UILabel!
@@ -37,7 +38,8 @@ class SecondViewController: UIViewController, AVCaptureVideoDataOutputSampleBuff
 
         // Initailizing and setting properties to capture the frames from camera
         captureSession.sessionPreset = .photo
-        guard let captureDevice = AVCaptureDevice.default(for: .video) else { return }
+        //guard let captureDevice = AVCaptureDevice.default(for: .video) else { return }
+        guard let captureDevice = AVCaptureDevice.default(.builtInTelephotoCamera, for: .video, position: .back) else { return }
         guard let input = try? AVCaptureDeviceInput(device: captureDevice) else { return }
         captureSession.addInput(input)
         // Adding a new View on top and making changing the shape to circle.
@@ -55,23 +57,24 @@ class SecondViewController: UIViewController, AVCaptureVideoDataOutputSampleBuff
         let dataOutput = AVCaptureVideoDataOutput()
         dataOutput.setSampleBufferDelegate(self, queue: DispatchQueue(label: "videoQueue"))
         captureSession.addOutput(dataOutput)
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        UIView.animate(withDuration: 2, animations: {
-            //self.bgImage.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
+        if self.isSimulator {
+            self.messageLabel.center = self.view.center
+            self.messageLabel.text = "Looks like you on an Simulator.....\nTo experience this feature, please open this on a device with camera!"
+            self.bgImage.backgroundColor = UIColor(red: 1, green: 0, blue: 0, alpha: 1)
             self.bgImage.layer.cornerRadius = (self.bgImage.frame.size.width)/10
-            self.bgImage.clipsToBounds = true
-            UIView.animate(withDuration: 2, animations: {
-                if !self.isSimulator {
-                    self.circleView.transform = self.circleView.transform.rotated(by: CGFloat.pi)
-                    self.circleView.transform = self.circleView.transform.rotated(by: CGFloat.pi)
-                    self.circleView.layer.cornerRadius = self.circleView.frame.size.width/2
-                }
+        } else {
+            UIView.animate(withDuration: 2, delay: 0, animations: {
+                self.bgImage.layer.cornerRadius = (self.bgImage.frame.size.width)/10
+                self.bgImage.clipsToBounds = true
+                self.circleView.transform = self.circleView.transform.rotated(by: CGFloat.pi)
+                self.circleView.transform = self.circleView.transform.rotated(by: CGFloat.pi)
+                self.circleView.layer.cornerRadius = self.circleView.frame.size.width/2
             })
-        })
+        }
         self.captureSession.startRunning()
     }
     

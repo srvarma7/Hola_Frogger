@@ -39,8 +39,16 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
             favFrogs = CoreDataHandler.fetchOnlyFav()
         }
         reloadTable()
+        
+        // https://stackoverflow.com/questions/25921623/how-to-reload-tableview-from-another-view-controller-in-swift
+        NotificationCenter.default.addObserver(self, selector: #selector(loadList), name: NSNotification.Name(rawValue: "load"), object: nil)
         showFavButton.setBackgroundImage(UIImage(systemName: "suit.heart"), for: UIControl.State.normal, barMetrics: .default)
         //showFavButton.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
+    }
+    
+    @objc func loadList(notification: NSNotification){
+        //load data here
+        reloadTable()
     }
     
     func setUpMenuButton(){
@@ -70,9 +78,7 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     func reloadTable() {
         frogs = CoreDataHandler.fetchObject()
-        print(frogs.count)
         favFrogs = CoreDataHandler.fetchOnlyFav()
-        print(favFrogs.count)
         tableView.reloadData()
     }
     

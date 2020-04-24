@@ -53,11 +53,11 @@ class FrogDetailsViewController: UIViewController, MKMapViewDelegate {
     var lat: Double = 0
     var long: Double = 0
     let favButton = UIButton()
+    let closeButton = UIButton()
     var localIsFav: Bool = false
     var focusLocation = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 0, longitude: 0), latitudinalMeters: 1000, longitudinalMeters: 1000)
     var annotaion = FrogAnnotation(title: "", subtitle: "", latitude: 0, longitude: 0)
-    //var apiurl =  "https://api.openweathermap.org/data/2.5/weather?lat="+lat+"&lon="+long+"&appid=3af463d5d4d7916e155dd605e37db688"
-    
+  
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -70,10 +70,15 @@ class FrogDetailsViewController: UIViewController, MKMapViewDelegate {
         comNameLbl.text = receivedFrog?.cname
         scNameLbl.text = receivedFrog?.sname
         descLbl.text = receivedFrog?.desc
+        descLbl.isEditable = false
         locationLbl.text = "\(String(describing: receivedFrog!.uncertainty))"
         statusLbl.text = receivedFrog?.threatnedStatus
         countLbl.text = "\(String(describing: receivedFrog!.frogcount))"
         favButton.frame = CGRect(x: self.view.center.x - 10, y: self.view.center.y - 240, width: 30, height: 30)
+        closeButton.frame = CGRect(x: view.center.x, y: view.frame.maxY + 30, width: 50, height: 50)
+        closeButton.center.x = view.center.x
+        closeButton.setBackgroundImage(UIImage(systemName: "xmark.circle.fill"), for: UIControl.State.normal)
+        closeButton.tintColor = UIColor.red
         localIsFav = receivedFrog!.isFavourite
         if localIsFav {
             favButton.setBackgroundImage(UIImage(systemName: "suit.heart.fill"), for: UIControl.State.normal)
@@ -82,16 +87,24 @@ class FrogDetailsViewController: UIViewController, MKMapViewDelegate {
         }
         favButton.addTarget(self, action: #selector(favButtonAction), for: .touchUpInside)
         self.view.addSubview(favButton)
+        closeButton.addTarget(self, action: #selector(closeButtonAction), for: .touchUpInside)
+        self.view.addSubview(closeButton)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        UIView.animate(withDuration: 4, delay: 1, animations: {
+        UIView.animate(withDuration: 1, delay: 0.3, animations: {
             self.focusLocation = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: self.receivedFrog!.latitude, longitude: self.receivedFrog!.longitude), latitudinalMeters: 1000, longitudinalMeters: 1000)
             self.mapView.setRegion(self.focusLocation, animated: true)
             self.mapView.addAnnotation(self.annotaion)
-
+            self.closeButton.transform = CGAffineTransform(translationX: 0, y: -230)
         })
+    }
+    
+    @objc func closeButtonAction(sender: UIButton!) {
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "load"), object: nil)
+        dismiss(animated: true)
     }
     
     @objc func favButtonAction(sender: UIButton!) {
@@ -102,10 +115,6 @@ class FrogDetailsViewController: UIViewController, MKMapViewDelegate {
             favButton.setBackgroundImage(UIImage(systemName: "suit.heart"), for: UIControl.State.normal)
         }
         CoreDataHandler.updateFrog(frog: receivedFrog!, isVisited: receivedFrog!.isVisited, isFavourite: localIsFav)
-    }
-    
-    @IBAction func dismissButton(_ sender: Any) {
-        dismiss(animated: true)
     }
     
     // MARK: - Weather
