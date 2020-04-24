@@ -24,10 +24,20 @@ struct Weather: Codable {
 struct TempPressure: Codable {
     let temp: Double
     let pressure: Double
+    let humidity: Int
 }
 
 class FrogDetailsViewController: UIViewController, MKMapViewDelegate {
 
+    
+    
+    @IBOutlet weak var wLocName: UILabel!
+    @IBOutlet weak var wTemp: UILabel!
+    @IBOutlet weak var wCondition: UILabel!
+    @IBOutlet weak var wHumidity: UILabel!
+    @IBOutlet weak var wHumidityLabel: UILabel!
+    @IBOutlet weak var wImage: UIImageView!
+    
     
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var comNameLbl: UILabel!
@@ -37,22 +47,25 @@ class FrogDetailsViewController: UIViewController, MKMapViewDelegate {
     @IBOutlet weak var statusLbl: UILabel!
     @IBOutlet weak var countLbl: UILabel!
     
-    
     var receivedFrog: FrogEntity?
+    
     
     var lat: Double = 0
     var long: Double = 0
-    //var apiurl = "https://api.openweathermap.org/data/2.5/weather?lat="+lat+"&lon="+long+"&appid=3af463d5d4d7916e155dd605e37db688"
+    let favButton = UIButton()
+    var localIsFav: Bool = false
+    var focusLocation = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 0, longitude: 0), latitudinalMeters: 1000, longitudinalMeters: 1000)
+    var annotaion = FrogAnnotation(title: "", subtitle: "", latitude: 0, longitude: 0)
+    //var apiurl =  "https://api.openweathermap.org/data/2.5/weather?lat="+lat+"&lon="+long+"&appid=3af463d5d4d7916e155dd605e37db688"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let focusLocation = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: receivedFrog!.latitude, longitude: receivedFrog!.longitude), latitudinalMeters: 1000, longitudinalMeters: 1000)
+        getDataFromUrl()
+        
         mapView.delegate = self
         // When the Map is loaded the Map will focus to the following location.
-        mapView.setRegion(focusLocation, animated: true)
-        let annotaion = FrogAnnotation(title: receivedFrog!.cname!, subtitle: receivedFrog!.sname!, latitude: receivedFrog!.latitude, longitude: receivedFrog!.longitude)
-        mapView.addAnnotation(annotaion)
+        annotaion = FrogAnnotation(title: receivedFrog!.cname!, subtitle: receivedFrog!.sname!, latitude: receivedFrog!.latitude, longitude: receivedFrog!.longitude)
         // Do any additional setup after loading the view.
         comNameLbl.text = receivedFrog?.cname
         scNameLbl.text = receivedFrog?.sname
@@ -60,25 +73,42 @@ class FrogDetailsViewController: UIViewController, MKMapViewDelegate {
         locationLbl.text = "\(String(describing: receivedFrog!.uncertainty))"
         statusLbl.text = receivedFrog?.threatnedStatus
         countLbl.text = "\(String(describing: receivedFrog!.frogcount))"
+        favButton.frame = CGRect(x: self.view.center.x - 10, y: self.view.center.y - 240, width: 30, height: 30)
+        localIsFav = receivedFrog!.isFavourite
+        if localIsFav {
+            favButton.setBackgroundImage(UIImage(systemName: "suit.heart.fill"), for: UIControl.State.normal)
+        } else {
+            favButton.setBackgroundImage(UIImage(systemName: "suit.heart"), for: UIControl.State.normal)
+        }
+        favButton.addTarget(self, action: #selector(favButtonAction), for: .touchUpInside)
+        self.view.addSubview(favButton)
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        UIView.animate(withDuration: 4, delay: 1, animations: {
+            self.focusLocation = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: self.receivedFrog!.latitude, longitude: self.receivedFrog!.longitude), latitudinalMeters: 1000, longitudinalMeters: 1000)
+            self.mapView.setRegion(self.focusLocation, animated: true)
+            self.mapView.addAnnotation(self.annotaion)
 
+        })
+    }
+    
+    @objc func favButtonAction(sender: UIButton!) {
+        localIsFav.toggle()
+        if localIsFav {
+            favButton.setBackgroundImage(UIImage(systemName: "suit.heart.fill"), for: UIControl.State.normal)
+        } else {
+            favButton.setBackgroundImage(UIImage(systemName: "suit.heart"), for: UIControl.State.normal)
+        }
+        CoreDataHandler.updateFrog(frog: receivedFrog!, isVisited: receivedFrog!.isVisited, isFavourite: localIsFav)
+    }
+    
     @IBAction func dismissButton(_ sender: Any) {
         dismiss(animated: true)
     }
     
-    @IBAction func favBtnClicked(_ sender: Any) {
-        getDataFromUrl()
-    }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    
+    // MARK: - Weather
     //Gets data and parses the JSON data into usable data
     func getDataFromUrl() {
         let url = URL(string: "https://api.openweathermap.org/data/2.5/weather?lat=\(receivedFrog!.latitude)&lon=\(receivedFrog!.longitude)&appid=3af463d5d4d7916e155dd605e37db688")
@@ -88,8 +118,13 @@ class FrogDetailsViewController: UIViewController, MKMapViewDelegate {
                 DispatchQueue.main.async {
                     let d: Double = round((resp?.main.temp)!)
                     let intTemp = Int(d)
-                    print(String(format: "%i", intTemp - 273) + " °C")
-                    //self.makeGetRequestImage(icon: (resp?.weather[0].icon)!)
+                    let tempInCelsius = String(format: "%i", intTemp - 273) + " °C"
+                    self.wTemp.text = tempInCelsius
+                    self.wLocName.text = resp?.name
+                    self.wCondition.text = resp?.weather[0].description
+                    let humidityText = "\(resp?.main.humidity ?? 87)"
+                    self.wHumidity.text = humidityText
+                    self.makeGetRequestImage(icon: (resp?.weather[0].icon)!)
                 }
             }
         }.resume()
@@ -105,8 +140,8 @@ class FrogDetailsViewController: UIViewController, MKMapViewDelegate {
         request.timeoutInterval = 60
         NSURLConnection.sendAsynchronousRequest(request as URLRequest, queue: OperationQueue(), completionHandler:{ (response:URLResponse!, data: Data!, error: Error!) -> Void in
             DispatchQueue.main.async {
-//                self.apiIcon.backgroundColor = .clear
-//                self.apiIcon.image = UIImage(data: data)
+                self.wImage.backgroundColor = .clear
+                self.wImage.image = UIImage(data: data)
                 
             }
         })

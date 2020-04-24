@@ -14,7 +14,10 @@ import CoreData
 extension FrogEntity {
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<FrogEntity> {
-        return NSFetchRequest<FrogEntity>(entityName: "FrogEntity")
+        let request = NSFetchRequest<FrogEntity>(entityName: "FrogEntity")
+        let sort = NSSortDescriptor(key: "cname", ascending: true)
+        request.sortDescriptors = [sort]
+        return request
     }
 
     @NSManaged public var cname: String?

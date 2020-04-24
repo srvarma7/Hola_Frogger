@@ -7,22 +7,39 @@
 //
 
 import UIKit
+import WebKit
 
-class DetailsViewController: UIViewController {
+class DetailsViewController: UIViewController, WKNavigationDelegate {
 
-    var receivedArticle: Article?
+    @IBOutlet weak var webView: WKWebView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
-    @IBOutlet weak var textLabel: UITextView!
-    @IBOutlet weak var descLabel: UITextView!
+    var receivedArticle: Article?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        textLabel.text = receivedArticle!.title
-        descLabel.text = receivedArticle!.description
-        // Do any additional setup after loading the view.
+        
+        //
+        activityIndicator.center = view.center
+        let url = URL(string: receivedArticle!.url)
+        let request = URLRequest(url: url!)
+        webView.load(request)
+        webView.navigationDelegate = self
+        activityIndicator.startAnimating()
+        activityIndicator.hidesWhenStopped = true
     }
     
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        activityIndicator.stopAnimating()
+    }
+    
+    func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
+        activityIndicator.stopAnimating()
+    }
+    
+    func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
+        activityIndicator.startAnimating()
+    }
 
     /*
     // MARK: - Navigation

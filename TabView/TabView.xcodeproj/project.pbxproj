@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		57320A7C245344BC00ADE06C /* FrogImageClassification 3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 57320A7B245344BC00ADE06C /* FrogImageClassification 3.mlmodel */; };
+		57320A7F2453477900ADE06C /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57320A7E2453477900ADE06C /* WebKit.framework */; };
+		57320A8124535A4300ADE06C /* FrogImageClassification Refined.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 57320A8024535A4300ADE06C /* FrogImageClassification Refined.mlmodel */; };
 		574A3C2A24505E850022CCB3 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574A3C2924505E840022CCB3 /* MapViewController.swift */; };
 		574A3C2C245066060022CCB3 /* FrogAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574A3C2B245066060022CCB3 /* FrogAnnotation.swift */; };
 		574A3C2F245072E70022CCB3 /* Crinia parinsignifera.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 574A3C2E245072E70022CCB3 /* Crinia parinsignifera.gpx */; };
@@ -14,7 +17,7 @@
 		579B45472447084200EACA4B /* CoreDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579B45462447084200EACA4B /* CoreDataHandler.swift */; };
 		579B45512447460900EACA4B /* FrogEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579B454F2447460900EACA4B /* FrogEntity+CoreDataClass.swift */; };
 		579B45522447460900EACA4B /* FrogEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579B45502447460900EACA4B /* FrogEntity+CoreDataProperties.swift */; };
-		579EE7A724433BCC00321C7E /* ImageClassifier2 1.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 579EE7A624433BCC00321C7E /* ImageClassifier2 1.mlmodel */; };
+		579EE7A724433BCC00321C7E /* BearBottle.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 579EE7A624433BCC00321C7E /* BearBottle.mlmodel */; };
 		579EE7A92444763000321C7E /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579EE7A82444763000321C7E /* NewsViewController.swift */; };
 		579EE7AD2444CB2D00321C7E /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579EE7AC2444CB2D00321C7E /* DetailsViewController.swift */; };
 		579EE7AF2444D96A00321C7E /* FrogDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579EE7AE2444D96A00321C7E /* FrogDetailsViewController.swift */; };
@@ -29,6 +32,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		57320A7B245344BC00ADE06C /* FrogImageClassification 3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = "FrogImageClassification 3.mlmodel"; sourceTree = "<group>"; };
+		57320A7E2453477900ADE06C /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		57320A8024535A4300ADE06C /* FrogImageClassification Refined.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = "FrogImageClassification Refined.mlmodel"; sourceTree = "<group>"; };
 		574A3C2924505E840022CCB3 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		574A3C2B245066060022CCB3 /* FrogAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrogAnnotation.swift; sourceTree = "<group>"; };
 		574A3C2E245072E70022CCB3 /* Crinia parinsignifera.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Crinia parinsignifera.gpx"; sourceTree = "<group>"; };
@@ -36,7 +42,7 @@
 		579B45462447084200EACA4B /* CoreDataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHandler.swift; sourceTree = "<group>"; };
 		579B454F2447460900EACA4B /* FrogEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "FrogEntity+CoreDataClass.swift"; path = "TabView/FrogEntity+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		579B45502447460900EACA4B /* FrogEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "FrogEntity+CoreDataProperties.swift"; path = "TabView/FrogEntity+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
-		579EE7A624433BCC00321C7E /* ImageClassifier2 1.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = "ImageClassifier2 1.mlmodel"; sourceTree = "<group>"; };
+		579EE7A624433BCC00321C7E /* BearBottle.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = BearBottle.mlmodel; sourceTree = "<group>"; };
 		579EE7A82444763000321C7E /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		579EE7AC2444CB2D00321C7E /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		579EE7AE2444D96A00321C7E /* FrogDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrogDetailsViewController.swift; sourceTree = "<group>"; };
@@ -57,12 +63,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57320A7F2453477900ADE06C /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		57320A7D2453477800ADE06C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				57320A7E2453477900ADE06C /* WebKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		574A3C2D245072D10022CCB3 /* GPX files */ = {
 			isa = PBXGroup;
 			children = (
@@ -86,10 +101,10 @@
 		579B45492447441200EACA4B /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				574A3C2924505E840022CCB3 /* MapViewController.swift */,
 				57A3B8A0244315230011F674 /* FirstViewController.swift */,
 				579EE7AE2444D96A00321C7E /* FrogDetailsViewController.swift */,
 				57A3B8A2244315230011F674 /* SecondViewController.swift */,
+				574A3C2924505E840022CCB3 /* MapViewController.swift */,
 				579EE7A82444763000321C7E /* NewsViewController.swift */,
 				579EE7AC2444CB2D00321C7E /* DetailsViewController.swift */,
 				574A3C2B245066060022CCB3 /* FrogAnnotation.swift */,
@@ -100,7 +115,9 @@
 		579B454A2447442600EACA4B /* Core ML */ = {
 			isa = PBXGroup;
 			children = (
-				579EE7A624433BCC00321C7E /* ImageClassifier2 1.mlmodel */,
+				57320A8024535A4300ADE06C /* FrogImageClassification Refined.mlmodel */,
+				57320A7B245344BC00ADE06C /* FrogImageClassification 3.mlmodel */,
+				579EE7A624433BCC00321C7E /* BearBottle.mlmodel */,
 			);
 			path = "Core ML";
 			sourceTree = "<group>";
@@ -119,6 +136,7 @@
 			children = (
 				57A3B89B244315230011F674 /* TabView */,
 				57A3B89A244315230011F674 /* Products */,
+				57320A7D2453477800ADE06C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -221,15 +239,17 @@
 			files = (
 				57A3B8A3244315230011F674 /* SecondViewController.swift in Sources */,
 				579B45472447084200EACA4B /* CoreDataHandler.swift in Sources */,
-				579EE7A724433BCC00321C7E /* ImageClassifier2 1.mlmodel in Sources */,
+				579EE7A724433BCC00321C7E /* BearBottle.mlmodel in Sources */,
 				57A3B8A1244315230011F674 /* FirstViewController.swift in Sources */,
 				574A3C2C245066060022CCB3 /* FrogAnnotation.swift in Sources */,
 				579EE7AD2444CB2D00321C7E /* DetailsViewController.swift in Sources */,
 				579EE7AF2444D96A00321C7E /* FrogDetailsViewController.swift in Sources */,
 				574A3C2A24505E850022CCB3 /* MapViewController.swift in Sources */,
 				57A3B89D244315230011F674 /* AppDelegate.swift in Sources */,
+				57320A8124535A4300ADE06C /* FrogImageClassification Refined.mlmodel in Sources */,
 				579EE7A92444763000321C7E /* NewsViewController.swift in Sources */,
 				579B45522447460900EACA4B /* FrogEntity+CoreDataProperties.swift in Sources */,
+				57320A7C245344BC00ADE06C /* FrogImageClassification 3.mlmodel in Sources */,
 				579B45512447460900EACA4B /* FrogEntity+CoreDataClass.swift in Sources */,
 				57A3B8A9244315230011F674 /* TabView.xcdatamodeld in Sources */,
 				57A3B89F244315230011F674 /* SceneDelegate.swift in Sources */,

@@ -38,7 +38,7 @@ class NewsViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //getNews()
+        getNews()
         tableView.delegate = self
         tableView.allowsSelection = true
         tableView.reloadData()
@@ -75,7 +75,6 @@ class NewsViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
         if let viewController = storyboard?.instantiateViewController(identifier: "newsDetails") as? DetailsViewController {
             let article = articles[indexPath.row]
             viewController.receivedArticle = article

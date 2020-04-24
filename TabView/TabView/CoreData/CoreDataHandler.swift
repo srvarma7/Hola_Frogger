@@ -53,16 +53,27 @@ class CoreDataHandler: NSObject {
         return frogs
     }
     
-    //MARK:- Save new FROG
-    class func updateFrog(frog: FrogEntity, sname: String, cname: String, latitude: Double, longitude: Double, uncertainty: Int, threatnedStatus: String, isVisited: Bool, isFavourite: Bool) {
+    //let p2 = NSPredicate(format: "isRegistered == true")
+    class func fetchOnlyFav() -> [FrogEntity] {
+        let context = getContect()
+        var favFrogs: [FrogEntity] = []
+        
+        let request = NSFetchRequest<FrogEntity>(entityName: "FrogEntity")
+        let sort = NSSortDescriptor(key: "cname", ascending: true)
+        let predicate = NSPredicate(format: "isFavourite == %@", NSNumber(value: true))
+        request.predicate = predicate
+        request.sortDescriptors = [sort]
+        do {
+            favFrogs = try context.fetch(request)
+        } catch {
+            print(error, "Error while fetching data in CoreDataHandler")
+        }
+        return favFrogs
+    }
+    
+    class func updateFrog(frog: FrogEntity, isVisited: Bool, isFavourite: Bool) {
         
         let context = getContect()
-        frog.sname = sname
-        frog.cname = cname
-        frog.latitude = latitude
-        frog.longitude = longitude
-        frog.uncertainty = Int16(uncertainty)
-        frog.threatnedStatus = threatnedStatus
         frog.isVisited = isVisited
         frog.isFavourite = isFavourite
         
@@ -74,6 +85,7 @@ class CoreDataHandler: NSObject {
         }
     }
     
+    //MARK:- Save new FROG
     class func addAllRecords() {
         CoreDataHandler.saveFrog(sname: "Crinia parinsignifera", frogcount: 319, cname: "Eastern Sign-bearing Froglet", desc: "Their physique is  white skined grainy or grey skined grainy with marks which are black in colour near their abdominal area. They can be of different colours such as clear brown , clear black , clear green , clear white , clear grey and clear red. They belong to woods or marshlands. They serve on insects.", latitude: -37.7401, longitude: 141.091, uncertainty: 294, threatnedStatus: "Not endangered", isVisited: false, isFavourite: false)
 
@@ -116,11 +128,11 @@ class CoreDataHandler: NSObject {
 
         CoreDataHandler.saveFrog(sname: "Paracrinia haswelli", frogcount: 4, cname: "Red-groined Froglet", desc: "Their physique consists of light greyish and brown skin tone with dark and red streaks . They are found near open jungles , woods , bushes and streams. They serve on insects.",latitude: -38.08226310771, longitude:145.806622128583, uncertainty:165, threatnedStatus: "Not endangered", isVisited: false, isFavourite: false)
 
-        CoreDataHandler.saveFrog(sname: "Pseudophryne bibronii", frogcount: 6, cname: "Brown Toadlet", desc: "Their physique is granular black and mineral white near the belly along with an opaque brown or black coloured body . They can be of different colours such as clear brown , clear black , clear white and clear grey . They are found near woods ,rocks near streams . They serve on insects.",latitude: -37, longitude:141.7, uncertainty:10000, threatnedStatus: "Endangered", isVisited: false, isFavourite: false)
+        CoreDataHandler.saveFrog(sname: "Pseudophryne bibronii", frogcount: 6, cname: "Brown Toadlet", desc: "Their physique is granular black and mineral white near the belly along with an opaque brown or black coloured body . They can be of different colours such as clear brown , clear black , clear white and clear grey . They are found near woods ,rocks near streams . They serve on insects.",latitude: -37, longitude:141.7, uncertainty:10000, threatnedStatus: "Endangered", isVisited: false, isFavourite: true)
 
-        CoreDataHandler.saveFrog(sname: "Pseudophryne dendyi", frogcount: 1, cname: "Dendy's Toadlet", desc: "Their physique consists of opaque brown with yellow shades under arms . They can be of different colours such as clear brown , clear white ,clear black and clear yellow . They are found near woods .  They serve on insects.",latitude: -36.7034432572836, longitude:147.921584784843, uncertainty:6, threatnedStatus: "Not endangered", isVisited: false, isFavourite: false)
+        CoreDataHandler.saveFrog(sname: "Pseudophryne dendyi", frogcount: 1, cname: "Dendy's Toadlet", desc: "Their physique consists of opaque brown with yellow shades under arms . They can be of different colours such as clear brown , clear white ,clear black and clear yellow . They are found near woods .  They serve on insects.",latitude: -36.7034432572836, longitude:147.921584784843, uncertainty:6, threatnedStatus: "Not endangered", isVisited: false, isFavourite: true)
 
 
-        CoreDataHandler.saveFrog(sname: "Pseudophryne semimarmorata", frogcount: 8, cname: "Southern Toadlet", desc: "Their physique comprises of rough black and mineral white along with darker green and darker brown body with vivid orange or yellow shades on belly side. They can be of different colours such as clear brown , clear green, clear black ,clear white and clear orange .They are found near damp areas. They serve on insects.",latitude: -37.9661880384892, longitude:145.263331896779, uncertainty:1414, threatnedStatus: "Vulnerable", isVisited: false, isFavourite: false)
+        CoreDataHandler.saveFrog(sname: "Pseudophryne semimarmorata", frogcount: 8, cname: "Southern Toadlet", desc: "Their physique comprises of rough black and mineral white along with darker green and darker brown body with vivid orange or yellow shades on belly side. They can be of different colours such as clear brown , clear green, clear black ,clear white and clear orange .They are found near damp areas. They serve on insects.",latitude: -37.9661880384892, longitude:145.263331896779, uncertainty:1414, threatnedStatus: "Vulnerable", isVisited: false, isFavourite: true)
     }
  }
