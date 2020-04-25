@@ -8,7 +8,7 @@ To watch the application in action click [here](https://medium.com/).
 ## Key Features (Iteration 1)
 - Frogs with threatned status.
 - Get detailed information of each Frog.
-- Can favourite or unfavourite to access later.
+- Can favourite or unfavourite a Frog to access later.
 - Can see the Frogs location on Map.
 - Get weather details of the frogs location, so that you can plan a visit accordingly for sighting.
 - Notifying user when entering Frog's habitat.
