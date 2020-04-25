@@ -14,7 +14,7 @@ To watch the application in action click [here](https://medium.com/).
 - Notifying user when entering Frog's habitat.
 - Real-Time identification of Frogs using camera.
 - Get latest news on 'Endangered Frogs' from trusted source with support of Web view.
-- Modern and simple UI.
+- Pleasing and simple UI.
 - Dark Mode/Light Mode supported.
 
 ## Requirements
