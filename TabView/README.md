@@ -8,16 +8,24 @@ To watch the application in action click [here](https://medium.com/).
 ## Key Features (Iteration 1)
 - Frogs with threatned status.
 - Get detailed information of each Frog.
-- Can favourite or unfavourite to access later
+- Can favourite or unfavourite to access later.
 - Can see the Frogs location on Map.
 - Get weather details of the frogs location, so that you can plan a visit accordingly for sighting.
-- 
+- Notifying user when entering Frog's habitat.
+- Real-Time identification of Frogs using camera.
+- Get latest news on 'Endangered Frogs' from trusted source with support of Web view.
+- Modern and simple UI.
+- Dark Mode/Light Mode supported.
 
 ## Requirements
 - Swift 5.0
 - iOS 13.4+ 
 - To access Identification feature, please install the application on a physical device which has camera with Telephoto lens.
 - Internet Connection for loading Maps.
+
+## Steps to Install
+-
+-
 
 ## Credits
 * [Creating and Training Machine Learning model] (https://developer.apple.com/videos/play/wwdc2018/717)
