@@ -12,9 +12,7 @@ import Vision
 
 class SecondViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate {
 
-    
     @IBOutlet weak var messageLabel: UILabel!
-    
     @IBOutlet weak var bgImage: UIImageView!
     @IBOutlet weak var textlabel: UILabel!
     
@@ -28,18 +26,19 @@ class SecondViewController: UIViewController, AVCaptureVideoDataOutputSampleBuff
     @IBOutlet weak var percentage3Lbl: UILabel!
     
     
-    
     var circleView: UIView!
     let captureSession = AVCaptureSession()
+    let activityView = UIActivityIndicatorView()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-
+        
         // Initailizing and setting properties to capture the frames from camera
         captureSession.sessionPreset = .photo
-        //guard let captureDevice = AVCaptureDevice.default(for: .video) else { return }
-        guard let captureDevice = AVCaptureDevice.default(.builtInTelephotoCamera, for: .video, position: .back) else { return }
+        guard let captureDevice = AVCaptureDevice.default(for: .video) else { return }
+        //guard let captureDevice = AVCaptureDevice.default(.default, for: .video, position: .back) else { return }
         guard let input = try? AVCaptureDeviceInput(device: captureDevice) else { return }
         captureSession.addInput(input)
         // Adding a new View on top and making changing the shape to circle.
@@ -52,6 +51,11 @@ class SecondViewController: UIViewController, AVCaptureVideoDataOutputSampleBuff
         let previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
         circleView.layer.insertSublayer(previewLayer, at: 0)
         previewLayer.frame = CGRect(x: -50, y: 0, width: 400, height: 400)
+        
+        activityView.style = .large
+        activityView.color = UIColor(red: 197/255, green: 26/255, blue: 74/255, alpha: 1)
+        activityView.center = circleView.center
+        self.view.addSubview(activityView)
         
         // Displaying the Camera feed.
         let dataOutput = AVCaptureVideoDataOutput()
@@ -73,6 +77,7 @@ class SecondViewController: UIViewController, AVCaptureVideoDataOutputSampleBuff
                 self.circleView.transform = self.circleView.transform.rotated(by: CGFloat.pi)
                 self.circleView.transform = self.circleView.transform.rotated(by: CGFloat.pi)
                 self.circleView.layer.cornerRadius = self.circleView.frame.size.width/2
+                self.activityView.startAnimating()
             })
         }
         self.captureSession.startRunning()
@@ -86,7 +91,7 @@ class SecondViewController: UIViewController, AVCaptureVideoDataOutputSampleBuff
     
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         
-        sleep(1)
+        usleep(1000000)
         guard let pixelBuffer: CVPixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return }
         
         guard let model = try? VNCoreMLModel(for: FrogImageClassification_Refined().model) else { return }
@@ -102,6 +107,7 @@ class SecondViewController: UIViewController, AVCaptureVideoDataOutputSampleBuff
                 DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                     self.textlabel.text = firstOb.identifier
                     if !(firstOb.identifier == "Point the camera to a Forg") {
+                        self.activityView.stopAnimating()
                         self.name1Lbl.text = firstOb.identifier
                         self.percentage1Lbl.text = "\(Int(firstOb.confidence * 100))%"
                         self.name2Lbl.text = secOb.identifier
@@ -109,6 +115,7 @@ class SecondViewController: UIViewController, AVCaptureVideoDataOutputSampleBuff
                         self.name3Lbl.text = thirdOb.identifier
                         self.percentage3Lbl.text = "\(Int(thirdOb.confidence * 100))%"
                     } else {
+                        self.activityView.startAnimating()
                         self.name1Lbl.text = ""
                         self.percentage1Lbl.text = ""
                         self.name2Lbl.text = ""

@@ -29,6 +29,7 @@
 		57A3B8A9244315230011F674 /* TabView.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 57A3B8A7244315230011F674 /* TabView.xcdatamodeld */; };
 		57A3B8AB244315270011F674 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57A3B8AA244315270011F674 /* Assets.xcassets */; };
 		57A3B8AE244315270011F674 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57A3B8AC244315270011F674 /* LaunchScreen.storyboard */; };
+		57E6347A24554A9100FF3475 /* pi.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 57E6347924554A9100FF3475 /* pi.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		57A3B8AA244315270011F674 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		57A3B8AD244315270011F674 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		57A3B8AF244315270011F674 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		57E6347924554A9100FF3475 /* pi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pi.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +155,7 @@
 			children = (
 				574A3C2D245072D10022CCB3 /* GPX files */,
 				57A3B89C244315230011F674 /* AppDelegate.swift */,
+				57E6347924554A9100FF3475 /* pi.jpg */,
 				57A3B89E244315230011F674 /* SceneDelegate.swift */,
 				579B455324477DF300EACA4B /* Inferface */,
 				579B45492447441200EACA4B /* ViewControllers */,
@@ -226,6 +229,7 @@
 				574A3C31245074BF0022CCB3 /* Eastern Dwarf Tree Frog.gpx in Resources */,
 				57A3B8AB244315270011F674 /* Assets.xcassets in Resources */,
 				574A3C2F245072E70022CCB3 /* Crinia parinsignifera.gpx in Resources */,
+				57E6347A24554A9100FF3475 /* pi.jpg in Resources */,
 				57A3B8A6244315230011F674 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

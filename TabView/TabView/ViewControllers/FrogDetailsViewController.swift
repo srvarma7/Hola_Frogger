@@ -71,10 +71,11 @@ class FrogDetailsViewController: UIViewController, MKMapViewDelegate {
         scNameLbl.text = receivedFrog?.sname
         descLbl.text = receivedFrog?.desc
         descLbl.isEditable = false
-        locationLbl.text = "\(String(describing: receivedFrog!.uncertainty))"
+        locationLbl.text = "\(String(describing: receivedFrog!.uncertainty)) meters"
         statusLbl.text = receivedFrog?.threatnedStatus
         countLbl.text = "\(String(describing: receivedFrog!.frogcount))"
         favButton.frame = CGRect(x: self.view.center.x - 10, y: self.view.center.y - 240, width: 30, height: 30)
+        favButton.center.x = view.center.x
         closeButton.frame = CGRect(x: view.center.x, y: view.frame.maxY + 30, width: 50, height: 50)
         closeButton.center.x = view.center.x
         closeButton.setBackgroundImage(UIImage(systemName: "xmark.circle.fill"), for: UIControl.State.normal)
@@ -100,6 +101,11 @@ class FrogDetailsViewController: UIViewController, MKMapViewDelegate {
             self.mapView.addAnnotation(self.annotaion)
             self.closeButton.transform = CGAffineTransform(translationX: 0, y: -230)
         })
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "load"), object: nil)
+
     }
     
     @objc func closeButtonAction(sender: UIButton!) {

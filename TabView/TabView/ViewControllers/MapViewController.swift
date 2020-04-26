@@ -21,10 +21,20 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     var focusLocation = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: -37.937282, longitude: 144.610342), latitudinalMeters: 800000, longitudinalMeters: 800000)
     var locationMgr: CLLocationManager = CLLocationManager()
     var tappedLocation: String = ""
+    let focusOnUL = UIButton()
+    var location = CLLocation()
+    let regionRadius: Double = 1000
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        focusOnUL.frame = CGRect(x: self.view.frame.maxX - 60, y: self.view.frame.maxY - 150, width: 30, height: 30)
+        //focusOnUL.center.x = view.center.x
+        focusOnUL.setBackgroundImage(UIImage(systemName: "location.fill"), for: UIControl.State.normal)
+        focusOnUL.addTarget(self, action: #selector(foucsOnUserLocation), for: .touchUpInside)
+        self.view.addSubview(focusOnUL)
+
+        
         
         // Fetching all the records from the coredata and storing in the local variable.
         frogs = CoreDataHandler.fetchObject()
@@ -52,6 +62,20 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
             }
         }
         startFencing()
+    }
+    
+    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
+        foucsOnUserLoc()
+    }
+    
+    func foucsOnUserLoc() {
+        guard let coordinate = locationMgr.location?.coordinate else {return}
+        let coordinateRegion = MKCoordinateRegion(center: coordinate, latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
+        mapView.setRegion(coordinateRegion, animated: true)
+    }
+    
+    @objc func foucsOnUserLocation(sender: UIButton!) {
+        foucsOnUserLoc()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -83,13 +107,13 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         }
     }
     
-    //Alerts the user when he is nearby the destination
+    //Alerts the user when he is nearby the Frog's habitat.
     func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
-        displayMessage(title: "Alert", message: "You have entered a Frog's Habitat, please sanitize yourself")
+        displayMessage(title: "Alert", message: "You are near a Frog's habitat, please take precautions while entering. \n\n\nNote: Sanitize yourself to keep the frogs safe!!!")
         //Stackoverflow - https://stackoverflow.com/questions/41912386/using-unusernotificationcenter-for-ios-10
         let notification = UNMutableNotificationContent()
         notification.title = "Alert"
-        notification.body = "You have entered a Frog's Habitat, please sanitize yourself"
+        notification.body = "You are near a Frog's habitat, please take precautions while entering. \n\n\nNote: Sanitize yourself to keep the frogs safe!!!"
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
         let req = UNNotificationRequest(identifier: "Request", content: notification, trigger: trigger)
         UNUserNotificationCenter.current().add(req, withCompletionHandler: nil)
@@ -110,31 +134,6 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
             performSegue(withIdentifier: "mapFrogDetails", sender: self)
         }
     }
-    /*
-    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-        if let annotationTitle = view.annotation?.title
-        {
-            let tappedLocation = "\(annotationTitle!)"
-            for ele in frogs {
-                if tappedLocation == ele.cname {
-                    if let viewController = storyboard?.instantiateViewController(identifier: "frogDetails") as? FrogDetailsViewController {
-                        viewController.receivedFrog = ele
-                    }
-                }
-            }
-        }
-    }
-     
-    
-    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-        let detailsCrt = self.storyboard?.instantiateViewController(withIdentifier: "test")
-        let dest = detailsCrt as! DetailsViewController
-        let sldAnnotation = view.annotation as! DestinationAnnotation
-        dest.destination = databaseCR?.fetchDestByName(name: sldAnnotation.title!)[0]
-        print(dest.destination?.title)
-        self.navigationController?.pushViewController(detailsCrt!, animated: true)
-    }
-*/
     
     // MARK: - Navigation
 
