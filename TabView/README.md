@@ -6,7 +6,7 @@
 To watch the application in action click [here](https://www.youtube.com/watch?v=RpPpLSh0fo0&feature=emb_logo).
 
 ## Key Features (Iteration 1)
-- Frogs with threatned status.
+- Frogs with threatened status.
 - Get detailed information of each Frog.
 - Can favourite or unfavourite a Frog to access later.
 - Can see the Frogs location on Map.
