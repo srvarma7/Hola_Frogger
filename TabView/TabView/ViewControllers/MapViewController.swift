@@ -14,10 +14,9 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
 
     // UI outlet
     @IBOutlet weak var mapView: MKMapView!
-    
     // Variable to fold all the frog recored of Frog entity type
     var frogs: [FrogEntity] = []
-    // Location
+    // Focusing on the following location when the Map is loaded.
     var focusLocation = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: -37.937282, longitude: 144.610342), latitudinalMeters: 800000, longitudinalMeters: 800000)
     var locationMgr: CLLocationManager = CLLocationManager()
     var tappedLocation: String = ""
@@ -25,17 +24,13 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     var location = CLLocation()
     let regionRadius: Double = 1000
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Setting a button to get to user's current location up on tapping.
         focusOnUL.frame = CGRect(x: self.view.frame.maxX - 60, y: self.view.frame.maxY - 150, width: 30, height: 30)
-        //focusOnUL.center.x = view.center.x
         focusOnUL.setBackgroundImage(UIImage(systemName: "location.fill"), for: UIControl.State.normal)
         focusOnUL.addTarget(self, action: #selector(foucsOnUserLocation), for: .touchUpInside)
         self.view.addSubview(focusOnUL)
-
-        
-        
         // Fetching all the records from the coredata and storing in the local variable.
         frogs = CoreDataHandler.fetchObject()
         // If the appliation is opened for the first time then the records are added to the database.
@@ -43,13 +38,12 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
             CoreDataHandler.addAllRecords()
             frogs = CoreDataHandler.fetchObject()
         }
-        
-        // Do any additional setup after loading the view.
         mapView.delegate = self
         // When the Map is loaded the Map will focus to the following location.
         mapView.setRegion(focusLocation, animated: true)
         // Frog locations will be loaded as annotaions after focus on the location.
         loadAnnotations()
+        // To get user location and its accuracy.
         locationMgr.desiredAccuracy = kCLLocationAccuracyBestForNavigation
         locationMgr.distanceFilter = 10
         locationMgr.delegate = self
@@ -61,21 +55,8 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
                 return
             }
         }
+        // Starts monitoring to see if the user enter a Frog Habitat.
         startFencing()
-    }
-    
-    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
-        foucsOnUserLoc()
-    }
-    
-    func foucsOnUserLoc() {
-        guard let coordinate = locationMgr.location?.coordinate else {return}
-        let coordinateRegion = MKCoordinateRegion(center: coordinate, latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
-        mapView.setRegion(coordinateRegion, animated: true)
-    }
-    
-    @objc func foucsOnUserLocation(sender: UIButton!) {
-        foucsOnUserLoc()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -86,6 +67,23 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
         locationMgr.stopUpdatingLocation()
+    }
+    
+    // When the user locations is changed, map is fouced on current location.
+    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
+        foucsOnUserLoc()
+    }
+    
+    // Foucs on the user current location.
+    func foucsOnUserLoc() {
+        guard let coordinate = locationMgr.location?.coordinate else {return}
+        let coordinateRegion = MKCoordinateRegion(center: coordinate, latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
+        mapView.setRegion(coordinateRegion, animated: true)
+    }
+    
+    // When the button is tapped, Map will foucs on user location.
+    @objc func foucsOnUserLocation(sender: UIButton!) {
+        foucsOnUserLoc()
     }
     
     // MARK: - Funtion to load annotations on the Map
@@ -99,6 +97,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         }
     }
     
+    // Starts monitoring to see if the user enter a Frog Habitat.
     func startFencing() {
         for ele in frogs {
             let geoLocation = CLCircularRegion(center: CLLocationCoordinate2D(latitude: ele.latitude, longitude: ele.longitude), radius: 100, identifier: ele.cname!)
@@ -120,14 +119,13 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     }
     
     //To display messages to the user as an alert
-    //Reference - Tutorial
     func displayMessage(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
     
-    
+    // Pop-up annotation when tapped on a annotation.
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         if (control == view.rightCalloutAccessoryView) {
             tappedLocation = (view.annotation?.title)!!
@@ -136,7 +134,6 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     }
     
     // MARK: - Navigation
-
     //In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "mapFrogDetails" {
@@ -151,23 +148,20 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
 
 }
 
+// Custom annotaion.
+/// Reference - https://www.raywenderlich.com/7738344-mapkit-tutorial-getting-started
 extension MapViewController {
-  // 1
   func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-    // 2
     guard let annotation = annotation as? FrogAnnotation else {
       return nil
     }
-    // 3
     let identifier = "frogDetails"
     var view: MKMarkerAnnotationView
-    // 4
     if let dequeuedView = mapView.dequeueReusableAnnotationView(
       withIdentifier: identifier) as? MKMarkerAnnotationView {
       dequeuedView.annotation = annotation
       view = dequeuedView
     } else {
-      // 5
       view = MKMarkerAnnotationView(
         annotation: annotation,
         reuseIdentifier: identifier)

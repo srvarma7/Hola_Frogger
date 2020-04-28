@@ -53,13 +53,14 @@ class CoreDataHandler: NSObject {
         return frogs
     }
     
-    //let p2 = NSPredicate(format: "isRegistered == true")
+    // fetches only frogs which are favourite.
     class func fetchOnlyFav() -> [FrogEntity] {
         let context = getContect()
         var favFrogs: [FrogEntity] = []
         
         let request = NSFetchRequest<FrogEntity>(entityName: "FrogEntity")
         let sort = NSSortDescriptor(key: "cname", ascending: true)
+        // Filter for getting only favourites.
         let predicate = NSPredicate(format: "isFavourite == %@", NSNumber(value: true))
         request.predicate = predicate
         request.sortDescriptors = [sort]
@@ -71,6 +72,7 @@ class CoreDataHandler: NSObject {
         return favFrogs
     }
     
+    // Method to update frogs favourite stauts
     class func updateFrog(frog: FrogEntity, isVisited: Bool, isFavourite: Bool) {
         
         let context = getContect()

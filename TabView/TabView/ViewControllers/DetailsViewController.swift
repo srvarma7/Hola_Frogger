@@ -11,44 +11,40 @@ import WebKit
 
 class DetailsViewController: UIViewController, WKNavigationDelegate {
 
+    // UI outlets
     @IBOutlet weak var webView: WKWebView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
+    // Holds the sent artile.
     var receivedArticle: Article?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //
+        // Setting the Activity Indicator
         activityIndicator.center = view.center
+        // Setting the artile URL, to load in a Web view.
         let url = URL(string: receivedArticle!.url)
         let request = URLRequest(url: url!)
         webView.load(request)
         webView.navigationDelegate = self
+        // Starts animation when website is loading.
         activityIndicator.startAnimating()
         activityIndicator.hidesWhenStopped = true
     }
     
+    // When it finishes loading, the animation is stopepd.
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         activityIndicator.stopAnimating()
     }
     
+    // When it fails loading, the animation is stopepd.
     func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
         activityIndicator.stopAnimating()
     }
     
+    // When it starts loading again, the animation is started.
     func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
         activityIndicator.startAnimating()
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

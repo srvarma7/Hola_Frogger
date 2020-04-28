@@ -8,6 +8,7 @@
 
 import UIKit
 
+// Structure to hold the News data.
 struct JsonResponse: Codable {
     let articleCount: Int
     let articles: [Article]
@@ -29,27 +30,28 @@ struct Source: Codable {
 
 class NewsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    // UI oulet
     @IBOutlet weak var tableView: UITableView!
     
-    var headline: [String] = []
-    
+    // Stores the artilcles.
     var articles = [Article]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        // Retrives news from the API when the controller is loaded.
         getNews()
         tableView.delegate = self
         tableView.allowsSelection = true
         tableView.reloadData()
     }
     
+    // Changing the height of a row in table view.
     override func viewWillAppear(_ animated: Bool) {
         tableView.rowHeight = 100
         tableView.estimatedRowHeight = UITableView.automaticDimension
     }
     
-    //Fetching News from the API
+    //Fetching News from the API, when fetch completes, table view is reloaded.
     func getNews() {
         let url = URL(string: "https://gnews.io/api/v3/search?q=endangered+frog&country=au&token=2e90adf5b191d077e1ae0d79a862cbcb")
         URLSession.shared.dataTask(with: url!) { data, _, _ in
@@ -68,12 +70,14 @@ class NewsViewController: UIViewController, UITableViewDataSource, UITableViewDe
         return articles.count
     }
     
+    // Setting the data in a cell.
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel?.text = articles[indexPath.row].title
         return cell
     }
     
+    // Loading a news detailes view controller when an artilce is selected.
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let viewController = storyboard?.instantiateViewController(identifier: "newsDetails") as? DetailsViewController {
             let article = articles[indexPath.row]
