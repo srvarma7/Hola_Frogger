@@ -8,14 +8,14 @@ To watch the application in action click [here](https://www.youtube.com/watch?v=
 ## Key Features (Iteration 1)
 - Frogs with threatened status.
 - Get detailed information of each Frog.
-- Can favourite or unfavourite a Frog to access later.
+- Can [favourite or unfavourite](https://youtu.be/KeNd2owf86I) a Frog to access later.
 - Can see the Frogs location on Map.
 - Get weather details of the frogs location, so that you can plan a visit accordingly for sighting.
-- Notifying user when entering Frog's habitat.
-- Real-Time identification of Frogs using camera.
-- Get latest news on 'Endangered Frogs' from trusted source with support of Web view.
+- Notifying user when entering [Frog's habitat](https://youtu.be/pcqeEWCkYhM).
+- Real-Time [identification](https://youtu.be/SkIn_CO-7fA) of Frogs using camera.
+- Get [latest news](https://youtu.be/WPr21odGQsU) on 'Endangered Frogs' from trusted source with support of Web view.
+- [Dark Mode/Light Mode](https://youtu.be/vhOirOOohlo) supported.
 - Pleasing and simple UI.
-- Dark Mode/Light Mode supported.
 
 ## Requirements
 - Swift 5.0
