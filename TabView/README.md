@@ -20,11 +20,11 @@ To watch the application in action click [here](https://www.youtube.com/watch?v=
 ## Requirements
 - Swift 5.0
 - iOS 13.4+ 
-- To access Identification feature, please install the application on a physical device which has camera with Telephoto lens.
+- To access Identification feature, please install the application on a physical device which has camera.
 - Internet Connection for loading Maps.
 
 ## Steps to Install
--
+- 
 -
 
 ## Credits
