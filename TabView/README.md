@@ -29,8 +29,8 @@ To watch the application in action click [here](https://www.youtube.com/watch?v=
 - Open `TabView.xcodeproj` file.
 - Select iPhone 11 Pro as a target device under simulator.
 - Build and Run the application by tapping on Play button or hit 'Cmd + R' on keyboard.
-- If you encounter any error, try signing in with your apple id, and select it under Team in Target.
-- Viola
+- If you encounter any saying `Signing for "TabView" requires a development team.`, try signing in with your apple id, and select it under Team in Target.
+- Viola!!
 - If you still experience any issues, please reachout at ckal0008@student.monash.edu
 
 ## Credits
