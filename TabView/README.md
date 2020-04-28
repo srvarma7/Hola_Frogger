@@ -24,6 +24,7 @@ To watch the application in action click [here](https://www.youtube.com/watch?v=
 - Internet Connection for loading Maps.
 
 ## Steps to Install
+- If you do not have Xcode installed on you Mac, please open App Store and search for Xcode and install. 
 - Unzip the download file.
 - Navigate to TabView folder.
 - Open `TabView.xcodeproj` file.
