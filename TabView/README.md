@@ -8,6 +8,9 @@ To watch the application in action click [here](https://www.youtube.com/watch?v=
 ## Key Features (Iteration 1)
 - Frogs with threatned status.
 - Get detailed information of each Frog.
+
+![demo2](GIF/show_fav.GIF)
+![Farmers Market Finder Demo](GIF/show_fav.GIF)
 - Can favourite or unfavourite a Frog to access later.
 - Can see the Frogs location on Map.
 - Get weather details of the frogs location, so that you can plan a visit accordingly for sighting.
