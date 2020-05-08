@@ -1,0 +1,24 @@
+PODS:
+  - iOSDropDown (0.3.4)
+  - lottie-ios (3.1.8)
+  - RAMReel (4.1.0)
+
+DEPENDENCIES:
+  - iOSDropDown
+  - lottie-ios
+  - RAMReel
+
+SPEC REPOS:
+  trunk:
+    - iOSDropDown
+    - lottie-ios
+    - RAMReel
+
+SPEC CHECKSUMS:
+  iOSDropDown: c10a761f9a00c3f1cc9d3bce43ae504628e2f692
+  lottie-ios: 48fac6be217c76937e36e340e2d09cf7b10b7f5f
+  RAMReel: 198e41f62d65f54c44797679ade03b4a1cef9709
+
+PODFILE CHECKSUM: dfc6af7125991eec37c12351590f154c66eb2f38
+
+COCOAPODS: 1.9.1

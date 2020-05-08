@@ -99,7 +99,7 @@ class FrogDetailsViewController: UIViewController, MKMapViewDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         // When the Map is loaded, the Map will focus to the below location and puts the annotation marker.
-        UIView.animate(withDuration: 1, delay: 0.3, animations: {
+        UIView.animate(withDuration: 0.5, delay: 0.3, animations: {
             self.focusLocation = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: self.receivedFrog!.latitude, longitude: self.receivedFrog!.longitude), latitudinalMeters: 1000, longitudinalMeters: 1000)
             self.mapView.setRegion(self.focusLocation, animated: true)
             self.mapView.addAnnotation(self.annotaion)

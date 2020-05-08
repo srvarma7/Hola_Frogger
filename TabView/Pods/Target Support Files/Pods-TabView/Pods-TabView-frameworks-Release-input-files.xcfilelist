@@ -1,0 +1,4 @@
+${PODS_ROOT}/Target Support Files/Pods-TabView/Pods-TabView-frameworks.sh
+${BUILT_PRODUCTS_DIR}/RAMReel/RAMReel.framework
+${BUILT_PRODUCTS_DIR}/iOSDropDown/iOSDropDown.framework
+${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework

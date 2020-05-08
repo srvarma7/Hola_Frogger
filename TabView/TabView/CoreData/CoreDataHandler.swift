@@ -72,6 +72,24 @@ class CoreDataHandler: NSObject {
         return favFrogs
     }
     
+    class func fetchSpecificFrog(frogname: String) -> FrogEntity {
+        let context = getContect()
+        var frog: [FrogEntity] = []
+        
+        let request = NSFetchRequest<FrogEntity>(entityName: "FrogEntity")
+        let sort = NSSortDescriptor(key: "cname", ascending: true)
+        // Filter for getting only favourites.
+        let predicate = NSPredicate(format: "sname == %@", frogname)
+        request.predicate = predicate
+        request.sortDescriptors = [sort]
+        do {
+            frog = try context.fetch(request)
+        } catch {
+            print(error, "Error while fetching data in CoreDataHandler")
+        }
+        return frog.first!
+    }
+    
     // Method to update frogs favourite stauts
     class func updateFrog(frog: FrogEntity, isVisited: Bool, isFavourite: Bool) {
         

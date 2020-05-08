@@ -3,17 +3,20 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2DC7934B91BDC021A7F78B27 /* Pods_TabView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BDCD6C8E26AF54B75AEA6CA /* Pods_TabView.framework */; };
 		57320A7C245344BC00ADE06C /* FrogImageClassification 3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 57320A7B245344BC00ADE06C /* FrogImageClassification 3.mlmodel */; };
 		57320A7F2453477900ADE06C /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57320A7E2453477900ADE06C /* WebKit.framework */; };
 		57320A8124535A4300ADE06C /* FrogImageClassification Refined.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 57320A8024535A4300ADE06C /* FrogImageClassification Refined.mlmodel */; };
+		57441D922463F00A00BC4DE0 /* catchmeifyoucan.json in Resources */ = {isa = PBXBuildFile; fileRef = 57441D912463F00A00BC4DE0 /* catchmeifyoucan.json */; };
 		574A3C2A24505E850022CCB3 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574A3C2924505E840022CCB3 /* MapViewController.swift */; };
 		574A3C2C245066060022CCB3 /* FrogAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574A3C2B245066060022CCB3 /* FrogAnnotation.swift */; };
 		574A3C2F245072E70022CCB3 /* Crinia parinsignifera.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 574A3C2E245072E70022CCB3 /* Crinia parinsignifera.gpx */; };
 		574A3C31245074BF0022CCB3 /* Eastern Dwarf Tree Frog.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 574A3C30245074BF0022CCB3 /* Eastern Dwarf Tree Frog.gpx */; };
+		5757F98A24639E3600F8D75C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5757F98924639E3600F8D75C /* HomeViewController.swift */; };
 		579B45472447084200EACA4B /* CoreDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579B45462447084200EACA4B /* CoreDataHandler.swift */; };
 		579B45512447460900EACA4B /* FrogEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579B454F2447460900EACA4B /* FrogEntity+CoreDataClass.swift */; };
 		579B45522447460900EACA4B /* FrogEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579B45502447460900EACA4B /* FrogEntity+CoreDataProperties.swift */; };
@@ -32,13 +35,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2BDCD6C8E26AF54B75AEA6CA /* Pods_TabView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TabView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		57320A7B245344BC00ADE06C /* FrogImageClassification 3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = "FrogImageClassification 3.mlmodel"; sourceTree = "<group>"; };
 		57320A7E2453477900ADE06C /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		57320A8024535A4300ADE06C /* FrogImageClassification Refined.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = "FrogImageClassification Refined.mlmodel"; sourceTree = "<group>"; };
+		57441D912463F00A00BC4DE0 /* catchmeifyoucan.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = catchmeifyoucan.json; sourceTree = "<group>"; };
 		574A3C2924505E840022CCB3 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		574A3C2B245066060022CCB3 /* FrogAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrogAnnotation.swift; sourceTree = "<group>"; };
 		574A3C2E245072E70022CCB3 /* Crinia parinsignifera.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Crinia parinsignifera.gpx"; sourceTree = "<group>"; };
 		574A3C30245074BF0022CCB3 /* Eastern Dwarf Tree Frog.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Eastern Dwarf Tree Frog.gpx"; sourceTree = "<group>"; };
+		5757F98924639E3600F8D75C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		579B45462447084200EACA4B /* CoreDataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHandler.swift; sourceTree = "<group>"; };
 		579B454F2447460900EACA4B /* FrogEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "FrogEntity+CoreDataClass.swift"; path = "TabView/FrogEntity+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		579B45502447460900EACA4B /* FrogEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "FrogEntity+CoreDataProperties.swift"; path = "TabView/FrogEntity+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
@@ -56,6 +62,8 @@
 		57A3B8AA244315270011F674 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		57A3B8AD244315270011F674 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		57A3B8AF244315270011F674 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ACBCC81B8DB64478F334A8A5 /* Pods-TabView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TabView.debug.xcconfig"; path = "Target Support Files/Pods-TabView/Pods-TabView.debug.xcconfig"; sourceTree = "<group>"; };
+		DEF23522100C96BCBF38C1D1 /* Pods-TabView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TabView.release.xcconfig"; path = "Target Support Files/Pods-TabView/Pods-TabView.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +72,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				57320A7F2453477900ADE06C /* WebKit.framework in Frameworks */,
+				2DC7934B91BDC021A7F78B27 /* Pods_TabView.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				57320A7E2453477900ADE06C /* WebKit.framework */,
+				2BDCD6C8E26AF54B75AEA6CA /* Pods_TabView.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -85,6 +95,14 @@
 				574A3C2E245072E70022CCB3 /* Crinia parinsignifera.gpx */,
 			);
 			path = "GPX files (To simulate Locations)";
+			sourceTree = "<group>";
+		};
+		574DCD142463EC8B00BA40B7 /* LottieFiles */ = {
+			isa = PBXGroup;
+			children = (
+				57441D912463F00A00BC4DE0 /* catchmeifyoucan.json */,
+			);
+			path = LottieFiles;
 			sourceTree = "<group>";
 		};
 		579B4548244743E100EACA4B /* CoreData */ = {
@@ -101,6 +119,7 @@
 		579B45492447441200EACA4B /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				5757F98924639E3600F8D75C /* HomeViewController.swift */,
 				57A3B8A0244315230011F674 /* FrogListController.swift */,
 				579EE7AE2444D96A00321C7E /* FrogDetailsViewController.swift */,
 				57A3B8A2244315230011F674 /* IdentifyViewController.swift */,
@@ -137,6 +156,7 @@
 				57A3B89B244315230011F674 /* TabView */,
 				57A3B89A244315230011F674 /* Products */,
 				57320A7D2453477800ADE06C /* Frameworks */,
+				E71D97BDF56D4843DF18292D /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -154,6 +174,7 @@
 				57A3B89C244315230011F674 /* AppDelegate.swift */,
 				57A3B89E244315230011F674 /* SceneDelegate.swift */,
 				579B455324477DF300EACA4B /* Inferface */,
+				574DCD142463EC8B00BA40B7 /* LottieFiles */,
 				579B45492447441200EACA4B /* ViewControllers */,
 				579B4548244743E100EACA4B /* CoreData */,
 				579B454A2447442600EACA4B /* Core ML */,
@@ -164,6 +185,15 @@
 			path = TabView;
 			sourceTree = "<group>";
 		};
+		E71D97BDF56D4843DF18292D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				ACBCC81B8DB64478F334A8A5 /* Pods-TabView.debug.xcconfig */,
+				DEF23522100C96BCBF38C1D1 /* Pods-TabView.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -171,9 +201,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 57A3B8B2244315270011F674 /* Build configuration list for PBXNativeTarget "TabView" */;
 			buildPhases = (
+				F1770C10371497F05260C084 /* [CP] Check Pods Manifest.lock */,
 				57A3B895244315230011F674 /* Sources */,
 				57A3B896244315230011F674 /* Frameworks */,
 				57A3B897244315230011F674 /* Resources */,
+				FD78217FC0CD21DBE1B855C5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -223,6 +255,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				57A3B8AE244315270011F674 /* LaunchScreen.storyboard in Resources */,
+				57441D922463F00A00BC4DE0 /* catchmeifyoucan.json in Resources */,
 				574A3C31245074BF0022CCB3 /* Eastern Dwarf Tree Frog.gpx in Resources */,
 				57A3B8AB244315270011F674 /* Assets.xcassets in Resources */,
 				574A3C2F245072E70022CCB3 /* Crinia parinsignifera.gpx in Resources */,
@@ -232,6 +265,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		F1770C10371497F05260C084 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TabView-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FD78217FC0CD21DBE1B855C5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TabView/Pods-TabView-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TabView/Pods-TabView-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TabView/Pods-TabView-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		57A3B895244315230011F674 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -240,6 +315,7 @@
 				57A3B8A3244315230011F674 /* IdentifyViewController.swift in Sources */,
 				579B45472447084200EACA4B /* CoreDataHandler.swift in Sources */,
 				579EE7A724433BCC00321C7E /* BearBottle.mlmodel in Sources */,
+				5757F98A24639E3600F8D75C /* HomeViewController.swift in Sources */,
 				57A3B8A1244315230011F674 /* FrogListController.swift in Sources */,
 				574A3C2C245066060022CCB3 /* FrogAnnotation.swift in Sources */,
 				579EE7AD2444CB2D00321C7E /* DetailsViewController.swift in Sources */,
@@ -394,16 +470,18 @@
 		};
 		57A3B8B3244315270011F674 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ACBCC81B8DB64478F334A8A5 /* Pods-TabView.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5G9HGCW6QY;
 				INFOPLIST_FILE = TabView/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Monash.TabView;
+				PRODUCT_BUNDLE_IDENTIFIER = Monash.TabView.new;
 				PRODUCT_NAME = "Hola Frogger";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -412,16 +490,18 @@
 		};
 		57A3B8B4244315270011F674 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DEF23522100C96BCBF38C1D1 /* Pods-TabView.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5G9HGCW6QY;
 				INFOPLIST_FILE = TabView/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Monash.TabView;
+				PRODUCT_BUNDLE_IDENTIFIER = Monash.TabView.new;
 				PRODUCT_NAME = "Hola Frogger";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
