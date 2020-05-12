@@ -32,6 +32,7 @@
 		57A3B8A9244315230011F674 /* TabView.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 57A3B8A7244315230011F674 /* TabView.xcdatamodeld */; };
 		57A3B8AB244315270011F674 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57A3B8AA244315270011F674 /* Assets.xcassets */; };
 		57A3B8AE244315270011F674 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57A3B8AC244315270011F674 /* LaunchScreen.storyboard */; };
+		57C098BE246A49BD0041C235 /* ChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C098BD246A49BD0041C235 /* ChallengeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		57A3B8AA244315270011F674 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		57A3B8AD244315270011F674 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		57A3B8AF244315270011F674 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		57C098BD246A49BD0041C235 /* ChallengeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeViewController.swift; sourceTree = "<group>"; };
 		ACBCC81B8DB64478F334A8A5 /* Pods-TabView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TabView.debug.xcconfig"; path = "Target Support Files/Pods-TabView/Pods-TabView.debug.xcconfig"; sourceTree = "<group>"; };
 		DEF23522100C96BCBF38C1D1 /* Pods-TabView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TabView.release.xcconfig"; path = "Target Support Files/Pods-TabView/Pods-TabView.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -127,6 +129,7 @@
 				579EE7A82444763000321C7E /* NewsViewController.swift */,
 				579EE7AC2444CB2D00321C7E /* DetailsViewController.swift */,
 				574A3C2B245066060022CCB3 /* FrogAnnotation.swift */,
+				57C098BD246A49BD0041C235 /* ChallengeViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -322,6 +325,7 @@
 				579EE7AF2444D96A00321C7E /* FrogDetailsViewController.swift in Sources */,
 				574A3C2A24505E850022CCB3 /* MapViewController.swift in Sources */,
 				57A3B89D244315230011F674 /* AppDelegate.swift in Sources */,
+				57C098BE246A49BD0041C235 /* ChallengeViewController.swift in Sources */,
 				57320A8124535A4300ADE06C /* FrogImageClassification Refined.mlmodel in Sources */,
 				579EE7A92444763000321C7E /* NewsViewController.swift in Sources */,
 				579B45522447460900EACA4B /* FrogEntity+CoreDataProperties.swift in Sources */,

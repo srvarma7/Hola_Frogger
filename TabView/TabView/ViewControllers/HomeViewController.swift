@@ -22,9 +22,9 @@ class HomeViewController: UIViewController {
     
     // set frame
     let  searchField = DropDown(frame: CGRect(x: 10, y: 0, width: 350, height: 50))
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        lottieAnimation()
         var frogs: [FrogEntity] = []
         frogs = CoreDataHandler.fetchObject()
         // If the appliation is opened for the first time then the records are added to the database
@@ -38,12 +38,24 @@ class HomeViewController: UIViewController {
                 namesList.append(ele.sname!)
             }
         }
+        
+        initializeSearch()
+
+        lottieAnimation()
+
+        applyParallaxEffect()
+    }
+    
+    func initializeSearch() {
         searchField.backgroundColor = #colorLiteral(red: 0.7719962001, green: 0.1048256829, blue: 0.2892795205, alpha: 1)
         searchField.listHeight = 150
         searchField.rowHeight = 50
         searchField.placeholder = "  Search here....."
         self.view.addSubview(searchField)
-        
+    }
+    func applyParallaxEffect() {
+        applyMotionEffect(toView: searchField, magnitude: Float(magnitude))
+        applyMotionEffect(toView: exploreBtn, magnitude: Float(-magnitude))
     }
     
     func lottieAnimation() {
@@ -51,7 +63,6 @@ class HomeViewController: UIViewController {
         animationView.center.x = self.view.center.x
         animationView.contentMode = .scaleAspectFit
         view.addSubview(animationView)
-        animationView.play()
         animationView.loopMode = .loop
     }
     
@@ -78,9 +89,7 @@ class HomeViewController: UIViewController {
         UIView.animate(withDuration: 1, animations: {
             self.searchField.layer.cornerRadius = self.searchField.frame.size.width/20
         })
-        applyMotionEffect(toView: searchField, magnitude: Float(magnitude))
-        applyMotionEffect(toView: exploreBtn, magnitude: Float(-magnitude))
-
+        animationView.play()
     }
     
     func applyMotionEffect (toView view: DropDown, magnitude:Float) {
