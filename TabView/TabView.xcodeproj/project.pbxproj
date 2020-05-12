@@ -33,6 +33,8 @@
 		57A3B8AB244315270011F674 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57A3B8AA244315270011F674 /* Assets.xcassets */; };
 		57A3B8AE244315270011F674 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57A3B8AC244315270011F674 /* LaunchScreen.storyboard */; };
 		57C098BE246A49BD0041C235 /* ChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C098BD246A49BD0041C235 /* ChallengeViewController.swift */; };
+		57C098C9246A8E570041C235 /* UnSightedFrogEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C098C7246A8E570041C235 /* UnSightedFrogEntity+CoreDataClass.swift */; };
+		57C098CA246A8E570041C235 /* UnSightedFrogEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C098C8246A8E570041C235 /* UnSightedFrogEntity+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +66,8 @@
 		57A3B8AD244315270011F674 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		57A3B8AF244315270011F674 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		57C098BD246A49BD0041C235 /* ChallengeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeViewController.swift; sourceTree = "<group>"; };
+		57C098C7246A8E570041C235 /* UnSightedFrogEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UnSightedFrogEntity+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		57C098C8246A8E570041C235 /* UnSightedFrogEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UnSightedFrogEntity+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		ACBCC81B8DB64478F334A8A5 /* Pods-TabView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TabView.debug.xcconfig"; path = "Target Support Files/Pods-TabView/Pods-TabView.debug.xcconfig"; sourceTree = "<group>"; };
 		DEF23522100C96BCBF38C1D1 /* Pods-TabView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TabView.release.xcconfig"; path = "Target Support Files/Pods-TabView/Pods-TabView.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -110,6 +114,8 @@
 		579B4548244743E100EACA4B /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				57C098C7246A8E570041C235 /* UnSightedFrogEntity+CoreDataClass.swift */,
+				57C098C8246A8E570041C235 /* UnSightedFrogEntity+CoreDataProperties.swift */,
 				579B454F2447460900EACA4B /* FrogEntity+CoreDataClass.swift */,
 				579B45502447460900EACA4B /* FrogEntity+CoreDataProperties.swift */,
 				57A3B8A7244315230011F674 /* TabView.xcdatamodeld */,
@@ -320,11 +326,13 @@
 				579EE7A724433BCC00321C7E /* BearBottle.mlmodel in Sources */,
 				5757F98A24639E3600F8D75C /* HomeViewController.swift in Sources */,
 				57A3B8A1244315230011F674 /* FrogListController.swift in Sources */,
+				57C098C9246A8E570041C235 /* UnSightedFrogEntity+CoreDataClass.swift in Sources */,
 				574A3C2C245066060022CCB3 /* FrogAnnotation.swift in Sources */,
 				579EE7AD2444CB2D00321C7E /* DetailsViewController.swift in Sources */,
 				579EE7AF2444D96A00321C7E /* FrogDetailsViewController.swift in Sources */,
 				574A3C2A24505E850022CCB3 /* MapViewController.swift in Sources */,
 				57A3B89D244315230011F674 /* AppDelegate.swift in Sources */,
+				57C098CA246A8E570041C235 /* UnSightedFrogEntity+CoreDataProperties.swift in Sources */,
 				57C098BE246A49BD0041C235 /* ChallengeViewController.swift in Sources */,
 				57320A8124535A4300ADE06C /* FrogImageClassification Refined.mlmodel in Sources */,
 				579EE7A92444763000321C7E /* NewsViewController.swift in Sources */,
@@ -408,7 +416,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -462,7 +470,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

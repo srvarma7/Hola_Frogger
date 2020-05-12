@@ -26,11 +26,11 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         var frogs: [FrogEntity] = []
-        frogs = CoreDataHandler.fetchObject()
+        frogs = CoreDataHandler.fetchAllFrogs()
         // If the appliation is opened for the first time then the records are added to the database
         if(frogs.count == 0) {
             CoreDataHandler.addAllRecords()
-            frogs = CoreDataHandler.fetchObject()
+            frogs = CoreDataHandler.fetchAllFrogs()
         }
         
         if namesList.count == 0 {

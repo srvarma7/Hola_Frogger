@@ -33,12 +33,16 @@ class NewsViewController: UIViewController, UITableViewDataSource, UITableViewDe
     // UI oulet
     @IBOutlet weak var tableView: UITableView!
     
+    var activityView: UIActivityIndicatorView?
+
+    
     // Stores the artilcles.
     var articles = [Article]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Retrives news from the API when the controller is loaded.
+        showActivityIndicator()
         getNews()
         tableView.delegate = self
         tableView.allowsSelection = true
@@ -49,6 +53,7 @@ class NewsViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override func viewWillAppear(_ animated: Bool) {
         tableView.rowHeight = 100
         tableView.estimatedRowHeight = UITableView.automaticDimension
+        tableView.reloadData()
     }
     
     //Fetching News from the API, when fetch completes, table view is reloaded.
@@ -60,11 +65,26 @@ class NewsViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 self.articles = jsonResp!.articles
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
+                    self.hideActivityIndicator()
                 }
             }
         }.resume()
     }
-
+    
+    func showActivityIndicator() {
+        activityView = UIActivityIndicatorView(style: .large)
+        activityView?.center = self.view.center
+        activityView?.color = #colorLiteral(red: 0.7719962001, green: 0.1048256829, blue: 0.2892795205, alpha: 1)
+        self.view.addSubview(activityView!)
+        activityView?.startAnimating()
+    }
+    
+    func hideActivityIndicator(){
+        if (activityView != nil){
+            activityView?.stopAnimating()
+        }
+    }
+    
     // MARK: - TableView
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return articles.count

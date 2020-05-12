@@ -29,12 +29,12 @@ class FrogListController: UIViewController, UITableViewDataSource, UITableViewDe
         showFavButton.title = ".."
         
         //MARK: -  coreData fetch
-        frogs = CoreDataHandler.fetchObject()
+        frogs = CoreDataHandler.fetchAllFrogs()
         favFrogs = CoreDataHandler.fetchOnlyFav()
         // If the appliation is opened for the first time then the records are added to the database
         if(frogs.count == 0) {
             CoreDataHandler.addAllRecords()
-            frogs = CoreDataHandler.fetchObject()
+            frogs = CoreDataHandler.fetchAllFrogs()
             favFrogs = CoreDataHandler.fetchOnlyFav()
         }
         reloadTable()
@@ -68,7 +68,7 @@ class FrogListController: UIViewController, UITableViewDataSource, UITableViewDe
     
     // Fetched the latest data from database and reloads the table view
     func reloadTable() {
-        frogs = CoreDataHandler.fetchObject()
+        frogs = CoreDataHandler.fetchAllFrogs()
         favFrogs = CoreDataHandler.fetchOnlyFav()
         tableView.reloadData()
     }

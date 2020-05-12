@@ -32,11 +32,11 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         focusOnUL.addTarget(self, action: #selector(foucsOnUserLocation), for: .touchUpInside)
         self.view.addSubview(focusOnUL)
         // Fetching all the records from the coredata and storing in the local variable.
-        frogs = CoreDataHandler.fetchObject()
+        frogs = CoreDataHandler.fetchAllFrogs()
         // If the appliation is opened for the first time then the records are added to the database.
         if(frogs.count == 0) {
             CoreDataHandler.addAllRecords()
-            frogs = CoreDataHandler.fetchObject()
+            frogs = CoreDataHandler.fetchAllFrogs()
         }
         mapView.delegate = self
         // When the Map is loaded the Map will focus to the following location.
