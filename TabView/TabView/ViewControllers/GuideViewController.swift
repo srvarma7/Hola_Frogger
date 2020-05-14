@@ -10,6 +10,8 @@ import UIKit
 
 class GuideViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
  
+    
+    
     //add the collectionView
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -164,7 +166,8 @@ class GuideViewController: UIViewController, UICollectionViewDataSource, UIColle
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
+        //remain light system
+        self.overrideUserInterfaceStyle = .light
         view.addSubview(collectionView)
         view.addSubview(pageControl)
         view.addSubview(skipButton)

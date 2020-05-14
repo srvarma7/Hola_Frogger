@@ -13,5 +13,8 @@ class ChallengeCell: UICollectionViewCell {
     @IBOutlet weak var sname: UILabel!
     @IBOutlet weak var location: UILabel!
     @IBOutlet weak var visited: UILabel!
+
+        
+    
     
 }

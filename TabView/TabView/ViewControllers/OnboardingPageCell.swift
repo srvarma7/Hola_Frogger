@@ -31,17 +31,23 @@ class OnboardingPageCell: UICollectionViewCell {
             animationView.play()
             
             let color = UIColor(white: 0.2, alpha: 1)
+      
             
             //set format for description
-            let attributedText = NSMutableAttributedString(string: page.title, attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 25, weight: UIFont.Weight.medium), NSAttributedString.Key.foregroundColor: color])
+            let attributedText = NSMutableAttributedString(string: page.title, attributes: [NSAttributedString.Key.font:
+                UIFont.systemFont(ofSize: 25, weight: UIFont.Weight.medium), NSAttributedString.Key.foregroundColor: color])
             
-            attributedText.append(NSAttributedString(string: "\n\n\n\(page.message)", attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14), NSAttributedString.Key.foregroundColor: color]))
+            attributedText.append(NSAttributedString(string: "\n\n\n\(page.message)", attributes: [NSAttributedString.Key.font:
+                UIFont.systemFont(ofSize: 14), NSAttributedString.Key.foregroundColor: color]))
+            
+
                        
             let paragraphStyle = NSMutableParagraphStyle()
             paragraphStyle.alignment = .center
                        
             let length = attributedText.string.count
-            attributedText.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragraphStyle, range: NSRange(location: 0, length: length))
+            attributedText.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragraphStyle,
+                                        range: NSRange(location: 0, length: length))
             
             textView.attributedText = attributedText
             

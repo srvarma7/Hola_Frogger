@@ -53,6 +53,12 @@ class OnboardingDoneCell: UICollectionViewCell {
         button.addTarget(self, action: #selector(reversed), for: .touchDown)
         return button
     }()
+    
+    let reverseAnimationButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.addTarget(self, action: #selector(reversed), for: .touchDown)
+        return button
+    }()
     var guideview: GuideViewController?
     
     @objc func done() {
@@ -99,6 +105,7 @@ class OnboardingDoneCell: UICollectionViewCell {
         addSubview(animationView2)
         addSubview(doneButton)
         addSubview(reverseButton)
+        addSubview(reverseAnimationButton)
       
         //add layout constraint
         _ = animationView1.anchor(topAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, topConstant: 70, leftConstant: 41, bottomConstant: 0, rightConstant: 41, widthConstant: 335, heightConstant: 322)
@@ -111,6 +118,8 @@ class OnboardingDoneCell: UICollectionViewCell {
         _ = descriptionTextView.anchor(titleTextView.bottomAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, topConstant: 18, leftConstant: 42, bottomConstant: 0, rightConstant: 42, widthConstant: 330, heightConstant: 140)
         
         _ = animationView2.anchor(descriptionTextView.bottomAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, topConstant: 20, leftConstant: 181, bottomConstant: 0, rightConstant: 181, widthConstant: 52, heightConstant: 52)
+        
+        _ = reverseAnimationButton.anchor(descriptionTextView.bottomAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, topConstant: 20, leftConstant: 181, bottomConstant: 0, rightConstant: 181, widthConstant: 52, heightConstant: 52)
                
          _ = reverseButton.anchor(animationView2.bottomAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, topConstant: 16, leftConstant: 127, bottomConstant: 60, rightConstant: 127, widthConstant: 160, heightConstant: 35)
        

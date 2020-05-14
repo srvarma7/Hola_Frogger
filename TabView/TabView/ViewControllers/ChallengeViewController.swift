@@ -76,6 +76,17 @@ class ChallengeViewController: UIViewController, UICollectionViewDelegate, UICol
         
         return cell
     }
+    //when tap the cell to get the information
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+           if let viewController = storyboard?.instantiateViewController(identifier: "frogDetails") as? FrogDetailsViewController {
+                 var newFrog: FrogEntity
+    
+                     newFrog = frogs[indexPath.row]
+                 let frog = newFrog
+                 viewController.receivedFrog = frog
+                 navigationController?.present(viewController, animated: true)
+             }
+    }
     
     // Fetching the Frogs details when the controller is invoked.
     func fetchData() {
