@@ -35,6 +35,19 @@
 		57C098BE246A49BD0041C235 /* ChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C098BD246A49BD0041C235 /* ChallengeViewController.swift */; };
 		57C098C9246A8E570041C235 /* UnSightedFrogEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C098C7246A8E570041C235 /* UnSightedFrogEntity+CoreDataClass.swift */; };
 		57C098CA246A8E570041C235 /* UnSightedFrogEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C098C8246A8E570041C235 /* UnSightedFrogEntity+CoreDataProperties.swift */; };
+		B960A57A246C3BA9003CFDE3 /* CardLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B960A579246C3BA9003CFDE3 /* CardLayout.swift */; };
+		B9FD7A40246C11CB0058B4B3 /* ChallengeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FD7A3F246C11CB0058B4B3 /* ChallengeCell.swift */; };
+		B9FD7A44246C1B150058B4B3 /* GuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FD7A43246C1B150058B4B3 /* GuideViewController.swift */; };
+		B9FD7A46246C1C7D0058B4B3 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FD7A45246C1C7D0058B4B3 /* Page.swift */; };
+		B9FD7A48246C1CB00058B4B3 /* OnboardingPageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FD7A47246C1CB00058B4B3 /* OnboardingPageCell.swift */; };
+		B9FD7A4A246C1D210058B4B3 /* OnboardingDoneCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FD7A49246C1D210058B4B3 /* OnboardingDoneCell.swift */; };
+		B9FD7A52246C1F2D0058B4B3 /* 20301-newspaper-open.json in Resources */ = {isa = PBXBuildFile; fileRef = B9FD7A4B246C1F2C0058B4B3 /* 20301-newspaper-open.json */; };
+		B9FD7A53246C1F2D0058B4B3 /* 13357-route-finder.json in Resources */ = {isa = PBXBuildFile; fileRef = B9FD7A4C246C1F2C0058B4B3 /* 13357-route-finder.json */; };
+		B9FD7A54246C1F2D0058B4B3 /* 291-searchask-loop.json in Resources */ = {isa = PBXBuildFile; fileRef = B9FD7A4D246C1F2C0058B4B3 /* 291-searchask-loop.json */; };
+		B9FD7A55246C1F2D0058B4B3 /* 10548-forest.json in Resources */ = {isa = PBXBuildFile; fileRef = B9FD7A4E246C1F2C0058B4B3 /* 10548-forest.json */; };
+		B9FD7A56246C1F2D0058B4B3 /* 8878-done.json in Resources */ = {isa = PBXBuildFile; fileRef = B9FD7A4F246C1F2D0058B4B3 /* 8878-done.json */; };
+		B9FD7A57246C1F2D0058B4B3 /* 336-search.json in Resources */ = {isa = PBXBuildFile; fileRef = B9FD7A50246C1F2D0058B4B3 /* 336-search.json */; };
+		B9FD7A58246C1F2D0058B4B3 /* 13005-refresh.json in Resources */ = {isa = PBXBuildFile; fileRef = B9FD7A51246C1F2D0058B4B3 /* 13005-refresh.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +82,19 @@
 		57C098C7246A8E570041C235 /* UnSightedFrogEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UnSightedFrogEntity+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		57C098C8246A8E570041C235 /* UnSightedFrogEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UnSightedFrogEntity+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		ACBCC81B8DB64478F334A8A5 /* Pods-TabView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TabView.debug.xcconfig"; path = "Target Support Files/Pods-TabView/Pods-TabView.debug.xcconfig"; sourceTree = "<group>"; };
+		B960A579246C3BA9003CFDE3 /* CardLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardLayout.swift; sourceTree = "<group>"; };
+		B9FD7A3F246C11CB0058B4B3 /* ChallengeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeCell.swift; sourceTree = "<group>"; };
+		B9FD7A43246C1B150058B4B3 /* GuideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideViewController.swift; sourceTree = "<group>"; };
+		B9FD7A45246C1C7D0058B4B3 /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
+		B9FD7A47246C1CB00058B4B3 /* OnboardingPageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageCell.swift; sourceTree = "<group>"; };
+		B9FD7A49246C1D210058B4B3 /* OnboardingDoneCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingDoneCell.swift; sourceTree = "<group>"; };
+		B9FD7A4B246C1F2C0058B4B3 /* 20301-newspaper-open.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "20301-newspaper-open.json"; sourceTree = "<group>"; };
+		B9FD7A4C246C1F2C0058B4B3 /* 13357-route-finder.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "13357-route-finder.json"; sourceTree = "<group>"; };
+		B9FD7A4D246C1F2C0058B4B3 /* 291-searchask-loop.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "291-searchask-loop.json"; sourceTree = "<group>"; };
+		B9FD7A4E246C1F2C0058B4B3 /* 10548-forest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "10548-forest.json"; sourceTree = "<group>"; };
+		B9FD7A4F246C1F2D0058B4B3 /* 8878-done.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "8878-done.json"; sourceTree = "<group>"; };
+		B9FD7A50246C1F2D0058B4B3 /* 336-search.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "336-search.json"; sourceTree = "<group>"; };
+		B9FD7A51246C1F2D0058B4B3 /* 13005-refresh.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "13005-refresh.json"; sourceTree = "<group>"; };
 		DEF23522100C96BCBF38C1D1 /* Pods-TabView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TabView.release.xcconfig"; path = "Target Support Files/Pods-TabView/Pods-TabView.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -107,6 +133,13 @@
 			isa = PBXGroup;
 			children = (
 				57441D912463F00A00BC4DE0 /* catchmeifyoucan.json */,
+				B9FD7A4D246C1F2C0058B4B3 /* 291-searchask-loop.json */,
+				B9FD7A50246C1F2D0058B4B3 /* 336-search.json */,
+				B9FD7A4F246C1F2D0058B4B3 /* 8878-done.json */,
+				B9FD7A4E246C1F2C0058B4B3 /* 10548-forest.json */,
+				B9FD7A51246C1F2D0058B4B3 /* 13005-refresh.json */,
+				B9FD7A4C246C1F2C0058B4B3 /* 13357-route-finder.json */,
+				B9FD7A4B246C1F2C0058B4B3 /* 20301-newspaper-open.json */,
 			);
 			path = LottieFiles;
 			sourceTree = "<group>";
@@ -136,6 +169,12 @@
 				579EE7AC2444CB2D00321C7E /* DetailsViewController.swift */,
 				574A3C2B245066060022CCB3 /* FrogAnnotation.swift */,
 				57C098BD246A49BD0041C235 /* ChallengeViewController.swift */,
+				B9FD7A3F246C11CB0058B4B3 /* ChallengeCell.swift */,
+				B9FD7A43246C1B150058B4B3 /* GuideViewController.swift */,
+				B9FD7A45246C1C7D0058B4B3 /* Page.swift */,
+				B9FD7A47246C1CB00058B4B3 /* OnboardingPageCell.swift */,
+				B9FD7A49246C1D210058B4B3 /* OnboardingDoneCell.swift */,
+				B960A579246C3BA9003CFDE3 /* CardLayout.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -266,8 +305,15 @@
 				57A3B8AE244315270011F674 /* LaunchScreen.storyboard in Resources */,
 				57441D922463F00A00BC4DE0 /* catchmeifyoucan.json in Resources */,
 				574A3C31245074BF0022CCB3 /* Eastern Dwarf Tree Frog.gpx in Resources */,
+				B9FD7A58246C1F2D0058B4B3 /* 13005-refresh.json in Resources */,
+				B9FD7A56246C1F2D0058B4B3 /* 8878-done.json in Resources */,
+				B9FD7A53246C1F2D0058B4B3 /* 13357-route-finder.json in Resources */,
+				B9FD7A54246C1F2D0058B4B3 /* 291-searchask-loop.json in Resources */,
+				B9FD7A55246C1F2D0058B4B3 /* 10548-forest.json in Resources */,
+				B9FD7A52246C1F2D0058B4B3 /* 20301-newspaper-open.json in Resources */,
 				57A3B8AB244315270011F674 /* Assets.xcassets in Resources */,
 				574A3C2F245072E70022CCB3 /* Crinia parinsignifera.gpx in Resources */,
+				B9FD7A57246C1F2D0058B4B3 /* 336-search.json in Resources */,
 				57A3B8A6244315230011F674 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -326,21 +372,27 @@
 				579EE7A724433BCC00321C7E /* BearBottle.mlmodel in Sources */,
 				5757F98A24639E3600F8D75C /* HomeViewController.swift in Sources */,
 				57A3B8A1244315230011F674 /* FrogListController.swift in Sources */,
+				B960A57A246C3BA9003CFDE3 /* CardLayout.swift in Sources */,
 				57C098C9246A8E570041C235 /* UnSightedFrogEntity+CoreDataClass.swift in Sources */,
 				574A3C2C245066060022CCB3 /* FrogAnnotation.swift in Sources */,
 				579EE7AD2444CB2D00321C7E /* DetailsViewController.swift in Sources */,
 				579EE7AF2444D96A00321C7E /* FrogDetailsViewController.swift in Sources */,
 				574A3C2A24505E850022CCB3 /* MapViewController.swift in Sources */,
 				57A3B89D244315230011F674 /* AppDelegate.swift in Sources */,
+				B9FD7A48246C1CB00058B4B3 /* OnboardingPageCell.swift in Sources */,
 				57C098CA246A8E570041C235 /* UnSightedFrogEntity+CoreDataProperties.swift in Sources */,
 				57C098BE246A49BD0041C235 /* ChallengeViewController.swift in Sources */,
 				57320A8124535A4300ADE06C /* FrogImageClassification Refined.mlmodel in Sources */,
 				579EE7A92444763000321C7E /* NewsViewController.swift in Sources */,
 				579B45522447460900EACA4B /* FrogEntity+CoreDataProperties.swift in Sources */,
 				57320A7C245344BC00ADE06C /* FrogImageClassification 3.mlmodel in Sources */,
+				B9FD7A44246C1B150058B4B3 /* GuideViewController.swift in Sources */,
 				579B45512447460900EACA4B /* FrogEntity+CoreDataClass.swift in Sources */,
+				B9FD7A46246C1C7D0058B4B3 /* Page.swift in Sources */,
 				57A3B8A9244315230011F674 /* TabView.xcdatamodeld in Sources */,
+				B9FD7A40246C11CB0058B4B3 /* ChallengeCell.swift in Sources */,
 				57A3B89F244315230011F674 /* SceneDelegate.swift in Sources */,
+				B9FD7A4A246C1D210058B4B3 /* OnboardingDoneCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
