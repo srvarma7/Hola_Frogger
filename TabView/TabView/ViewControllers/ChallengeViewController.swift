@@ -8,7 +8,9 @@
 
 import UIKit
 import CoreLocation
-class ChallengeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource,CLLocationManagerDelegate {
+import MapKit
+
+class ChallengeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, CLLocationManagerDelegate, MKMapViewDelegate {
 
     @IBOutlet weak var sightedLabel: UILabel!
     @IBOutlet weak var unSightedLabel: UILabel!
@@ -22,16 +24,12 @@ class ChallengeViewController: UIViewController, UICollectionViewDelegate, UICol
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchData()
-        locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.distanceFilter = 100
-        locationManager.requestAlwaysAuthorization()
-        if (CLLocationManager.locationServicesEnabled())
-              {
-                  locationManager.startUpdatingLocation()
-              }
-        
+        setupLocationManager()
+        if unSightedFrogsList.count > 1 {
+            startFencing()
+        }
     }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         getStatistics()
@@ -43,6 +41,7 @@ class ChallengeViewController: UIViewController, UICollectionViewDelegate, UICol
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         currentLocation = locations.last!
+        //collectionView.reloadData()
     }
     
     //add to the challengeCell
@@ -109,6 +108,43 @@ class ChallengeViewController: UIViewController, UICollectionViewDelegate, UICol
         }
     }
     
+    func setupLocationManager() {
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.distanceFilter = 100
+        locationManager.requestAlwaysAuthorization()
+        if (CLLocationManager.locationServicesEnabled()) {
+              locationManager.startUpdatingLocation()
+        }
+    }
+    
+    // MARK: - Monitoring Location
+    func startFencing() {
+        for ele in unSightedFrogsList {
+            let geoLocation = CLCircularRegion(center: CLLocationCoordinate2D(latitude: ele.latitude, longitude: ele.longitude), radius: 100, identifier: ele.cname!)
+            geoLocation.notifyOnEntry = true
+            locationManager.startMonitoring(for: geoLocation)
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
+        print(region.identifier)
+        displayMessage(title: "Alert", message: "You are near a Frog's habitat, please take precautions while entering. \n\n\nNote: Sanitize yourself to keep the frogs safe!!!")
+        //Stackoverflow - https://stackoverflow.com/questions/41912386/using-unusernotificationcenter-for-ios-10
+        let notification = UNMutableNotificationContent()
+        notification.title = "Alert"
+        notification.body = "You are near a Frog's habitat, please take precautions while entering. \n\n\nNote: Sanitize yourself to keep the frogs safe!!!"
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
+        let req = UNNotificationRequest(identifier: "Request", content: notification, trigger: trigger)
+        UNUserNotificationCenter.current().add(req, withCompletionHandler: nil)
+    }
+    
+    //To display messages to the user as an alert
+    func displayMessage(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
     
     // Call this method when user marks a Frog as Visited.
     func updateSightedStatus(receivedFrog: FrogEntity, receivedUnsightedFrog: UnSightedFrogEntity, isVisited: Bool) {
@@ -131,15 +167,5 @@ class ChallengeViewController: UIViewController, UICollectionViewDelegate, UICol
         sightedLabel.text = String(sightedCount.count)
         unSightedLabel.text = String(unSightedCount.count)
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

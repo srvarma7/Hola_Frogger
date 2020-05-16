@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2DC7934B91BDC021A7F78B27 /* Pods_TabView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BDCD6C8E26AF54B75AEA6CA /* Pods_TabView.framework */; };
+		570D1C12246FA86700B9FB22 /* Brown Toadlet.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 570D1C11246FA86700B9FB22 /* Brown Toadlet.gpx */; };
 		57320A7C245344BC00ADE06C /* FrogImageClassification 3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 57320A7B245344BC00ADE06C /* FrogImageClassification 3.mlmodel */; };
 		57320A7F2453477900ADE06C /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57320A7E2453477900ADE06C /* WebKit.framework */; };
 		57320A8124535A4300ADE06C /* FrogImageClassification Refined.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 57320A8024535A4300ADE06C /* FrogImageClassification Refined.mlmodel */; };
@@ -52,6 +53,7 @@
 
 /* Begin PBXFileReference section */
 		2BDCD6C8E26AF54B75AEA6CA /* Pods_TabView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TabView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		570D1C11246FA86700B9FB22 /* Brown Toadlet.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Brown Toadlet.gpx"; sourceTree = "<group>"; };
 		57320A7B245344BC00ADE06C /* FrogImageClassification 3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = "FrogImageClassification 3.mlmodel"; sourceTree = "<group>"; };
 		57320A7E2453477900ADE06C /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		57320A8024535A4300ADE06C /* FrogImageClassification Refined.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = "FrogImageClassification Refined.mlmodel"; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 		574A3C2D245072D10022CCB3 /* GPX files (To simulate Locations) */ = {
 			isa = PBXGroup;
 			children = (
+				570D1C11246FA86700B9FB22 /* Brown Toadlet.gpx */,
 				574A3C30245074BF0022CCB3 /* Eastern Dwarf Tree Frog.gpx */,
 				574A3C2E245072E70022CCB3 /* Crinia parinsignifera.gpx */,
 			);
@@ -222,10 +225,10 @@
 				57A3B89C244315230011F674 /* AppDelegate.swift */,
 				57A3B89E244315230011F674 /* SceneDelegate.swift */,
 				579B455324477DF300EACA4B /* Inferface */,
-				574DCD142463EC8B00BA40B7 /* LottieFiles */,
 				579B45492447441200EACA4B /* ViewControllers */,
 				579B4548244743E100EACA4B /* CoreData */,
 				579B454A2447442600EACA4B /* Core ML */,
+				574DCD142463EC8B00BA40B7 /* LottieFiles */,
 				574A3C2D245072D10022CCB3 /* GPX files (To simulate Locations) */,
 				57A3B8AA244315270011F674 /* Assets.xcassets */,
 				57A3B8AF244315270011F674 /* Info.plist */,
@@ -305,6 +308,7 @@
 				57A3B8AE244315270011F674 /* LaunchScreen.storyboard in Resources */,
 				57441D922463F00A00BC4DE0 /* catchmeifyoucan.json in Resources */,
 				574A3C31245074BF0022CCB3 /* Eastern Dwarf Tree Frog.gpx in Resources */,
+				570D1C12246FA86700B9FB22 /* Brown Toadlet.gpx in Resources */,
 				B9FD7A58246C1F2D0058B4B3 /* 13005-refresh.json in Resources */,
 				B9FD7A56246C1F2D0058B4B3 /* 8878-done.json in Resources */,
 				B9FD7A53246C1F2D0058B4B3 /* 13357-route-finder.json in Resources */,

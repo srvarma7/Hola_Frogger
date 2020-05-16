@@ -23,6 +23,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     let focusOnUL = UIButton()
     var location = CLLocation()
     let regionRadius: Double = 1000
+    var geoLocation = CLCircularRegion()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,6 +70,10 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         locationMgr.stopUpdatingLocation()
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        locationMgr.stopMonitoring(for: geoLocation)
+    }
+    
     // When the user locations is changed, map is fouced on current location.
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
         foucsOnUserLoc()
@@ -100,7 +105,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     // Starts monitoring to see if the user enter a Frog Habitat.
     func startFencing() {
         for ele in frogs {
-            let geoLocation = CLCircularRegion(center: CLLocationCoordinate2D(latitude: ele.latitude, longitude: ele.longitude), radius: 100, identifier: ele.cname!)
+            geoLocation = CLCircularRegion(center: CLLocationCoordinate2D(latitude: ele.latitude, longitude: ele.longitude), radius: 100, identifier: ele.cname!)
             geoLocation.notifyOnEntry = true
             locationMgr.startMonitoring(for: geoLocation)
         }
@@ -108,6 +113,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     
     //Alerts the user when he is nearby the Frog's habitat.
     func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
+        print(region.identifier)
         displayMessage(title: "Alert", message: "You are near a Frog's habitat, please take precautions while entering. \n\n\nNote: Sanitize yourself to keep the frogs safe!!!")
         //Stackoverflow - https://stackoverflow.com/questions/41912386/using-unusernotificationcenter-for-ios-10
         let notification = UNMutableNotificationContent()

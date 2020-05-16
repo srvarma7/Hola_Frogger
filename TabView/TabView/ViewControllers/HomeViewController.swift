@@ -38,24 +38,9 @@ class HomeViewController: UIViewController {
                 namesList.append(ele.sname!)
             }
         }
-        
-        initializeSearch()
-
         lottieAnimation()
-
+        initializeSearch()
         applyParallaxEffect()
-    }
-    
-    func initializeSearch() {
-        searchField.backgroundColor = #colorLiteral(red: 0.7719962001, green: 0.1048256829, blue: 0.2892795205, alpha: 1)
-        searchField.listHeight = 150
-        searchField.rowHeight = 50
-        searchField.placeholder = "  Search here....."
-        self.view.addSubview(searchField)
-    }
-    func applyParallaxEffect() {
-        applyMotionEffect(toView: searchField, magnitude: Float(magnitude))
-        applyMotionEffect(toView: exploreBtn, magnitude: Float(-magnitude))
     }
     
     func lottieAnimation() {
@@ -64,6 +49,21 @@ class HomeViewController: UIViewController {
         animationView.contentMode = .scaleAspectFit
         view.addSubview(animationView)
         animationView.loopMode = .loop
+        _ = animationView.anchor(view.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, topConstant: 20, leftConstant: 20, bottomConstant: 0, rightConstant: 20, widthConstant: 150, heightConstant: 150)
+    }
+    
+    func initializeSearch() {
+        searchField.backgroundColor = #colorLiteral(red: 0.7719962001, green: 0.1048256829, blue: 0.2892795205, alpha: 1)
+        searchField.listHeight = 150
+        searchField.rowHeight = 50
+        searchField.placeholder = "  Search here....."
+        self.view.addSubview(searchField)
+        _ = searchField.anchor(animationView.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, topConstant: 270, leftConstant: 20, bottomConstant: 0, rightConstant: 20, widthConstant: 350, heightConstant: 50)
+    }
+    
+    func applyParallaxEffect() {
+        applyMotionEffect(toView: searchField, magnitude: Float(magnitude))
+        applyMotionEffect(toView: exploreBtn, magnitude: Float(-magnitude))
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -78,6 +78,8 @@ class HomeViewController: UIViewController {
         exploreBtn.layer.shadowOffset = CGSize(width: 5.0, height: 2.0)
         exploreBtn.layer.shadowOpacity = 1.0
         searchField.clipsToBounds = true
+        
+        // MARK:- Check here
         UIView.animate(withDuration: 1, animations: {
             self.searchField.center = self.view.center
             self.searchField.transform = CGAffineTransform(translationX: 0, y: -100)
@@ -148,3 +150,71 @@ class HomeViewController: UIViewController {
         }
     }
 }
+
+
+////some methods for add layout constraint
+//extension UIView {
+//    
+//    func anchorToTop(top: NSLayoutYAxisAnchor? = nil, left: NSLayoutXAxisAnchor? = nil, bottom: NSLayoutYAxisAnchor? = nil, right: NSLayoutXAxisAnchor? = nil) {
+//        
+//        anchorWithConstantsToTop(top: top, left: left, bottom: bottom, right: right, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0)
+//    }
+//    
+//    func anchorWithConstantsToTop(top: NSLayoutYAxisAnchor? = nil, left: NSLayoutXAxisAnchor? = nil, bottom: NSLayoutYAxisAnchor? = nil, right: NSLayoutXAxisAnchor? = nil, topConstant: CGFloat = 0, leftConstant: CGFloat = 0, bottomConstant: CGFloat = 0, rightConstant: CGFloat = 0) {
+//        
+//        translatesAutoresizingMaskIntoConstraints = false
+//        
+//        if let top = top {
+//            topAnchor.constraint(equalTo: top, constant: topConstant).isActive = true
+//        }
+//        
+//        if let bottom = bottom {
+//            bottomAnchor.constraint(equalTo: bottom, constant: -bottomConstant).isActive = true
+//        }
+//        
+//        if let left = left {
+//            leftAnchor.constraint(equalTo: left, constant: leftConstant).isActive = true
+//        }
+//        
+//        if let right = right {
+//            rightAnchor.constraint(equalTo: right, constant: -rightConstant).isActive = true
+//        }
+//        
+//    }
+//    
+//    func anchor(_ top: NSLayoutYAxisAnchor? = nil, left: NSLayoutXAxisAnchor? = nil, bottom: NSLayoutYAxisAnchor? = nil, right: NSLayoutXAxisAnchor? = nil, topConstant: CGFloat = 0, leftConstant: CGFloat = 0, bottomConstant: CGFloat = 0, rightConstant: CGFloat = 0, widthConstant: CGFloat = 0, heightConstant: CGFloat = 0) -> [NSLayoutConstraint] {
+//        translatesAutoresizingMaskIntoConstraints = false
+//        
+//        var anchors = [NSLayoutConstraint]()
+//        
+//        if let top = top {
+//            anchors.append(topAnchor.constraint(equalTo: top, constant: topConstant))
+//        }
+//        
+//        if let left = left {
+//            anchors.append(leftAnchor.constraint(equalTo: left, constant: leftConstant))
+//        }
+//        
+//        if let bottom = bottom {
+//            anchors.append(bottomAnchor.constraint(equalTo: bottom, constant: -bottomConstant))
+//        }
+//        
+//        if let right = right {
+//            anchors.append(rightAnchor.constraint(equalTo: right, constant: -rightConstant))
+//        }
+//        
+//        if widthConstant > 0 {
+//            anchors.append(widthAnchor.constraint(equalToConstant: widthConstant))
+//        }
+//        
+//        if heightConstant > 0 {
+//            anchors.append(heightAnchor.constraint(equalToConstant: heightConstant))
+//        }
+//        
+//        anchors.forEach({$0.isActive = true})
+//        
+//        return anchors
+//    }
+//    
+//    
+//}
