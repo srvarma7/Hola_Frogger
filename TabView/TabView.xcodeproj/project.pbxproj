@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		2DC7934B91BDC021A7F78B27 /* Pods_TabView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BDCD6C8E26AF54B75AEA6CA /* Pods_TabView.framework */; };
-		570D1C12246FA86700B9FB22 /* Pseudophryne bibronii.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 570D1C11246FA86700B9FB22 /* Pseudophryne bibronii.gpx */; };
 		570D1C14247015E500B9FB22 /* VisitedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570D1C13247015E500B9FB22 /* VisitedViewController.swift */; };
 		570D1C162470551B00B9FB22 /* test.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 570D1C152470551B00B9FB22 /* test.mp3 */; };
 		570D1C1C24705E5200B9FB22 /* sad2.json in Resources */ = {isa = PBXBuildFile; fileRef = 570D1C1724705E5100B9FB22 /* sad2.json */; };
@@ -25,9 +24,8 @@
 		57441D922463F00A00BC4DE0 /* catchmeifyoucan.json in Resources */ = {isa = PBXBuildFile; fileRef = 57441D912463F00A00BC4DE0 /* catchmeifyoucan.json */; };
 		574A3C2A24505E850022CCB3 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574A3C2924505E840022CCB3 /* MapViewController.swift */; };
 		574A3C2C245066060022CCB3 /* FrogAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574A3C2B245066060022CCB3 /* FrogAnnotation.swift */; };
-		574A3C2F245072E70022CCB3 /* Crinia parinsignifera.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 574A3C2E245072E70022CCB3 /* Crinia parinsignifera.gpx */; };
-		574A3C31245074BF0022CCB3 /* Eastern Dwarf Tree Frog.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 574A3C30245074BF0022CCB3 /* Eastern Dwarf Tree Frog.gpx */; };
 		5757F98A24639E3600F8D75C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5757F98924639E3600F8D75C /* HomeViewController.swift */; };
+		577AA1A3247159E100B85AF6 /* GPX files (To simulate Locations) in Resources */ = {isa = PBXBuildFile; fileRef = 577AA1A2247159E100B85AF6 /* GPX files (To simulate Locations) */; };
 		579B45472447084200EACA4B /* CoreDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579B45462447084200EACA4B /* CoreDataHandler.swift */; };
 		579B45512447460900EACA4B /* FrogEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579B454F2447460900EACA4B /* FrogEntity+CoreDataClass.swift */; };
 		579B45522447460900EACA4B /* FrogEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579B45502447460900EACA4B /* FrogEntity+CoreDataProperties.swift */; };
@@ -63,7 +61,6 @@
 
 /* Begin PBXFileReference section */
 		2BDCD6C8E26AF54B75AEA6CA /* Pods_TabView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TabView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		570D1C11246FA86700B9FB22 /* Pseudophryne bibronii.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Pseudophryne bibronii.gpx"; sourceTree = "<group>"; };
 		570D1C13247015E500B9FB22 /* VisitedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitedViewController.swift; sourceTree = "<group>"; };
 		570D1C152470551B00B9FB22 /* test.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = test.mp3; sourceTree = "<group>"; };
 		570D1C1724705E5100B9FB22 /* sad2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sad2.json; sourceTree = "<group>"; };
@@ -80,9 +77,8 @@
 		57441D912463F00A00BC4DE0 /* catchmeifyoucan.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = catchmeifyoucan.json; sourceTree = "<group>"; };
 		574A3C2924505E840022CCB3 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		574A3C2B245066060022CCB3 /* FrogAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrogAnnotation.swift; sourceTree = "<group>"; };
-		574A3C2E245072E70022CCB3 /* Crinia parinsignifera.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Crinia parinsignifera.gpx"; sourceTree = "<group>"; };
-		574A3C30245074BF0022CCB3 /* Eastern Dwarf Tree Frog.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Eastern Dwarf Tree Frog.gpx"; sourceTree = "<group>"; };
 		5757F98924639E3600F8D75C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		577AA1A2247159E100B85AF6 /* GPX files (To simulate Locations) */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "GPX files (To simulate Locations)"; sourceTree = "<group>"; };
 		579B45462447084200EACA4B /* CoreDataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHandler.swift; sourceTree = "<group>"; };
 		579B454F2447460900EACA4B /* FrogEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "FrogEntity+CoreDataClass.swift"; path = "TabView/FrogEntity+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		579B45502447460900EACA4B /* FrogEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "FrogEntity+CoreDataProperties.swift"; path = "TabView/FrogEntity+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
@@ -151,16 +147,6 @@
 				2BDCD6C8E26AF54B75AEA6CA /* Pods_TabView.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		574A3C2D245072D10022CCB3 /* GPX files (To simulate Locations) */ = {
-			isa = PBXGroup;
-			children = (
-				570D1C11246FA86700B9FB22 /* Pseudophryne bibronii.gpx */,
-				574A3C30245074BF0022CCB3 /* Eastern Dwarf Tree Frog.gpx */,
-				574A3C2E245072E70022CCB3 /* Crinia parinsignifera.gpx */,
-			);
-			path = "GPX files (To simulate Locations)";
 			sourceTree = "<group>";
 		};
 		574DCD142463EC8B00BA40B7 /* LottieFiles */ = {
@@ -266,8 +252,8 @@
 				579B45492447441200EACA4B /* ViewControllers */,
 				579B4548244743E100EACA4B /* CoreData */,
 				579B454A2447442600EACA4B /* Core ML */,
+				577AA1A2247159E100B85AF6 /* GPX files (To simulate Locations) */,
 				574DCD142463EC8B00BA40B7 /* LottieFiles */,
-				574A3C2D245072D10022CCB3 /* GPX files (To simulate Locations) */,
 				57A3B8AA244315270011F674 /* Assets.xcassets */,
 				57A3B8AF244315270011F674 /* Info.plist */,
 			);
@@ -346,9 +332,7 @@
 				57A3B8AE244315270011F674 /* LaunchScreen.storyboard in Resources */,
 				57441D922463F00A00BC4DE0 /* catchmeifyoucan.json in Resources */,
 				570D1C1E24705E5200B9FB22 /* confetti2.json in Resources */,
-				574A3C31245074BF0022CCB3 /* Eastern Dwarf Tree Frog.gpx in Resources */,
 				570D1C1F24705E5200B9FB22 /* sad1.json in Resources */,
-				570D1C12246FA86700B9FB22 /* Pseudophryne bibronii.gpx in Resources */,
 				B9FD7A58246C1F2D0058B4B3 /* 13005-refresh.json in Resources */,
 				B9FD7A56246C1F2D0058B4B3 /* 8878-done.json in Resources */,
 				B9FD7A53246C1F2D0058B4B3 /* 13357-route-finder.json in Resources */,
@@ -361,10 +345,10 @@
 				570D1C232470EA0C00B9FB22 /* frog.mp3 in Resources */,
 				570D1C1C24705E5200B9FB22 /* sad2.json in Resources */,
 				570D1C162470551B00B9FB22 /* test.mp3 in Resources */,
-				574A3C2F245072E70022CCB3 /* Crinia parinsignifera.gpx in Resources */,
 				B9FD7A57246C1F2D0058B4B3 /* 336-search.json in Resources */,
 				57A3B8A6244315230011F674 /* Main.storyboard in Resources */,
 				570D1C2024705E5200B9FB22 /* confetti1.json in Resources */,
+				577AA1A3247159E100B85AF6 /* GPX files (To simulate Locations) in Resources */,
 				570D1C272470EBE100B9FB22 /* confetti.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

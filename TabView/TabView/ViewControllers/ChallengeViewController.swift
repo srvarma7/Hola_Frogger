@@ -14,14 +14,20 @@ class ChallengeViewController: UIViewController, UICollectionViewDelegate, UICol
 
     @IBOutlet weak var sightedLabel: UILabel!
     @IBOutlet weak var unSightedLabel: UILabel!
+    @IBOutlet weak var collectionView: UICollectionView!
     
-    var frogs: [FrogEntity] = []
+    
+    var frogsList: [FrogEntity] = []
     var unSightedFrogsList: [UnSightedFrogEntity] = []
     let numberOfChallenges = 3
     let locationManager:CLLocationManager = CLLocationManager()
     var currentLocation = CLLocation()
     var geoLocation = CLCircularRegion()
 
+    var totalSightedCount: Int = 0
+    var totalUnSightedCount: Int = 0
+    var unSightedCount: Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchData()
@@ -29,6 +35,8 @@ class ChallengeViewController: UIViewController, UICollectionViewDelegate, UICol
         if unSightedFrogsList.count > 0 {
             startFencing()
         }
+        collectionView.dataSource = self
+        collectionView.reloadData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -36,11 +44,18 @@ class ChallengeViewController: UIViewController, UICollectionViewDelegate, UICol
         fetchData()
         getStatistics()
         startFencing()
+        collectionView.reloadData()
+        
+    }
+    
+    func checkNumberofSightingsleft() {
+        
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         locationManager.stopUpdatingLocation()
         stopFencing()
+        
     }
     
     func stopFencing() {
@@ -57,23 +72,31 @@ class ChallengeViewController: UIViewController, UICollectionViewDelegate, UICol
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         currentLocation = locations.last!
+        collectionView.reloadData()
+        
     }
     
     //add to the challengeCell
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ChallengeCell
+<<<<<<< HEAD
+        cell.cname.text = frogsList[indexPath.row].cname
+        cell.sname.text = frogsList[indexPath.row].sname
+=======
+       
         cell.cname.text = frogs[indexPath.row].cname
         cell.sname.text = frogs[indexPath.row].sname
+>>>>>>> c3d12e3ccb8a6f1f191e2c043b1a5f5e0f7985e5
         //get location and cacluate
-        let frogLocation = CLLocation(latitude: frogs[indexPath.row].latitude, longitude: frogs[indexPath.row].longitude)
+        let frogLocation = CLLocation(latitude: frogsList[indexPath.row].latitude, longitude: frogsList[indexPath.row].longitude)
         
-        locationManager(locationManager, didUpdateLocations: [currentLocation])
+      //  locationManager(locationManager, didUpdateLocations: [currentLocation])
         let distance: CLLocationDistance = currentLocation.distance(from: frogLocation)/1000
         cell.location.text = "\(String(ceil(distance))) Kms away from you"
-        if(frogs[indexPath.row].isVisited){
-            cell.visited.text = "You already visited it"
+        if(frogsList[indexPath.row].isVisited){
+            cell.visited.text = "You have Sighted"
         } else{
-            cell.visited.text = "Not yet Visited"
+            cell.visited.text = "Yet to Sight"
         }
         //set layout for cell
         cell.contentView.layer.cornerRadius = 4.0
@@ -87,6 +110,7 @@ class ChallengeViewController: UIViewController, UICollectionViewDelegate, UICol
         cell.layer.masksToBounds = false
         cell.layer.shadowPath = UIBezierPath(roundedRect: cell.bounds, cornerRadius:cell.contentView.layer.cornerRadius).cgPath
         
+        
         return cell
     }
     
@@ -94,7 +118,7 @@ class ChallengeViewController: UIViewController, UICollectionViewDelegate, UICol
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let viewController = storyboard?.instantiateViewController(identifier: "frogDetails") as? FrogDetailsViewController {
             var newFrog: FrogEntity
-            newFrog = frogs[indexPath.row]
+            newFrog = frogsList[indexPath.row]
             let frog = newFrog
             viewController.receivedFrog = frog
             navigationController?.present(viewController, animated: true)
@@ -103,12 +127,12 @@ class ChallengeViewController: UIViewController, UICollectionViewDelegate, UICol
     
     // Fetching the Frogs details when the controller is invoked.
     func fetchData() {
-        frogs = CoreDataHandler.fetchAllFrogs()
+        frogsList = CoreDataHandler.fetchAllFrogs()
         unSightedFrogsList = CoreDataHandler.fetchAllUnsightedFrogs()
         print(unSightedFrogsList.count)
         if unSightedFrogsList.count == 0 {
             var flag = 0
-            for ele in frogs {
+            for ele in frogsList {
                 if flag == numberOfChallenges {
                     break
                 } else {
@@ -143,23 +167,30 @@ class ChallengeViewController: UIViewController, UICollectionViewDelegate, UICol
     
     func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
         print(region.identifier, "IDENTIFIER")
-        print(region.description)
         showDetails(frogname: region.identifier)
+        
     }
     
     func getStatistics() {
         fetchData()
-        var sightedCount: [String] = []
-        var unSightedCount: [String] = []
-        for ele in frogs {
+        for ele in frogsList {
             if ele.isVisited {
-                sightedCount.append(ele.sname!)
+                totalSightedCount += 1
             } else {
-                unSightedCount.append(ele.sname!)
+                totalUnSightedCount += 1
             }
         }
-        sightedLabel.text = String(sightedCount.count)
-        unSightedLabel.text = String(unSightedCount.count)
+        sightedLabel.text = String(totalSightedCount)
+        unSightedLabel.text = String(totalUnSightedCount)
+        for ele in unSightedFrogsList {
+            if !(ele.isVisited) {
+                unSightedCount += 1
+            }
+        }
+        print(unSightedCount)
+        if unSightedCount == 0 {
+            CoreDataHandler.deleteRecordsByEntityName(entityName: "UnSightedFrogEntity")
+        }
     }
 
     func showDetails(frogname: String) {
@@ -171,5 +202,7 @@ class ChallengeViewController: UIViewController, UICollectionViewDelegate, UICol
             viewController.receivedFrog = singleFrog
             navigationController?.present(viewController, animated: true)
         }
+       
     }
+   
 }

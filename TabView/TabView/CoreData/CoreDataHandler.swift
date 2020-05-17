@@ -109,9 +109,9 @@ class CoreDataHandler: NSObject {
         let fetchReq: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest.init(entityName: "FrogEntity")
         fetchReq.predicate = NSPredicate(format: "cname == %@", frog.cname!)
         do {
-            let test = try context.fetch(fetchReq)
+            let result = try context.fetch(fetchReq)
             
-            let objUpdate = test.first as! NSManagedObject
+            let objUpdate = result.first as! NSManagedObject
             objUpdate.setValue(isVisited, forKey: "isVisited")
             objUpdate.setValue(isFavourite, forKey: "isFavourite")
             do {
@@ -125,6 +125,22 @@ class CoreDataHandler: NSObject {
         }
     }
     
+    class func deleteRecordsByEntityName(entityName: String) {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        let context = appDelegate.persistentContainer.viewContext
+        let fetchReq: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest.init(entityName: entityName)
+        fetchReq.returnsObjectsAsFaults = false
+        do {
+            let results = try context.fetch(fetchReq)
+            for ele in results {
+                guard let record = ele as? NSManagedObject else { continue }
+                context.delete(record)
+            }
+        } catch {
+            print(error)
+        }
+        print("Deleted \(entityName) successfully")
+    }
     
     class func updateUnSightedFrog(unsightedFrog: String, isVisited: Bool, isFavourite: Bool) {
         print("UPDATING DUMMY")
@@ -134,9 +150,9 @@ class CoreDataHandler: NSObject {
         let fetchReq: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest.init(entityName: "UnSightedFrogEntity")
         fetchReq.predicate = NSPredicate(format: "cname == %@", unsightedFrog)
         do {
-            let test = try context.fetch(fetchReq)
+            let result = try context.fetch(fetchReq)
             
-            let objUpdate = test.first as! NSManagedObject
+            let objUpdate = result.first as! NSManagedObject
             objUpdate.setValue(isVisited, forKey: "isVisited")
             objUpdate.setValue(isFavourite, forKey: "isFavourite")
             do {
