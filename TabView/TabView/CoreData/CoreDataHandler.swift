@@ -150,6 +150,29 @@ class CoreDataHandler: NSObject {
         }
     }
     
+    class func deleteRecordsByEntity(entityName: String) {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        print("IN DELETE METHOD WITH ENTITY \(entityName)")
+        let context = appDelegate.persistentContainer.viewContext
+        let fetchReq: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest.init(entityName: "UnSightedFrogEntity")
+        fetchReq.returnsObjectsAsFaults = false
+        
+        do {
+            let result = try context.fetch(fetchReq)
+            for ele in result {
+                guard let record = ele as? NSManagedObject else { continue }
+                context.delete(record)
+                do {
+                    try context.save()
+                } catch {
+                    print(error , "Error while updating data in CoreDataHandler")
+                }
+            }
+        } catch {
+            print(error , "Error while updating data in CoreDataHandler")
+        }
+    }
+    
     //MARK:- Save new FROG
     class func addAllRecords() {
         CoreDataHandler.saveFrog(entityName: "FrogEntity", sname: "Crinia parinsignifera", frogcount: 319, cname: "Eastern Sign-bearing Froglet", desc: "Their physique is white, grainy or grey-skinned with marks which are black near their abdominal area. They can be of different colours such as clear brown, clear black, clear green, clear white, clear grey and clear red. They belong to woods or marshlands. They serve on insects.", latitude: -37.7401, longitude: 141.091, uncertainty: 294, threatnedStatus: "Not endangered", isVisited: false, isFavourite: false)

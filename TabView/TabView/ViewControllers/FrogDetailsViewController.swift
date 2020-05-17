@@ -70,6 +70,7 @@ class FrogDetailsViewController: UIViewController, MKMapViewDelegate {
         scNameLbl.text = receivedFrog?.sname
         descLbl.text = receivedFrog?.desc
         descLbl.isEditable = false
+        
         locationLbl.text = "\(String(describing: receivedFrog!.uncertainty)) meters"
         statusLbl.text = receivedFrog?.threatnedStatus
         countLbl.text = "\(String(describing: receivedFrog!.frogcount))"
