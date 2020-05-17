@@ -102,67 +102,26 @@ class CoreDataHandler: NSObject {
     
     // Method to update frog's visited and favourite status
     class func updateFrog(frog: FrogEntity, isVisited: Bool, isFavourite: Bool) {
-        print("UPDATING MAIN")
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
-        
-        let context = appDelegate.persistentContainer.viewContext
-        let fetchReq: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest.init(entityName: "FrogEntity")
-        fetchReq.predicate = NSPredicate(format: "cname == %@", frog.cname!)
+        let context = getContect()
+        frog.isVisited = isVisited
+        frog.isFavourite = isFavourite
         do {
-            let result = try context.fetch(fetchReq)
-            
-            let objUpdate = result.first as! NSManagedObject
-            objUpdate.setValue(isVisited, forKey: "isVisited")
-            objUpdate.setValue(isFavourite, forKey: "isFavourite")
-            do {
-                try context.save()
-                print("UPDATE MAIN SUCCESSFUL")
-            } catch {
-                print(error , "Error while updating data in CoreDataHandler")
-            }
+            try context.save()
+            print("Updated entry")
         } catch {
-            print(error, "Error while fetching data in CoreDataHandler")
+            print(error , "Error while updating data in CoreDataHandler")
         }
     }
     
-    class func deleteRecordsByEntityName(entityName: String) {
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
-        let context = appDelegate.persistentContainer.viewContext
-        let fetchReq: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest.init(entityName: entityName)
-        fetchReq.returnsObjectsAsFaults = false
+    class func updateUnSightedFrog(unsightedFrog: UnSightedFrogEntity, isVisited: Bool, isFavourite: Bool) {
+        let context = getContect()
+        unsightedFrog.isVisited = isVisited
+        unsightedFrog.isFavourite = isFavourite
         do {
-            let results = try context.fetch(fetchReq)
-            for ele in results {
-                guard let record = ele as? NSManagedObject else { continue }
-                context.delete(record)
-            }
+            try context.save()
+            print("Updated entry")
         } catch {
-            print(error)
-        }
-        print("Deleted \(entityName) successfully")
-    }
-    
-    class func updateUnSightedFrog(unsightedFrog: String, isVisited: Bool, isFavourite: Bool) {
-        print("UPDATING DUMMY")
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
-        
-        let context = appDelegate.persistentContainer.viewContext
-        let fetchReq: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest.init(entityName: "UnSightedFrogEntity")
-        fetchReq.predicate = NSPredicate(format: "cname == %@", unsightedFrog)
-        do {
-            let result = try context.fetch(fetchReq)
-            
-            let objUpdate = result.first as! NSManagedObject
-            objUpdate.setValue(isVisited, forKey: "isVisited")
-            objUpdate.setValue(isFavourite, forKey: "isFavourite")
-            do {
-                try context.save()
-                print("UPDATE DUMMY SUCCESSFUL")
-            } catch {
-                print(error , "Error while updating data in CoreDataHandler")
-            }
-        } catch {
-            print(error, "Error while fetching data in CoreDataHandler")
+            print(error , "Error while updating data in CoreDataHandler")
         }
     }
     
