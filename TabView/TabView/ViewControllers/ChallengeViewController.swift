@@ -33,11 +33,13 @@ class ChallengeViewController: UIViewController, UICollectionViewDelegate, UICol
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchData()
+        
         setupLocationManager()
         if unSightedFrogsList.count > 0 {
             startFencing()
         }
         collectionView.dataSource = self
+        getStatistics()
         collectionView.reloadData()
         NotificationCenter.default.addObserver(self, selector: #selector(loadList), name: NSNotification.Name(rawValue: "load"), object: nil)
     }
@@ -60,6 +62,7 @@ class ChallengeViewController: UIViewController, UICollectionViewDelegate, UICol
     
     func getStatistics() {
         fetchData()
+       
         for ele in frogsList {
             if ele.isVisited {
                 sightedCount += 1
@@ -67,6 +70,7 @@ class ChallengeViewController: UIViewController, UICollectionViewDelegate, UICol
                 unSightedCount += 1
             }
         }
+        
         sightedLabel.text = String(sightedCount)
         unSightedLabel.text = String(unSightedCount)
         
@@ -82,6 +86,7 @@ class ChallengeViewController: UIViewController, UICollectionViewDelegate, UICol
             //fetchData()
             let afterDelete = CoreDataHandler.fetchAllUnsightedFrogs()
             print(afterDelete.count, "AFTER DELETE")
+            
         }
         
     }

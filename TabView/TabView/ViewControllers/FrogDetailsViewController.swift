@@ -44,6 +44,8 @@ class FrogDetailsViewController: UIViewController, MKMapViewDelegate {
     @IBOutlet weak var locationLbl: UILabel!
     @IBOutlet weak var statusLbl: UILabel!
     @IBOutlet weak var countLbl: UILabel!
+
+    @IBOutlet weak var frogImage: UIImageView!
     
     // Variable will hold the data that is sent by other controller.
     var receivedFrog: FrogEntity?
@@ -70,13 +72,14 @@ class FrogDetailsViewController: UIViewController, MKMapViewDelegate {
         scNameLbl.text = receivedFrog?.sname
         descLbl.text = receivedFrog?.desc
         descLbl.isEditable = false
+        frogImage.image = UIImage(named:"\(String(receivedFrog!.sname!))")
         
         locationLbl.text = "\(String(describing: receivedFrog!.uncertainty)) meters"
         statusLbl.text = receivedFrog?.threatnedStatus
         countLbl.text = "\(String(describing: receivedFrog!.frogcount))"
         // This button is be used to Favourite or Unfavourite a Frog.
-        favButton.frame = CGRect(x: self.view.center.x - 10, y: self.view.center.y - 240, width: 30, height: 30)
-        favButton.center.x = view.center.x
+        favButton.frame = CGRect(x: self.view.center.x-15, y: self.view.center.y + 260, width: 30, height: 30)
+       // favButton.center.x = view.center.x
         // To dismiss the current view controller
         closeButton.frame = CGRect(x: view.center.x, y: view.frame.maxY + 30, width: 50, height: 50)
         closeButton.center.x = view.center.x
@@ -86,8 +89,10 @@ class FrogDetailsViewController: UIViewController, MKMapViewDelegate {
         // Checking the Favourite status to set the Logo of the button
         if localIsFav {
             favButton.setBackgroundImage(UIImage(systemName: "suit.heart.fill"), for: UIControl.State.normal)
+            favButton.tintColor = #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)
         } else {
             favButton.setBackgroundImage(UIImage(systemName: "suit.heart"), for: UIControl.State.normal)
+            favButton.tintColor = #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)
         }
         // Tap action methods
         favButton.addTarget(self, action: #selector(favButtonAction), for: .touchUpInside)
@@ -126,8 +131,10 @@ class FrogDetailsViewController: UIViewController, MKMapViewDelegate {
         // Changes the logo when tapped on it.
         if localIsFav {
             favButton.setBackgroundImage(UIImage(systemName: "suit.heart.fill"), for: UIControl.State.normal)
+            favButton.tintColor = #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)
         } else {
             favButton.setBackgroundImage(UIImage(systemName: "suit.heart"), for: UIControl.State.normal)
+            favButton.tintColor = #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)
         }
         // Updates the fav status of a frog in database.
         CoreDataHandler.updateFrog(frog: receivedFrog!, isVisited: receivedFrog!.isVisited, isFavourite: localIsFav)

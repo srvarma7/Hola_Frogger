@@ -33,7 +33,7 @@ class GuideViewController: UIViewController, UICollectionViewDataSource, UIColle
     
     let pages: [Page] = {
         let firstPage = Page(title: "Search", message: "Search for your favourite frogs using both scientific or common names!! Get live suggestion based on your text.", animationName: "336-search")
-        let secondPage = Page(title: "Names", message: "Our application provides both scientifc as well as common names for you to recognize your favourite frog. We have carfully laid out color-coded icons（V - Vulnerable，E - Endangered，N - Non - Vulnerable） to highlight the species based on their population", animationName: "10548-forest")
+        let secondPage = Page(title: "Frog Names", message: "Our application provides both scientifc as well as common names for you to recognize your favourite frog. We have carfully laid out color-coded icons（V - Vulnerable，E - Endangered，N - Non - Vulnerable） to highlight the species based on their population", animationName: "10548-forest")
         let thirdPage = Page(title: "Identify", message: "Holafrogger is equipped with lens feature to identify a frog species and provide the accurate name for frog through our self machine-learned data. Just point to the Frog and Magic !!", animationName: "291-searchask-loop")
         let fourthPage = Page(title: "Locate Frog on Maps", message: "Our government backed data provides hotspot across Victoria to sight particular frog species. Just find the annotation on the map and you are good to go. Plus our accurate weather and humidity conditions of the location will give you higher chances to sight them in wild.", animationName: "13357-route-finder")
         let fifthPage = Page(title: "News", message: "Stay up-to date with latest news on frogs from multiple trusted sources across the web. Just curated for your need.", animationName: "20301-newspaper-open")
@@ -55,7 +55,7 @@ class GuideViewController: UIViewController, UICollectionViewDataSource, UIColle
     let skipButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Skip", for: .normal)
-        button.setTitleColor(UIColor(red: 139/255, green: 195/255, blue: 74/255, alpha: 0.78), for: .normal)
+        button.tintColor = #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 20)
         button.addTarget(self, action: #selector(skip), for: .touchDown)
         return button
@@ -64,6 +64,7 @@ class GuideViewController: UIViewController, UICollectionViewDataSource, UIColle
     lazy var nextButton: UIButton = {
         let button = UIButton(type: .system)
         button.setImage(UIImage(systemName: "arrow.right"), for: .normal)
+        button.tintColor = #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)
         //button.setImage(UIImage(named: "right"), for: .normal)
         button.addTarget(self, action: #selector(nextPage), for: .touchUpInside)
         return button
@@ -72,6 +73,7 @@ class GuideViewController: UIViewController, UICollectionViewDataSource, UIColle
     lazy var preButton: UIButton = {
         let button = UIButton(type: .system)
         button.setImage(UIImage(systemName: "arrow.left"), for: .normal)
+        button.tintColor = #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)
         //button.setImage(UIImage(named: "left"), for: .normal)
         button.addTarget(self, action: #selector(lastPage), for: .touchUpInside)
         return button

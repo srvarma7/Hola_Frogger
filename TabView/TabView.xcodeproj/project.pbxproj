@@ -45,6 +45,7 @@
 		57C098C9246A8E570041C235 /* UnSightedFrogEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C098C7246A8E570041C235 /* UnSightedFrogEntity+CoreDataClass.swift */; };
 		57C098CA246A8E570041C235 /* UnSightedFrogEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C098C8246A8E570041C235 /* UnSightedFrogEntity+CoreDataProperties.swift */; };
 		B960A57A246C3BA9003CFDE3 /* CardLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B960A579246C3BA9003CFDE3 /* CardLayout.swift */; };
+		B9BC1B332471912900C15461 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BC1B322471912900C15461 /* WelcomeViewController.swift */; };
 		B9FD7A40246C11CB0058B4B3 /* ChallengeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FD7A3F246C11CB0058B4B3 /* ChallengeCell.swift */; };
 		B9FD7A44246C1B150058B4B3 /* GuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FD7A43246C1B150058B4B3 /* GuideViewController.swift */; };
 		B9FD7A46246C1C7D0058B4B3 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FD7A45246C1C7D0058B4B3 /* Page.swift */; };
@@ -101,6 +102,7 @@
 		57C098C8246A8E570041C235 /* UnSightedFrogEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UnSightedFrogEntity+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		ACBCC81B8DB64478F334A8A5 /* Pods-TabView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TabView.debug.xcconfig"; path = "Target Support Files/Pods-TabView/Pods-TabView.debug.xcconfig"; sourceTree = "<group>"; };
 		B960A579246C3BA9003CFDE3 /* CardLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardLayout.swift; sourceTree = "<group>"; };
+		B9BC1B322471912900C15461 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WelcomeViewController.swift; path = TabView/ViewControllers/WelcomeViewController.swift; sourceTree = SOURCE_ROOT; };
 		B9FD7A3F246C11CB0058B4B3 /* ChallengeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeCell.swift; sourceTree = "<group>"; };
 		B9FD7A43246C1B150058B4B3 /* GuideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideViewController.swift; sourceTree = "<group>"; };
 		B9FD7A45246C1C7D0058B4B3 /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 		579B45492447441200EACA4B /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				B9BC1B322471912900C15461 /* WelcomeViewController.swift */,
 				5757F98924639E3600F8D75C /* HomeViewController.swift */,
 				57A3B8A0244315230011F674 /* FrogListController.swift */,
 				579EE7AE2444D96A00321C7E /* FrogDetailsViewController.swift */,
@@ -415,6 +418,7 @@
 				574A3C2A24505E850022CCB3 /* MapViewController.swift in Sources */,
 				57A3B89D244315230011F674 /* AppDelegate.swift in Sources */,
 				B9FD7A48246C1CB00058B4B3 /* OnboardingPageCell.swift in Sources */,
+				B9BC1B332471912900C15461 /* WelcomeViewController.swift in Sources */,
 				57C098CA246A8E570041C235 /* UnSightedFrogEntity+CoreDataProperties.swift in Sources */,
 				57C098BE246A49BD0041C235 /* ChallengeViewController.swift in Sources */,
 				570D1C14247015E500B9FB22 /* VisitedViewController.swift in Sources */,
