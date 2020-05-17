@@ -8,7 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		2DC7934B91BDC021A7F78B27 /* Pods_TabView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BDCD6C8E26AF54B75AEA6CA /* Pods_TabView.framework */; };
-		570D1C12246FA86700B9FB22 /* Brown Toadlet.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 570D1C11246FA86700B9FB22 /* Brown Toadlet.gpx */; };
+		570D1C12246FA86700B9FB22 /* Pseudophryne bibronii.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 570D1C11246FA86700B9FB22 /* Pseudophryne bibronii.gpx */; };
+		570D1C14247015E500B9FB22 /* VisitedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570D1C13247015E500B9FB22 /* VisitedViewController.swift */; };
+		570D1C162470551B00B9FB22 /* test.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 570D1C152470551B00B9FB22 /* test.mp3 */; };
+		570D1C1C24705E5200B9FB22 /* sad2.json in Resources */ = {isa = PBXBuildFile; fileRef = 570D1C1724705E5100B9FB22 /* sad2.json */; };
+		570D1C1D24705E5200B9FB22 /* nonetwork.json in Resources */ = {isa = PBXBuildFile; fileRef = 570D1C1824705E5100B9FB22 /* nonetwork.json */; };
+		570D1C1E24705E5200B9FB22 /* confetti2.json in Resources */ = {isa = PBXBuildFile; fileRef = 570D1C1924705E5200B9FB22 /* confetti2.json */; };
+		570D1C1F24705E5200B9FB22 /* sad1.json in Resources */ = {isa = PBXBuildFile; fileRef = 570D1C1A24705E5200B9FB22 /* sad1.json */; };
+		570D1C2024705E5200B9FB22 /* confetti1.json in Resources */ = {isa = PBXBuildFile; fileRef = 570D1C1B24705E5200B9FB22 /* confetti1.json */; };
+		570D1C232470EA0C00B9FB22 /* frog.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 570D1C222470EA0C00B9FB22 /* frog.mp3 */; };
+		570D1C252470EBA700B9FB22 /* sad.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 570D1C242470EBA700B9FB22 /* sad.mp3 */; };
+		570D1C272470EBE100B9FB22 /* confetti.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 570D1C262470EBE000B9FB22 /* confetti.mp3 */; };
 		57320A7C245344BC00ADE06C /* FrogImageClassification 3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 57320A7B245344BC00ADE06C /* FrogImageClassification 3.mlmodel */; };
 		57320A7F2453477900ADE06C /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57320A7E2453477900ADE06C /* WebKit.framework */; };
 		57320A8124535A4300ADE06C /* FrogImageClassification Refined.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 57320A8024535A4300ADE06C /* FrogImageClassification Refined.mlmodel */; };
@@ -53,7 +63,17 @@
 
 /* Begin PBXFileReference section */
 		2BDCD6C8E26AF54B75AEA6CA /* Pods_TabView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TabView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		570D1C11246FA86700B9FB22 /* Brown Toadlet.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Brown Toadlet.gpx"; sourceTree = "<group>"; };
+		570D1C11246FA86700B9FB22 /* Pseudophryne bibronii.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Pseudophryne bibronii.gpx"; sourceTree = "<group>"; };
+		570D1C13247015E500B9FB22 /* VisitedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitedViewController.swift; sourceTree = "<group>"; };
+		570D1C152470551B00B9FB22 /* test.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = test.mp3; sourceTree = "<group>"; };
+		570D1C1724705E5100B9FB22 /* sad2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sad2.json; sourceTree = "<group>"; };
+		570D1C1824705E5100B9FB22 /* nonetwork.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = nonetwork.json; sourceTree = "<group>"; };
+		570D1C1924705E5200B9FB22 /* confetti2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = confetti2.json; sourceTree = "<group>"; };
+		570D1C1A24705E5200B9FB22 /* sad1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sad1.json; sourceTree = "<group>"; };
+		570D1C1B24705E5200B9FB22 /* confetti1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = confetti1.json; sourceTree = "<group>"; };
+		570D1C222470EA0C00B9FB22 /* frog.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = frog.mp3; sourceTree = "<group>"; };
+		570D1C242470EBA700B9FB22 /* sad.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sad.mp3; sourceTree = "<group>"; };
+		570D1C262470EBE000B9FB22 /* confetti.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = confetti.mp3; sourceTree = "<group>"; };
 		57320A7B245344BC00ADE06C /* FrogImageClassification 3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = "FrogImageClassification 3.mlmodel"; sourceTree = "<group>"; };
 		57320A7E2453477900ADE06C /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		57320A8024535A4300ADE06C /* FrogImageClassification Refined.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = "FrogImageClassification Refined.mlmodel"; sourceTree = "<group>"; };
@@ -113,6 +133,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		570D1C212470E9FE00B9FB22 /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				570D1C152470551B00B9FB22 /* test.mp3 */,
+				570D1C242470EBA700B9FB22 /* sad.mp3 */,
+				570D1C262470EBE000B9FB22 /* confetti.mp3 */,
+				570D1C222470EA0C00B9FB22 /* frog.mp3 */,
+			);
+			path = Audio;
+			sourceTree = "<group>";
+		};
 		57320A7D2453477800ADE06C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -125,7 +156,7 @@
 		574A3C2D245072D10022CCB3 /* GPX files (To simulate Locations) */ = {
 			isa = PBXGroup;
 			children = (
-				570D1C11246FA86700B9FB22 /* Brown Toadlet.gpx */,
+				570D1C11246FA86700B9FB22 /* Pseudophryne bibronii.gpx */,
 				574A3C30245074BF0022CCB3 /* Eastern Dwarf Tree Frog.gpx */,
 				574A3C2E245072E70022CCB3 /* Crinia parinsignifera.gpx */,
 			);
@@ -143,6 +174,11 @@
 				B9FD7A51246C1F2D0058B4B3 /* 13005-refresh.json */,
 				B9FD7A4C246C1F2C0058B4B3 /* 13357-route-finder.json */,
 				B9FD7A4B246C1F2C0058B4B3 /* 20301-newspaper-open.json */,
+				570D1C1B24705E5200B9FB22 /* confetti1.json */,
+				570D1C1924705E5200B9FB22 /* confetti2.json */,
+				570D1C1824705E5100B9FB22 /* nonetwork.json */,
+				570D1C1A24705E5200B9FB22 /* sad1.json */,
+				570D1C1724705E5100B9FB22 /* sad2.json */,
 			);
 			path = LottieFiles;
 			sourceTree = "<group>";
@@ -172,6 +208,7 @@
 				579EE7AC2444CB2D00321C7E /* DetailsViewController.swift */,
 				574A3C2B245066060022CCB3 /* FrogAnnotation.swift */,
 				57C098BD246A49BD0041C235 /* ChallengeViewController.swift */,
+				570D1C13247015E500B9FB22 /* VisitedViewController.swift */,
 				B9FD7A3F246C11CB0058B4B3 /* ChallengeCell.swift */,
 				B9FD7A43246C1B150058B4B3 /* GuideViewController.swift */,
 				B9FD7A45246C1C7D0058B4B3 /* Page.swift */,
@@ -224,6 +261,7 @@
 			children = (
 				57A3B89C244315230011F674 /* AppDelegate.swift */,
 				57A3B89E244315230011F674 /* SceneDelegate.swift */,
+				570D1C212470E9FE00B9FB22 /* Audio */,
 				579B455324477DF300EACA4B /* Inferface */,
 				579B45492447441200EACA4B /* ViewControllers */,
 				579B4548244743E100EACA4B /* CoreData */,
@@ -307,18 +345,27 @@
 			files = (
 				57A3B8AE244315270011F674 /* LaunchScreen.storyboard in Resources */,
 				57441D922463F00A00BC4DE0 /* catchmeifyoucan.json in Resources */,
+				570D1C1E24705E5200B9FB22 /* confetti2.json in Resources */,
 				574A3C31245074BF0022CCB3 /* Eastern Dwarf Tree Frog.gpx in Resources */,
-				570D1C12246FA86700B9FB22 /* Brown Toadlet.gpx in Resources */,
+				570D1C1F24705E5200B9FB22 /* sad1.json in Resources */,
+				570D1C12246FA86700B9FB22 /* Pseudophryne bibronii.gpx in Resources */,
 				B9FD7A58246C1F2D0058B4B3 /* 13005-refresh.json in Resources */,
 				B9FD7A56246C1F2D0058B4B3 /* 8878-done.json in Resources */,
 				B9FD7A53246C1F2D0058B4B3 /* 13357-route-finder.json in Resources */,
+				570D1C252470EBA700B9FB22 /* sad.mp3 in Resources */,
+				570D1C1D24705E5200B9FB22 /* nonetwork.json in Resources */,
 				B9FD7A54246C1F2D0058B4B3 /* 291-searchask-loop.json in Resources */,
 				B9FD7A55246C1F2D0058B4B3 /* 10548-forest.json in Resources */,
 				B9FD7A52246C1F2D0058B4B3 /* 20301-newspaper-open.json in Resources */,
 				57A3B8AB244315270011F674 /* Assets.xcassets in Resources */,
+				570D1C232470EA0C00B9FB22 /* frog.mp3 in Resources */,
+				570D1C1C24705E5200B9FB22 /* sad2.json in Resources */,
+				570D1C162470551B00B9FB22 /* test.mp3 in Resources */,
 				574A3C2F245072E70022CCB3 /* Crinia parinsignifera.gpx in Resources */,
 				B9FD7A57246C1F2D0058B4B3 /* 336-search.json in Resources */,
 				57A3B8A6244315230011F674 /* Main.storyboard in Resources */,
+				570D1C2024705E5200B9FB22 /* confetti1.json in Resources */,
+				570D1C272470EBE100B9FB22 /* confetti.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,6 +433,7 @@
 				B9FD7A48246C1CB00058B4B3 /* OnboardingPageCell.swift in Sources */,
 				57C098CA246A8E570041C235 /* UnSightedFrogEntity+CoreDataProperties.swift in Sources */,
 				57C098BE246A49BD0041C235 /* ChallengeViewController.swift in Sources */,
+				570D1C14247015E500B9FB22 /* VisitedViewController.swift in Sources */,
 				57320A8124535A4300ADE06C /* FrogImageClassification Refined.mlmodel in Sources */,
 				579EE7A92444763000321C7E /* NewsViewController.swift in Sources */,
 				579B45522447460900EACA4B /* FrogEntity+CoreDataProperties.swift in Sources */,

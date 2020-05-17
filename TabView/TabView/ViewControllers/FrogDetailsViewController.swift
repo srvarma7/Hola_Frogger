@@ -103,7 +103,7 @@ class FrogDetailsViewController: UIViewController, MKMapViewDelegate {
             self.focusLocation = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: self.receivedFrog!.latitude, longitude: self.receivedFrog!.longitude), latitudinalMeters: 1000, longitudinalMeters: 1000)
             self.mapView.setRegion(self.focusLocation, animated: true)
             self.mapView.addAnnotation(self.annotaion)
-            self.closeButton.transform = CGAffineTransform(translationX: 0, y: -230)
+            self.closeButton.transform = CGAffineTransform(translationX: 0, y: -170)
         })
     }
     

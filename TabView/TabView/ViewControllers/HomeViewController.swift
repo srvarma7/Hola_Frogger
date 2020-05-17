@@ -35,7 +35,7 @@ class HomeViewController: UIViewController {
         
         if namesList.count == 0 {
             for ele in frogs {
-                namesList.append(ele.sname!)
+                namesList.append(ele.cname!)
             }
         }
         lottieAnimation()
@@ -72,6 +72,7 @@ class HomeViewController: UIViewController {
         searchField.selectedRowColor = #colorLiteral(red: 0.7719962001, green: 0.1048256829, blue: 0.2892795205, alpha: 1)
         searchField.didSelect{(selectedText , index ,id) in
             self.selectedFrog = selectedText
+            print(selectedText, "SELECTED TEXT")
             self.showDetails(frogname: selectedText)
         }
         exploreBtn.layer.shadowColor = #colorLiteral(red: 0.7719962001, green: 0.1048256829, blue: 0.2892795205, alpha: 1)

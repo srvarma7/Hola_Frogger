@@ -20,19 +20,35 @@ class ChallengeViewController: UIViewController, UICollectionViewDelegate, UICol
     let numberOfChallenges = 3
     let locationManager:CLLocationManager = CLLocationManager()
     var currentLocation = CLLocation()
+    var geoLocation = CLCircularRegion()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchData()
         setupLocationManager()
-        if unSightedFrogsList.count > 1 {
+        if unSightedFrogsList.count > 0 {
             startFencing()
         }
     }
     
-    
     override func viewWillAppear(_ animated: Bool) {
+        stopFencing()
+        fetchData()
         getStatistics()
+        startFencing()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        locationManager.stopUpdatingLocation()
+        stopFencing()
+    }
+    
+    func stopFencing() {
+        for region in locationManager.monitoredRegions {
+            guard let circularRegion = region as? CLCircularRegion,
+              circularRegion.identifier == region.identifier else { continue }
+            locationManager.stopMonitoring(for: circularRegion)
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -41,7 +57,6 @@ class ChallengeViewController: UIViewController, UICollectionViewDelegate, UICol
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         currentLocation = locations.last!
-        //collectionView.reloadData()
     }
     
     //add to the challengeCell
@@ -57,8 +72,7 @@ class ChallengeViewController: UIViewController, UICollectionViewDelegate, UICol
         cell.location.text = "\(String(ceil(distance))) Kms away from you"
         if(frogs[indexPath.row].isVisited){
             cell.visited.text = "You already visited it"
-        }
-        else{
+        } else{
             cell.visited.text = "Not yet Visited"
         }
         //set layout for cell
@@ -75,16 +89,16 @@ class ChallengeViewController: UIViewController, UICollectionViewDelegate, UICol
         
         return cell
     }
+    
     //when tap the cell to get the information
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-           if let viewController = storyboard?.instantiateViewController(identifier: "frogDetails") as? FrogDetailsViewController {
-                 var newFrog: FrogEntity
-    
-                     newFrog = frogs[indexPath.row]
-                 let frog = newFrog
-                 viewController.receivedFrog = frog
-                 navigationController?.present(viewController, animated: true)
-             }
+        if let viewController = storyboard?.instantiateViewController(identifier: "frogDetails") as? FrogDetailsViewController {
+            var newFrog: FrogEntity
+            newFrog = frogs[indexPath.row]
+            let frog = newFrog
+            viewController.receivedFrog = frog
+            navigationController?.present(viewController, animated: true)
+        }
     }
     
     // Fetching the Frogs details when the controller is invoked.
@@ -121,29 +135,16 @@ class ChallengeViewController: UIViewController, UICollectionViewDelegate, UICol
     // MARK: - Monitoring Location
     func startFencing() {
         for ele in unSightedFrogsList {
-            let geoLocation = CLCircularRegion(center: CLLocationCoordinate2D(latitude: ele.latitude, longitude: ele.longitude), radius: 100, identifier: ele.cname!)
+            geoLocation = CLCircularRegion(center: CLLocationCoordinate2D(latitude: ele.latitude, longitude: ele.longitude), radius: 100, identifier: ele.cname!)
             geoLocation.notifyOnEntry = true
             locationManager.startMonitoring(for: geoLocation)
         }
     }
     
     func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
-        print(region.identifier)
-        displayMessage(title: "Alert", message: "You are near a Frog's habitat, please take precautions while entering. \n\n\nNote: Sanitize yourself to keep the frogs safe!!!")
-        //Stackoverflow - https://stackoverflow.com/questions/41912386/using-unusernotificationcenter-for-ios-10
-        let notification = UNMutableNotificationContent()
-        notification.title = "Alert"
-        notification.body = "You are near a Frog's habitat, please take precautions while entering. \n\n\nNote: Sanitize yourself to keep the frogs safe!!!"
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
-        let req = UNNotificationRequest(identifier: "Request", content: notification, trigger: trigger)
-        UNUserNotificationCenter.current().add(req, withCompletionHandler: nil)
-    }
-    
-    //To display messages to the user as an alert
-    func displayMessage(title: String, message: String) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
+        print(region.identifier, "IDENTIFIER")
+        print(region.description)
+        showDetails(frogname: region.identifier)
     }
     
     // Call this method when user marks a Frog as Visited.
@@ -155,6 +156,7 @@ class ChallengeViewController: UIViewController, UICollectionViewDelegate, UICol
     }
     
     func getStatistics() {
+        fetchData()
         var sightedCount: [String] = []
         var unSightedCount: [String] = []
         for ele in frogs {
@@ -168,4 +170,14 @@ class ChallengeViewController: UIViewController, UICollectionViewDelegate, UICol
         unSightedLabel.text = String(unSightedCount.count)
     }
 
+    func showDetails(frogname: String) {
+        print(frogname, "SHOW DETAILS")
+        let singleFrog = CoreDataHandler.fetchSpecificFrog(frogname: frogname)
+        print(singleFrog.sname!, "IN SHOW DETAILS sname")
+        print(singleFrog.cname!, "IN SHOW DETAILS cname")
+        if let viewController = storyboard?.instantiateViewController(identifier: "visitedDetails") as? VisitedViewController {
+            viewController.receivedFrog = singleFrog
+            navigationController?.present(viewController, animated: true)
+        }
+    }
 }

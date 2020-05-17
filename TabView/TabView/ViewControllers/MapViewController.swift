@@ -24,12 +24,13 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     var location = CLLocation()
     let regionRadius: Double = 1000
     var geoLocation = CLCircularRegion()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Setting a button to get to user's current location up on tapping.
         focusOnUL.frame = CGRect(x: self.view.frame.maxX - 60, y: self.view.frame.maxY - 150, width: 30, height: 30)
         focusOnUL.setBackgroundImage(UIImage(systemName: "location.fill"), for: UIControl.State.normal)
+        focusOnUL.tintColor = #colorLiteral(red: 0.7719962001, green: 0.1048256829, blue: 0.2892795205, alpha: 1)
         focusOnUL.addTarget(self, action: #selector(foucsOnUserLocation), for: .touchUpInside)
         self.view.addSubview(focusOnUL)
         // Fetching all the records from the coredata and storing in the local variable.
@@ -42,20 +43,10 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         mapView.delegate = self
         // When the Map is loaded the Map will focus to the following location.
         mapView.setRegion(focusLocation, animated: true)
+        mapView.tintColor = #colorLiteral(red: 0.7719962001, green: 0.1048256829, blue: 0.2892795205, alpha: 1)
         // Frog locations will be loaded as annotaions after focus on the location.
         loadAnnotations()
-        // To get user location and its accuracy.
-        locationMgr.desiredAccuracy = kCLLocationAccuracyBestForNavigation
-        locationMgr.distanceFilter = 10
-        locationMgr.delegate = self
-        locationMgr.requestAlwaysAuthorization()
-        mapView.showsUserLocation = true
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert]) {
-            (granted, error) in if !granted {
-                print("Permission rejected")
-                return
-            }
-        }
+        SetupLocationAndNotification()
         // Starts monitoring to see if the user enter a Frog Habitat.
         startFencing()
     }
@@ -71,7 +62,31 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     }
     
     override func viewDidDisappear(_ animated: Bool) {
-        locationMgr.stopMonitoring(for: geoLocation)
+        locationMgr.stopUpdatingLocation()
+        stopFencing()
+    }
+    
+    fileprivate func SetupLocationAndNotification() {
+        // To get user location and its accuracy.
+        locationMgr.desiredAccuracy = kCLLocationAccuracyBestForNavigation
+        locationMgr.distanceFilter = 10
+        locationMgr.delegate = self
+        locationMgr.requestAlwaysAuthorization()
+        mapView.showsUserLocation = true
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert]) {
+            (granted, error) in if !granted {
+                print("Permission rejected")
+                return
+            }
+        }
+    }
+    
+    func stopFencing() {
+        for region in locationMgr.monitoredRegions {
+            guard let circularRegion = region as? CLCircularRegion,
+              circularRegion.identifier == region.identifier else { continue }
+            locationMgr.stopMonitoring(for: circularRegion)
+        }
     }
     
     // When the user locations is changed, map is fouced on current location.
