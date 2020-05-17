@@ -158,6 +158,14 @@ class ChallengeViewController: UIViewController, UICollectionViewDelegate, UICol
         showDetails(frogname: region.identifier)
     }
     
+    // Call this method when user marks a Frog as Visited.
+    func updateSightedStatus(receivedFrog: FrogEntity, receivedUnsightedFrog: UnSightedFrogEntity, isVisited: Bool) {
+        CoreDataHandler.updateFrog(frog: receivedFrog, isVisited: isVisited, isFavourite: receivedFrog.isFavourite)
+        CoreDataHandler.updateUnSightedFrog(unsightedFrog: receivedUnsightedFrog, isVisited: isVisited, isFavourite: receivedUnsightedFrog.isFavourite)
+        fetchData()
+        getStatistics()
+    }
+    
     func getStatistics() {
         fetchData()
         var sightedCount: [String] = []

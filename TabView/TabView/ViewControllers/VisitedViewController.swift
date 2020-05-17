@@ -141,7 +141,18 @@ class VisitedViewController: UIViewController, CLLocationManagerDelegate {
     
     func updateSightedStatus(receivedFrog: FrogEntity, isVisited: Bool) {
         CoreDataHandler.updateFrog(frog: receivedFrog, isVisited: isVisited, isFavourite: receivedFrog.isFavourite)
-        CoreDataHandler.updateUnSightedFrog(unsightedFrog: receivedFrog.cname!, isVisited: receivedFrog.isVisited, isFavourite: receivedFrog.isFavourite)
+        let unsightedFrog: UnSightedFrogEntity? = UnSightedFrogEntity()
+        unsightedFrog!.cname = receivedFrog.cname
+        unsightedFrog!.sname = receivedFrog.sname
+        unsightedFrog!.desc = receivedFrog.desc
+        unsightedFrog!.frogcount = receivedFrog.frogcount
+        unsightedFrog!.isFavourite = receivedFrog.isFavourite
+        unsightedFrog!.isVisited = receivedFrog.isVisited
+        unsightedFrog!.latitude = receivedFrog.latitude
+        unsightedFrog!.longitude = receivedFrog.longitude
+        unsightedFrog!.threatnedStatus = receivedFrog.threatnedStatus
+        unsightedFrog!.uncertainty = receivedFrog.uncertainty
+        CoreDataHandler.updateUnSightedFrog(unsightedFrog: unsightedFrog!, isVisited: isVisited, isFavourite: unsightedFrog!.isFavourite)
     }
 
     @IBAction func segmentedCtrlDidSelect(_ sender: Any) {
