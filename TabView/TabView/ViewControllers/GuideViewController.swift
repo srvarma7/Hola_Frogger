@@ -63,7 +63,7 @@ class GuideViewController: UIViewController, UICollectionViewDataSource, UIColle
     
     lazy var nextButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setImage(UIImage(systemName: "arrow.left"), for: .normal)
+        button.setImage(UIImage(systemName: "arrow.right"), for: .normal)
         //button.setImage(UIImage(named: "right"), for: .normal)
         button.addTarget(self, action: #selector(nextPage), for: .touchUpInside)
         return button
@@ -71,7 +71,7 @@ class GuideViewController: UIViewController, UICollectionViewDataSource, UIColle
     
     lazy var preButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setImage(UIImage(systemName: "arrow.right"), for: .normal)
+        button.setImage(UIImage(systemName: "arrow.left"), for: .normal)
         //button.setImage(UIImage(named: "left"), for: .normal)
         button.addTarget(self, action: #selector(lastPage), for: .touchUpInside)
         return button
