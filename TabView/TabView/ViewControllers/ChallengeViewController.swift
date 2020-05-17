@@ -33,6 +33,13 @@ class ChallengeViewController: UIViewController, UICollectionViewDelegate, UICol
         }
         collectionView.dataSource = self
         collectionView.reloadData()
+        NotificationCenter.default.addObserver(self, selector: #selector(loadList), name: NSNotification.Name(rawValue: "load"), object: nil)
+    }
+    
+    @objc func loadList(notification: NSNotification){
+        /// load data here
+        fetchData()
+        collectionView.reloadData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -43,6 +50,7 @@ class ChallengeViewController: UIViewController, UICollectionViewDelegate, UICol
         collectionView.reloadData()
         
     }
+    
     
     override func viewDidDisappear(_ animated: Bool) {
         locationManager.stopUpdatingLocation()
