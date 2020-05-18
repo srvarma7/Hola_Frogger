@@ -14,9 +14,9 @@ class WelcomeViewController: UIViewController {
     let animationView = AnimationView(name: "catchmeifyoucan")
     let textView: UITextView = {
             let title = UITextView()
-            title.text = "Welcome Hola Frogger!"
+            title.text = "Hola Frogger!"
             title.textAlignment = NSTextAlignment.center
-            title.font = UIFont.boldSystemFont(ofSize: 20)
+            title.font = UIFont.boldSystemFont(ofSize: 30)
             title.isEditable = false
             return title
             
@@ -28,12 +28,18 @@ class WelcomeViewController: UIViewController {
         animationView.contentMode = .scaleAspectFit
         animationView.loopMode = .loop
         animationView.play()
-        view.addSubview(animationView)
         view.addSubview(textView)
+        view.addSubview(animationView)
+        
         
         _ = animationView.anchor(view.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, topConstant: 250, leftConstant: 20, bottomConstant: 0, rightConstant: 20, widthConstant: 150, heightConstant: 150)
         
-        _ = textView.anchor(animationView.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, topConstant: 20, leftConstant: 20, bottomConstant: 0, rightConstant: 20, widthConstant: 150, heightConstant: 150)
+        _ = textView.anchor(animationView.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, topConstant: -100, leftConstant: 20, bottomConstant: 0, rightConstant: 20, widthConstant: 150, heightConstant: 150)
+        
+        UIView.animate(withDuration: 2, delay: 3, animations: {
+            self.textView.transform = CGAffineTransform(translationX: 0, y: 110)
+        })
+        
         // Do any additional setup after loading the view.
         DispatchQueue.main.asyncAfter(deadline: .now()+6) {
                 

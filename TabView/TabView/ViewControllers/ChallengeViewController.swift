@@ -9,6 +9,7 @@
 import UIKit
 import CoreLocation
 import MapKit
+import Lottie
 
 class ChallengeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, CLLocationManagerDelegate, MKMapViewDelegate {
 
@@ -16,6 +17,8 @@ class ChallengeViewController: UIViewController, UICollectionViewDelegate, UICol
     @IBOutlet weak var unSightedLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     
+    @IBOutlet weak var congratsLbl: UILabel!
+    @IBOutlet weak var msgLbl: UILabel!
     
     var frogsList: [FrogEntity] = []
     var unSightedFrogsList: [UnSightedFrogEntity] = []
@@ -33,13 +36,15 @@ class ChallengeViewController: UIViewController, UICollectionViewDelegate, UICol
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchData()
-        
+        congratsLbl.isHidden = true
+        msgLbl.isHidden = true
         setupLocationManager()
         if unSightedFrogsList.count > 0 {
             startFencing()
         }
         collectionView.dataSource = self
         getStatistics()
+        
         collectionView.reloadData()
         NotificationCenter.default.addObserver(self, selector: #selector(loadList), name: NSNotification.Name(rawValue: "load"), object: nil)
     }
@@ -48,6 +53,7 @@ class ChallengeViewController: UIViewController, UICollectionViewDelegate, UICol
         /// load data here
         fetchData()
         getStatistics()
+        fetchData()
         collectionView.reloadData()
     }
     
@@ -62,18 +68,40 @@ class ChallengeViewController: UIViewController, UICollectionViewDelegate, UICol
     
     func getStatistics() {
         fetchData()
-       
-        for ele in frogsList {
-            if ele.isVisited {
-                sightedCount += 1
-            } else {
-                unSightedCount += 1
-            }
+
+        sightedCount = 0
+        unSightedCount = 0
+
+         for ele in frogsList {
+                if ele.isVisited {
+                 sightedCount += 1
+             } else {
+                 unSightedCount += 1
+             }
+         }
+         
+         sightedLabel.text = String(sightedCount)
+         unSightedLabel.text = String(unSightedCount)
+        // MARK: -
+        if unSightedCount == 0 {
+            let animationView = AnimationView(name: "award")
+            animationView.frame = CGRect(x: 0, y: 0, width: 250, height: 250)
+            animationView.center.x = self.view.center.x
+            animationView.contentMode = .scaleAspectFit
+            animationView.loopMode = .loop
+            animationView.play()
+            view.addSubview(animationView)
+            
+            _ = animationView.anchor(view.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, topConstant: 180, leftConstant: 20, bottomConstant: 0, rightConstant: 20, widthConstant: 250, heightConstant: 250)
+            
+            
+            congratsLbl.isHidden = false
+            msgLbl.isHidden = false
+            congratsLbl.text = "Congratulations!!"
+            congratsLbl.font = UIFont.boldSystemFont(ofSize: 20)
+            msgLbl.text = "You have completed all the challenges"
         }
-        
-        sightedLabel.text = String(sightedCount)
-        unSightedLabel.text = String(unSightedCount)
-        
+        numberOfFrogsLeftInChallenge = 0
         for ele in unSightedFrogsList {
             if !(ele.isVisited) {
                 numberOfFrogsLeftInChallenge += 1
@@ -88,7 +116,11 @@ class ChallengeViewController: UIViewController, UICollectionViewDelegate, UICol
             print(afterDelete.count, "AFTER DELETE")
             
         }
+        fetchData()
         
+    }
+    func getNumber(){
+
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -118,7 +150,7 @@ class ChallengeViewController: UIViewController, UICollectionViewDelegate, UICol
     //add to the challengeCell
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ChallengeCell
-       
+        cell.frogImage.image = UIImage(named: unSightedFrogsList[indexPath.row].sname!)
         cell.cname.text = unSightedFrogsList[indexPath.row].cname
         cell.sname.text = unSightedFrogsList[indexPath.row].sname
         //get location and cacluate
@@ -177,6 +209,9 @@ class ChallengeViewController: UIViewController, UICollectionViewDelegate, UICol
                     }
                 }
             }
+        } else {
+            stopFencing()
+            startFencing()
         }
     }
     

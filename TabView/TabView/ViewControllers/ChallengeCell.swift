@@ -14,7 +14,8 @@ class ChallengeCell: UICollectionViewCell {
     @IBOutlet weak var location: UILabel!
     @IBOutlet weak var visited: UILabel!
 
-        
+    @IBOutlet weak var frogImage: UIImageView!
+    
     
     
 }

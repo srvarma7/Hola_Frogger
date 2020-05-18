@@ -93,6 +93,8 @@ class FrogListController: UIViewController, UITableViewDataSource, UITableViewDe
         } else {
             newFrog = frogs[indexPath.row]
         }
+        
+        
         cell.textLabel?.text = newFrog.cname
         cell.detailTextLabel?.text = newFrog.sname
         if newFrog.threatnedStatus == "Not endangered" {

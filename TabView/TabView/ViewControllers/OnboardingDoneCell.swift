@@ -77,7 +77,7 @@ class OnboardingDoneCell: UICollectionViewCell {
     
     func setUpAnimation2 () {
         animationView2.animation = Animation.named("13005-refresh")
-        animationView2.frame = CGRect(x: 0, y: 0, width: 200, height: 200)
+        animationView2.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
         animationView2.backgroundColor = .white
         animationView2.contentMode = .scaleAspectFit
         animationView2.loopMode = .loop
@@ -91,10 +91,10 @@ class OnboardingDoneCell: UICollectionViewCell {
        }
     func setupViews() {
         animationView1.animation = Animation.named("8878-done")
-        animationView1.frame = CGRect(x: 0, y: 0, width: 200, height: 200)
+        animationView1.frame = CGRect(x: 0, y: 0, width: 300, height: 300)
         animationView1.backgroundColor = .white
         animationView1.contentMode = .scaleAspectFit
-                   animationView1.loopMode = .loop
+                   animationView1.loopMode = .playOnce
                    animationView1.play()
         
        
@@ -108,20 +108,20 @@ class OnboardingDoneCell: UICollectionViewCell {
         addSubview(reverseAnimationButton)
       
         //add layout constraint
-        _ = animationView1.anchor(topAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, topConstant: 70, leftConstant: 41, bottomConstant: 0, rightConstant: 41, widthConstant: 335, heightConstant: 322)
+        _ = animationView1.anchor(topAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, topConstant: 70, leftConstant: 41, bottomConstant: 0, rightConstant: 41, widthConstant: 335, heightConstant: 335)
         
         
         _ = doneButton.anchor(animationView1.bottomAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, topConstant: 52, leftConstant: 142, bottomConstant: 0, rightConstant: 142, widthConstant: 129, heightConstant: 48)
         
         _ = titleTextView.anchor(doneButton.bottomAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, topConstant: 25, leftConstant: 73, bottomConstant: 0, rightConstant: 73, widthConstant: 268, heightConstant: 41)
        
-        _ = descriptionTextView.anchor(titleTextView.bottomAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, topConstant: 18, leftConstant: 42, bottomConstant: 0, rightConstant: 42, widthConstant: 330, heightConstant: 140)
+        _ = descriptionTextView.anchor(titleTextView.bottomAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, topConstant: 18, leftConstant: 42, bottomConstant: 0, rightConstant: 42, widthConstant: 330, heightConstant: 70)
         
-        _ = animationView2.anchor(descriptionTextView.bottomAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, topConstant: 20, leftConstant: 181, bottomConstant: 0, rightConstant: 181, widthConstant: 52, heightConstant: 52)
+        _ = animationView2.anchor(descriptionTextView.bottomAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, topConstant: 20, leftConstant: 150, bottomConstant: 0, rightConstant: 150, widthConstant: 50, heightConstant: 50)
         
-        _ = reverseAnimationButton.anchor(descriptionTextView.bottomAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, topConstant: 20, leftConstant: 181, bottomConstant: 0, rightConstant: 181, widthConstant: 52, heightConstant: 52)
+        _ = reverseAnimationButton.anchor(descriptionTextView.bottomAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, topConstant: 20, leftConstant: 150, bottomConstant: 0, rightConstant: 150, widthConstant: 50, heightConstant: 50)
                
-         _ = reverseButton.anchor(animationView2.bottomAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, topConstant: 16, leftConstant: 127, bottomConstant: 60, rightConstant: 127, widthConstant: 160, heightConstant: 35)
+         _ = reverseButton.anchor(animationView2.bottomAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, topConstant: 16, leftConstant: 110, bottomConstant: 0, rightConstant: 110, widthConstant: 160, heightConstant: 35)
        
     }
     

@@ -45,6 +45,7 @@
 		57C098C9246A8E570041C235 /* UnSightedFrogEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C098C7246A8E570041C235 /* UnSightedFrogEntity+CoreDataClass.swift */; };
 		57C098CA246A8E570041C235 /* UnSightedFrogEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C098C8246A8E570041C235 /* UnSightedFrogEntity+CoreDataProperties.swift */; };
 		B960A57A246C3BA9003CFDE3 /* CardLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B960A579246C3BA9003CFDE3 /* CardLayout.swift */; };
+		B98A407D24725008006C2F2A /* award.json in Resources */ = {isa = PBXBuildFile; fileRef = B98A407C24725007006C2F2A /* award.json */; };
 		B9BC1B332471912900C15461 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BC1B322471912900C15461 /* WelcomeViewController.swift */; };
 		B9FD7A40246C11CB0058B4B3 /* ChallengeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FD7A3F246C11CB0058B4B3 /* ChallengeCell.swift */; };
 		B9FD7A44246C1B150058B4B3 /* GuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FD7A43246C1B150058B4B3 /* GuideViewController.swift */; };
@@ -102,6 +103,7 @@
 		57C098C8246A8E570041C235 /* UnSightedFrogEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UnSightedFrogEntity+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		ACBCC81B8DB64478F334A8A5 /* Pods-TabView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TabView.debug.xcconfig"; path = "Target Support Files/Pods-TabView/Pods-TabView.debug.xcconfig"; sourceTree = "<group>"; };
 		B960A579246C3BA9003CFDE3 /* CardLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardLayout.swift; sourceTree = "<group>"; };
+		B98A407C24725007006C2F2A /* award.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = award.json; sourceTree = "<group>"; };
 		B9BC1B322471912900C15461 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WelcomeViewController.swift; path = TabView/ViewControllers/WelcomeViewController.swift; sourceTree = SOURCE_ROOT; };
 		B9FD7A3F246C11CB0058B4B3 /* ChallengeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeCell.swift; sourceTree = "<group>"; };
 		B9FD7A43246C1B150058B4B3 /* GuideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideViewController.swift; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 				B9FD7A4D246C1F2C0058B4B3 /* 291-searchask-loop.json */,
 				B9FD7A50246C1F2D0058B4B3 /* 336-search.json */,
 				B9FD7A4F246C1F2D0058B4B3 /* 8878-done.json */,
+				B98A407C24725007006C2F2A /* award.json */,
 				B9FD7A4E246C1F2C0058B4B3 /* 10548-forest.json */,
 				B9FD7A51246C1F2D0058B4B3 /* 13005-refresh.json */,
 				B9FD7A4C246C1F2C0058B4B3 /* 13357-route-finder.json */,
@@ -335,6 +338,7 @@
 				57A3B8AE244315270011F674 /* LaunchScreen.storyboard in Resources */,
 				57441D922463F00A00BC4DE0 /* catchmeifyoucan.json in Resources */,
 				570D1C1E24705E5200B9FB22 /* confetti2.json in Resources */,
+				B98A407D24725008006C2F2A /* award.json in Resources */,
 				570D1C1F24705E5200B9FB22 /* sad1.json in Resources */,
 				B9FD7A58246C1F2D0058B4B3 /* 13005-refresh.json in Resources */,
 				B9FD7A56246C1F2D0058B4B3 /* 8878-done.json in Resources */,

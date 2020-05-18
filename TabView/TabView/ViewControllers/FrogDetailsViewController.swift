@@ -47,6 +47,7 @@ class FrogDetailsViewController: UIViewController, MKMapViewDelegate {
 
     @IBOutlet weak var frogImage: UIImageView!
     
+    @IBOutlet weak var isVisitedLbl: UILabel!
     // Variable will hold the data that is sent by other controller.
     var receivedFrog: FrogEntity?
     
@@ -77,8 +78,14 @@ class FrogDetailsViewController: UIViewController, MKMapViewDelegate {
         locationLbl.text = "\(String(describing: receivedFrog!.uncertainty)) meters"
         statusLbl.text = receivedFrog?.threatnedStatus
         countLbl.text = "\(String(describing: receivedFrog!.frogcount))"
+        if receivedFrog!.isVisited {
+            isVisitedLbl.text = "Yes"
+        } else {
+            isVisitedLbl.text = "No"
+        }
+        
         // This button is be used to Favourite or Unfavourite a Frog.
-        favButton.frame = CGRect(x: self.view.center.x-15, y: self.view.center.y + 260, width: 30, height: 30)
+        favButton.frame = CGRect(x: self.view.center.x-15, y: isVisitedLbl.frame.maxY + 10, width: 30, height: 30)
        // favButton.center.x = view.center.x
         // To dismiss the current view controller
         closeButton.frame = CGRect(x: view.center.x, y: view.frame.maxY + 30, width: 50, height: 50)

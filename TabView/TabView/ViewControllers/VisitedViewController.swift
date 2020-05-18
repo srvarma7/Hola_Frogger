@@ -74,6 +74,9 @@ class VisitedViewController: UIViewController, CLLocationManagerDelegate {
         view.addSubview(animationView)
         animationView.loopMode = .playOnce
         animationView.play()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3.5) {
+            self.animationView.removeFromSuperview()
+        }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -115,7 +118,7 @@ class VisitedViewController: UIViewController, CLLocationManagerDelegate {
         cNameLabel.text = receivedFrog?.cname
         sNameLabel.text = receivedFrog?.sname
         //greetingLabel.text = "Hurrah!!! \n You have entered the \(cNameLabel.text) habitat!!! \n Now, Lets try to sight the Frog"
-        imageView.image = UIImage(named: "shutter")
+        imageView.image = UIImage(named: (receivedFrog?.sname)!)
         imageView.backgroundColor = UIColor(white: 0, alpha: 0)
     }
 

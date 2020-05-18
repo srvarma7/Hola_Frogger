@@ -17,6 +17,8 @@ class HomeViewController: UIViewController {
     var selectedFrog: String = ""
     let magnitude = -20
     let animationView = AnimationView(name: "catchmeifyoucan")
+    
+    var isLoadingFirstTime: Bool = false
 
     @IBOutlet weak var exploreBtn: UIButton!
     
@@ -80,15 +82,20 @@ class HomeViewController: UIViewController {
         exploreBtn.layer.shadowOpacity = 1.0
         searchField.clipsToBounds = true
         
+        
+        if !isLoadingFirstTime {
+            UIView.animate(withDuration: 1, animations: {
+                self.searchField.center = self.view.center
+                self.searchField.transform = CGAffineTransform(translationX: 0, y: -100)
+                self.exploreBtn.layer.cornerRadius = self.exploreBtn.frame.size.width/10
+                self.animationView.transform = CGAffineTransform(translationX: 0, y: 160)
+                self.animationView.layer.cornerRadius = self.animationView.frame.size.width/10
+                self.animationView.clipsToBounds = true
+            })
+            isLoadingFirstTime = true
+        }
         // MARK:- Check here
-        UIView.animate(withDuration: 1, animations: {
-            self.searchField.center = self.view.center
-            self.searchField.transform = CGAffineTransform(translationX: 0, y: -100)
-            self.exploreBtn.layer.cornerRadius = self.exploreBtn.frame.size.width/10
-            self.animationView.transform = CGAffineTransform(translationX: 0, y: 160)
-            self.animationView.layer.cornerRadius = self.animationView.frame.size.width/10
-            self.animationView.clipsToBounds = true
-        })
+        
         UIView.animate(withDuration: 1, animations: {
             self.searchField.layer.cornerRadius = self.searchField.frame.size.width/20
         })

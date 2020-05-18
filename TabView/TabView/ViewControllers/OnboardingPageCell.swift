@@ -94,7 +94,7 @@ class OnboardingPageCell: UICollectionViewCell {
         
         _ = animationView.anchor(topAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, topConstant: 120, leftConstant: 39, bottomConstant: 0, rightConstant: 39, widthConstant: 335, heightConstant: 322)
         
-        _ = textView.anchor(animationView.bottomAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, topConstant: 100, leftConstant: 42, bottomConstant: 0, rightConstant: 42, widthConstant: 330, heightConstant: 180)
+        _ = textView.anchor(animationView.bottomAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, topConstant: 50, leftConstant: 42, bottomConstant: 0, rightConstant: 42, widthConstant: 330, heightConstant: 180)
         
     }
     
