@@ -54,11 +54,13 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         locationMgr.startUpdatingLocation()
+        startFencing()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
         locationMgr.stopUpdatingLocation()
+        stopFencing()
     }
     
     override func viewDidDisappear(_ animated: Bool) {

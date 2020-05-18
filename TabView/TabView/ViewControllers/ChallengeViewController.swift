@@ -21,6 +21,7 @@ class ChallengeViewController: UIViewController, UICollectionViewDelegate, UICol
     
     @IBOutlet weak var congratsLbl: UILabel!
     @IBOutlet weak var msgLbl: UILabel!
+    @IBOutlet weak var bgImage: UIImageView!
     var animationView = AnimationView()
     
     
@@ -71,6 +72,10 @@ class ChallengeViewController: UIViewController, UICollectionViewDelegate, UICol
         fetchData()
         startFencing()
         collectionView.reloadData()
+        UIView.animate(withDuration: 2, delay: 0, animations: {
+            self.bgImage.layer.cornerRadius = (self.bgImage.frame.size.width)/10
+            self.bgImage.clipsToBounds = true
+        })
     }
     
     func getStatistics() {

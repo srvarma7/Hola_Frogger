@@ -21,13 +21,19 @@ class WelcomeViewController: UIViewController {
             return title
             
         }()
+    
+    func move() {
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         animationView.frame = CGRect(x: 0, y: 0, width: 150, height: 150)
         animationView.center.x = self.view.center.x
         animationView.contentMode = .scaleAspectFit
-        animationView.loopMode = .loop
-        animationView.play()
+        animationView.loopMode = .playOnce
+        animationView.animationSpeed = 1.5
+        animationView.play(fromFrame: 20, toFrame: 300, loopMode: .loop)
         view.addSubview(textView)
         view.addSubview(animationView)
         
@@ -35,35 +41,35 @@ class WelcomeViewController: UIViewController {
         
         _ = textView.anchor(animationView.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, topConstant: -100, leftConstant: 20, bottomConstant: 0, rightConstant: 20, widthConstant: 150, heightConstant: 150)
         
-        UIView.animate(withDuration: 2, delay: 3, animations: {
+        UIView.animate(withDuration: 2, delay: 1, animations: {
             self.textView.transform = CGAffineTransform(translationX: 0, y: 110)
         })
         
         // Do any additional setup after loading the view.
-        DispatchQueue.main.asyncAfter(deadline: .now()+6) {
+        DispatchQueue.main.asyncAfter(deadline: .now()+3) {
                 
-                let sb = UIStoryboard(name: "Main", bundle: nil)
-                 let infoDictionary = Bundle.main.infoDictionary
-                let currentAppVersion = infoDictionary!["CFBundleShortVersionString"] as! String
-                             
-                         //get version number
-                let userDefaults = UserDefaults.standard
-                let appVersion = userDefaults.string(forKey: "appVersion")
-                             
-                if appVersion == nil || appVersion != currentAppVersion {
-                             //save the latest version number
-                    userDefaults.setValue(currentAppVersion, forKey: "appVersion")
-                    
-                    let homePage = sb.instantiateViewController(withIdentifier: "Guide") as! GuideViewController
-                    homePage.modalPresentationStyle = .fullScreen
-                    self.present(homePage, animated: true, completion: nil)
-                }
-                else{
-                    let homePage = sb.instantiateViewController(withIdentifier: "tabController") as! UITabBarController
-                    homePage.modalPresentationStyle = .fullScreen
-                    self.present(homePage, animated: true, completion: nil)
+            let sb = UIStoryboard(name: "Main", bundle: nil)
+             let infoDictionary = Bundle.main.infoDictionary
+            let currentAppVersion = infoDictionary!["CFBundleShortVersionString"] as! String
+                         
+                     //get version number
+            let userDefaults = UserDefaults.standard
+            let appVersion = userDefaults.string(forKey: "appVersion")
+                         
+            if appVersion == nil || appVersion != currentAppVersion {
+                         //save the latest version number
+                userDefaults.setValue(currentAppVersion, forKey: "appVersion")
+                
+                let homePage = sb.instantiateViewController(withIdentifier: "Guide") as! GuideViewController
+                homePage.modalPresentationStyle = .fullScreen
+                self.present(homePage, animated: true, completion: nil)
             }
-             }
+            else{
+                let homePage = sb.instantiateViewController(withIdentifier: "tabController") as! UITabBarController
+                homePage.modalPresentationStyle = .fullScreen
+                self.present(homePage, animated: true, completion: nil)
+            }
+        }
     }
     
     
