@@ -94,7 +94,7 @@ class OnboardingDoneCell: UICollectionViewCell {
         animationView1.frame = CGRect(x: 0, y: 0, width: 300, height: 300)
         animationView1.backgroundColor = .white
         animationView1.contentMode = .scaleAspectFit
-                   animationView1.loopMode = .playOnce
+                   animationView1.loopMode = .loop
                    animationView1.play()
         
        

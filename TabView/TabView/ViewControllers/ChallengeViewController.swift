@@ -178,15 +178,21 @@ class ChallengeViewController: UIViewController, UICollectionViewDelegate, UICol
     //add to the challengeCell
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ChallengeCell
+        
+        var color = UIColor.white
+        
         cell.frogImage.image = UIImage(named: unSightedFrogsList[indexPath.row].sname!)
         cell.cname.text = unSightedFrogsList[indexPath.row].cname
+        cell.cname.textColor = color
         cell.sname.text = unSightedFrogsList[indexPath.row].sname
+        cell.sname.textColor = color
         //get location and cacluate
         let frogLocation = CLLocation(latitude: unSightedFrogsList[indexPath.row].latitude, longitude: unSightedFrogsList[indexPath.row].longitude)
         
       //  locationManager(locationManager, didUpdateLocations: [currentLocation])
         let distance: CLLocationDistance = currentLocation.distance(from: frogLocation)/1000
         cell.location.text = "\(String(ceil(distance))) Kms away from you"
+        cell.location.textColor = color
         if(unSightedFrogsList[indexPath.row].isVisited){
             cell.visited.text = "You already Sighted"
             cell.backgroundColor = UIColor(red: 0, green: 0.6, blue: 0, alpha: 0.7)
@@ -194,6 +200,7 @@ class ChallengeViewController: UIViewController, UICollectionViewDelegate, UICol
             cell.visited.text = "Not yet Sighted"
             cell.backgroundColor = UIColor(red: 0.8, green: 0, blue: 0, alpha: 0.7)
         }
+        cell.visited.textColor = color
         //set layout for cell
         cell.contentView.layer.cornerRadius = 4.0
         cell.contentView.layer.borderWidth = 1.0
