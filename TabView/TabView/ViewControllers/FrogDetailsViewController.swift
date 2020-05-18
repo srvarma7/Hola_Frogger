@@ -73,6 +73,13 @@ class FrogDetailsViewController: UIViewController, MKMapViewDelegate {
         scNameLbl.text = receivedFrog?.sname
         descLbl.text = receivedFrog?.desc
         descLbl.isEditable = false
+        
+        if receivedFrog!.sname == "Litoria paraewingi" {
+           frogImage.image = UIImage(named: "frogsplash")
+        } else {
+            frogImage.image = UIImage(named:"\(String(receivedFrog!.sname!))")
+        }
+        
         frogImage.image = UIImage(named:"\(String(receivedFrog!.sname!))")
         if traitCollection.userInterfaceStyle == .light {
             frogImage.layer.shadowColor = UIColor.black.cgColor

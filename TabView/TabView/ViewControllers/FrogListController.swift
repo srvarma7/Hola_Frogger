@@ -96,7 +96,12 @@ class FrogListController: UIViewController, UITableViewDataSource, UITableViewDe
         
         cell.cName.text = newFrog.cname
         cell.sName.text = newFrog.sname
-        cell.frogImage.image = UIImage(named: newFrog.sname!)
+        if newFrog.sname == "Litoria paraewingi" {
+            cell.frogImage.image = UIImage(named: "frogsplash")
+            cell.frogImage.image = UIImage(named: newFrog.sname!)
+        } else {
+            cell.frogImage.image = UIImage(named: newFrog.sname!)
+        }        
         if newFrog.threatnedStatus == "Not endangered" {
             cell.status.image = UIImage(systemName: "n.square")
             cell.status.tintColor = UIColor(red: 0, green: 0.6, blue: 0, alpha: 1)
