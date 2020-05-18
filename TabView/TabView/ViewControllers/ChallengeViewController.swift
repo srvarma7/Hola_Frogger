@@ -10,6 +10,8 @@ import UIKit
 import CoreLocation
 import MapKit
 import Lottie
+import AudioToolbox
+import AVFoundation
 
 class ChallengeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, CLLocationManagerDelegate, MKMapViewDelegate {
 
@@ -19,6 +21,11 @@ class ChallengeViewController: UIViewController, UICollectionViewDelegate, UICol
     
     @IBOutlet weak var congratsLbl: UILabel!
     @IBOutlet weak var msgLbl: UILabel!
+    var animationView = AnimationView()
+    
+    
+    var audioPlayer = AVAudioPlayer()
+    
     
     var frogsList: [FrogEntity] = []
     var unSightedFrogsList: [UnSightedFrogEntity] = []
@@ -94,12 +101,14 @@ class ChallengeViewController: UIViewController, UICollectionViewDelegate, UICol
             
             _ = animationView.anchor(view.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, topConstant: 180, leftConstant: 20, bottomConstant: 0, rightConstant: 20, widthConstant: 250, heightConstant: 250)
             
-            
             congratsLbl.isHidden = false
             msgLbl.isHidden = false
             congratsLbl.text = "Congratulations!!"
             congratsLbl.font = UIFont.boldSystemFont(ofSize: 20)
             msgLbl.text = "You have completed all the challenges"
+            lottieAnimation(AnimationName: "confetti1", top: 150, sides: 30, size: 800)
+            AudioServicesPlaySystemSound(1520)
+            play(sound: "confetti")
         }
         numberOfFrogsLeftInChallenge = 0
         for ele in unSightedFrogsList {
@@ -119,8 +128,27 @@ class ChallengeViewController: UIViewController, UICollectionViewDelegate, UICol
         fetchData()
         
     }
-    func getNumber(){
-
+    
+    func play(sound: String) {
+        let sound = URL(fileURLWithPath: Bundle.main.path(forResource: sound, ofType: "mp3")!)
+        do {
+             audioPlayer = try AVAudioPlayer(contentsOf: sound)
+             audioPlayer.play()
+        } catch {  }
+    }
+    
+    func lottieAnimation(AnimationName: String, top: CGFloat, sides: CGFloat, size: CGFloat) {
+        animationView = AnimationView(name: AnimationName)
+        animationView.frame = CGRect(x: 0, y: 0, width: size, height: size)
+        animationView.center = self.view.center
+        animationView.contentMode = .scaleAspectFit
+        animationView.backgroundColor = UIColor(white: 0, alpha: 0)
+        view.addSubview(animationView)
+        animationView.loopMode = .playOnce
+        animationView.play()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3.5) {
+            self.animationView.removeFromSuperview()
+        }
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -160,15 +188,18 @@ class ChallengeViewController: UIViewController, UICollectionViewDelegate, UICol
         let distance: CLLocationDistance = currentLocation.distance(from: frogLocation)/1000
         cell.location.text = "\(String(ceil(distance))) Kms away from you"
         if(unSightedFrogsList[indexPath.row].isVisited){
-            cell.visited.text = "You already visited it"
+            cell.visited.text = "You already Sighted"
+            cell.backgroundColor = UIColor(red: 0, green: 0.6, blue: 0, alpha: 0.7)
         } else{
-            cell.visited.text = "Not yet Visited"
+            cell.visited.text = "Not yet Sighted"
+            cell.backgroundColor = UIColor(red: 0.8, green: 0, blue: 0, alpha: 0.7)
         }
         //set layout for cell
         cell.contentView.layer.cornerRadius = 4.0
         cell.contentView.layer.borderWidth = 1.0
         cell.contentView.layer.borderColor = UIColor.clear.cgColor
         cell.contentView.layer.masksToBounds = false
+        
         cell.layer.shadowColor = UIColor.gray.cgColor
         cell.layer.shadowOffset = CGSize(width: 0, height: 1.0)
         cell.layer.shadowRadius = 4.0

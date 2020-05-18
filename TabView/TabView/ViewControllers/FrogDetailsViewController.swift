@@ -74,7 +74,15 @@ class FrogDetailsViewController: UIViewController, MKMapViewDelegate {
         descLbl.text = receivedFrog?.desc
         descLbl.isEditable = false
         frogImage.image = UIImage(named:"\(String(receivedFrog!.sname!))")
-        
+        if traitCollection.userInterfaceStyle == .light {
+            frogImage.layer.shadowColor = UIColor.black.cgColor
+        } else {
+            frogImage.layer.shadowColor = UIColor.white.cgColor
+        }
+        frogImage.layer.shadowOffset = CGSize(width: 4, height: 4)
+        frogImage.layer.shadowRadius = 4.0
+        frogImage.layer.shadowOpacity = 1
+        frogImage.clipsToBounds = true
         locationLbl.text = "\(String(describing: receivedFrog!.uncertainty)) meters"
         statusLbl.text = receivedFrog?.threatnedStatus
         countLbl.text = "\(String(describing: receivedFrog!.frogcount))"

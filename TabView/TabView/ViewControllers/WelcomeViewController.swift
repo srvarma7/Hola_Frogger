@@ -16,7 +16,7 @@ class WelcomeViewController: UIViewController {
             let title = UITextView()
             title.text = "Hola Frogger!"
             title.textAlignment = NSTextAlignment.center
-            title.font = UIFont.boldSystemFont(ofSize: 30)
+            title.font = UIFont.boldSystemFont(ofSize: 25)
             title.isEditable = false
             return title
             
@@ -30,7 +30,6 @@ class WelcomeViewController: UIViewController {
         animationView.play()
         view.addSubview(textView)
         view.addSubview(animationView)
-        
         
         _ = animationView.anchor(view.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, topConstant: 250, leftConstant: 20, bottomConstant: 0, rightConstant: 20, widthConstant: 150, heightConstant: 150)
         

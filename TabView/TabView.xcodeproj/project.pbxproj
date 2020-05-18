@@ -46,6 +46,7 @@
 		57C098CA246A8E570041C235 /* UnSightedFrogEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C098C8246A8E570041C235 /* UnSightedFrogEntity+CoreDataProperties.swift */; };
 		B960A57A246C3BA9003CFDE3 /* CardLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B960A579246C3BA9003CFDE3 /* CardLayout.swift */; };
 		B98A407D24725008006C2F2A /* award.json in Resources */ = {isa = PBXBuildFile; fileRef = B98A407C24725007006C2F2A /* award.json */; };
+		B98A407F24725DE6006C2F2A /* FrogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98A407E24725DE6006C2F2A /* FrogCell.swift */; };
 		B9BC1B332471912900C15461 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BC1B322471912900C15461 /* WelcomeViewController.swift */; };
 		B9FD7A40246C11CB0058B4B3 /* ChallengeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FD7A3F246C11CB0058B4B3 /* ChallengeCell.swift */; };
 		B9FD7A44246C1B150058B4B3 /* GuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FD7A43246C1B150058B4B3 /* GuideViewController.swift */; };
@@ -104,6 +105,7 @@
 		ACBCC81B8DB64478F334A8A5 /* Pods-TabView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TabView.debug.xcconfig"; path = "Target Support Files/Pods-TabView/Pods-TabView.debug.xcconfig"; sourceTree = "<group>"; };
 		B960A579246C3BA9003CFDE3 /* CardLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardLayout.swift; sourceTree = "<group>"; };
 		B98A407C24725007006C2F2A /* award.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = award.json; sourceTree = "<group>"; };
+		B98A407E24725DE6006C2F2A /* FrogCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrogCell.swift; sourceTree = "<group>"; };
 		B9BC1B322471912900C15461 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WelcomeViewController.swift; path = TabView/ViewControllers/WelcomeViewController.swift; sourceTree = SOURCE_ROOT; };
 		B9FD7A3F246C11CB0058B4B3 /* ChallengeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeCell.swift; sourceTree = "<group>"; };
 		B9FD7A43246C1B150058B4B3 /* GuideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideViewController.swift; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 				B9FD7A47246C1CB00058B4B3 /* OnboardingPageCell.swift */,
 				B9FD7A49246C1D210058B4B3 /* OnboardingDoneCell.swift */,
 				B960A579246C3BA9003CFDE3 /* CardLayout.swift */,
+				B98A407E24725DE6006C2F2A /* FrogCell.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -413,6 +416,7 @@
 				579B45472447084200EACA4B /* CoreDataHandler.swift in Sources */,
 				579EE7A724433BCC00321C7E /* BearBottle.mlmodel in Sources */,
 				5757F98A24639E3600F8D75C /* HomeViewController.swift in Sources */,
+				B98A407F24725DE6006C2F2A /* FrogCell.swift in Sources */,
 				57A3B8A1244315230011F674 /* FrogListController.swift in Sources */,
 				B960A57A246C3BA9003CFDE3 /* CardLayout.swift in Sources */,
 				57C098C9246A8E570041C235 /* UnSightedFrogEntity+CoreDataClass.swift in Sources */,

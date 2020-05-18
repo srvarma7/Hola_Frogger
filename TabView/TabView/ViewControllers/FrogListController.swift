@@ -85,7 +85,7 @@ class FrogListController: UIViewController, UITableViewDataSource, UITableViewDe
     
     // Setting the values to the cell in the TableView
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "frogCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "frogCell", for: indexPath) as! FrogCell
     
         var newFrog: FrogEntity
         if showFavouriteFrogs {
@@ -94,18 +94,18 @@ class FrogListController: UIViewController, UITableViewDataSource, UITableViewDe
             newFrog = frogs[indexPath.row]
         }
         
-        
-        cell.textLabel?.text = newFrog.cname
-        cell.detailTextLabel?.text = newFrog.sname
+        cell.cName.text = newFrog.cname
+        cell.sName.text = newFrog.sname
+        cell.frogImage.image = UIImage(named: newFrog.sname!)
         if newFrog.threatnedStatus == "Not endangered" {
-            cell.imageView?.image = UIImage(systemName: "n.square")
-            cell.imageView?.tintColor = UIColor(red: 0, green: 0.6, blue: 0, alpha: 1)
+            cell.status.image = UIImage(systemName: "n.square")
+            cell.status.tintColor = UIColor(red: 0, green: 0.6, blue: 0, alpha: 1)
         } else if newFrog.threatnedStatus == "Vulnerable" {
-            cell.imageView?.image = UIImage(systemName: "v.square.fill")
-            cell.imageView?.tintColor = UIColor(red: 0.3, green: 0, blue: 0.7, alpha: 1)
+            cell.status.image = UIImage(systemName: "v.square.fill")
+            cell.status.tintColor = UIColor(red: 0.3, green: 0, blue: 0.7, alpha: 1)
         } else if newFrog.threatnedStatus ==  "Endangered" {
-            cell.imageView?.image = UIImage(systemName: "e.square.fill")
-            cell.imageView?.tintColor = UIColor(red: 0.8, green: 0, blue: 0, alpha: 0.8)
+            cell.status.image = UIImage(systemName: "e.square.fill")
+            cell.status.tintColor = UIColor(red: 0.8, green: 0, blue: 0, alpha: 0.8)
         }
         return cell
     }
