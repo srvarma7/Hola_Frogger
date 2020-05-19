@@ -1,9 +1,20 @@
 
 ## Hola Frogger iOS application
-[![Generic badge](https://img.shields.io/badge/Swift-5.0-orange.svg)](https://shields.io/) [![Generic badge](https://img.shields.io/badge/iOS-13.4+-blue.svg)](https://shields.io/) [![Generic badge](https://img.shields.io/badge/Version-1.0-orange.svg)](https://shields.io/) [![Generic badge](https://img.shields.io/badge/Platform-iOS-green.svg)](https://shields.io/) 
+[![Generic badge](https://img.shields.io/badge/Swift-5.0-orange.svg)](https://shields.io/) [![Generic badge](https://img.shields.io/badge/iOS-13.4+-blue.svg)](https://shields.io/) [![Generic badge](https://img.shields.io/badge/Version-1.1-orange.svg)](https://shields.io/) [![Generic badge](https://img.shields.io/badge/Platform-iOS-green.svg)](https://shields.io/) 
 
 ## DEMO
 To watch the application in action click [here](https://www.youtube.com/watch?v=QgAXakzqdkA&feature=emb_logo).
+
+## New Features (Iteration 2).
+- Welcome Screen with animation.
+- OnBoarding Screen a tour of application features, when the application is opened for the first time.
+- Home Screen with Search feature. Helps your find specific Frog easily.
+- New updated Frog list screen, with photos and their threatened status.
+- Improved Map functionalities.
+- All new Challenges screen.
+-- Shows challenges.
+-- Gives you statics of the achievements.
+
 
 ## Key Features (Iteration 1)
 - Frogs with threatened status.
