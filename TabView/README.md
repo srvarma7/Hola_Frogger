@@ -12,8 +12,8 @@ To watch the application in action click [here](https://www.youtube.com/watch?v=
 - New updated Frog list screen, with photos and their threatened status.
 - Improved Map functionalities.
 - All new Challenges screen.
--- Shows challenges.
--- Gives you statics of the achievements.
+- Shows challenges.
+- Gives you statics of the achievements.
 
 
 ## Key Features (Iteration 1)
