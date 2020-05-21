@@ -12,8 +12,10 @@ import MapKit
 import Lottie
 import AudioToolbox
 import AVFoundation
+import AwesomeSpotlightView
 
-class ChallengeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, CLLocationManagerDelegate, MKMapViewDelegate {
+
+class ChallengeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, CLLocationManagerDelegate, MKMapViewDelegate, AwesomeSpotlightViewDelegate {
 
     @IBOutlet weak var sightedLabel: UILabel!
     @IBOutlet weak var unSightedLabel: UILabel!
@@ -34,7 +36,8 @@ class ChallengeViewController: UIViewController, UICollectionViewDelegate, UICol
     let locationManager:CLLocationManager = CLLocationManager()
     var currentLocation = CLLocation()
     var geoLocation = CLCircularRegion()
-    
+    var spotlightView = AwesomeSpotlightView()
+    var spotlight: [SpotLightEntity] = []
 
     var sightedCount: Int = 0
     var unSightedCount: Int = 0
@@ -47,6 +50,7 @@ class ChallengeViewController: UIViewController, UICollectionViewDelegate, UICol
         congratsLbl.isHidden = true
         msgLbl.isHidden = true
         setupLocationManager()
+        // Start geo fencing when there are unsighted forgs in challenge
         if unSightedFrogsList.count > 0 {
             startFencing()
         }
@@ -54,10 +58,41 @@ class ChallengeViewController: UIViewController, UICollectionViewDelegate, UICol
         getStatistics()
         
         collectionView.reloadData()
-        NotificationCenter.default.addObserver(self, selector: #selector(loadList), name: NSNotification.Name(rawValue: "load"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadCollectionView), name: NSNotification.Name(rawValue: "loadColllectionView"), object: nil)
+        checkForSpotLight()
+    }
+
+    // Check if the application is opening for the first time to load spotlight
+    func checkForSpotLight() {
+        if spotlight.isEmpty {
+            CoreDataHandler.addSpotLight()
+            spotlight = CoreDataHandler.fetchSpotLight()
+        }
+        if !(spotlight.first!.challenges) {
+            startSpotLightTour()
+        }
     }
     
-    @objc func loadList(notification: NSNotification){
+    func startSpotLightTour() {
+        // Spotlight for Image
+        let spotlight1 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 10, y: 150, width: 395, height: 400), shape: .roundRectangle, text: "\nCurrent Challenges are shown here", isAllowPassTouchesThroughSpotlight: true)
+        
+        // Spotlight for Frog's Common Name
+        let spotlight2 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 16, y: 620, width: 380, height: 150), shape: .roundRectangle, text: "\n\n\nYour overall Statistics ", isAllowPassTouchesThroughSpotlight: true)
+        
+        let spotlightView = AwesomeSpotlightView(frame: view.frame, spotlight: [spotlight1, spotlight2])
+        
+        spotlightView.cutoutRadius = 8
+        spotlightView.delegate = self
+        view.addSubview(spotlightView)
+        DispatchQueue.main.asyncAfter(deadline: .now()+1) {
+            spotlightView.spotlightMaskColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.7)
+            spotlightView.enableArrowDown = true
+            spotlightView.start()        }
+        CoreDataHandler.updateSpotLight(attribute: "challenges", boolean: true)
+    }
+    
+    @objc func reloadCollectionView(notification: NSNotification){
         /// load data here
         fetchData()
         getStatistics()
@@ -78,6 +113,7 @@ class ChallengeViewController: UIViewController, UICollectionViewDelegate, UICol
         })
     }
     
+    // Calculate visied and unvisited frogs to show in statistics
     func getStatistics() {
         fetchData()
 
@@ -96,24 +132,7 @@ class ChallengeViewController: UIViewController, UICollectionViewDelegate, UICol
          unSightedLabel.text = String(unSightedCount)
         // MARK: -
         if unSightedCount == 0 {
-            let animationView = AnimationView(name: "award")
-            animationView.frame = CGRect(x: 0, y: 0, width: 250, height: 250)
-            animationView.center.x = self.view.center.x
-            animationView.contentMode = .scaleAspectFit
-            animationView.loopMode = .loop
-            animationView.play()
-            view.addSubview(animationView)
-            
-            _ = animationView.anchor(view.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, topConstant: 180, leftConstant: 20, bottomConstant: 0, rightConstant: 20, widthConstant: 250, heightConstant: 250)
-            
-            congratsLbl.isHidden = false
-            msgLbl.isHidden = false
-            congratsLbl.text = "Congratulations!!"
-            congratsLbl.font = UIFont.boldSystemFont(ofSize: 20)
-            msgLbl.text = "You have completed all the challenges"
-            lottieAnimation(AnimationName: "confetti1", top: 150, sides: 30, size: 800)
-            AudioServicesPlaySystemSound(1520)
-            play(sound: "confetti")
+            loadAnimationViewAndDisplayText()
         }
         numberOfFrogsLeftInChallenge = 0
         for ele in unSightedFrogsList {
@@ -132,6 +151,28 @@ class ChallengeViewController: UIViewController, UICollectionViewDelegate, UICol
         }
         fetchData()
         
+    }
+    
+    // If all the challenges are complete, it plays animation and text to congratulate and show status of the challenge
+    fileprivate func loadAnimationViewAndDisplayText() {
+        let animationView = AnimationView(name: "award")
+        animationView.frame = CGRect(x: 0, y: 0, width: 250, height: 250)
+        animationView.center.x = self.view.center.x
+        animationView.contentMode = .scaleAspectFit
+        animationView.loopMode = .loop
+        animationView.play()
+        view.addSubview(animationView)
+        
+        _ = animationView.anchor(view.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, topConstant: 180, leftConstant: 20, bottomConstant: 0, rightConstant: 20, widthConstant: 250, heightConstant: 250)
+        
+        congratsLbl.isHidden = false
+        msgLbl.isHidden = false
+        congratsLbl.text = "Congratulations!!"
+        congratsLbl.font = UIFont.boldSystemFont(ofSize: 20)
+        msgLbl.text = "You have completed all the challenges"
+        lottieAnimation(AnimationName: "confetti1", top: 150, sides: 30, size: 800)
+        AudioServicesPlaySystemSound(1520)
+        play(sound: "confetti")
     }
     
     func play(sound: String) {
@@ -184,8 +225,7 @@ class ChallengeViewController: UIViewController, UICollectionViewDelegate, UICol
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ChallengeCell
         
-        var color = UIColor.white
-        
+        let color = UIColor.white
         cell.frogImage.image = UIImage(named: unSightedFrogsList[indexPath.row].sname!)
         cell.cname.text = unSightedFrogsList[indexPath.row].cname
         cell.cname.textColor = color
@@ -194,7 +234,6 @@ class ChallengeViewController: UIViewController, UICollectionViewDelegate, UICol
         //get location and cacluate
         let frogLocation = CLLocation(latitude: unSightedFrogsList[indexPath.row].latitude, longitude: unSightedFrogsList[indexPath.row].longitude)
         
-      //  locationManager(locationManager, didUpdateLocations: [currentLocation])
         let distance: CLLocationDistance = currentLocation.distance(from: frogLocation)/1000
         cell.location.text = "\(String(ceil(distance))) Kms away from you"
         cell.location.textColor = color
@@ -218,8 +257,6 @@ class ChallengeViewController: UIViewController, UICollectionViewDelegate, UICol
         cell.layer.shadowOpacity = 1.0
         cell.layer.masksToBounds = false
         cell.layer.shadowPath = UIBezierPath(roundedRect: cell.bounds, cornerRadius:cell.contentView.layer.cornerRadius).cgPath
-        
-        
         return cell
     }
     
@@ -283,8 +320,7 @@ class ChallengeViewController: UIViewController, UICollectionViewDelegate, UICol
         showDetails(frogname: region.identifier)
     }
     
-    
-
+    // When the user enters to the frog location in the challenge, this method is automatically called to ask user whether he sighted the frog or not.
     func showDetails(frogname: String) {
         print(frogname, "SHOW DETAILS")
         let singleFrog = CoreDataHandler.fetchSpecificFrog(frogname: frogname)

@@ -40,6 +40,67 @@ class CoreDataHandler: NSObject {
         }
     }
     
+    //MARK:- Save SpotLight
+    class func saveSpotLight(entityName: String, home: Bool, frogList: Bool, frogdetails: Bool, identity: Bool, location: Bool, news: Bool, challenges: Bool) {
+        let context = getContect()
+        let entity = NSEntityDescription.entity(forEntityName: entityName, in: context)
+        let managedObject = NSManagedObject(entity: entity!, insertInto: context)
+        managedObject.setValue("single", forKey: "id")
+        managedObject.setValue(home, forKey: "home")
+        managedObject.setValue(frogList, forKey: "frogList")
+        managedObject.setValue(frogdetails, forKey: "frogdetails")
+        managedObject.setValue(identity, forKey: "identity")
+        managedObject.setValue(location, forKey: "location")
+        managedObject.setValue(news, forKey: "news")
+        managedObject.setValue(challenges, forKey: "challenges")
+        do {
+            try context.save()
+            print("Saved entry")
+        } catch {
+            print(error , "Error while adding data in CoreDataHandler")
+        }
+    }
+    
+    class func addSpotLight() {
+        CoreDataHandler.saveSpotLight(entityName: "SpotLightEntity", home: false, frogList: false, frogdetails: false, identity: false, location: false, news: false, challenges: false)
+    }
+    
+    class func fetchSpotLight() -> [SpotLightEntity] {
+        let context = getContect()
+        var spotLight: [SpotLightEntity] = []
+        
+        let request = NSFetchRequest<SpotLightEntity>(entityName: "SpotLightEntity")
+        do {
+            spotLight = try context.fetch(request)
+        } catch {
+            print(error, "Error while fetching data in CoreDataHandler")
+        }
+        return spotLight
+    }
+    
+    class func updateSpotLight(attribute: String, boolean: Bool) {
+        print("UPDATING MAIN")
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        
+        let context = appDelegate.persistentContainer.viewContext
+        let fetchReq: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest.init(entityName: "SpotLightEntity")
+        fetchReq.predicate = NSPredicate(format: "id == %@", "single")
+        do {
+            let test = try context.fetch(fetchReq)
+            
+            let objUpdate = test.first as! NSManagedObject
+            objUpdate.setValue(boolean, forKey: attribute)
+            do {
+                try context.save()
+                print("UPDATE MAIN SUCCESSFUL")
+            } catch {
+                print(error , "Error while updating data in CoreDataHandler")
+            }
+        } catch {
+            print(error, "Error while fetching data in CoreDataHandler")
+        }
+    }
+    
     //MARK:- Fetch all Frog Details
     class func fetchAllFrogs() -> [FrogEntity] {
         let context = getContect()
@@ -58,7 +119,6 @@ class CoreDataHandler: NSObject {
         let request = NSFetchRequest<UnSightedFrogEntity>(entityName: "UnSightedFrogEntity")
         let descriptors = [NSSortDescriptor(key: "isVisited", ascending: true)]
         request.sortDescriptors = descriptors
-            
         do {
             frogs = try context.fetch(request)
         } catch {

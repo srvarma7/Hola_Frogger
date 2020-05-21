@@ -12,6 +12,16 @@
         <attribute name="threatnedStatus" optional="YES" attributeType="String"/>
         <attribute name="uncertainty" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
     </entity>
+    <entity name="SpotLightEntity" representedClassName="SpotLightEntity" syncable="YES">
+        <attribute name="challenges" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="frogdetails" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="frogList" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="home" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="id" optional="YES" attributeType="String"/>
+        <attribute name="identity" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="location" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="news" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+    </entity>
     <entity name="UnSightedFrogEntity" representedClassName="UnSightedFrogEntity" syncable="YES">
         <attribute name="cname" optional="YES" attributeType="String"/>
         <attribute name="desc" optional="YES" attributeType="String"/>
@@ -27,5 +37,6 @@
     <elements>
         <element name="FrogEntity" positionX="-63" positionY="-18" width="128" height="193"/>
         <element name="UnSightedFrogEntity" positionX="-63" positionY="54" width="128" height="193"/>
+        <element name="SpotLightEntity" positionX="-63" positionY="90" width="128" height="163"/>
     </elements>
 </model>

@@ -20,7 +20,10 @@ class DetailsViewController: UIViewController, WKNavigationDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setUpActivityIndicator()
+    }
+    
+    fileprivate func setUpActivityIndicator() {
         // Setting the Activity Indicator
         activityIndicator.center = view.center
         // Setting the artile URL, to load in a Web view.

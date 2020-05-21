@@ -8,10 +8,10 @@
 
 import UIKit
 import iOSDropDown
-import RAMReel
 import Lottie
+import AwesomeSpotlightView
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, AwesomeSpotlightViewDelegate {
     
     var namesList: [String] = []
     var selectedFrog: String = ""
@@ -19,14 +19,42 @@ class HomeViewController: UIViewController {
     let animationView = AnimationView(name: "catchmeifyoucan")
     
     var isLoadingFirstTime: Bool = false
+    var spotlight: [SpotLightEntity] = []
 
     @IBOutlet weak var exploreBtn: UIButton!
     
     // set frame
     let  searchField = DropDown(frame: CGRect(x: 10, y: 0, width: 350, height: 50))
+    var spotlightView = AwesomeSpotlightView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        addFrogsToSearchBar()
+        lottieAnimation()
+        initializeSearch()
+        applyParallaxEffect()
+        checkForSpotLight()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        setUpSearchBarAndExploreButton()
+        searchBarAnimation()
+        animationView.play()
+    }
+    
+    // Check if the application is opening for the first time
+    func checkForSpotLight() {
+        if spotlight.isEmpty {
+            CoreDataHandler.addSpotLight()
+            spotlight = CoreDataHandler.fetchSpotLight()
+        }
+        if (spotlight.first!.home) {
+            startSpotLightTour()
+        }
+    }
+    
+    // Add the frogs names to the suggestings list
+    fileprivate func addFrogsToSearchBar() {
         var frogs: [FrogEntity] = []
         frogs = CoreDataHandler.fetchAllFrogs()
         // If the appliation is opened for the first time then the records are added to the database
@@ -34,17 +62,33 @@ class HomeViewController: UIViewController {
             CoreDataHandler.addAllRecords()
             frogs = CoreDataHandler.fetchAllFrogs()
         }
-        
         if namesList.count == 0 {
             for ele in frogs {
                 namesList.append(ele.cname!)
             }
         }
-        lottieAnimation()
-        initializeSearch()
-        applyParallaxEffect()
     }
     
+    // If the application is opened for the first time, provide tutorial to the user using spot light.
+    func startSpotLightTour() {
+        let spotlightMain = AwesomeSpotlight(withRect: CGRect(x: 12, y: 77, width: 220, height: 75), shape: .circle, text: "\n\n\n\n\n\n\n\n\n\nTap anywhere on the grey area to continue\nor\nTap on white area to skip the tutorial", isAllowPassTouchesThroughSpotlight: true)
+        let spotlight1 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 15, y: 335, width: 385, height: 60), shape: .roundRectangle, text: "You can search for a specifc frog here", isAllowPassTouchesThroughSpotlight: true)
+        // Spotlight for Frog's Common Name
+        let spotlight2 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 33, y: 560, width: 350, height: 200), shape: .roundRectangle, text: "\n\n\nYou can Explore all Frogs here", isAllowPassTouchesThroughSpotlight: true)
+        // Load spotlights
+        let spotlightView = AwesomeSpotlightView(frame: view.frame, spotlight: [spotlightMain, spotlight1, spotlight2])
+        spotlightView.cutoutRadius = 8
+        spotlightView.delegate = self
+        view.addSubview(spotlightView)
+        DispatchQueue.main.asyncAfter(deadline: .now()+1) {
+            spotlightView.spotlightMaskColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.7)
+            spotlightView.enableArrowDown = true
+            spotlightView.start()
+        }
+        CoreDataHandler.updateSpotLight(attribute: "home", boolean: true)
+    }
+    
+    // Setup lottie animation and add constraints
     func lottieAnimation() {
         animationView.frame = CGRect(x: 0, y: 0, width: 150, height: 150)
         animationView.center.x = self.view.center.x
@@ -54,6 +98,7 @@ class HomeViewController: UIViewController {
         _ = animationView.anchor(view.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, topConstant: 20, leftConstant: 20, bottomConstant: 0, rightConstant: 20, widthConstant: 150, heightConstant: 150)
     }
     
+    // Setup search bar and add constraints
     func initializeSearch() {
         searchField.backgroundColor = #colorLiteral(red: 0.7719962001, green: 0.1048256829, blue: 0.2892795205, alpha: 1)
         searchField.listHeight = 150
@@ -68,7 +113,7 @@ class HomeViewController: UIViewController {
         applyMotionEffect(toView: exploreBtn, magnitude: Float(-magnitude))
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    fileprivate func setUpSearchBarAndExploreButton() {
         searchField.optionArray = namesList
         searchField.rowBackgroundColor = #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)
         searchField.selectedRowColor = #colorLiteral(red: 0.7719962001, green: 0.1048256829, blue: 0.2892795205, alpha: 1)
@@ -81,8 +126,10 @@ class HomeViewController: UIViewController {
         exploreBtn.layer.shadowOffset = CGSize(width: 5.0, height: 2.0)
         exploreBtn.layer.shadowOpacity = 1.0
         searchField.clipsToBounds = true
-        
-        
+    }
+    
+    // Slides in top when application is loaded for the first time
+    fileprivate func searchBarAnimation() {
         if !isLoadingFirstTime {
             UIView.animate(withDuration: 1, animations: {
                 self.searchField.center = self.view.center
@@ -94,14 +141,12 @@ class HomeViewController: UIViewController {
             })
             isLoadingFirstTime = true
         }
-        // MARK:- Check here
-        
         UIView.animate(withDuration: 1, animations: {
             self.searchField.layer.cornerRadius = self.searchField.frame.size.width/20
         })
-        animationView.play()
     }
     
+    // Parallax effect for SearchBar
     func applyMotionEffect (toView view: DropDown, magnitude:Float) {
         let xMotion = UIInterpolatingMotionEffect(keyPath: "center.x", type: .tiltAlongHorizontalAxis)
         xMotion.minimumRelativeValue = -magnitude
@@ -116,6 +161,7 @@ class HomeViewController: UIViewController {
         view.addMotionEffect(group)
     }
     
+    // Parallax effect for Button
     func applyMotionEffect (toView view: UIButton, magnitude:Float) {
         let xMotion = UIInterpolatingMotionEffect(keyPath: "center.x", type: .tiltAlongHorizontalAxis)
         xMotion.minimumRelativeValue = -magnitude
@@ -130,6 +176,7 @@ class HomeViewController: UIViewController {
         view.addMotionEffect(group)
     }
     
+    // Parallax effect for Image
     func applyMotionEffect (toView view: UIImageView, magnitude:Float) {
         let xMotion = UIInterpolatingMotionEffect(keyPath: "center.x", type: .tiltAlongHorizontalAxis)
         xMotion.minimumRelativeValue = -magnitude
@@ -145,10 +192,12 @@ class HomeViewController: UIViewController {
         view.addMotionEffect(group)
     }
 
+    // Dismiss Keyboard when tapped on View
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
     
+    // When tapped on a perticular frog, go to details screen.
     func showDetails(frogname: String) {
         let singleFrog = CoreDataHandler.fetchSpecificFrog(frogname: frogname)
         print(singleFrog.sname!)
@@ -158,71 +207,3 @@ class HomeViewController: UIViewController {
         }
     }
 }
-
-
-////some methods for add layout constraint
-//extension UIView {
-//    
-//    func anchorToTop(top: NSLayoutYAxisAnchor? = nil, left: NSLayoutXAxisAnchor? = nil, bottom: NSLayoutYAxisAnchor? = nil, right: NSLayoutXAxisAnchor? = nil) {
-//        
-//        anchorWithConstantsToTop(top: top, left: left, bottom: bottom, right: right, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0)
-//    }
-//    
-//    func anchorWithConstantsToTop(top: NSLayoutYAxisAnchor? = nil, left: NSLayoutXAxisAnchor? = nil, bottom: NSLayoutYAxisAnchor? = nil, right: NSLayoutXAxisAnchor? = nil, topConstant: CGFloat = 0, leftConstant: CGFloat = 0, bottomConstant: CGFloat = 0, rightConstant: CGFloat = 0) {
-//        
-//        translatesAutoresizingMaskIntoConstraints = false
-//        
-//        if let top = top {
-//            topAnchor.constraint(equalTo: top, constant: topConstant).isActive = true
-//        }
-//        
-//        if let bottom = bottom {
-//            bottomAnchor.constraint(equalTo: bottom, constant: -bottomConstant).isActive = true
-//        }
-//        
-//        if let left = left {
-//            leftAnchor.constraint(equalTo: left, constant: leftConstant).isActive = true
-//        }
-//        
-//        if let right = right {
-//            rightAnchor.constraint(equalTo: right, constant: -rightConstant).isActive = true
-//        }
-//        
-//    }
-//    
-//    func anchor(_ top: NSLayoutYAxisAnchor? = nil, left: NSLayoutXAxisAnchor? = nil, bottom: NSLayoutYAxisAnchor? = nil, right: NSLayoutXAxisAnchor? = nil, topConstant: CGFloat = 0, leftConstant: CGFloat = 0, bottomConstant: CGFloat = 0, rightConstant: CGFloat = 0, widthConstant: CGFloat = 0, heightConstant: CGFloat = 0) -> [NSLayoutConstraint] {
-//        translatesAutoresizingMaskIntoConstraints = false
-//        
-//        var anchors = [NSLayoutConstraint]()
-//        
-//        if let top = top {
-//            anchors.append(topAnchor.constraint(equalTo: top, constant: topConstant))
-//        }
-//        
-//        if let left = left {
-//            anchors.append(leftAnchor.constraint(equalTo: left, constant: leftConstant))
-//        }
-//        
-//        if let bottom = bottom {
-//            anchors.append(bottomAnchor.constraint(equalTo: bottom, constant: -bottomConstant))
-//        }
-//        
-//        if let right = right {
-//            anchors.append(rightAnchor.constraint(equalTo: right, constant: -rightConstant))
-//        }
-//        
-//        if widthConstant > 0 {
-//            anchors.append(widthAnchor.constraint(equalToConstant: widthConstant))
-//        }
-//        
-//        if heightConstant > 0 {
-//            anchors.append(heightAnchor.constraint(equalToConstant: heightConstant))
-//        }
-//        
-//        anchors.forEach({$0.isActive = true})
-//        
-//        return anchors
-//    }
-//    
-//    
-//}

@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import AwesomeSpotlightView
 
 // Structure to hold API response
 struct WeatherJsonResponse: Codable {
@@ -28,7 +29,7 @@ struct TempPressure: Codable {
     let humidity: Int
 }
 
-class FrogDetailsViewController: UIViewController, MKMapViewDelegate {
+class FrogDetailsViewController: UIViewController, MKMapViewDelegate, AwesomeSpotlightViewDelegate {
 
     // UI outlets
     @IBOutlet weak var wLocName: UILabel!
@@ -48,6 +49,13 @@ class FrogDetailsViewController: UIViewController, MKMapViewDelegate {
     @IBOutlet weak var frogImage: UIImageView!
     
     @IBOutlet weak var isVisitedLbl: UILabel!
+    
+    var spotlight: [SpotLightEntity] = []
+    var spotlightView = AwesomeSpotlightView()
+    
+    var fromListScreen: Bool = false
+
+
     // Variable will hold the data that is sent by other controller.
     var receivedFrog: FrogEntity?
     
@@ -121,7 +129,45 @@ class FrogDetailsViewController: UIViewController, MKMapViewDelegate {
         self.view.addSubview(favButton)
         closeButton.addTarget(self, action: #selector(closeButtonAction), for: .touchUpInside)
         self.view.addSubview(closeButton)
+        checkForSpotLight()
+    }
         
+        
+        
+    func checkForSpotLight() {
+        
+        if spotlight.isEmpty {
+            CoreDataHandler.addSpotLight()
+            spotlight = CoreDataHandler.fetchSpotLight()
+        }
+        
+        if !(spotlight.first!.frogdetails) {
+            startSpotLightTour()
+        }
+    }
+    
+    func startSpotLightTour() {
+        
+        // Spotlight for Image
+        let spotlight1 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 162, y: 122, width: 90, height: 90), shape: .circle, text: "\n\nFrog's geographical location", isAllowPassTouchesThroughSpotlight: true)
+        
+        // Spotlight for Frog's Common Name
+        let spotlight2 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY+8, y: 5, width: 400, height: 85), shape: .roundRectangle, text: "Weather conditions at Frog's location", isAllowPassTouchesThroughSpotlight: true)
+        
+        // Spotlight for Filter by Favourite
+        let spotlight5 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 181, y: 632, width: 50, height: 50), shape: .circle, text: "Make Favourite or Unfavourite")
+        
+        
+        let spotlightView = AwesomeSpotlightView(frame: view.frame, spotlight: [spotlight1, spotlight2, spotlight5])
+        
+        spotlightView.cutoutRadius = 8
+        spotlightView.delegate = self
+        view.addSubview(spotlightView)
+        DispatchQueue.main.asyncAfter(deadline: .now()+1) {
+            spotlightView.spotlightMaskColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.7)
+            spotlightView.enableArrowDown = true
+            spotlightView.start()        }
+        CoreDataHandler.updateSpotLight(attribute: "frogdetails", boolean: true)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -137,12 +183,16 @@ class FrogDetailsViewController: UIViewController, MKMapViewDelegate {
     
     override func viewWillDisappear(_ animated: Bool) {
         // Sends a notification to the Frog list controller to reload the tableview controller.
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "load"), object: nil)
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "loadTableView"), object: nil)
     }
     
     @objc func closeButtonAction(sender: UIButton!) {
         // Sends a notification to the Frog list controller to reload the tableview controller.
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "load"), object: nil)
+        if fromListScreen {
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "loadTableView"), object: nil)
+        } else {
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "loadColllectionView"), object: nil)
+        }
         // Dismisses the current controller.
         dismiss(animated: true)
     }
@@ -185,7 +235,6 @@ class FrogDetailsViewController: UIViewController, MKMapViewDelegate {
         }.resume()
     }
     
-    //From Apple docs
     //Gets image data from the API and sets the icon into image view for location's weather
     func makeGetRequestImage(icon: String){
         let url : String = "https://openweathermap.org/img/wn/" + icon + "@2x.png"

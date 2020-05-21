@@ -8,8 +8,9 @@
 
 import UIKit
 import CoreData
+import AwesomeSpotlightView
 
-class FrogListController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class FrogListController: UIViewController, UITableViewDataSource, UITableViewDelegate, AwesomeSpotlightViewDelegate {
     
     // UI outlets
     @IBOutlet weak var showFavButton: UIBarButtonItem!
@@ -20,14 +21,77 @@ class FrogListController: UIViewController, UITableViewDataSource, UITableViewDe
     var favFrogs: [FrogEntity] = []
     let menuBtn = UIButton(type: .custom)
     
+    var spotlightView = AwesomeSpotlightView()
+    var spotlight: [SpotLightEntity] = []
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Setting deligates for TabelView
+        showFavButton.title = ".."
+        fetchData()
+        /// Reference from Stackoverflow, Author Sebastian
+        /// https://stackoverflow.com/questions/25921623/how-to-reload-tableview-from-another-view-controller-in-swift
+        NotificationCenter.default.addObserver(self, selector: #selector(loadList), name: NSNotification.Name(rawValue: "loadTableView"), object: nil)
+        showFavButton.setBackgroundImage(UIImage(systemName: "suit.heart"), for: UIControl.State.normal, barMetrics: .default)
+        setUpTableView()
+        checkForSpotLight()
+    }
+    
+    
+    
+    func checkForSpotLight() {
+        if spotlight.isEmpty {
+            CoreDataHandler.addSpotLight()
+            spotlight = CoreDataHandler.fetchSpotLight()
+        }
+        
+        if !(spotlight.first!.frogList) {
+            startSpotLightTour()
+        }
+    }
+    
+    func startSpotLightTour() {
+        
+        // Spotlight for Image
+        let spotlight1 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 13, y: 160, width: 60, height: 60), shape: .circle, text: "\nFrog Image", isAllowPassTouchesThroughSpotlight: true)
+        // Spotlight for Frog's Common Name
+        let spotlight2 = AwesomeSpotlight(withRect: CGRect(x: 80, y: 163, width: 130, height: 25), shape: .roundRectangle, text: "Frog's Common Name", isAllowPassTouchesThroughSpotlight: true)
+        // Spotlight for Frog's Scentific Name
+        let spotlight3 = AwesomeSpotlight(withRect: CGRect(x: 80, y: 196, width: 175, height: 25), shape: .roundRectangle, text: "Frog's Scentific Name")
+        // Spotlight for Filter by Favourite
+        let spotlight4 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 363, y: 170, width: 40, height: 40), shape: .circle, text: "Frog's Threatened status\n\nE - Endangered\nV - Vulnerable\nN - Not Endangered")
+        // Spotlight for Filter by Favourite
+        let spotlight5 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 360, y: 40, width: 50, height: 50), shape: .circle, text: "Filter by Favourite")
+        
+        
+        let spotlightView = AwesomeSpotlightView(frame: view.frame, spotlight: [spotlight1, spotlight2, spotlight3, spotlight4, spotlight5])
+        spotlightView.cutoutRadius = 8
+        spotlightView.delegate = self
+        view.addSubview(spotlightView)
+        DispatchQueue.main.asyncAfter(deadline: .now()+1) {
+            spotlightView.spotlightMaskColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.7)
+            spotlightView.enableArrowDown = true
+            spotlightView.start()
+        }
+        CoreDataHandler.updateSpotLight(attribute: "frogList", boolean: true)
+    }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        reloadTable()
+    }
+    
+    fileprivate func setUpTableView() {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = 100
-        showFavButton.title = ".."
-        
+        reloadTable()
+    }
+    
+    // Gets Frogs list from CoreData
+    fileprivate func fetchData() {
         //MARK: -  coreData fetch
         frogs = CoreDataHandler.fetchAllFrogs()
         favFrogs = CoreDataHandler.fetchOnlyFav()
@@ -37,16 +101,6 @@ class FrogListController: UIViewController, UITableViewDataSource, UITableViewDe
             frogs = CoreDataHandler.fetchAllFrogs()
             favFrogs = CoreDataHandler.fetchOnlyFav()
         }
-        reloadTable()
-        /// Reference from Stackoverflow, Author Sebastian
-        /// https://stackoverflow.com/questions/25921623/how-to-reload-tableview-from-another-view-controller-in-swift
-        NotificationCenter.default.addObserver(self, selector: #selector(loadList), name: NSNotification.Name(rawValue: "load"), object: nil)
-        showFavButton.setBackgroundImage(UIImage(systemName: "suit.heart"), for: UIControl.State.normal, barMetrics: .default)
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        reloadTable()
     }
     
     // Whenever this controller recieves notification, table view is refreshed.
@@ -86,14 +140,12 @@ class FrogListController: UIViewController, UITableViewDataSource, UITableViewDe
     // Setting the values to the cell in the TableView
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "frogCell", for: indexPath) as! FrogCell
-    
         var newFrog: FrogEntity
         if showFavouriteFrogs {
             newFrog = favFrogs[indexPath.row]
         } else {
             newFrog = frogs[indexPath.row]
         }
-        
         cell.cName.text = newFrog.cname
         cell.sName.text = newFrog.sname
         if newFrog.sname == "Litoria paraewingi" {
@@ -126,11 +178,12 @@ class FrogListController: UIViewController, UITableViewDataSource, UITableViewDe
             }
             let frog = newFrog
             viewController.receivedFrog = frog
+            viewController.fromListScreen = true
             navigationController?.present(viewController, animated: true)
         }
     }
     
-    //MARK: - Changes the Favourite button logo up on tap
+    // Changes the Favourite button logo up on tap
     @IBAction func favButton(_ sender: Any) {
         if showFavouriteFrogs {
             showFavButton.setBackgroundImage(UIImage(systemName: "suit.heart"), for: UIControl.State.normal, barMetrics: .default)

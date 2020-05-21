@@ -18,6 +18,8 @@
 		570D1C232470EA0C00B9FB22 /* frog.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 570D1C222470EA0C00B9FB22 /* frog.mp3 */; };
 		570D1C252470EBA700B9FB22 /* sad.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 570D1C242470EBA700B9FB22 /* sad.mp3 */; };
 		570D1C272470EBE100B9FB22 /* confetti.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 570D1C262470EBE000B9FB22 /* confetti.mp3 */; };
+		571996DD2473917700EEF512 /* SpotLightEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571996DB2473917700EEF512 /* SpotLightEntity+CoreDataClass.swift */; };
+		571996DE2473917700EEF512 /* SpotLightEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571996DC2473917700EEF512 /* SpotLightEntity+CoreDataProperties.swift */; };
 		57320A7C245344BC00ADE06C /* FrogImageClassification 3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 57320A7B245344BC00ADE06C /* FrogImageClassification 3.mlmodel */; };
 		57320A7F2453477900ADE06C /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57320A7E2453477900ADE06C /* WebKit.framework */; };
 		57320A8124535A4300ADE06C /* FrogImageClassification Refined.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 57320A8024535A4300ADE06C /* FrogImageClassification Refined.mlmodel */; };
@@ -44,6 +46,11 @@
 		57C098BE246A49BD0041C235 /* ChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C098BD246A49BD0041C235 /* ChallengeViewController.swift */; };
 		57C098C9246A8E570041C235 /* UnSightedFrogEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C098C7246A8E570041C235 /* UnSightedFrogEntity+CoreDataClass.swift */; };
 		57C098CA246A8E570041C235 /* UnSightedFrogEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C098C8246A8E570041C235 /* UnSightedFrogEntity+CoreDataProperties.swift */; };
+		57F877E424741A9800D5501F /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F877E324741A9800D5501F /* ARViewController.swift */; };
+		57F877E624741B0100D5501F /* toy_biplane.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 57F877E524741B0100D5501F /* toy_biplane.usdz */; };
+		57F877E924763B5700D5501F /* FROG.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 57F877E824763B5700D5501F /* FROG.usdz */; };
+		57F877EB24763E9300D5501F /* DartFrog.obj in Resources */ = {isa = PBXBuildFile; fileRef = 57F877EA24763E9300D5501F /* DartFrog.obj */; };
+		57F877F1247641F900D5501F /* Frog_Hopping.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 57F877F0247641F900D5501F /* Frog_Hopping.usdz */; };
 		B960A57A246C3BA9003CFDE3 /* CardLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B960A579246C3BA9003CFDE3 /* CardLayout.swift */; };
 		B98A407D24725008006C2F2A /* award.json in Resources */ = {isa = PBXBuildFile; fileRef = B98A407C24725007006C2F2A /* award.json */; };
 		B98A407F24725DE6006C2F2A /* FrogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98A407E24725DE6006C2F2A /* FrogCell.swift */; };
@@ -74,6 +81,8 @@
 		570D1C222470EA0C00B9FB22 /* frog.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = frog.mp3; sourceTree = "<group>"; };
 		570D1C242470EBA700B9FB22 /* sad.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sad.mp3; sourceTree = "<group>"; };
 		570D1C262470EBE000B9FB22 /* confetti.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = confetti.mp3; sourceTree = "<group>"; };
+		571996DB2473917700EEF512 /* SpotLightEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SpotLightEntity+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		571996DC2473917700EEF512 /* SpotLightEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SpotLightEntity+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		57320A7B245344BC00ADE06C /* FrogImageClassification 3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = "FrogImageClassification 3.mlmodel"; sourceTree = "<group>"; };
 		57320A7E2453477900ADE06C /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		57320A8024535A4300ADE06C /* FrogImageClassification Refined.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = "FrogImageClassification Refined.mlmodel"; sourceTree = "<group>"; };
@@ -102,6 +111,11 @@
 		57C098BD246A49BD0041C235 /* ChallengeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeViewController.swift; sourceTree = "<group>"; };
 		57C098C7246A8E570041C235 /* UnSightedFrogEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UnSightedFrogEntity+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		57C098C8246A8E570041C235 /* UnSightedFrogEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UnSightedFrogEntity+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		57F877E324741A9800D5501F /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
+		57F877E524741B0100D5501F /* toy_biplane.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = toy_biplane.usdz; sourceTree = "<group>"; };
+		57F877E824763B5700D5501F /* FROG.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = FROG.usdz; sourceTree = "<group>"; };
+		57F877EA24763E9300D5501F /* DartFrog.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DartFrog.obj; sourceTree = "<group>"; };
+		57F877F0247641F900D5501F /* Frog_Hopping.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Frog_Hopping.usdz; sourceTree = "<group>"; };
 		ACBCC81B8DB64478F334A8A5 /* Pods-TabView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TabView.debug.xcconfig"; path = "Target Support Files/Pods-TabView/Pods-TabView.debug.xcconfig"; sourceTree = "<group>"; };
 		B960A579246C3BA9003CFDE3 /* CardLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardLayout.swift; sourceTree = "<group>"; };
 		B98A407C24725007006C2F2A /* award.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = award.json; sourceTree = "<group>"; };
@@ -179,6 +193,8 @@
 		579B4548244743E100EACA4B /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				571996DB2473917700EEF512 /* SpotLightEntity+CoreDataClass.swift */,
+				571996DC2473917700EEF512 /* SpotLightEntity+CoreDataProperties.swift */,
 				57C098C7246A8E570041C235 /* UnSightedFrogEntity+CoreDataClass.swift */,
 				57C098C8246A8E570041C235 /* UnSightedFrogEntity+CoreDataProperties.swift */,
 				579B454F2447460900EACA4B /* FrogEntity+CoreDataClass.swift */,
@@ -210,6 +226,7 @@
 				B9FD7A49246C1D210058B4B3 /* OnboardingDoneCell.swift */,
 				B960A579246C3BA9003CFDE3 /* CardLayout.swift */,
 				B98A407E24725DE6006C2F2A /* FrogCell.swift */,
+				57F877E324741A9800D5501F /* ARViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -259,6 +276,7 @@
 				570D1C212470E9FE00B9FB22 /* Audio */,
 				579B455324477DF300EACA4B /* Inferface */,
 				579B45492447441200EACA4B /* ViewControllers */,
+				57F877E724741BD300D5501F /* AR files */,
 				579B4548244743E100EACA4B /* CoreData */,
 				579B454A2447442600EACA4B /* Core ML */,
 				577AA1A2247159E100B85AF6 /* GPX files (To simulate Locations) */,
@@ -267,6 +285,17 @@
 				57A3B8AF244315270011F674 /* Info.plist */,
 			);
 			path = TabView;
+			sourceTree = "<group>";
+		};
+		57F877E724741BD300D5501F /* AR files */ = {
+			isa = PBXGroup;
+			children = (
+				57F877F0247641F900D5501F /* Frog_Hopping.usdz */,
+				57F877E824763B5700D5501F /* FROG.usdz */,
+				57F877E524741B0100D5501F /* toy_biplane.usdz */,
+				57F877EA24763E9300D5501F /* DartFrog.obj */,
+			);
+			path = "AR files";
 			sourceTree = "<group>";
 		};
 		E71D97BDF56D4843DF18292D /* Pods */ = {
@@ -343,12 +372,16 @@
 				570D1C1E24705E5200B9FB22 /* confetti2.json in Resources */,
 				B98A407D24725008006C2F2A /* award.json in Resources */,
 				570D1C1F24705E5200B9FB22 /* sad1.json in Resources */,
+				57F877F1247641F900D5501F /* Frog_Hopping.usdz in Resources */,
+				57F877EB24763E9300D5501F /* DartFrog.obj in Resources */,
 				B9FD7A58246C1F2D0058B4B3 /* 13005-refresh.json in Resources */,
 				B9FD7A56246C1F2D0058B4B3 /* 8878-done.json in Resources */,
 				B9FD7A53246C1F2D0058B4B3 /* 13357-route-finder.json in Resources */,
 				570D1C252470EBA700B9FB22 /* sad.mp3 in Resources */,
 				570D1C1D24705E5200B9FB22 /* nonetwork.json in Resources */,
 				B9FD7A54246C1F2D0058B4B3 /* 291-searchask-loop.json in Resources */,
+				57F877E924763B5700D5501F /* FROG.usdz in Resources */,
+				57F877E624741B0100D5501F /* toy_biplane.usdz in Resources */,
 				B9FD7A55246C1F2D0058B4B3 /* 10548-forest.json in Resources */,
 				B9FD7A52246C1F2D0058B4B3 /* 20301-newspaper-open.json in Resources */,
 				57A3B8AB244315270011F674 /* Assets.xcassets in Resources */,
@@ -415,6 +448,7 @@
 				57A3B8A3244315230011F674 /* IdentifyViewController.swift in Sources */,
 				579B45472447084200EACA4B /* CoreDataHandler.swift in Sources */,
 				579EE7A724433BCC00321C7E /* BearBottle.mlmodel in Sources */,
+				57F877E424741A9800D5501F /* ARViewController.swift in Sources */,
 				5757F98A24639E3600F8D75C /* HomeViewController.swift in Sources */,
 				B98A407F24725DE6006C2F2A /* FrogCell.swift in Sources */,
 				57A3B8A1244315230011F674 /* FrogListController.swift in Sources */,
@@ -426,7 +460,9 @@
 				574A3C2A24505E850022CCB3 /* MapViewController.swift in Sources */,
 				57A3B89D244315230011F674 /* AppDelegate.swift in Sources */,
 				B9FD7A48246C1CB00058B4B3 /* OnboardingPageCell.swift in Sources */,
+				571996DE2473917700EEF512 /* SpotLightEntity+CoreDataProperties.swift in Sources */,
 				B9BC1B332471912900C15461 /* WelcomeViewController.swift in Sources */,
+				571996DD2473917700EEF512 /* SpotLightEntity+CoreDataClass.swift in Sources */,
 				57C098CA246A8E570041C235 /* UnSightedFrogEntity+CoreDataProperties.swift in Sources */,
 				57C098BE246A49BD0041C235 /* ChallengeViewController.swift in Sources */,
 				570D1C14247015E500B9FB22 /* VisitedViewController.swift in Sources */,
