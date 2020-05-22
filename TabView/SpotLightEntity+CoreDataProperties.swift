@@ -25,5 +25,6 @@ extension SpotLightEntity {
     @NSManaged public var location: Bool
     @NSManaged public var news: Bool
     @NSManaged public var challenges: Bool
+    @NSManaged public var visited: Bool
 
 }

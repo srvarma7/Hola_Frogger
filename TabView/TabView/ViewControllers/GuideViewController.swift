@@ -32,11 +32,11 @@ class GuideViewController: UIViewController, UICollectionViewDataSource, UIColle
     let fileId = "fileId"
     
     let pages: [Page] = {
-        let firstPage = Page(title: "Search", message: "Search for your favourite frogs using both scientific or common names!! Get live suggestion based on your text.", animationName: "336-search")
-        let secondPage = Page(title: "Frog Names", message: "Our application provides both scientifc as well as common names for you to recognize your favourite frog. We have carfully laid out color-coded icons（V-Vulnerable，E-Endangered，N-Not Vulnerable） to highlight the species based on their population", animationName: "10548-forest")
-        let thirdPage = Page(title: "Identify", message: "Hola Frogger is equipped with lens feature to identify a frog species and provide the accurate name for frog through our self machine-learned data. Just point to the Frog and Magic!", animationName: "291-searchask-loop")
-        let fourthPage = Page(title: "Locate Frog on Maps", message: "Our government backed data provides hotspot across Victoria to sight particular frog species. Just find the annotation on the map and you are good to go. Plus our accurate weather and humidity conditions of the location will give you higher chances to sight them in wild.", animationName: "13357-route-finder")
-        let fifthPage = Page(title: "News", message: "Stay up-to date with latest news on frogs from multiple trusted sources across the web. Just curated for your need.", animationName: "20301-newspaper-open")
+        let firstPage = Page(title: "Search", message: "Search for your favourite frogs using their names!! Get real-time suggestion based on what you type.", animationName: "336-search")
+        let secondPage = Page(title: "Frog Names", message: "Our application provides both scientifc as well as common names for you to recognize your favourite frog. We have carfully laid out color-coded icons（V-Vulnerable，E-Endangered，N-Not Vulnerable）to highlight the species based on their threatened status", animationName: "10548-forest")
+        let thirdPage = Page(title: "Identify", message: "Hola Frogger is equipped with lens feature to identify a frog species and provide the accurate name of frog through our machine-learned model of 18 frogs from Victoria. Just point the camera at the Frog and watch the magic!", animationName: "291-searchask-loop")
+        let fourthPage = Page(title: "Locate Frog on Maps", message: "Government backed data provides hotspot across Victoria to sight particular frog species. Just find the annotation on the map and you are good to go. Plus our accurate weather and humidity conditions of the location will give you higher chances to sight them in wild.", animationName: "13357-route-finder")
+        let fifthPage = Page(title: "News", message: "Stay up-to date with latest news on frogs from multiple trusted sources across the web.\nJust curated for your need.", animationName: "20301-newspaper-open")
         return [firstPage, secondPage, thirdPage,fourthPage,fifthPage]
         
     }()
@@ -56,7 +56,7 @@ class GuideViewController: UIViewController, UICollectionViewDataSource, UIColle
         let button = UIButton(type: .system)
         button.setTitle("Skip", for: .normal)
         button.tintColor = #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 20)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 15)
         button.addTarget(self, action: #selector(skip), for: .touchDown)
         return button
     }()

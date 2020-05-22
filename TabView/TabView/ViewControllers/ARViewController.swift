@@ -17,7 +17,7 @@ class ARViewController: UIViewController, QLPreviewControllerDataSource {
         previewController.dataSource = self
         present(previewController, animated: true, completion: nil)
     }
-
+    
     func numberOfPreviewItems(in controller: QLPreviewController) -> Int { return 1 }
 
     func previewController(_ controller: QLPreviewController, previewItemAt index: Int) -> QLPreviewItem {

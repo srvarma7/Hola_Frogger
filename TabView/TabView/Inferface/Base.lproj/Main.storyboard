@@ -474,10 +474,10 @@
                     </tabBar>
                     <connections>
                         <segue destination="Dvz-t9-wt0" kind="relationship" relationship="viewControllers" id="d7p-cO-gHY"/>
+                        <segue destination="dAg-oL-NEN" kind="relationship" relationship="viewControllers" id="IJ0-ox-swS"/>
                         <segue destination="ks0-eK-vvc" kind="relationship" relationship="viewControllers" id="RgL-9h-92q"/>
                         <segue destination="jey-aW-ZC9" kind="relationship" relationship="viewControllers" id="73C-5r-HwL"/>
                         <segue destination="XYl-GJ-vC3" kind="relationship" relationship="viewControllers" id="vio-8E-Xlk"/>
-                        <segue destination="dAg-oL-NEN" kind="relationship" relationship="viewControllers" id="IJ0-ox-swS"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>

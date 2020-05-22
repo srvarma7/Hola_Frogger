@@ -108,7 +108,8 @@ class FrogDetailsViewController: UIViewController, MKMapViewDelegate, AwesomeSpo
         }
         
         // This button is be used to Favourite or Unfavourite a Frog.
-        favButton.frame = CGRect(x: self.view.center.x-15, y: isVisitedLbl.frame.maxY + 10, width: 30, height: 30)
+        favButton.frame = CGRect(x: self.view.center.x-20, y: isVisitedLbl.frame.maxY + 10, width: 50, height: 50)
+        favButton.center.x = view.center.x
        // favButton.center.x = view.center.x
         // To dismiss the current view controller
         closeButton.frame = CGRect(x: view.center.x, y: view.frame.maxY + 30, width: 50, height: 50)
@@ -149,13 +150,13 @@ class FrogDetailsViewController: UIViewController, MKMapViewDelegate, AwesomeSpo
     func startSpotLightTour() {
         
         // Spotlight for Image
-        let spotlight1 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 162, y: 122, width: 90, height: 90), shape: .circle, text: "\n\nFrog's geographical location", isAllowPassTouchesThroughSpotlight: true)
+        let spotlight1 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 162, y: 122, width: 90, height: 90), shape: .circle, text: "\n\nFrog's geographical location", isAllowPassTouchesThroughSpotlight: false)
         
         // Spotlight for Frog's Common Name
-        let spotlight2 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY+8, y: 5, width: 400, height: 85), shape: .roundRectangle, text: "Weather conditions at Frog's location", isAllowPassTouchesThroughSpotlight: true)
+        let spotlight2 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY+8, y: 5, width: 400, height: 85), shape: .roundRectangle, text: "Weather conditions at frog's location", isAllowPassTouchesThroughSpotlight: false)
         
         // Spotlight for Filter by Favourite
-        let spotlight5 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 181, y: 632, width: 50, height: 50), shape: .circle, text: "Make Favourite or Unfavourite")
+        let spotlight5 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 181, y: 636, width: 50, height: 50), shape: .circle, text: "Make favourite or unfavourite", isAllowPassTouchesThroughSpotlight: false)
         
         
         let spotlightView = AwesomeSpotlightView(frame: view.frame, spotlight: [spotlight1, spotlight2, spotlight5])

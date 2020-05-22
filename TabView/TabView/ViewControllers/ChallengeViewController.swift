@@ -74,13 +74,15 @@ class ChallengeViewController: UIViewController, UICollectionViewDelegate, UICol
     }
     
     func startSpotLightTour() {
-        // Spotlight for Image
-        let spotlight1 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 10, y: 150, width: 395, height: 400), shape: .roundRectangle, text: "\nCurrent Challenges are shown here", isAllowPassTouchesThroughSpotlight: true)
+        let spotlightMain = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 200, y: 77, width: 0, height: 0), shape: .circle, text: "\n\n\n\n\n\n\n\n\nWelcome to the challenges", isAllowPassTouchesThroughSpotlight: false)
+        let spotlightMain2 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 200, y: 77, width: 0, height: 0), shape: .circle, text: "\n\n\n\n\n\n\n\n\n\n\nTo complete the challenges, visit the frog's location in the challenges and sight the frogs in the location", isAllowPassTouchesThroughSpotlight: false)
+        let spotlight1 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 10, y: 150, width: 395, height: 400), shape: .roundRectangle, text: "\nCurrent challenges are shown here", isAllowPassTouchesThroughSpotlight: false)
+        let spotlightMain3 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 200, y: 77, width: 0, height: 0), shape: .circle, text: "\n\n\n\n\n\n\n\n\n\n\nOnce you sight all the frogs in the challenge, new challenges will be added", isAllowPassTouchesThroughSpotlight: false)
+        let spotlightMain4 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 200, y: 77, width: 0, height: 0), shape: .circle, text: "\n\n\n\n\n\n\n\n\n\n\nRed card represents the unsighted frog\n(Yet to complete the challenge)", isAllowPassTouchesThroughSpotlight: false)
+        let spotlightMain5 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 200, y: 77, width: 0, height: 0), shape: .circle, text: "\n\n\n\n\n\n\n\n\n\n\nGreen card represents the sighted frog\n(Completed the challenge)", isAllowPassTouchesThroughSpotlight: false)
+        let spotlight2 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 16, y: 610, width: 380, height: 150), shape: .roundRectangle, text: "\n\n\nYour current progress", isAllowPassTouchesThroughSpotlight: false)
         
-        // Spotlight for Frog's Common Name
-        let spotlight2 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 16, y: 620, width: 380, height: 150), shape: .roundRectangle, text: "\n\n\nYour overall Statistics ", isAllowPassTouchesThroughSpotlight: true)
-        
-        let spotlightView = AwesomeSpotlightView(frame: view.frame, spotlight: [spotlight1, spotlight2])
+        let spotlightView = AwesomeSpotlightView(frame: view.frame, spotlight: [spotlightMain, spotlightMain2, spotlight1, spotlightMain3, spotlightMain4, spotlightMain5, spotlight2])
         
         spotlightView.cutoutRadius = 8
         spotlightView.delegate = self

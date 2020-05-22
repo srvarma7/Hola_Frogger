@@ -54,15 +54,15 @@ class FrogListController: UIViewController, UITableViewDataSource, UITableViewDe
     func startSpotLightTour() {
         
         // Spotlight for Image
-        let spotlight1 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 13, y: 160, width: 60, height: 60), shape: .circle, text: "\nFrog Image", isAllowPassTouchesThroughSpotlight: true)
+        let spotlight1 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 13, y: 160, width: 60, height: 60), shape: .circle, text: "\nFrog's image", isAllowPassTouchesThroughSpotlight: false)
         // Spotlight for Frog's Common Name
-        let spotlight2 = AwesomeSpotlight(withRect: CGRect(x: 80, y: 163, width: 130, height: 25), shape: .roundRectangle, text: "Frog's Common Name", isAllowPassTouchesThroughSpotlight: true)
+        let spotlight2 = AwesomeSpotlight(withRect: CGRect(x: 80, y: 163, width: 130, height: 25), shape: .roundRectangle, text: "Frog's common name", isAllowPassTouchesThroughSpotlight: false)
         // Spotlight for Frog's Scentific Name
-        let spotlight3 = AwesomeSpotlight(withRect: CGRect(x: 80, y: 196, width: 175, height: 25), shape: .roundRectangle, text: "Frog's Scentific Name")
+        let spotlight3 = AwesomeSpotlight(withRect: CGRect(x: 80, y: 196, width: 175, height: 25), shape: .roundRectangle, text: "Frog's scentific name", isAllowPassTouchesThroughSpotlight: false)
         // Spotlight for Filter by Favourite
-        let spotlight4 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 363, y: 170, width: 40, height: 40), shape: .circle, text: "Frog's Threatened status\n\nE - Endangered\nV - Vulnerable\nN - Not Endangered")
+        let spotlight4 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 363, y: 170, width: 40, height: 40), shape: .circle, text: "Frog's threatened status\n\nE-Endangered\nV-Vulnerable\nN-Not Endangered", isAllowPassTouchesThroughSpotlight: false)
         // Spotlight for Filter by Favourite
-        let spotlight5 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 360, y: 40, width: 50, height: 50), shape: .circle, text: "Filter by Favourite")
+        let spotlight5 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 360, y: 40, width: 50, height: 50), shape: .circle, text: "Filter by favourite", isAllowPassTouchesThroughSpotlight: false)
         
         
         let spotlightView = AwesomeSpotlightView(frame: view.frame, spotlight: [spotlight1, spotlight2, spotlight3, spotlight4, spotlight5])

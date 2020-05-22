@@ -21,6 +21,7 @@
         <attribute name="identity" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="location" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="news" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="visited" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
     </entity>
     <entity name="UnSightedFrogEntity" representedClassName="UnSightedFrogEntity" syncable="YES">
         <attribute name="cname" optional="YES" attributeType="String"/>
@@ -36,7 +37,7 @@
     </entity>
     <elements>
         <element name="FrogEntity" positionX="-63" positionY="-18" width="128" height="193"/>
+        <element name="SpotLightEntity" positionX="-63" positionY="90" width="128" height="178"/>
         <element name="UnSightedFrogEntity" positionX="-63" positionY="54" width="128" height="193"/>
-        <element name="SpotLightEntity" positionX="-63" positionY="90" width="128" height="163"/>
     </elements>
 </model>

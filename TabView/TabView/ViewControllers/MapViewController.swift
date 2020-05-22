@@ -9,8 +9,9 @@
 import UIKit
 import MapKit
 import CoreLocation
+import AwesomeSpotlightView
 
-class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
+class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, AwesomeSpotlightViewDelegate {
 
     // UI outlet
     @IBOutlet weak var mapView: MKMapView!
@@ -24,6 +25,10 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     var location = CLLocation()
     let regionRadius: Double = 1000
     var geoLocation = CLCircularRegion()
+
+
+    var spotlight: [SpotLightEntity] = []
+    var spotlightView = AwesomeSpotlightView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,6 +54,8 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         SetupLocationAndNotification()
         // Starts monitoring to see if the user enter a Frog Habitat.
         startFencing()
+        
+        checkForSpotLight()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -66,6 +73,39 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     override func viewDidDisappear(_ animated: Bool) {
         locationMgr.stopUpdatingLocation()
         stopFencing()
+    }
+    
+    
+
+    // Check if the application is opening for the first time
+    func checkForSpotLight() {
+        if spotlight.isEmpty {
+            CoreDataHandler.addSpotLight()
+            spotlight = CoreDataHandler.fetchSpotLight()
+        }
+        if !(spotlight.first!.location) {
+            startSpotLightTour()
+        }
+    }
+    
+    
+    // If the application is opened for the first time, provide tutorial to the user using spot light.
+    func startSpotLightTour() {
+        let spotlightMain = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 200, y: 77, width: 0, height: 0), shape: .circle, text: "\n\n\n\n\n\n\n\n\n\n\n\n\n\nAll the frogs locations in Victoria are show here", isAllowPassTouchesThroughSpotlight: false)
+        let spotlight1 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 95, y: 380, width: 100, height: 100), shape: .circle, text: "To get more details of the frog, tap on the annotation", isAllowPassTouchesThroughSpotlight: false)
+        // Spotlight for Frog's Common Name
+        let spotlight2 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 343, y: 735, width: 50, height: 50), shape: .circle, text: "Tap on this button to zoom into your location", isAllowPassTouchesThroughSpotlight: false)
+        // Load spotlights
+        let spotlightView = AwesomeSpotlightView(frame: view.frame, spotlight: [spotlightMain, spotlight1, spotlight2])
+        spotlightView.cutoutRadius = 8
+        spotlightView.delegate = self
+        view.addSubview(spotlightView)
+        DispatchQueue.main.asyncAfter(deadline: .now()+1) {
+            spotlightView.spotlightMaskColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.7)
+            spotlightView.enableArrowDown = true
+            spotlightView.start()
+        }
+        //CoreDataHandler.updateSpotLight(attribute: "location", boolean: true)
     }
     
     fileprivate func SetupLocationAndNotification() {
@@ -132,13 +172,6 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
         print(region.identifier)
         displayMessage(title: "Alert", message: "You are near a Frog's habitat, please take precautions while entering. \n\n\nNote: Sanitize yourself to keep the frogs safe!!!")
-        //Stackoverflow - https://stackoverflow.com/questions/41912386/using-unusernotificationcenter-for-ios-10
-        let notification = UNMutableNotificationContent()
-        notification.title = "Alert"
-        notification.body = "You are near a Frog's habitat, please take precautions while entering. \n\n\nNote: Sanitize yourself to keep the frogs safe!!!"
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
-        let req = UNNotificationRequest(identifier: "Request", content: notification, trigger: trigger)
-        UNUserNotificationCenter.current().add(req, withCompletionHandler: nil)
     }
     
     //To display messages to the user as an alert

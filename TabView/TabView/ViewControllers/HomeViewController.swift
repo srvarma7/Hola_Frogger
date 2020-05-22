@@ -10,6 +10,7 @@ import UIKit
 import iOSDropDown
 import Lottie
 import AwesomeSpotlightView
+import AudioToolbox
 
 class HomeViewController: UIViewController, AwesomeSpotlightViewDelegate {
     
@@ -32,8 +33,9 @@ class HomeViewController: UIViewController, AwesomeSpotlightViewDelegate {
         addFrogsToSearchBar()
         lottieAnimation()
         initializeSearch()
-        applyParallaxEffect()
         checkForSpotLight()
+        applyParallaxEffect()
+        AudioServicesPlaySystemSound(1520) // Actuate "Nope" feedback (series of three weak booms)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -48,7 +50,7 @@ class HomeViewController: UIViewController, AwesomeSpotlightViewDelegate {
             CoreDataHandler.addSpotLight()
             spotlight = CoreDataHandler.fetchSpotLight()
         }
-        if (spotlight.first!.home) {
+        if !(spotlight.first!.home) {
             startSpotLightTour()
         }
     }
@@ -71,10 +73,10 @@ class HomeViewController: UIViewController, AwesomeSpotlightViewDelegate {
     
     // If the application is opened for the first time, provide tutorial to the user using spot light.
     func startSpotLightTour() {
-        let spotlightMain = AwesomeSpotlight(withRect: CGRect(x: 12, y: 77, width: 220, height: 75), shape: .circle, text: "\n\n\n\n\n\n\n\n\n\nTap anywhere on the grey area to continue\nor\nTap on white area to skip the tutorial", isAllowPassTouchesThroughSpotlight: true)
-        let spotlight1 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 15, y: 335, width: 385, height: 60), shape: .roundRectangle, text: "You can search for a specifc frog here", isAllowPassTouchesThroughSpotlight: true)
+        let spotlightMain = AwesomeSpotlight(withRect: CGRect(x: 10, y: 77, width: 220, height: 75), shape: .circle, text: "\n\nWelcome\n\n\n\n\n\n\nTap anywhere on the grey area to continue", isAllowPassTouchesThroughSpotlight: false)
+        let spotlight1 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 15, y: 335, width: 385, height: 60), shape: .roundRectangle, text: "You can search for a specifc frog here", isAllowPassTouchesThroughSpotlight: false)
         // Spotlight for Frog's Common Name
-        let spotlight2 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 33, y: 560, width: 350, height: 200), shape: .roundRectangle, text: "\n\n\nYou can Explore all Frogs here", isAllowPassTouchesThroughSpotlight: true)
+        let spotlight2 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 33, y: 559, width: 350, height: 200), shape: .roundRectangle, text: "\n\n\nYou can explore all frogs here", isAllowPassTouchesThroughSpotlight: false)
         // Load spotlights
         let spotlightView = AwesomeSpotlightView(frame: view.frame, spotlight: [spotlightMain, spotlight1, spotlight2])
         spotlightView.cutoutRadius = 8

@@ -41,7 +41,7 @@ class CoreDataHandler: NSObject {
     }
     
     //MARK:- Save SpotLight
-    class func saveSpotLight(entityName: String, home: Bool, frogList: Bool, frogdetails: Bool, identity: Bool, location: Bool, news: Bool, challenges: Bool) {
+    class func saveSpotLight(entityName: String, home: Bool, frogList: Bool, frogdetails: Bool, identity: Bool, location: Bool, news: Bool, challenges: Bool, visited: Bool) {
         let context = getContect()
         let entity = NSEntityDescription.entity(forEntityName: entityName, in: context)
         let managedObject = NSManagedObject(entity: entity!, insertInto: context)
@@ -53,6 +53,8 @@ class CoreDataHandler: NSObject {
         managedObject.setValue(location, forKey: "location")
         managedObject.setValue(news, forKey: "news")
         managedObject.setValue(challenges, forKey: "challenges")
+        managedObject.setValue(visited, forKey: "visited")
+
         do {
             try context.save()
             print("Saved entry")
@@ -62,7 +64,7 @@ class CoreDataHandler: NSObject {
     }
     
     class func addSpotLight() {
-        CoreDataHandler.saveSpotLight(entityName: "SpotLightEntity", home: false, frogList: false, frogdetails: false, identity: false, location: false, news: false, challenges: false)
+        CoreDataHandler.saveSpotLight(entityName: "SpotLightEntity", home: false, frogList: false, frogdetails: false, identity: false, location: false, news: false, challenges: false, visited: false)
     }
     
     class func fetchSpotLight() -> [SpotLightEntity] {
@@ -272,7 +274,7 @@ class CoreDataHandler: NSObject {
 
         CoreDataHandler.saveFrog(entityName: "FrogEntity", sname: "Pseudophryne bibronii", frogcount: 6, cname: "Brown Toadlet", desc: "Their physique is granular black and mineral white near the belly along with an opaque brown or black coloured body. They can be of different colours such as clear brown, clear black, clear white and clear grey. They are found near woods, rocks, streams. They serve on insects.",latitude: -37, longitude:141.7, uncertainty:10000, threatnedStatus: "Endangered", isVisited: false, isFavourite: false)
 
-        CoreDataHandler.saveFrog(entityName: "FrogEntity", sname: "Pseudophryne dendyi", frogcount: 1, cname: "Dendy's Toadlet", desc: "Their physique consists of opaque brown with yellow shades underarms. They can be of different colours such as clear brown, clear white, clear black and clear yellow. They are found near woods. They serve on insects.",latitude: -36.7034432572836, longitude:147.921584784843, uncertainty:6, threatnedStatus: "Not endangered", isVisited: false, isFavourite: false)
+        CoreDataHandler.saveFrog(entityName: "FrogEntity", sname: "Pseudophryne dendyi", frogcount: 1, cname: "Dendy's Toadlet", desc: "Their physique consists of opaque brown with yellow shades underarms. They can be of different colours such as clear brown, clear white, clear black and clear yellow. They are found near woods. They serve on insects.",latitude: -36.7034432572836, longitude:147.921584784843, uncertainty:6, threatnedStatus: "Endangered", isVisited: false, isFavourite: false)
 
         CoreDataHandler.saveFrog(entityName: "FrogEntity", sname: "Pseudophryne semimarmorata", frogcount: 8, cname: "Southern Toadlet", desc: "Their physique comprises of rough black and mineral white along with darker green and darker brown body with vivid orange or yellow shades on the belly side. They can be of different colours such as clear brown, clear green, clear black, clear white and clear orange. They are found near damp areas. They serve on insects.",latitude: -37.9661880384892, longitude:145.263331896779, uncertainty:1414, threatnedStatus: "Vulnerable", isVisited: false, isFavourite: true)
     }

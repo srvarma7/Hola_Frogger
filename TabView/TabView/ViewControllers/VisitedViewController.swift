@@ -11,8 +11,10 @@ import MapKit
 import AudioToolbox
 import AVFoundation
 import Lottie
+import AwesomeSpotlightView
 
-class VisitedViewController: UIViewController, CLLocationManagerDelegate {
+
+class VisitedViewController: UIViewController, CLLocationManagerDelegate, AwesomeSpotlightViewDelegate {
 
     var receivedFrog: FrogEntity?
     //var unsightedFrog: UnSightedFrogEntity?
@@ -27,7 +29,8 @@ class VisitedViewController: UIViewController, CLLocationManagerDelegate {
     var locationMgr: CLLocationManager = CLLocationManager()
     let regionRadius: Double = 20000
     var annotaion = FrogAnnotation(title: "", subtitle: "", latitude: 0, longitude: 0)
-    
+    var spotlightView = AwesomeSpotlightView()
+    var spotlight: [SpotLightEntity] = []
     
     var audioPlayer = AVAudioPlayer()
     
@@ -43,6 +46,7 @@ class VisitedViewController: UIViewController, CLLocationManagerDelegate {
         //AudioServicesPlaySystemSound(1520) // Actuate "Pop" feedback (strong boom)
         AudioServicesPlaySystemSound(3000) // Actuate "Nope" feedback (series of three weak booms)
         //play(sound: test)
+        checkForSpotLight()
     }
     
     func changeSegment() {
@@ -117,7 +121,7 @@ class VisitedViewController: UIViewController, CLLocationManagerDelegate {
     func setLabels() {
         cNameLabel.text = receivedFrog?.cname
         sNameLabel.text = receivedFrog?.sname
-        //greetingLabel.text = "Hurrah!!! \n You have entered the \(cNameLabel.text) habitat!!! \n Now, Lets try to sight the Frog"
+        greetingLabel.text = "Hurrah!!! \n You have entered the \(cNameLabel.text!) habitat!!! \n Now, Lets try to sight the Frog"
         imageView.image = UIImage(named: (receivedFrog?.sname)!)
         imageView.backgroundColor = UIColor(white: 0, alpha: 0)
     }
@@ -161,5 +165,34 @@ class VisitedViewController: UIViewController, CLLocationManagerDelegate {
             lottieAnimation(AnimationName: "confetti1", top: 150, sides: 30, size: 800)
             updateSightedStatus(receivedFrog: receivedFrog!, isVisited: true)
         }
+    }
+    
+    // Check if the application is opening for the first time to load spotlight
+    func checkForSpotLight() {
+        if spotlight.isEmpty {
+            CoreDataHandler.addSpotLight()
+            spotlight = CoreDataHandler.fetchSpotLight()
+        }
+        if !(spotlight.first!.visited) {
+            startSpotLightTour()
+        }
+    }
+    
+    func startSpotLightTour() {
+        let spotlightMain = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 200, y: 77, width: 0, height: 0), shape: .circle, text: "\n\n\n\n\n\n\n\n\n\n\nCongratulations on visiting frog's habitat", isAllowPassTouchesThroughSpotlight: false)
+        let spotlightMain1 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 200, y: 77, width: 0, height: 0), shape: .circle, text: "\n\n\n\n\n\n\n\n\n\n\nNow to try to sight the frog", isAllowPassTouchesThroughSpotlight: false)
+        let spotlight = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 85, y: 620, width: 250, height: 80), shape: .roundRectangle, text: "\nWhen you sight the frog, tap on Yes to record the status and complete the challenge", isAllowPassTouchesThroughSpotlight: false)
+        let spotlightMain3 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 200, y: 77, width: 0, height: 0), shape: .circle, text: "\n\n\n\n\n\n\n\n\n\n\nGood luck frogger for sighting the frog", isAllowPassTouchesThroughSpotlight: false)
+        
+        let spotlightView = AwesomeSpotlightView(frame: view.frame, spotlight: [spotlightMain, spotlightMain1, spotlight, spotlightMain3])
+        
+        spotlightView.cutoutRadius = 8
+        spotlightView.delegate = self
+        view.addSubview(spotlightView)
+        DispatchQueue.main.asyncAfter(deadline: .now()+1) {
+            spotlightView.spotlightMaskColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.7)
+            spotlightView.enableArrowDown = true
+            spotlightView.start()        }
+        CoreDataHandler.updateSpotLight(attribute: "visited", boolean: true)
     }
 }
