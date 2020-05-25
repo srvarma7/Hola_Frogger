@@ -23,7 +23,7 @@ class FrogListController: UIViewController, UITableViewDataSource, UITableViewDe
     
     var spotlightView = AwesomeSpotlightView()
     var spotlight: [SpotLightEntity] = []
-
+    let screenSize: CGRect = UIScreen.main.bounds
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,9 +32,10 @@ class FrogListController: UIViewController, UITableViewDataSource, UITableViewDe
         fetchData()
         /// Reference from Stackoverflow, Author Sebastian
         /// https://stackoverflow.com/questions/25921623/how-to-reload-tableview-from-another-view-controller-in-swift
-        NotificationCenter.default.addObserver(self, selector: #selector(loadList), name: NSNotification.Name(rawValue: "loadTableView"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(loadList), name: NSNotification.Name(rawValue: "reload"), object: nil)
         showFavButton.setBackgroundImage(UIImage(systemName: "suit.heart"), for: UIControl.State.normal, barMetrics: .default)
         setUpTableView()
+        //MARK: - UNCOMMENT THIS
         checkForSpotLight()
     }
     
@@ -53,28 +54,56 @@ class FrogListController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func startSpotLightTour() {
         
-        // Spotlight for Image
-        let spotlight1 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 13, y: 160, width: 60, height: 60), shape: .circle, text: "\nFrog's image", isAllowPassTouchesThroughSpotlight: false)
-        // Spotlight for Frog's Common Name
-        let spotlight2 = AwesomeSpotlight(withRect: CGRect(x: 80, y: 163, width: 130, height: 25), shape: .roundRectangle, text: "Frog's common name", isAllowPassTouchesThroughSpotlight: false)
-        // Spotlight for Frog's Scentific Name
-        let spotlight3 = AwesomeSpotlight(withRect: CGRect(x: 80, y: 196, width: 175, height: 25), shape: .roundRectangle, text: "Frog's scentific name", isAllowPassTouchesThroughSpotlight: false)
-        // Spotlight for Filter by Favourite
-        let spotlight4 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 363, y: 170, width: 40, height: 40), shape: .circle, text: "Frog's threatened status\n\nE-Endangered\nV-Vulnerable\nN-Not Endangered", isAllowPassTouchesThroughSpotlight: false)
-        // Spotlight for Filter by Favourite
-        let spotlight5 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 360, y: 40, width: 50, height: 50), shape: .circle, text: "Filter by favourite", isAllowPassTouchesThroughSpotlight: false)
-        
-        
-        let spotlightView = AwesomeSpotlightView(frame: view.frame, spotlight: [spotlight1, spotlight2, spotlight3, spotlight4, spotlight5])
-        spotlightView.cutoutRadius = 8
-        spotlightView.delegate = self
-        view.addSubview(spotlightView)
-        DispatchQueue.main.asyncAfter(deadline: .now()+1) {
-            spotlightView.spotlightMaskColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.7)
-            spotlightView.enableArrowDown = true
-            spotlightView.start()
+        var spotlight1 = AwesomeSpotlight()
+        var spotlight2 = AwesomeSpotlight()
+        var spotlight3 = AwesomeSpotlight()
+        var spotlight4 = AwesomeSpotlight()
+        var spotlight5 = AwesomeSpotlight()
+
+        var properDevice = false
+        print(screenSize.width)
+        if screenSize.width == 414.0 {
+            // Spotlight for Image
+            spotlight1 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 13, y: 160, width: 60, height: 60), shape: .circle, text: "\nFrog's image", isAllowPassTouchesThroughSpotlight: false)
+            // Spotlight for Frog's Common Name
+            spotlight2 = AwesomeSpotlight(withRect: CGRect(x: 80, y: 163, width: 130, height: 25), shape: .roundRectangle, text: "Frog's common name", isAllowPassTouchesThroughSpotlight: false)
+            // Spotlight for Frog's Scentific Name
+            spotlight3 = AwesomeSpotlight(withRect: CGRect(x: 80, y: 196, width: 175, height: 25), shape: .roundRectangle, text: "Frog's scentific name", isAllowPassTouchesThroughSpotlight: false)
+            // Spotlight for Filter by Favourite
+            spotlight4 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 363, y: 170, width: 40, height: 40), shape: .circle, text: "Frog's threatened status\n\nE-Endangered\nV-Vulnerable\nN-Not Endangered", isAllowPassTouchesThroughSpotlight: false)
+            // Spotlight for Filter by Favourite
+            spotlight5 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 360, y: 40, width: 50, height: 50), shape: .circle, text: "Filter by favourite", isAllowPassTouchesThroughSpotlight: false)
+            properDevice = true
+        } else if screenSize.width == 375.0 {
+            // Spotlight for Image
+            spotlight1 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 13, y: 160, width: 60, height: 60), shape: .circle, text: "\nFrog's image", isAllowPassTouchesThroughSpotlight: false)
+            // Spotlight for Frog's Common Name
+            spotlight2 = AwesomeSpotlight(withRect: CGRect(x: 80, y: 163, width: 130, height: 25), shape: .roundRectangle, text: "Frog's common name", isAllowPassTouchesThroughSpotlight: false)
+            // Spotlight for Frog's Scentific Name
+            spotlight3 = AwesomeSpotlight(withRect: CGRect(x: 80, y: 196, width: 175, height: 25), shape: .roundRectangle, text: "Frog's scentific name", isAllowPassTouchesThroughSpotlight: false)
+            // Spotlight for Status
+            spotlight4 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 323, y: 170, width: 40, height: 40), shape: .circle, text: "Frog's threatened status\n\nE-Endangered\nV-Vulnerable\nN-Not Endangered", isAllowPassTouchesThroughSpotlight: false)
+            // Spotlight for Filter by Favourite
+            spotlight5 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 325, y: 40, width: 50, height: 50), shape: .circle, text: "Filter by favourite", isAllowPassTouchesThroughSpotlight: false)
+            properDevice = true
         }
-        CoreDataHandler.updateSpotLight(attribute: "frogList", boolean: true)
+        if properDevice {
+            // Load spotlights
+            let spotlightView = AwesomeSpotlightView(frame: view.frame, spotlight: [spotlight1, spotlight2, spotlight3, spotlight4, spotlight5])
+            spotlightView.cutoutRadius = 8
+            spotlightView.delegate = self
+            view.addSubview(spotlightView)
+            DispatchQueue.main.asyncAfter(deadline: .now()+1) {
+                if self.traitCollection.userInterfaceStyle == .light {
+                    spotlightView.spotlightMaskColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.7)
+                } else {
+                    spotlightView.spotlightMaskColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.8)
+                }
+                spotlightView.enableArrowDown = true
+                spotlightView.start()
+            }
+            CoreDataHandler.updateSpotLight(attribute: "frogList", boolean: true)
+        }
     }
     
     

@@ -12,8 +12,9 @@ import CoreLocation
 import AwesomeSpotlightView
 
 class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, AwesomeSpotlightViewDelegate {
-
+    
     // UI outlet
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var mapView: MKMapView!
     // Variable to fold all the frog recored of Frog entity type
     var frogs: [FrogEntity] = []
@@ -32,6 +33,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        segmentedControl.selectedSegmentIndex = -1
         // Setting a button to get to user's current location up on tapping.
         focusOnUL.frame = CGRect(x: self.view.frame.maxX - 60, y: self.view.frame.maxY - 150, width: 30, height: 30)
         focusOnUL.setBackgroundImage(UIImage(systemName: "location.fill"), for: UIControl.State.normal)
@@ -88,24 +90,45 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         }
     }
     
-    
     // If the application is opened for the first time, provide tutorial to the user using spot light.
     func startSpotLightTour() {
-        let spotlightMain = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 200, y: 77, width: 0, height: 0), shape: .circle, text: "\n\n\n\n\n\n\n\n\n\n\n\n\n\nAll the frogs locations in Victoria are show here", isAllowPassTouchesThroughSpotlight: false)
-        let spotlight1 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 95, y: 380, width: 100, height: 100), shape: .circle, text: "To get more details of the frog, tap on the annotation", isAllowPassTouchesThroughSpotlight: false)
-        // Spotlight for Frog's Common Name
-        let spotlight2 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 343, y: 735, width: 50, height: 50), shape: .circle, text: "Tap on this button to zoom into your location", isAllowPassTouchesThroughSpotlight: false)
-        // Load spotlights
-        let spotlightView = AwesomeSpotlightView(frame: view.frame, spotlight: [spotlightMain, spotlight1, spotlight2])
-        spotlightView.cutoutRadius = 8
-        spotlightView.delegate = self
-        view.addSubview(spotlightView)
-        DispatchQueue.main.asyncAfter(deadline: .now()+1) {
-            spotlightView.spotlightMaskColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.7)
-            spotlightView.enableArrowDown = true
-            spotlightView.start()
+        let screenSize: CGRect = UIScreen.main.bounds
+        var spotlight1 = AwesomeSpotlight()
+        var spotlight2 = AwesomeSpotlight()
+        var spotlightMain = AwesomeSpotlight()
+        var properDevice = false
+        print(screenSize.width)
+        if screenSize.width == 414.0 {
+            spotlightMain = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 200, y: 77, width: 0, height: 0), shape: .circle, text: "\n\n\n\n\n\n\n\n\n\n\n\n\n\nAll the frogs locations in Victoria are show here", isAllowPassTouchesThroughSpotlight: false)
+            spotlight1 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 95, y: 380, width: 100, height: 100), shape: .circle, text: "To get more details of the frog, tap on the annotation", isAllowPassTouchesThroughSpotlight: false)
+            // Spotlight for Frog's Common Name
+            spotlight2 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 343, y: 735, width: 50, height: 50), shape: .circle, text: "Tap on this button to zoom into your location", isAllowPassTouchesThroughSpotlight: false)
+            properDevice = true
+        } else if screenSize.width == 375.0 {
+            spotlightMain = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 200, y: 77, width: 0, height: 0), shape: .circle, text: "\n\n\n\n\n\n\n\n\n\n\n\n\n\nAll the frogs locations in Victoria are show here", isAllowPassTouchesThroughSpotlight: false)
+            spotlight1 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 77, y: 330, width: 100, height: 100), shape: .circle, text: "To get more details of the frog, tap on the annotation", isAllowPassTouchesThroughSpotlight: false)
+            // Spotlight for Frog's Common Name
+            spotlight2 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 303, y: 650, width: 50, height: 50), shape: .circle, text: "Tap on this button to zoom into your location", isAllowPassTouchesThroughSpotlight: false)
+            properDevice = true
         }
-        //CoreDataHandler.updateSpotLight(attribute: "location", boolean: true)
+        if properDevice {
+            // Load spotlights
+            let spotlightView = AwesomeSpotlightView(frame: view.frame, spotlight: [spotlightMain, spotlight1, spotlight2])
+            spotlightView.cutoutRadius = 8
+            spotlightView.delegate = self
+            view.addSubview(spotlightView)
+            DispatchQueue.main.asyncAfter(deadline: .now()+1) {
+                if self.traitCollection.userInterfaceStyle == .light {
+                    spotlightView.spotlightMaskColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.7)
+
+                } else {
+                    spotlightView.spotlightMaskColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.8)
+                }
+                spotlightView.enableArrowDown = true
+                spotlightView.start()
+            }
+            CoreDataHandler.updateSpotLight(attribute: "location", boolean: true)
+        }
     }
     
     fileprivate func SetupLocationAndNotification() {
@@ -115,6 +138,8 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         locationMgr.delegate = self
         locationMgr.requestAlwaysAuthorization()
         mapView.showsUserLocation = true
+
+
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert]) {
             (granted, error) in if !granted {
                 print("Permission rejected")
@@ -129,6 +154,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
               circularRegion.identifier == region.identifier else { continue }
             locationMgr.stopMonitoring(for: circularRegion)
         }
+        
     }
     
     // When the user locations is changed, map is fouced on current location.
@@ -202,6 +228,22 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         }
     }
 
+    @IBAction func segmentedControlDidTapped(_ sender: Any) {
+        if segmentedControl.selectedSegmentIndex == 0 {
+            segmentedControl.selectedSegmentTintColor = #colorLiteral(red: 0.4280183911, green: 0.5731796026, blue: 0.1544426084, alpha: 1)
+            displayMessage(title: "Alert", message: "You are near a Brown Toadlet frog's habitat, please take precautions while entering. \n\n\nNote: Sanitize yourself to keep the frogs safe!!!")
+            //mapView.userLocation = MKUserLocation
+        } else if segmentedControl.selectedSegmentIndex == 1 {
+            segmentedControl.selectedSegmentTintColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
+            displayMessage(title: "Alert", message: "You are near a Dendy's Toadlet frog's habitat, please take precautions while entering. \n\n\nNote: Sanitize yourself to keep the frogs safe!!!")
+        } else if segmentedControl.selectedSegmentIndex == 2 {
+            segmentedControl.selectedSegmentTintColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
+            displayMessage(title: "Alert", message: "You are near Southern Toadlet frog's habitat, please take precautions while entering. \n\n\nNote: Sanitize yourself to keep the frogs safe!!!")
+        } else if segmentedControl.selectedSegmentIndex == 3 {
+            segmentedControl.selectedSegmentTintColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
+            displayMessage(title: "Alert", message: "You are near Victorian Smooth Froglet frog's habitat, please take precautions while entering. \n\n\nNote: Sanitize yourself to keep the frogs safe!!!")
+        }
+    }
 }
 
 // Custom annotaion.

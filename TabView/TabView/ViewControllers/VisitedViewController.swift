@@ -140,8 +140,8 @@ class VisitedViewController: UIViewController, CLLocationManagerDelegate, Awesom
     }
     
     @objc func closeButtonAction(sender: UIButton!) {
-        // Sends a notification to the Frog list controller to reload the tableview controller.
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "load"), object: nil)
+        // Sends a notification to the Challenge view controller to reload the cards in controller.
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "reloadChallenges"), object: nil)
         // Dismisses the current controller.
         dismiss(animated: true)
     }
@@ -179,20 +179,44 @@ class VisitedViewController: UIViewController, CLLocationManagerDelegate, Awesom
     }
     
     func startSpotLightTour() {
-        let spotlightMain = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 200, y: 77, width: 0, height: 0), shape: .circle, text: "\n\n\n\n\n\n\n\n\n\n\nCongratulations on visiting frog's habitat", isAllowPassTouchesThroughSpotlight: false)
-        let spotlightMain1 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 200, y: 77, width: 0, height: 0), shape: .circle, text: "\n\n\n\n\n\n\n\n\n\n\nNow to try to sight the frog", isAllowPassTouchesThroughSpotlight: false)
-        let spotlight = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 85, y: 620, width: 250, height: 80), shape: .roundRectangle, text: "\nWhen you sight the frog, tap on Yes to record the status and complete the challenge", isAllowPassTouchesThroughSpotlight: false)
-        let spotlightMain3 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 200, y: 77, width: 0, height: 0), shape: .circle, text: "\n\n\n\n\n\n\n\n\n\n\nGood luck frogger for sighting the frog", isAllowPassTouchesThroughSpotlight: false)
-        
-        let spotlightView = AwesomeSpotlightView(frame: view.frame, spotlight: [spotlightMain, spotlightMain1, spotlight, spotlightMain3])
-        
-        spotlightView.cutoutRadius = 8
-        spotlightView.delegate = self
-        view.addSubview(spotlightView)
-        DispatchQueue.main.asyncAfter(deadline: .now()+1) {
-            spotlightView.spotlightMaskColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.7)
-            spotlightView.enableArrowDown = true
-            spotlightView.start()        }
-        CoreDataHandler.updateSpotLight(attribute: "visited", boolean: true)
+        let screenSize: CGRect = UIScreen.main.bounds
+        var spotlightMain = AwesomeSpotlight()
+        var spotlightMain1 = AwesomeSpotlight()
+        var spotlightMain3 = AwesomeSpotlight()
+
+        var spotlight = AwesomeSpotlight()
+        var properDevice = false
+        print(screenSize.width)
+        if screenSize.width == 414.0 {
+            spotlightMain = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 200, y: 77, width: 0, height: 0), shape: .circle, text: "\n\n\n\n\n\n\n\n\n\n\nCongratulations on visiting frog's habitat", isAllowPassTouchesThroughSpotlight: false)
+            spotlightMain1 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 200, y: 77, width: 0, height: 0), shape: .circle, text: "\n\n\n\n\n\n\n\n\n\n\nNow to try to sight the frog", isAllowPassTouchesThroughSpotlight: false)
+            spotlight = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 85, y: 620, width: 250, height: 80), shape: .roundRectangle, text: "\nWhen you sight the frog, tap on Yes to record the status and complete the challenge", isAllowPassTouchesThroughSpotlight: false)
+            spotlightMain3 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 200, y: 77, width: 0, height: 0), shape: .circle, text: "\n\n\n\n\n\n\n\n\n\n\nGood luck frogger for sighting the frog", isAllowPassTouchesThroughSpotlight: false)
+            properDevice = true
+        } else if screenSize.width == 375.0 {
+            spotlightMain = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 200, y: 77, width: 0, height: 0), shape: .circle, text: "\n\n\n\n\n\n\n\n\n\n\nCongratulations on visiting frog's habitat", isAllowPassTouchesThroughSpotlight: false)
+            spotlightMain1 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 200, y: 77, width: 0, height: 0), shape: .circle, text: "\n\n\n\n\n\n\n\n\n\n\nNow to try to sight the frog", isAllowPassTouchesThroughSpotlight: false)
+            spotlight = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 60, y: 550, width: 250, height: 80), shape: .roundRectangle, text: "\nWhen you sight the frog, tap on Yes to record the status and complete the challenge", isAllowPassTouchesThroughSpotlight: false)
+            spotlightMain3 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 200, y: 77, width: 0, height: 0), shape: .circle, text: "\n\n\n\n\n\n\n\n\n\n\nGood luck frogger sighting the frog", isAllowPassTouchesThroughSpotlight: false)
+            properDevice = true
+        }
+        if properDevice {
+            let spotlightView = AwesomeSpotlightView(frame: view.frame, spotlight: [spotlightMain, spotlightMain1, spotlight, spotlightMain3])
+            
+            spotlightView.cutoutRadius = 8
+            spotlightView.delegate = self
+            view.addSubview(spotlightView)
+            DispatchQueue.main.asyncAfter(deadline: .now()+1) {
+                if self.traitCollection.userInterfaceStyle == .light {
+                    spotlightView.spotlightMaskColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.7)
+                } else {
+                    spotlightView.spotlightMaskColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.8)
+                }
+                spotlightView.enableArrowDown = true
+                spotlightView.start()
+            }
+            CoreDataHandler.updateSpotLight(attribute: "visited", boolean: true)
+        }
     }
+    
 }

@@ -19,12 +19,12 @@ class WelcomeViewController: UIViewController {
             title.font = UIFont.boldSystemFont(ofSize: 25)
             title.isEditable = false
             return title
-            
         }()
    
     override func viewDidLoad() {
         super.viewDidLoad()
-        sutUpAnimation()
+        
+        setUpAnimation()
         setConstraints()
         UIView.animate(withDuration: 2, delay: 1, animations: {
             self.textView.transform = CGAffineTransform(translationX: 0, y: 110)
@@ -32,7 +32,7 @@ class WelcomeViewController: UIViewController {
         navigateToNewScreen()
     }
     
-   fileprivate func sutUpAnimation() {
+   fileprivate func setUpAnimation() {
        animationView.frame = CGRect(x: 0, y: 0, width: 150, height: 150)
        animationView.center.x = self.view.center.x
        animationView.contentMode = .scaleAspectFit

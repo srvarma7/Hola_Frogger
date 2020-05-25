@@ -43,7 +43,8 @@ class ChallengeViewController: UIViewController, UICollectionViewDelegate, UICol
     var unSightedCount: Int = 0
     
     var numberOfFrogsLeftInChallenge: Int = 0
-
+    @IBOutlet weak var locSegmentedCtrl: UISegmentedControl!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchData()
@@ -58,8 +59,9 @@ class ChallengeViewController: UIViewController, UICollectionViewDelegate, UICol
         getStatistics()
         
         collectionView.reloadData()
-        NotificationCenter.default.addObserver(self, selector: #selector(reloadCollectionView), name: NSNotification.Name(rawValue: "loadColllectionView"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadCollectionView), name: NSNotification.Name(rawValue: "reloadChallenges"), object: nil)
         checkForSpotLight()
+        changeSegment()
     }
 
     // Check if the application is opening for the first time to load spotlight
@@ -74,24 +76,53 @@ class ChallengeViewController: UIViewController, UICollectionViewDelegate, UICol
     }
     
     func startSpotLightTour() {
-        let spotlightMain = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 200, y: 77, width: 0, height: 0), shape: .circle, text: "\n\n\n\n\n\n\n\n\nWelcome to the challenges", isAllowPassTouchesThroughSpotlight: false)
-        let spotlightMain2 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 200, y: 77, width: 0, height: 0), shape: .circle, text: "\n\n\n\n\n\n\n\n\n\n\nTo complete the challenges, visit the frog's location in the challenges and sight the frogs in the location", isAllowPassTouchesThroughSpotlight: false)
-        let spotlight1 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 10, y: 150, width: 395, height: 400), shape: .roundRectangle, text: "\nCurrent challenges are shown here", isAllowPassTouchesThroughSpotlight: false)
-        let spotlightMain3 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 200, y: 77, width: 0, height: 0), shape: .circle, text: "\n\n\n\n\n\n\n\n\n\n\nOnce you sight all the frogs in the challenge, new challenges will be added", isAllowPassTouchesThroughSpotlight: false)
-        let spotlightMain4 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 200, y: 77, width: 0, height: 0), shape: .circle, text: "\n\n\n\n\n\n\n\n\n\n\nRed card represents the unsighted frog\n(Yet to complete the challenge)", isAllowPassTouchesThroughSpotlight: false)
-        let spotlightMain5 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 200, y: 77, width: 0, height: 0), shape: .circle, text: "\n\n\n\n\n\n\n\n\n\n\nGreen card represents the sighted frog\n(Completed the challenge)", isAllowPassTouchesThroughSpotlight: false)
-        let spotlight2 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 16, y: 610, width: 380, height: 150), shape: .roundRectangle, text: "\n\n\nYour current progress", isAllowPassTouchesThroughSpotlight: false)
-        
-        let spotlightView = AwesomeSpotlightView(frame: view.frame, spotlight: [spotlightMain, spotlightMain2, spotlight1, spotlightMain3, spotlightMain4, spotlightMain5, spotlight2])
-        
-        spotlightView.cutoutRadius = 8
-        spotlightView.delegate = self
-        view.addSubview(spotlightView)
-        DispatchQueue.main.asyncAfter(deadline: .now()+1) {
-            spotlightView.spotlightMaskColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.7)
-            spotlightView.enableArrowDown = true
-            spotlightView.start()        }
-        CoreDataHandler.updateSpotLight(attribute: "challenges", boolean: true)
+        let screenSize: CGRect = UIScreen.main.bounds
+        var spotlightMain = AwesomeSpotlight()
+        var spotlightMain2 = AwesomeSpotlight()
+        var spotlightMain3 = AwesomeSpotlight()
+        var spotlightMain4 = AwesomeSpotlight()
+        var spotlightMain5 = AwesomeSpotlight()
+
+        var spotlight1 = AwesomeSpotlight()
+        var spotlight2 = AwesomeSpotlight()
+        var properDevice = false
+        print(screenSize.width)
+        if screenSize.width == 414.0 {
+            spotlightMain = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 200, y: 77, width: 0, height: 0), shape: .circle, text: "\n\n\n\n\n\n\n\n\nWelcome to the challenges", isAllowPassTouchesThroughSpotlight: false)
+            spotlightMain2 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 200, y: 77, width: 0, height: 0), shape: .circle, text: "\n\n\n\n\n\n\n\n\n\n\nTo complete the challenges, visit the frog's location in the challenges and sight the frogs in the location", isAllowPassTouchesThroughSpotlight: false)
+            spotlight1 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 10, y: 150, width: 395, height: 400), shape: .roundRectangle, text: "\nCurrent challenges are shown here", isAllowPassTouchesThroughSpotlight: false)
+            spotlightMain3 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 200, y: 77, width: 0, height: 0), shape: .circle, text: "\n\n\n\n\n\n\n\n\n\n\nOnce you sight all the frogs in the challenge, new challenges will be added", isAllowPassTouchesThroughSpotlight: false)
+            spotlightMain4 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 200, y: 77, width: 0, height: 0), shape: .circle, text: "\n\n\n\n\n\n\n\n\n\n\nRed card represents the unsighted frog\n(Yet to complete the challenge)", isAllowPassTouchesThroughSpotlight: false)
+            spotlightMain5 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 200, y: 77, width: 0, height: 0), shape: .circle, text: "\n\n\n\n\n\n\n\n\n\n\nGreen card represents the sighted frog\n(Completed the challenge)", isAllowPassTouchesThroughSpotlight: false)
+            spotlight2 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 16, y: 610, width: 380, height: 150), shape: .roundRectangle, text: "\n\n\nYour current progress", isAllowPassTouchesThroughSpotlight: false)
+            properDevice = true
+        } else if screenSize.width == 375.0 {
+            spotlightMain = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 200, y: 77, width: 0, height: 0), shape: .circle, text: "\n\n\n\n\n\n\n\n\nWelcome to the challenges", isAllowPassTouchesThroughSpotlight: false)
+            spotlightMain2 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 200, y: 77, width: 0, height: 0), shape: .circle, text: "\n\n\n\n\n\n\n\n\n\n\nTo complete the challenges, visit the frog's location in the challenges and sight the frogs in the location", isAllowPassTouchesThroughSpotlight: false)
+            spotlight1 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 13, y: 140, width: 350, height: 370), shape: .roundRectangle, text: "\nCurrent challenges are shown here", isAllowPassTouchesThroughSpotlight: false)
+            spotlightMain3 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 200, y: 77, width: 0, height: 0), shape: .circle, text: "\n\n\n\n\n\n\n\n\n\n\nOnce you sight all the frogs in the challenge, new challenges will be added", isAllowPassTouchesThroughSpotlight: false)
+            spotlightMain4 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 200, y: 77, width: 0, height: 0), shape: .circle, text: "\n\n\n\n\n\n\n\n\n\n\nRed card represents the unsighted frog\n(Yet to complete the challenge)", isAllowPassTouchesThroughSpotlight: false)
+            spotlightMain5 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 200, y: 77, width: 0, height: 0), shape: .circle, text: "\n\n\n\n\n\n\n\n\n\n\nGreen card represents the sighted frog\n(Completed the challenge)", isAllowPassTouchesThroughSpotlight: false)
+            spotlight2 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 10, y: 555, width: 350, height: 140), shape: .roundRectangle, text: "\n\n\nYour current progress", isAllowPassTouchesThroughSpotlight: false)
+            properDevice = true
+        }
+        if properDevice {
+            let spotlightView = AwesomeSpotlightView(frame: view.frame, spotlight: [spotlightMain, spotlightMain2, spotlight1, spotlightMain3, spotlightMain4, spotlightMain5, spotlight2])
+            
+            spotlightView.cutoutRadius = 8
+            spotlightView.delegate = self
+            view.addSubview(spotlightView)
+            DispatchQueue.main.asyncAfter(deadline: .now()+1) {
+                if self.traitCollection.userInterfaceStyle == .light {
+                    spotlightView.spotlightMaskColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.7)
+                } else {
+                    spotlightView.spotlightMaskColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.8)
+                }
+                spotlightView.enableArrowDown = true
+                spotlightView.start()
+            }
+            CoreDataHandler.updateSpotLight(attribute: "challenges", boolean: true)
+        }
     }
     
     @objc func reloadCollectionView(notification: NSNotification){
@@ -99,6 +130,7 @@ class ChallengeViewController: UIViewController, UICollectionViewDelegate, UICol
         fetchData()
         getStatistics()
         fetchData()
+        print(unSightedFrogsList.count, "numberOfFrogsLeftInChallenge after dismiss of visited screen")
         collectionView.reloadData()
     }
     
@@ -118,10 +150,8 @@ class ChallengeViewController: UIViewController, UICollectionViewDelegate, UICol
     // Calculate visied and unvisited frogs to show in statistics
     func getStatistics() {
         fetchData()
-
         sightedCount = 0
         unSightedCount = 0
-
          for ele in frogsList {
                 if ele.isVisited {
                  sightedCount += 1
@@ -129,7 +159,6 @@ class ChallengeViewController: UIViewController, UICollectionViewDelegate, UICol
                  unSightedCount += 1
              }
          }
-         
          sightedLabel.text = String(sightedCount)
          unSightedLabel.text = String(unSightedCount)
         // MARK: -
@@ -174,7 +203,8 @@ class ChallengeViewController: UIViewController, UICollectionViewDelegate, UICol
         msgLbl.text = "You have completed all the challenges"
         lottieAnimation(AnimationName: "confetti1", top: 150, sides: 30, size: 800)
         AudioServicesPlaySystemSound(1520)
-        play(sound: "confetti")
+        //play(sound: "confetti")
+        locSegmentedCtrl.isHidden = true
     }
     
     func play(sound: String) {
@@ -310,9 +340,11 @@ class ChallengeViewController: UIViewController, UICollectionViewDelegate, UICol
     // MARK: - Monitoring Location
     func startFencing() {
         for ele in unSightedFrogsList {
-            geoLocation = CLCircularRegion(center: CLLocationCoordinate2D(latitude: ele.latitude, longitude: ele.longitude), radius: 100, identifier: ele.cname!)
-            geoLocation.notifyOnEntry = true
-            locationManager.startMonitoring(for: geoLocation)
+            if !ele.isVisited {
+                geoLocation = CLCircularRegion(center: CLLocationCoordinate2D(latitude: ele.latitude, longitude: ele.longitude), radius: 100, identifier: ele.cname!)
+                geoLocation.notifyOnEntry = true
+                locationManager.startMonitoring(for: geoLocation)
+            }
         }
     }
     
@@ -335,4 +367,20 @@ class ChallengeViewController: UIViewController, UICollectionViewDelegate, UICol
        
     }
    
+    func changeSegment() {
+        locSegmentedCtrl.selectedSegmentIndex = -1
+    }
+    
+    @IBAction func didTapLocSegmentedCtrl(_ sender: Any) {
+        if locSegmentedCtrl.selectedSegmentIndex == 0 {
+            locSegmentedCtrl.selectedSegmentTintColor = #colorLiteral(red: 0.4280183911, green: 0.5731796026, blue: 0.1544426084, alpha: 1)
+            showDetails(frogname: "Brown Toadlet")
+        } else if locSegmentedCtrl.selectedSegmentIndex == 1 {
+            locSegmentedCtrl.selectedSegmentTintColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
+            showDetails(frogname: "Dendy's Toadlet")
+        } else if locSegmentedCtrl.selectedSegmentIndex == 2 {
+            locSegmentedCtrl.selectedSegmentTintColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
+            showDetails(frogname: "Southern Toadlet")
+        }
+    }
 }

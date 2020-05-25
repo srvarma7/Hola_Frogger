@@ -115,21 +115,44 @@ class IdentifyViewController: UIViewController, AVCaptureVideoDataOutputSampleBu
     
     // If the application is opened for the first time, provide tutorial to the user using spot light.
     func startSpotLightTour() {
-        let spotlightMain = AwesomeSpotlight(withRect: CGRect(x: 10, y: 77, width: 0, height: 0), shape: .circle, text: "\n\n\n\n\n\n\nOur classification feature can recognise 18 types of frog from Victoria using our own ML model", isAllowPassTouchesThroughSpotlight: false)
-        let spotlight1 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 41, y: 154, width: 330, height: 330), shape: .circle, text: "Point the camera to a frog in the view here and watch the magic below", isAllowPassTouchesThroughSpotlight: false)
-        // Spotlight for Frog's Common Name
-        let spotlight2 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 33, y: 630, width: 350, height: 150), shape: .roundRectangle, text: "\n\n\nIdentified frogs results with their prediction are shown here", isAllowPassTouchesThroughSpotlight: false)
-        // Load spotlights
-        let spotlightView = AwesomeSpotlightView(frame: view.frame, spotlight: [spotlightMain, spotlight1, spotlight2])
-        spotlightView.cutoutRadius = 8
-        spotlightView.delegate = self
-        view.addSubview(spotlightView)
-        DispatchQueue.main.asyncAfter(deadline: .now()+1) {
-            spotlightView.spotlightMaskColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.7)
-            spotlightView.enableArrowDown = true
-            spotlightView.start()
+        let screenSize: CGRect = UIScreen.main.bounds
+        var spotlight1 = AwesomeSpotlight()
+        var spotlight2 = AwesomeSpotlight()
+        var spotlightMain = AwesomeSpotlight()
+        var properDevice = false
+        print(screenSize.width)
+        if screenSize.width == 414.0 {
+            spotlightMain = AwesomeSpotlight(withRect: CGRect(x: 10, y: 77, width: 0, height: 0), shape: .circle, text: "\n\n\n\n\n\n\nOur classification feature can recognise 18 types of frog from Victoria using our own ML model", isAllowPassTouchesThroughSpotlight: false)
+            spotlight1 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 41, y: 154, width: 330, height: 330), shape: .circle, text: "Point the camera to a frog in the view here and watch the magic below", isAllowPassTouchesThroughSpotlight: false)
+            // Spotlight for Frog's Common Name
+            spotlight2 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 33, y: 630, width: 350, height: 150), shape: .roundRectangle, text: "\n\n\nIdentified frogs results with their prediction are shown here", isAllowPassTouchesThroughSpotlight: false)
+            properDevice = true
+        } else if screenSize.width == 375.0 {
+            
+            // MARK:- ASHISH CHANGE THIS VALUES HERE TO SUIT YOUR PHONES SCREEN
+            spotlightMain = AwesomeSpotlight(withRect: CGRect(x: 10, y: 77, width: 0, height: 0), shape: .circle, text: "\n\n\n\n\n\n\nOur classification feature can recognise 18 types of frog from Victoria using our own ML model", isAllowPassTouchesThroughSpotlight: false)
+            spotlight1 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 41, y: 145, width: 330, height: 330), shape: .circle, text: "Point the camera to a frog in the view here and watch the magic below", isAllowPassTouchesThroughSpotlight: false)
+            // Spotlight for Frog's Common Name
+            spotlight2 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 33, y: 630, width: 350, height: 150), shape: .roundRectangle, text: "\n\n\nIdentified frogs results with their prediction are shown here", isAllowPassTouchesThroughSpotlight: false)
+            properDevice = true
         }
-        //CoreDataHandler.updateSpotLight(attribute: "identity", boolean: true)
+        if properDevice {
+            // Load spotlights
+            let spotlightView = AwesomeSpotlightView(frame: view.frame, spotlight: [spotlightMain, spotlight1, spotlight2])
+            spotlightView.cutoutRadius = 8
+            spotlightView.delegate = self
+            view.addSubview(spotlightView)
+            DispatchQueue.main.asyncAfter(deadline: .now()+1) {
+                if self.traitCollection.userInterfaceStyle == .light {
+                    spotlightView.spotlightMaskColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.7)
+                } else {
+                    spotlightView.spotlightMaskColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.8)
+                }
+                spotlightView.enableArrowDown = true
+                spotlightView.start()
+            }
+            CoreDataHandler.updateSpotLight(attribute: "identity", boolean: true)
+        }
     }
     
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Yxx-iZ-Imt">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Yxx-iZ-Imt">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -136,7 +136,7 @@
                                 <rect key="frame" x="149" y="25" width="70" height="70"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1No-7C-vLr">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1No-7C-vLr">
                                 <rect key="frame" x="140" y="215" width="100" height="83"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -443,7 +443,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ehD-DG-rSj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1500" y="1538"/>
+            <point key="canvasLocation" x="4295" y="768"/>
         </scene>
         <!--Guide View Controller-->
         <scene sceneID="FB0-dc-2nO">
@@ -474,8 +474,8 @@
                     </tabBar>
                     <connections>
                         <segue destination="Dvz-t9-wt0" kind="relationship" relationship="viewControllers" id="d7p-cO-gHY"/>
-                        <segue destination="dAg-oL-NEN" kind="relationship" relationship="viewControllers" id="IJ0-ox-swS"/>
                         <segue destination="ks0-eK-vvc" kind="relationship" relationship="viewControllers" id="RgL-9h-92q"/>
+                        <segue destination="dAg-oL-NEN" kind="relationship" relationship="viewControllers" id="IJ0-ox-swS"/>
                         <segue destination="jey-aW-ZC9" kind="relationship" relationship="viewControllers" id="73C-5r-HwL"/>
                         <segue destination="XYl-GJ-vC3" kind="relationship" relationship="viewControllers" id="vio-8E-Xlk"/>
                     </connections>
@@ -492,12 +492,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="za7-8D-sCO">
-                                <rect key="frame" x="40" y="570" width="295" height="95"/>
-                                <color key="backgroundColor" red="0.45814818140000002" green="0.56906914710000001" blue="0.22736948730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="za7-8D-sCO">
+                                <rect key="frame" x="0.0" y="552" width="375" height="177"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="24"/>
-                                <state key="normal" title="Explore all Frogs     &gt;">
+                                <state key="normal" title="Explore all Frogs">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections>
                                     <segue destination="9pv-A4-QxB" kind="show" id="41E-ZX-WcK"/>
@@ -505,12 +506,6 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="Wu6-rO-kCl" firstAttribute="bottom" secondItem="za7-8D-sCO" secondAttribute="bottom" constant="64" id="CtG-e0-tiK"/>
-                            <constraint firstItem="za7-8D-sCO" firstAttribute="leading" secondItem="Wu6-rO-kCl" secondAttribute="leading" constant="40" id="Gw8-PA-CBx"/>
-                            <constraint firstItem="za7-8D-sCO" firstAttribute="centerX" secondItem="0xZ-4b-ahg" secondAttribute="centerX" id="K63-Gl-xxH"/>
-                            <constraint firstItem="za7-8D-sCO" firstAttribute="top" secondItem="Wu6-rO-kCl" secondAttribute="top" constant="430" id="c0l-a4-ssU"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Wu6-rO-kCl"/>
                     </view>
                     <navigationItem key="navigationItem" title="Hola Frogger" id="YBN-pW-DJr"/>
@@ -668,6 +663,18 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="kFE-y8-1Mz">
+                                <rect key="frame" x="53" y="491" width="269" height="32"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Brown"/>
+                                    <segment title="Dendy's"/>
+                                    <segment title="Southern"/>
+                                </segments>
+                                <connections>
+                                    <action selector="didTapLocSegmentedCtrl:" destination="SNz-hF-dz8" eventType="valueChanged" id="P5n-nf-1rF"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="P90-rF-x30"/>
@@ -677,6 +684,7 @@
                         <outlet property="bgImage" destination="gIx-cO-riB" id="ctz-sW-XQR"/>
                         <outlet property="collectionView" destination="5Yi-qt-M9n" id="3lC-Uc-VGS"/>
                         <outlet property="congratsLbl" destination="WBs-rv-4HP" id="c6Y-tj-fGs"/>
+                        <outlet property="locSegmentedCtrl" destination="kFE-y8-1Mz" id="BXd-Nr-doP"/>
                         <outlet property="msgLbl" destination="WML-S6-7L7" id="U83-XM-Cin"/>
                         <outlet property="sightedLabel" destination="8it-4n-tzU" id="F6E-r8-tiD"/>
                         <outlet property="unSightedLabel" destination="2dz-Mc-dsf" id="CyY-ME-6Gy"/>
@@ -685,13 +693,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vF3-Hp-bzA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3430.434782608696" y="-259.15178571428572"/>
+            <point key="canvasLocation" x="3429.5999999999999" y="-259.35960591133005"/>
         </scene>
         <!--News-->
         <scene sceneID="WhJ-la-zoP">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XYl-GJ-vC3" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="News" image="info.circle" catalog="system" id="auh-4h-Ioh"/>
+                    <tabBarItem key="tabBarItem" title="News" image="dot.radiowaves.left.and.right" catalog="system" id="auh-4h-Ioh"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="4bl-Yf-Lfr">
                         <rect key="frame" x="0.0" y="44" width="375" height="96"/>
@@ -718,6 +726,27 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="cDn-Jh-Wn4">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
                             </mapView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="mCd-ym-EpN">
+                                <rect key="frame" x="16" y="131" width="343" height="32"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Brown"/>
+                                    <segment title="Dendy's"/>
+                                    <segment title="Southern"/>
+                                    <segment title="Victorian"/>
+                                </segments>
+                                <connections>
+                                    <action selector="didTapLocSegmentedCtrl:" destination="SNz-hF-dz8" eventType="valueChanged" id="rps-Qc-oAC"/>
+                                    <action selector="segmentedControlDidTapped:" destination="jey-aW-ZC9" eventType="valueChanged" id="qyt-vF-LgE"/>
+                                </connections>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="You can simulate user's location manually using the control below" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="icb-MP-j6K">
+                                <rect key="frame" x="64" y="61" width="247" height="65"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -731,12 +760,13 @@
                     <tabBarItem key="tabBarItem" title="Locations" image="map" catalog="system" id="83a-Xk-AJb"/>
                     <connections>
                         <outlet property="mapView" destination="cDn-Jh-Wn4" id="sKw-Vh-c5Y"/>
+                        <outlet property="segmentedControl" destination="mCd-ym-EpN" id="jpa-Rn-53O"/>
                         <segue destination="j28-Jb-P8Y" kind="show" identifier="mapFrogDetails" id="Zi5-kQ-tjG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="49b-R7-5dk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="28" y="768"/>
+            <point key="canvasLocation" x="28" y="767.73399014778329"/>
         </scene>
         <!--Details View Controller-->
         <scene sceneID="B9B-Gl-y8B">
@@ -777,7 +807,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W0I-aa-add" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2442" y="1538"/>
+            <point key="canvasLocation" x="5198" y="768"/>
         </scene>
         <!--Home-->
         <scene sceneID="lBW-MG-KHN">
@@ -956,10 +986,10 @@
     </scenes>
     <resources>
         <image name="camera.viewfinder" catalog="system" width="128" height="114"/>
+        <image name="dot.radiowaves.left.and.right" catalog="system" width="128" height="89"/>
         <image name="gamecontroller" catalog="system" width="128" height="82"/>
         <image name="greaterthan.circle.fill" catalog="system" width="128" height="121"/>
         <image name="house" catalog="system" width="128" height="110"/>
-        <image name="info.circle" catalog="system" width="128" height="121"/>
         <image name="location.fill" catalog="system" width="128" height="115"/>
         <image name="map" catalog="system" width="128" height="113"/>
         <image name="pi" width="1000" height="890"/>

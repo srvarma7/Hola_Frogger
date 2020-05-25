@@ -27,10 +27,13 @@
 		574A3C2A24505E850022CCB3 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574A3C2924505E840022CCB3 /* MapViewController.swift */; };
 		574A3C2C245066060022CCB3 /* FrogAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574A3C2B245066060022CCB3 /* FrogAnnotation.swift */; };
 		5757F98A24639E3600F8D75C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5757F98924639E3600F8D75C /* HomeViewController.swift */; };
+		576F2949247AD04D0078EC67 /* Frog2usdz.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 576F2948247AD04D0078EC67 /* Frog2usdz.usdz */; };
+		576F294B247AD3D90078EC67 /* FrogScaledUsdz.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 576F294A247AD3D90078EC67 /* FrogScaledUsdz.usdz */; };
 		577AA1A3247159E100B85AF6 /* GPX files (To simulate Locations) in Resources */ = {isa = PBXBuildFile; fileRef = 577AA1A2247159E100B85AF6 /* GPX files (To simulate Locations) */; };
 		579B45472447084200EACA4B /* CoreDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579B45462447084200EACA4B /* CoreDataHandler.swift */; };
 		579B45512447460900EACA4B /* FrogEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579B454F2447460900EACA4B /* FrogEntity+CoreDataClass.swift */; };
 		579B45522447460900EACA4B /* FrogEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579B45502447460900EACA4B /* FrogEntity+CoreDataProperties.swift */; };
+		579C04B7247B78D1003EEB6D /* greenwaves.json in Resources */ = {isa = PBXBuildFile; fileRef = 579C04B6247B78D1003EEB6D /* greenwaves.json */; };
 		579EE7A724433BCC00321C7E /* BearBottle.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 579EE7A624433BCC00321C7E /* BearBottle.mlmodel */; };
 		579EE7A92444763000321C7E /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579EE7A82444763000321C7E /* NewsViewController.swift */; };
 		579EE7AD2444CB2D00321C7E /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579EE7AC2444CB2D00321C7E /* DetailsViewController.swift */; };
@@ -90,10 +93,13 @@
 		574A3C2924505E840022CCB3 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		574A3C2B245066060022CCB3 /* FrogAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrogAnnotation.swift; sourceTree = "<group>"; };
 		5757F98924639E3600F8D75C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		576F2948247AD04D0078EC67 /* Frog2usdz.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Frog2usdz.usdz; sourceTree = "<group>"; };
+		576F294A247AD3D90078EC67 /* FrogScaledUsdz.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = FrogScaledUsdz.usdz; sourceTree = "<group>"; };
 		577AA1A2247159E100B85AF6 /* GPX files (To simulate Locations) */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "GPX files (To simulate Locations)"; sourceTree = "<group>"; };
 		579B45462447084200EACA4B /* CoreDataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHandler.swift; sourceTree = "<group>"; };
 		579B454F2447460900EACA4B /* FrogEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "FrogEntity+CoreDataClass.swift"; path = "TabView/FrogEntity+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		579B45502447460900EACA4B /* FrogEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "FrogEntity+CoreDataProperties.swift"; path = "TabView/FrogEntity+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		579C04B6247B78D1003EEB6D /* greenwaves.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = greenwaves.json; sourceTree = "<group>"; };
 		579EE7A624433BCC00321C7E /* BearBottle.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = BearBottle.mlmodel; sourceTree = "<group>"; };
 		579EE7A82444763000321C7E /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		579EE7AC2444CB2D00321C7E /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
@@ -172,6 +178,7 @@
 		574DCD142463EC8B00BA40B7 /* LottieFiles */ = {
 			isa = PBXGroup;
 			children = (
+				579C04B6247B78D1003EEB6D /* greenwaves.json */,
 				57441D912463F00A00BC4DE0 /* catchmeifyoucan.json */,
 				B9FD7A4D246C1F2C0058B4B3 /* 291-searchask-loop.json */,
 				B9FD7A50246C1F2D0058B4B3 /* 336-search.json */,
@@ -276,11 +283,11 @@
 				570D1C212470E9FE00B9FB22 /* Audio */,
 				579B455324477DF300EACA4B /* Inferface */,
 				579B45492447441200EACA4B /* ViewControllers */,
-				57F877E724741BD300D5501F /* AR files */,
 				579B4548244743E100EACA4B /* CoreData */,
 				579B454A2447442600EACA4B /* Core ML */,
 				577AA1A2247159E100B85AF6 /* GPX files (To simulate Locations) */,
 				574DCD142463EC8B00BA40B7 /* LottieFiles */,
+				57F877E724741BD300D5501F /* AR files */,
 				57A3B8AA244315270011F674 /* Assets.xcassets */,
 				57A3B8AF244315270011F674 /* Info.plist */,
 			);
@@ -291,9 +298,11 @@
 			isa = PBXGroup;
 			children = (
 				57F877F0247641F900D5501F /* Frog_Hopping.usdz */,
+				576F2948247AD04D0078EC67 /* Frog2usdz.usdz */,
 				57F877E824763B5700D5501F /* FROG.usdz */,
 				57F877E524741B0100D5501F /* toy_biplane.usdz */,
 				57F877EA24763E9300D5501F /* DartFrog.obj */,
+				576F294A247AD3D90078EC67 /* FrogScaledUsdz.usdz */,
 			);
 			path = "AR files";
 			sourceTree = "<group>";
@@ -371,10 +380,12 @@
 				57441D922463F00A00BC4DE0 /* catchmeifyoucan.json in Resources */,
 				570D1C1E24705E5200B9FB22 /* confetti2.json in Resources */,
 				B98A407D24725008006C2F2A /* award.json in Resources */,
+				576F2949247AD04D0078EC67 /* Frog2usdz.usdz in Resources */,
 				570D1C1F24705E5200B9FB22 /* sad1.json in Resources */,
 				57F877F1247641F900D5501F /* Frog_Hopping.usdz in Resources */,
 				57F877EB24763E9300D5501F /* DartFrog.obj in Resources */,
 				B9FD7A58246C1F2D0058B4B3 /* 13005-refresh.json in Resources */,
+				579C04B7247B78D1003EEB6D /* greenwaves.json in Resources */,
 				B9FD7A56246C1F2D0058B4B3 /* 8878-done.json in Resources */,
 				B9FD7A53246C1F2D0058B4B3 /* 13357-route-finder.json in Resources */,
 				570D1C252470EBA700B9FB22 /* sad.mp3 in Resources */,
@@ -393,6 +404,7 @@
 				570D1C2024705E5200B9FB22 /* confetti1.json in Resources */,
 				577AA1A3247159E100B85AF6 /* GPX files (To simulate Locations) in Resources */,
 				570D1C272470EBE100B9FB22 /* confetti.mp3 in Resources */,
+				576F294B247AD3D90078EC67 /* FrogScaledUsdz.usdz in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

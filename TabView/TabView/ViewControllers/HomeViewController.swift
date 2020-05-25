@@ -18,30 +18,63 @@ class HomeViewController: UIViewController, AwesomeSpotlightViewDelegate {
     var selectedFrog: String = ""
     let magnitude = -20
     let animationView = AnimationView(name: "catchmeifyoucan")
+    let wavesAnimationView = AnimationView(name: "greenwaves")
     
     var isLoadingFirstTime: Bool = false
     var spotlight: [SpotLightEntity] = []
-
+    
+    let screenSize: CGRect = UIScreen.main.bounds
+ 
     @IBOutlet weak var exploreBtn: UIButton!
     
     // set frame
     let  searchField = DropDown(frame: CGRect(x: 10, y: 0, width: 350, height: 50))
     var spotlightView = AwesomeSpotlightView()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         addFrogsToSearchBar()
         lottieAnimation()
         initializeSearch()
+        
+        //MARK: - UNCOMMENT THIS
         checkForSpotLight()
         applyParallaxEffect()
-        AudioServicesPlaySystemSound(1520) // Actuate "Nope" feedback (series of three weak booms)
+        // Actuate "Nope" feedback (series of three weak booms)
+        AudioServicesPlaySystemSound(1520)
+        
+        //wavesAnimation.contentMode = .scaleAspectFit
+        //wavesAnimation.loopMode = .loop
+        //_ = wavesAnimation.anchor(view.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 150, heightConstant: 150)
+    }
+    
+    // Setup lottie animation and add constraints
+    func lottieAnimation() {
+        animationView.frame = CGRect(x: 0, y: 0, width: 150, height: 150)
+        animationView.center.x = self.view.center.x
+        animationView.contentMode = .scaleAspectFit
+        view.addSubview(animationView)
+        animationView.loopMode = .loop
+        _ = animationView.anchor(view.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, topConstant: 20, leftConstant: 20, bottomConstant: 0, rightConstant: 20, widthConstant: 150, heightConstant: 150)
+        wavesAnimationView.frame = CGRect(x: 0, y: 0, width: 510, height: 510)
+        wavesAnimationView.center.x = self.view.center.x
+        wavesAnimationView.contentMode = .scaleAspectFit
+        view.addSubview(wavesAnimationView)
+        wavesAnimationView.loopMode = .loop
+        
+        if screenSize.width == 375.0 {
+            _ = wavesAnimationView.anchor(nil, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: -50, rightConstant: 0, widthConstant: 510, heightConstant: 510)
+        } else if screenSize.width == 414.0 {
+            _ = wavesAnimationView.anchor(nil, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: -20, rightConstant: 0, widthConstant: 525, heightConstant: 525)
+        }
+        
+        view.bringSubviewToFront(exploreBtn)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         setUpSearchBarAndExploreButton()
         searchBarAnimation()
         animationView.play()
+        wavesAnimationView.play()
     }
     
     // Check if the application is opening for the first time
@@ -73,31 +106,40 @@ class HomeViewController: UIViewController, AwesomeSpotlightViewDelegate {
     
     // If the application is opened for the first time, provide tutorial to the user using spot light.
     func startSpotLightTour() {
-        let spotlightMain = AwesomeSpotlight(withRect: CGRect(x: 10, y: 77, width: 220, height: 75), shape: .circle, text: "\n\nWelcome\n\n\n\n\n\n\nTap anywhere on the grey area to continue", isAllowPassTouchesThroughSpotlight: false)
-        let spotlight1 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 15, y: 335, width: 385, height: 60), shape: .roundRectangle, text: "You can search for a specifc frog here", isAllowPassTouchesThroughSpotlight: false)
-        // Spotlight for Frog's Common Name
-        let spotlight2 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 33, y: 559, width: 350, height: 200), shape: .roundRectangle, text: "\n\n\nYou can explore all frogs here", isAllowPassTouchesThroughSpotlight: false)
-        // Load spotlights
-        let spotlightView = AwesomeSpotlightView(frame: view.frame, spotlight: [spotlightMain, spotlight1, spotlight2])
-        spotlightView.cutoutRadius = 8
-        spotlightView.delegate = self
-        view.addSubview(spotlightView)
-        DispatchQueue.main.asyncAfter(deadline: .now()+1) {
-            spotlightView.spotlightMaskColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.7)
-            spotlightView.enableArrowDown = true
-            spotlightView.start()
+        var spotlightMain = AwesomeSpotlight()
+        var spotlight1 = AwesomeSpotlight()
+        var spotlight2 = AwesomeSpotlight()
+        var properDevice = false
+        print(screenSize.width)
+        if screenSize.width == 414.0 {
+            spotlightMain = AwesomeSpotlight(withRect: CGRect(x: 10, y: 77, width: 220, height: 75), shape: .circle, text: "\n\nWelcome\n\n\n\n\n\n\nTap anywhere on the grey area to continue", isAllowPassTouchesThroughSpotlight: false)
+            spotlight1 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 15, y: 335, width: 385, height: 60), shape: .roundRectangle, text: "You can search for a specifc frog here", isAllowPassTouchesThroughSpotlight: false)
+            // Spotlight for Frog's Common Name
+            spotlight2 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 33, y: 665, width: 350, height: 100), shape: .roundRectangle, text: "\n\n\nYou can explore all frogs here", isAllowPassTouchesThroughSpotlight: false)
+            properDevice = true
+        } else if screenSize.width == 375.0 {
+            spotlightMain = AwesomeSpotlight(withRect: CGRect(x: 7, y: 77, width: 220, height: 75), shape: .circle, text: "\n\nWelcome\n\n\n\n\n\n\nTap anywhere on the grey area to continue", isAllowPassTouchesThroughSpotlight: false)
+            spotlight1 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 15, y: 335, width: 345, height: 60), shape: .roundRectangle, text: "You can search for a specifc frog here", isAllowPassTouchesThroughSpotlight: false)
+            spotlight2 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 33, y: 603, width: 310, height: 80), shape: .roundRectangle, text: "\n\n\nTap here to explore all frogs", isAllowPassTouchesThroughSpotlight: false)
+            properDevice = true
         }
-        CoreDataHandler.updateSpotLight(attribute: "home", boolean: true)
-    }
-    
-    // Setup lottie animation and add constraints
-    func lottieAnimation() {
-        animationView.frame = CGRect(x: 0, y: 0, width: 150, height: 150)
-        animationView.center.x = self.view.center.x
-        animationView.contentMode = .scaleAspectFit
-        view.addSubview(animationView)
-        animationView.loopMode = .loop
-        _ = animationView.anchor(view.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, topConstant: 20, leftConstant: 20, bottomConstant: 0, rightConstant: 20, widthConstant: 150, heightConstant: 150)
+        if properDevice {
+            // Load spotlights
+            let spotlightView = AwesomeSpotlightView(frame: view.frame, spotlight: [spotlightMain, spotlight1, spotlight2])
+            spotlightView.cutoutRadius = 8
+            spotlightView.delegate = self
+            view.addSubview(spotlightView)
+            DispatchQueue.main.asyncAfter(deadline: .now()+1) {
+                if self.traitCollection.userInterfaceStyle == .light {
+                    spotlightView.spotlightMaskColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.7)
+                } else {
+                    spotlightView.spotlightMaskColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.8)
+                }
+                spotlightView.enableArrowDown = true
+                spotlightView.start()
+            }
+            CoreDataHandler.updateSpotLight(attribute: "home", boolean: true)
+        }
     }
     
     // Setup search bar and add constraints
@@ -124,9 +166,9 @@ class HomeViewController: UIViewController, AwesomeSpotlightViewDelegate {
             print(selectedText, "SELECTED TEXT")
             self.showDetails(frogname: selectedText)
         }
-        exploreBtn.layer.shadowColor = #colorLiteral(red: 0.7719962001, green: 0.1048256829, blue: 0.2892795205, alpha: 1)
-        exploreBtn.layer.shadowOffset = CGSize(width: 5.0, height: 2.0)
-        exploreBtn.layer.shadowOpacity = 1.0
+        //exploreBtn.layer.shadowColor = #colorLiteral(red: 0.7719962001, green: 0.1048256829, blue: 0.2892795205, alpha: 1)
+        exploreBtn.layer.shadowOffset = CGSize(width: 2.0, height: 2.0)
+        exploreBtn.layer.shadowOpacity = 0.8
         searchField.clipsToBounds = true
     }
     

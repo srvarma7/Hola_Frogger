@@ -32,7 +32,7 @@ public class AwesomeSpotlightView: UIView {
   private static let kEnableSkipButton = false
   private static let kEnableArrowDown = false
   private static let kShowAllSpotlightsAtOnce = false
-  private static let kTextLabelFont = UIFont.systemFont(ofSize: 20.0)
+  private static let kTextLabelFont = UIFont.boldSystemFont(ofSize: 20.0)
   private static let kContinueLabelFont = UIFont.systemFont(ofSize: 13.0)
   private static let kSkipButtonFont = UIFont.boldSystemFont(ofSize: 13.0)
   private static let kSkipButtonLastStepTitle = "Done".localized
@@ -119,7 +119,15 @@ public class AwesomeSpotlightView: UIView {
     let textLabelRect = CGRect(x: 0, y: 0, width: maxLabelWidth, height: 0)
     textLabel = UILabel(frame: textLabelRect)
     textLabel.backgroundColor = .clear
-    textLabel.textColor = .white
+    if #available(iOS 12.0, *) {
+        if self.traitCollection.userInterfaceStyle == .light {
+            textLabel.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        } else {
+            textLabel.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        }
+    } else {
+        textLabel.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+    }
     textLabel.font = textLabelFont
     textLabel.lineBreakMode = .byWordWrapping
     textLabel.numberOfLines = 0

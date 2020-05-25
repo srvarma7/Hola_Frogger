@@ -9,6 +9,8 @@
 import UIKit
 import MapKit
 import AwesomeSpotlightView
+import QuickLook
+import ARKit
 
 // Structure to hold API response
 struct WeatherJsonResponse: Codable {
@@ -29,7 +31,7 @@ struct TempPressure: Codable {
     let humidity: Int
 }
 
-class FrogDetailsViewController: UIViewController, MKMapViewDelegate, AwesomeSpotlightViewDelegate {
+class FrogDetailsViewController: UIViewController, MKMapViewDelegate, AwesomeSpotlightViewDelegate, QLPreviewControllerDataSource {
 
     // UI outlets
     @IBOutlet weak var wLocName: UILabel!
@@ -45,17 +47,12 @@ class FrogDetailsViewController: UIViewController, MKMapViewDelegate, AwesomeSpo
     @IBOutlet weak var locationLbl: UILabel!
     @IBOutlet weak var statusLbl: UILabel!
     @IBOutlet weak var countLbl: UILabel!
-
     @IBOutlet weak var frogImage: UIImageView!
-    
     @IBOutlet weak var isVisitedLbl: UILabel!
     
     var spotlight: [SpotLightEntity] = []
     var spotlightView = AwesomeSpotlightView()
-    
     var fromListScreen: Bool = false
-
-
     // Variable will hold the data that is sent by other controller.
     var receivedFrog: FrogEntity?
     
@@ -65,6 +62,7 @@ class FrogDetailsViewController: UIViewController, MKMapViewDelegate, AwesomeSpo
     let favButton = UIButton()
     let closeButton = UIButton()
     var localIsFav: Bool = false
+    
     // Used to show the foucs loation on map
     var focusLocation = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 0, longitude: 0), latitudinalMeters: 1000, longitudinalMeters: 1000)
     var annotaion = FrogAnnotation(title: "", subtitle: "", latitude: 0, longitude: 0)
@@ -87,7 +85,6 @@ class FrogDetailsViewController: UIViewController, MKMapViewDelegate, AwesomeSpo
         } else {
             frogImage.image = UIImage(named:"\(String(receivedFrog!.sname!))")
         }
-        
         frogImage.image = UIImage(named:"\(String(receivedFrog!.sname!))")
         if traitCollection.userInterfaceStyle == .light {
             frogImage.layer.shadowColor = UIColor.black.cgColor
@@ -131,44 +128,93 @@ class FrogDetailsViewController: UIViewController, MKMapViewDelegate, AwesomeSpo
         closeButton.addTarget(self, action: #selector(closeButtonAction), for: .touchUpInside)
         self.view.addSubview(closeButton)
         checkForSpotLight()
+        // MARK:- AR
+        // Frog image tapped
+        //frogImage.addTarget(self, action: #selector(frogImageDidTapped), for: .touchUpInside)
+        let tap = UITapGestureRecognizer(target: self, action: #selector(tappedMe))
+        frogImage.addGestureRecognizer(tap)
+        frogImage.isUserInteractionEnabled = true
     }
-        
-        
-        
+    
+    @objc func tappedMe()
+    {
+        print("Tapped")
+        if isSimulator {
+            displayMessage(title: "Alert!", message: "Augmented Reality is not avaliable on simulators!!!.\nTo experiance AR, please open this feature on a AR supported device")
+        } else {
+            let previewController = QLPreviewController()
+            previewController.dataSource = self
+            present(previewController, animated: true, completion: nil)
+        }
+    }
+    
+    func numberOfPreviewItems(in controller: QLPreviewController) -> Int { return 1 }
+
+    func previewController(_ controller: QLPreviewController, previewItemAt index: Int) -> QLPreviewItem {
+        //guard let path = Bundle.main.path(forResource: "FROG", ofType: "usdz") else { fatalError("Couldn't find the supported input file.") }
+        //guard let path = Bundle.main.path(forResource: "Frog_Hopping", ofType: "usdz") else { fatalError("Couldn't find the supported input file.") }
+        //guard let path = Bundle.main.path(forResource: "DartFrog", ofType: "obj") else { fatalError("Couldn't find the supported input file.") }
+        //guard let path = Bundle.main.path(forResource: "toy_biplane", ofType: "usdz") else { fatalError("Couldn't find the supported input file.") }
+        guard let path = Bundle.main.path(forResource: "FrogScaledUsdz", ofType: "usdz") else { fatalError("Couldn't find the supported input file.") }
+        let url = URL(fileURLWithPath: path)
+        return url as QLPreviewItem
+    }
+    
     func checkForSpotLight() {
-        
         if spotlight.isEmpty {
             CoreDataHandler.addSpotLight()
             spotlight = CoreDataHandler.fetchSpotLight()
         }
-        
         if !(spotlight.first!.frogdetails) {
             startSpotLightTour()
         }
     }
     
     func startSpotLightTour() {
-        
-        // Spotlight for Image
-        let spotlight1 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 162, y: 122, width: 90, height: 90), shape: .circle, text: "\n\nFrog's geographical location", isAllowPassTouchesThroughSpotlight: false)
-        
-        // Spotlight for Frog's Common Name
-        let spotlight2 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY+8, y: 5, width: 400, height: 85), shape: .roundRectangle, text: "Weather conditions at frog's location", isAllowPassTouchesThroughSpotlight: false)
-        
-        // Spotlight for Filter by Favourite
-        let spotlight5 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 181, y: 636, width: 50, height: 50), shape: .circle, text: "Make favourite or unfavourite", isAllowPassTouchesThroughSpotlight: false)
-        
-        
-        let spotlightView = AwesomeSpotlightView(frame: view.frame, spotlight: [spotlight1, spotlight2, spotlight5])
-        
-        spotlightView.cutoutRadius = 8
-        spotlightView.delegate = self
-        view.addSubview(spotlightView)
-        DispatchQueue.main.asyncAfter(deadline: .now()+1) {
-            spotlightView.spotlightMaskColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.7)
-            spotlightView.enableArrowDown = true
-            spotlightView.start()        }
-        CoreDataHandler.updateSpotLight(attribute: "frogdetails", boolean: true)
+        let screenSize: CGRect = UIScreen.main.bounds
+        var spotlight1 = AwesomeSpotlight()
+        var spotlight2 = AwesomeSpotlight()
+        var spotlight5 = AwesomeSpotlight()
+        var properDevice = false
+        print(screenSize.width)
+        if screenSize.width == 414.0 {
+            // Spotlight for Image
+            spotlight1 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 162, y: 122, width: 90, height: 90), shape: .circle, text: "\n\nFrog's geographical location", isAllowPassTouchesThroughSpotlight: false)
+            
+            // Spotlight for Frog's Common Name
+            spotlight2 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY+8, y: 5, width: 400, height: 85), shape: .roundRectangle, text: "Weather conditions at frog's location", isAllowPassTouchesThroughSpotlight: false)
+            
+            // Spotlight for Filter by Favourite
+            spotlight5 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 177, y: 636, width: 60, height: 60), shape: .circle, text: "Make favourite or unfavourite", isAllowPassTouchesThroughSpotlight: false)
+            properDevice = true
+        } else if screenSize.width == 375.0 {
+            // Spotlight for Image
+            spotlight1 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 140, y: 115, width: 90, height: 90), shape: .circle, text: "\n\nFrog's geographical location", isAllowPassTouchesThroughSpotlight: false)
+            
+            // Spotlight for Frog's Common Name
+            spotlight2 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY+8, y: 5, width: 360, height: 75), shape: .roundRectangle, text: "Weather conditions at frog's location", isAllowPassTouchesThroughSpotlight: false)
+            
+            // Spotlight for Filter by Favourite
+            spotlight5 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 157, y: 625, width: 60, height: 60), shape: .circle, text: "Make favourite or unfavourite", isAllowPassTouchesThroughSpotlight: false)
+            properDevice = true
+        }
+        if properDevice {
+            // Load spotlights
+            let spotlightView = AwesomeSpotlightView(frame: view.frame, spotlight: [spotlight1, spotlight2, spotlight5])
+            spotlightView.cutoutRadius = 8
+            spotlightView.delegate = self
+            view.addSubview(spotlightView)
+            DispatchQueue.main.asyncAfter(deadline: .now()+1) {
+                if self.traitCollection.userInterfaceStyle == .light {
+                    spotlightView.spotlightMaskColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.7)
+                } else {
+                    spotlightView.spotlightMaskColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.8)
+                }
+                spotlightView.enableArrowDown = true
+                spotlightView.start()
+            }
+            CoreDataHandler.updateSpotLight(attribute: "frogdetails", boolean: true)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -178,7 +224,12 @@ class FrogDetailsViewController: UIViewController, MKMapViewDelegate, AwesomeSpo
             self.focusLocation = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: self.receivedFrog!.latitude, longitude: self.receivedFrog!.longitude), latitudinalMeters: 1000, longitudinalMeters: 1000)
             self.mapView.setRegion(self.focusLocation, animated: true)
             self.mapView.addAnnotation(self.annotaion)
-            self.closeButton.transform = CGAffineTransform(translationX: 0, y: -170)
+            let screenSize: CGRect = UIScreen.main.bounds
+            if screenSize.width == 375.0 {
+                self.closeButton.transform = CGAffineTransform(translationX: 0, y: -155)
+            } else {
+                self.closeButton.transform = CGAffineTransform(translationX: 0, y: -180)
+            }
         })
     }
     
@@ -249,5 +300,25 @@ class FrogDetailsViewController: UIViewController, MKMapViewDelegate, AwesomeSpo
                 self.wImage.image = UIImage(data: data)
             }
         })
+    }
+    
+    //To display messages to the user as an alert
+    func displayMessage(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+}
+
+// Method to identify the device type
+/// Author "mbelsky"
+/// Reference link - https://stackoverflow.com/questions/24869481/how-to-detect-if-app-is-being-built-for-device-or-simulator-in-swift
+extension FrogDetailsViewController {
+    var isSimulator: Bool {
+        #if arch(i386) || arch(x86_64)
+            return true
+        #else
+            return false
+        #endif
     }
 }
