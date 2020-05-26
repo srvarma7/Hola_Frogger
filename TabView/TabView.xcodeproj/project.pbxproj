@@ -49,6 +49,7 @@
 		57C098BE246A49BD0041C235 /* ChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C098BD246A49BD0041C235 /* ChallengeViewController.swift */; };
 		57C098C9246A8E570041C235 /* UnSightedFrogEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C098C7246A8E570041C235 /* UnSightedFrogEntity+CoreDataClass.swift */; };
 		57C098CA246A8E570041C235 /* UnSightedFrogEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C098C8246A8E570041C235 /* UnSightedFrogEntity+CoreDataProperties.swift */; };
+		57F75BAA247CB4D200832D9A /* FrogCartoon.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 57F75BA9247CB4D200832D9A /* FrogCartoon.usdz */; };
 		57F877E424741A9800D5501F /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F877E324741A9800D5501F /* ARViewController.swift */; };
 		57F877E624741B0100D5501F /* toy_biplane.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 57F877E524741B0100D5501F /* toy_biplane.usdz */; };
 		57F877E924763B5700D5501F /* FROG.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 57F877E824763B5700D5501F /* FROG.usdz */; };
@@ -117,6 +118,7 @@
 		57C098BD246A49BD0041C235 /* ChallengeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeViewController.swift; sourceTree = "<group>"; };
 		57C098C7246A8E570041C235 /* UnSightedFrogEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UnSightedFrogEntity+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		57C098C8246A8E570041C235 /* UnSightedFrogEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UnSightedFrogEntity+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		57F75BA9247CB4D200832D9A /* FrogCartoon.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; name = FrogCartoon.usdz; path = ../../../../../../../../../.Trash/FrogCartoon.usdz; sourceTree = "<group>"; };
 		57F877E324741A9800D5501F /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
 		57F877E524741B0100D5501F /* toy_biplane.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = toy_biplane.usdz; sourceTree = "<group>"; };
 		57F877E824763B5700D5501F /* FROG.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = FROG.usdz; sourceTree = "<group>"; };
@@ -297,6 +299,7 @@
 		57F877E724741BD300D5501F /* AR files */ = {
 			isa = PBXGroup;
 			children = (
+				57F75BA9247CB4D200832D9A /* FrogCartoon.usdz */,
 				57F877F0247641F900D5501F /* Frog_Hopping.usdz */,
 				576F2948247AD04D0078EC67 /* Frog2usdz.usdz */,
 				57F877E824763B5700D5501F /* FROG.usdz */,
@@ -403,6 +406,7 @@
 				57A3B8A6244315230011F674 /* Main.storyboard in Resources */,
 				570D1C2024705E5200B9FB22 /* confetti1.json in Resources */,
 				577AA1A3247159E100B85AF6 /* GPX files (To simulate Locations) in Resources */,
+				57F75BAA247CB4D200832D9A /* FrogCartoon.usdz in Resources */,
 				570D1C272470EBE100B9FB22 /* confetti.mp3 in Resources */,
 				576F294B247AD3D90078EC67 /* FrogScaledUsdz.usdz in Resources */,
 			);
