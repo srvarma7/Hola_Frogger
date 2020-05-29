@@ -37,8 +37,8 @@ class OnboardingPageCell: UICollectionViewCell {
             let attributedText = NSMutableAttributedString(string: page.title, attributes: [NSAttributedString.Key.font:
                 UIFont.systemFont(ofSize: 25, weight: UIFont.Weight.medium), NSAttributedString.Key.foregroundColor: color])
             
-            attributedText.append(NSAttributedString(string: "\n\n\n\(page.message)", attributes: [NSAttributedString.Key.font:
-                UIFont.systemFont(ofSize: 14), NSAttributedString.Key.foregroundColor: color]))
+            attributedText.append(NSAttributedString(string: "\n\n\(page.message)", attributes: [NSAttributedString.Key.font:
+                UIFont.systemFont(ofSize: 16), NSAttributedString.Key.foregroundColor: color]))
             
 
                        
@@ -92,9 +92,9 @@ class OnboardingPageCell: UICollectionViewCell {
         addSubview(animationView)
         addSubview(textView)
         
-        _ = animationView.anchor(topAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, topConstant: 120, leftConstant: 39, bottomConstant: 0, rightConstant: 39, widthConstant: 335, heightConstant: 322)
+        _ = animationView.anchor(topAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, topConstant: 100, leftConstant: 39, bottomConstant: 0, rightConstant: 39, widthConstant: 335, heightConstant: 322)
         
-        _ = textView.anchor(animationView.bottomAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, topConstant: 50, leftConstant: 42, bottomConstant: 0, rightConstant: 42, widthConstant: 330, heightConstant: 180)
+        _ = textView.anchor(animationView.bottomAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, topConstant: 20, leftConstant: 42, bottomConstant: 0, rightConstant: 42, widthConstant: 330, heightConstant: 250)
         
     }
     

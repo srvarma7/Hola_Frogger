@@ -152,11 +152,11 @@ class FrogDetailsViewController: UIViewController, MKMapViewDelegate, AwesomeSpo
     func numberOfPreviewItems(in controller: QLPreviewController) -> Int { return 1 }
     
     func previewController(_ controller: QLPreviewController, previewItemAt index: Int) -> QLPreviewItem {
-        guard let path = Bundle.main.path(forResource: "FrogCartoon", ofType: "usdz") else { fatalError("Couldn't find the supported input file.") }
+        //guard let path = Bundle.main.path(forResource: "FrogCartoon", ofType: "usdz") else { fatalError("Couldn't find the supported input file.") }
         //guard let path = Bundle.main.path(forResource: "Frog_Hopping", ofType: "usdz") else { fatalError("Couldn't find the supported input file.") }
         //guard let path = Bundle.main.path(forResource: "DartFrog", ofType: "obj") else { fatalError("Couldn't find the supported input file.") }
         //guard let path = Bundle.main.path(forResource: "toy_biplane", ofType: "usdz") else { fatalError("Couldn't find the supported input file.") }
-        //guard let path = Bundle.main.path(forResource: "FrogScaledUsdz", ofType: "usdz") else { fatalError("Couldn't find the supported input file.") }
+        guard let path = Bundle.main.path(forResource: "FrogScaledUsdz", ofType: "usdz") else { fatalError("Couldn't find the supported input file.") }
         let url = URL(fileURLWithPath: path)
         return url as QLPreviewItem
     }

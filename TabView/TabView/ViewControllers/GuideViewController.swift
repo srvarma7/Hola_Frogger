@@ -32,11 +32,11 @@ class GuideViewController: UIViewController, UICollectionViewDataSource, UIColle
     let fileId = "fileId"
     
     let pages: [Page] = {
-        let firstPage = Page(title: "Search", message: "Search for your favourite frogs using their names!! Get real-time suggestion based on what you type.", animationName: "336-search")
-        let secondPage = Page(title: "Frog Names", message: "Our application provides both scientifc as well as common names for you to recognize your favourite frog. We have carfully laid out color-coded icons（V-Vulnerable，E-Endangered，N-Not Vulnerable）to highlight the species based on their threatened status", animationName: "10548-forest")
-        let thirdPage = Page(title: "Identify", message: "Hola Frogger is equipped with lens feature to identify a frog species and provide the accurate name of frog through our machine-learned model of 18 frogs from Victoria. Just point the camera at the Frog and watch the magic!", animationName: "291-searchask-loop")
-        let fourthPage = Page(title: "Locate Frog on Maps", message: "Government backed data provides hotspot across Victoria to sight particular frog species. Just find the annotation on the map and you are good to go. Plus our accurate weather and humidity conditions of the location will give you higher chances to sight them in wild.", animationName: "13357-route-finder")
-        let fifthPage = Page(title: "News", message: "Stay up-to date with latest news on frogs from multiple trusted sources across the web.\nJust curated for your need.", animationName: "20301-newspaper-open")
+        let firstPage = Page(title: "Search", message: "Search for your favourite frogs using both scientific or common names. Get live suggestion based on your text!", animationName: "336-search")
+        let secondPage = Page(title: "Frog Names", message: "Our application provides both scientific as well as common names for you to recognize your favourite frog. We have carefully laid out colour-coded icons(V - Vulnerable, E - Endangered, N - Non - Vulnerable) to highlight the species based on their population.", animationName: "10548-forest")
+        let thirdPage = Page(title: "Identify", message: "Hola Frogger is equipped with lens feature to identify a frog species and provide the correct name for frog through our self machine-learned data. Just point to the Frog and Magic !!", animationName: "291-searchask-loop")
+        let fourthPage = Page(title: "Locate Frog on Maps", message: "Our data provides hotspot across Victoria to sight particular frog species. Just find the annotation on the map, along with our correct weather information will give you an edge of sighting the frog in wild.", animationName: "13357-route-finder")
+        let fifthPage = Page(title: "News", message: "Stay up-to date with latest news on frogs from multiple trusted sources across the web. Just curated for your need.", animationName: "20301-newspaper-open")
         return [firstPage, secondPage, thirdPage,fourthPage,fifthPage]
         
     }()

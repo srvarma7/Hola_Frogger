@@ -16,7 +16,7 @@ class OnboardingDoneCell: UICollectionViewCell {
         let title = UITextView()
         title.text = "Almost done"
         title.textAlignment = NSTextAlignment.center
-        title.font = UIFont.boldSystemFont(ofSize: 20)
+        title.font = UIFont.boldSystemFont(ofSize: 25)
         title.isEditable = false
         return title
         
@@ -24,8 +24,8 @@ class OnboardingDoneCell: UICollectionViewCell {
     let descriptionTextView: UITextView = {
            let title = UITextView()
         title.text = "You are almost there to explore and locate Frogs around you. Click on the \"Done\" button to go to the homescreen."
-           title.textAlignment = NSTextAlignment.justified
-           title.font = UIFont.systemFont(ofSize: 14)
+        title.textAlignment = NSTextAlignment.center
+           title.font = UIFont.systemFont(ofSize: 16)
            title.isEditable = false
            return title
            
