@@ -106,8 +106,9 @@ class FrogDetailsViewController: UIViewController, MKMapViewDelegate, AwesomeSpo
         
         // This button is be used to Favourite or Unfavourite a Frog.
         favButton.frame = CGRect(x: self.view.center.x-20, y: isVisitedLbl.frame.maxY + 10, width: 50, height: 50)
-        favButton.center.x = view.center.x
-       // favButton.center.x = view.center.x
+        
+        favButton.center = frogImage.center
+        favButton.center.x = frogImage.center.x + 150
         // To dismiss the current view controller
         closeButton.frame = CGRect(x: view.center.x, y: view.frame.maxY + 30, width: 50, height: 50)
         closeButton.center.x = view.center.x
@@ -185,7 +186,7 @@ class FrogDetailsViewController: UIViewController, MKMapViewDelegate, AwesomeSpo
             spotlight2 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY+8, y: 5, width: 400, height: 85), shape: .roundRectangle, text: "Weather conditions at frog's location", isAllowPassTouchesThroughSpotlight: false)
             
             // Spotlight for Filter by Favourite
-            spotlight5 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 177, y: 636, width: 60, height: 60), shape: .circle, text: "Make favourite or unfavourite", isAllowPassTouchesThroughSpotlight: false)
+            spotlight5 = AwesomeSpotlight(withRect: CGRect(x: frogImage.center.x + 120, y: frogImage.center.y - 30, width: 60, height: 60), shape: .circle, text: "Make favourite or unfavourite", isAllowPassTouchesThroughSpotlight: false)
             properDevice = true
         } else if screenSize.width == 375.0 {
             // Spotlight for Image
@@ -194,8 +195,8 @@ class FrogDetailsViewController: UIViewController, MKMapViewDelegate, AwesomeSpo
             // Spotlight for Frog's Common Name
             spotlight2 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY+8, y: 5, width: 360, height: 75), shape: .roundRectangle, text: "Weather conditions at frog's location", isAllowPassTouchesThroughSpotlight: false)
             
-            // Spotlight for Filter by Favourite
-            spotlight5 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 157, y: 625, width: 60, height: 60), shape: .circle, text: "Make favourite or unfavourite", isAllowPassTouchesThroughSpotlight: false)
+            // Spotlight for Favourite
+            spotlight5 = AwesomeSpotlight(withRect: CGRect(x: frogImage.center.x + 120, y: frogImage.center.y - 30, width: 60, height: 60), shape: .circle, text: "Make favourite or unfavourite", isAllowPassTouchesThroughSpotlight: false)
             properDevice = true
         }
         if properDevice {

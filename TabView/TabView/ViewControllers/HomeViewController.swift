@@ -41,7 +41,7 @@ class HomeViewController: UIViewController, AwesomeSpotlightViewDelegate {
         applyParallaxEffect()
         // Actuate "Nope" feedback (series of three weak booms)
         AudioServicesPlaySystemSound(1520)
-        
+        searchField.textAlignment = .center
         //wavesAnimation.contentMode = .scaleAspectFit
         //wavesAnimation.loopMode = .loop
         //_ = wavesAnimation.anchor(view.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 150, heightConstant: 150)
@@ -170,6 +170,12 @@ class HomeViewController: UIViewController, AwesomeSpotlightViewDelegate {
         exploreBtn.layer.shadowOffset = CGSize(width: 2.0, height: 2.0)
         exploreBtn.layer.shadowOpacity = 0.8
         searchField.clipsToBounds = true
+        searchField.textColor = .white
+        searchField.arrowColor = .white
+        searchField.layer.shadowOffset = CGSize(width: 2.0, height: 2.0)
+        searchField.layer.shadowOpacity = 0.8
+        searchField.tintColor = .white        
+
     }
     
     // Slides in top when application is loaded for the first time
