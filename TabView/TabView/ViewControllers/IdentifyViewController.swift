@@ -131,9 +131,9 @@ class IdentifyViewController: UIViewController, AVCaptureVideoDataOutputSampleBu
             
             // MARK:- ASHISH CHANGE THIS VALUES HERE TO SUIT YOUR PHONES SCREEN
             spotlightMain = AwesomeSpotlight(withRect: CGRect(x: 10, y: 77, width: 0, height: 0), shape: .circle, text: "\n\n\n\n\n\n\nOur classification feature can recognise 18 types of frog from Victoria using our own ML model", isAllowPassTouchesThroughSpotlight: false)
-            spotlight1 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 41, y: 145, width: 330, height: 330), shape: .circle, text: "Point the camera to a frog in the view here and watch the magic below", isAllowPassTouchesThroughSpotlight: false)
+            spotlight1 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 23, y: 153, width: 330, height: 330), shape: .circle, text: "Point the camera to a frog in the view here and watch the magic below", isAllowPassTouchesThroughSpotlight: false)
             // Spotlight for Frog's Common Name
-            spotlight2 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 33, y: 630, width: 350, height: 150), shape: .roundRectangle, text: "\n\n\nIdentified frogs results with their prediction are shown here", isAllowPassTouchesThroughSpotlight: false)
+            spotlight2 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 33, y: 547, width: 310, height: 150), shape: .roundRectangle, text: "\n\n\nIdentified frogs results with their prediction are shown here", isAllowPassTouchesThroughSpotlight: false)
             properDevice = true
         }
         if properDevice {
