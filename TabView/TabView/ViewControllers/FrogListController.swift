@@ -68,7 +68,7 @@ class FrogListController: UIViewController, UITableViewDataSource, UITableViewDe
             // Spotlight for Frog's Common Name
             spotlight2 = AwesomeSpotlight(withRect: CGRect(x: 80, y: 163, width: 130, height: 25), shape: .roundRectangle, text: "Frog's common name", isAllowPassTouchesThroughSpotlight: false)
             // Spotlight for Frog's Scentific Name
-            spotlight3 = AwesomeSpotlight(withRect: CGRect(x: 80, y: 196, width: 175, height: 25), shape: .roundRectangle, text: "Frog's scentific name", isAllowPassTouchesThroughSpotlight: false)
+            spotlight3 = AwesomeSpotlight(withRect: CGRect(x: 80, y: 196, width: 175, height: 25), shape: .roundRectangle, text: "Frog's scientific name", isAllowPassTouchesThroughSpotlight: false)
             // Spotlight for Filter by Favourite
             spotlight4 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 363, y: 170, width: 40, height: 40), shape: .circle, text: "Frog's threatened status\n\nE-Endangered\nV-Vulnerable\nN-Not Endangered", isAllowPassTouchesThroughSpotlight: false)
             // Spotlight for Filter by Favourite
@@ -80,7 +80,7 @@ class FrogListController: UIViewController, UITableViewDataSource, UITableViewDe
             // Spotlight for Frog's Common Name
             spotlight2 = AwesomeSpotlight(withRect: CGRect(x: 80, y: 163, width: 130, height: 25), shape: .roundRectangle, text: "Frog's common name", isAllowPassTouchesThroughSpotlight: false)
             // Spotlight for Frog's Scentific Name
-            spotlight3 = AwesomeSpotlight(withRect: CGRect(x: 80, y: 196, width: 175, height: 25), shape: .roundRectangle, text: "Frog's scentific name", isAllowPassTouchesThroughSpotlight: false)
+            spotlight3 = AwesomeSpotlight(withRect: CGRect(x: 80, y: 196, width: 175, height: 25), shape: .roundRectangle, text: "Frog's scientific name", isAllowPassTouchesThroughSpotlight: false)
             // Spotlight for Status
             spotlight4 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 323, y: 170, width: 40, height: 40), shape: .circle, text: "Frog's threatened status\n\nE-Endangered\nV-Vulnerable\nN-Not Endangered", isAllowPassTouchesThroughSpotlight: false)
             // Spotlight for Filter by Favourite
