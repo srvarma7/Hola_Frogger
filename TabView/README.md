@@ -1,6 +1,6 @@
 
 ## Hola Frogger iOS application
-[![Generic badge](https://img.shields.io/badge/Swift-5.0-orange.svg)](https://shields.io/) [![Generic badge](https://img.shields.io/badge/iOS-13.4+-blue.svg)](https://shields.io/) [![Generic badge](https://img.shields.io/badge/Version-1.1-orange.svg)](https://shields.io/) [![Generic badge](https://img.shields.io/badge/Platform-iOS-green.svg)](https://shields.io/) 
+[![Generic badge](https://img.shields.io/badge/Swift-5.0-orange.svg)](https://shields.io/) [![Generic badge](https://img.shields.io/badge/iOS-13.0+-blue.svg)](https://shields.io/) [![Generic badge](https://img.shields.io/badge/Version-1.2-orange.svg)](https://shields.io/) [![Generic badge](https://img.shields.io/badge/Platform-iOS-green.svg)](https://shields.io/) 
 
 ## DEMO
 To watch the application in action click [here](https://www.youtube.com/watch?v=QgAXakzqdkA&feature=emb_logo).
