@@ -43,7 +43,7 @@ To watch the application in action click [here](https://www.youtube.com/watch?v=
 - Build and Run the application by tapping on Play button or hit 'Cmd + R' on keyboard.
 - If you encounter any saying `Signing for "TabView" requires a development team.`, try signing in with your apple id, and select it under Team in Target.
 - Viola!!
-- If you still experience any issues, please reachout at ckal0008@student.monash.edu
+- If you still experience any issues, please reachout at srvarma7@gmail.com
 - Still having issues? For more detailed instructions click [here](https://monashuni-my.sharepoint.com/:w:/g/personal/ckal0008_student_monash_edu/EeZ5h4O-92lJlpw4KS6f9U8Bg1zQfz7Pc7z5GCPMvJWsdw?e=VjRiNh).
 
 ## Credits
