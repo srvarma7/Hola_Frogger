@@ -48,6 +48,4 @@ To watch the application in action click [here](https://www.youtube.com/watch?v=
 
 ## Credits
 * [Creating and Training Machine Learning model](https://developer.apple.com/videos/play/wwdc2018/717).
-* [Frog Detection](https://www.letsbuildthatapp.com/course_video?id=1592).
 * [Adding custom Annotation](https://www.raywenderlich.com/7738344-mapkit-tutorial-getting-started).
-* [WebKit activity indicatior](https://www.youtube.com/watch?v=tW3MUaU_eNs).
