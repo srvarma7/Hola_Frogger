@@ -1,7 +1,6 @@
 # Hola Frogger
 
-## iOS application
--	Hola Frogger, a one-stop iOS application for Frog enthusiasts and curious people
+###	Hola Frogger, a one-stop iOS application for Frog enthusiasts and curious people
 -	Alert feature, the user gets notified when entering a Frog's habitat. So, users can keep the frog's habitat and themselves safe and clean
 -	Machine Learning feature, the user can identify the frog species along with the prediction percentage real-time using the built-in camera by leveraging on device in-house built models
 -	Keeps the user engaged with weekly challenges and help them learn about frogs
