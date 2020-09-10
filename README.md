@@ -1,11 +1,17 @@
 # Hola Frogger
 
 ## iOS application
-Hola Frogger, a one-stop application for Frog enthusiasts. With our Alert feature, the user gets notified when entering a Frog's habitat and with our ML feature, you can identify the Frog real-time using a camera.  Also keeps you updated with the latest news and exciting challenges.
+-	Hola Frogger, a one-stop iOS application for Frog enthusiasts and curious people
+-	Alert feature, the user gets notified when entering a Frog's habitat. So, users can keep the frog's habitat and themselves safe and clean
+-	Machine Learning feature, the user can identify the frog species along with the prediction percentage real-time using the built-in camera by leveraging on device in-house built models
+-	Keeps the user engaged with weekly challenges and help them learn about frogs
+-	Keeps user updated with the latest news using API. Adapts to Dark/Light mode.
+-	The application was developed using several Apple frameworks like Core Data, Core Location, Map Kit, Web Kit, Vision, AR Kit, AV Foundation, Audio ToolBox and Quick Look and CocoaPods like Lottie, AwesomeSpotlightView, iOSDropDown
+
 
 [![Generic badge](https://img.shields.io/badge/Swift-5.0-orange.svg)](https://shields.io/) [![Generic badge](https://img.shields.io/badge/iOS-13.0+-blue.svg)](https://shields.io/) [![Generic badge](https://img.shields.io/badge/Version-1.2-orange.svg)](https://shields.io/) [![Generic badge](https://img.shields.io/badge/Platform-iOS-green.svg)](https://shields.io/) 
 
-## DEMO
+## Promo
 To watch the application in action click [here](https://www.youtube.com/watch?v=eiUdJElxNBA).
 
 ## New Features (Iteration 2).
