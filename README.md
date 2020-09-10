@@ -9,10 +9,16 @@
 -	The application was developed using several Apple frameworks like Core Data, Core Location, Map Kit, Web Kit, Vision, AR Kit, AV Foundation, Audio ToolBox and Quick Look and CocoaPods like Lottie, AwesomeSpotlightView, iOSDropDown
 
 
-[![Generic badge](https://img.shields.io/badge/Swift-5.0-orange.svg)](https://shields.io/) [![Generic badge](https://img.shields.io/badge/iOS-13.0+-blue.svg)](https://shields.io/) [![Generic badge](https://img.shields.io/badge/Version-1.2-orange.svg)](https://shields.io/) [![Generic badge](https://img.shields.io/badge/Platform-iOS-green.svg)](https://shields.io/) 
+[![Generic badge](https://img.shields.io/badge/Swift-5.0-orange.svg)](https://shields.io/) 
+[![Generic badge](https://img.shields.io/badge/iOS-13.0+-blue.svg)](https://shields.io/) 
+[![Generic badge](https://img.shields.io/badge/Version-1.3-orange.svg)](https://shields.io/) 
+[![Generic badge](https://img.shields.io/badge/Platform-iOS-green.svg)](https://shields.io/) 
 
 ## Promo
-To watch the application in action click [here](https://www.youtube.com/watch?v=eiUdJElxNBA).
+To watch the application promo, please click [here](https://www.youtube.com/watch?v=eiUdJElxNBA).
+
+## Experience app on online simulator
+To experience Hola Frogger on an online simulator, please click [here](https://appetize.io/embed/9kg20fnkh6nm005bn3v5pu9x60?device=iphone11pro&scale=75&orientation=portrait&osVersion=13.3)
 
 ## New Features (Iteration 2).
 - Welcome Screen with animation.
