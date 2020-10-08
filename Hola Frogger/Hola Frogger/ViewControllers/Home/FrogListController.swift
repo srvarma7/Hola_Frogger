@@ -15,6 +15,7 @@ class FrogListController: UIViewController, UITableViewDataSource, UITableViewDe
     // UI outlets
     @IBOutlet weak var showFavButton: UIBarButtonItem!
     @IBOutlet weak var tableView: UITableView!
+    
     var showFavouriteFrogs: Bool = false
     // Variable to fold all the frog recored of Frog entity type
     var frogs: [FrogEntity] = []

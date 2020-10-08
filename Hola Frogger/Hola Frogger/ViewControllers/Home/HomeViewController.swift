@@ -14,7 +14,7 @@ import AudioToolbox
 
 class HomeViewController: UIViewController, AwesomeSpotlightViewDelegate {
     
-    var namesList: [String] = []
+    var frogNamesForSearch: [String] = []
     var selectedFrog: String = ""
     let magnitude = -20
     let animationView = AnimationView(name: "catchmeifyoucan")
@@ -97,9 +97,9 @@ class HomeViewController: UIViewController, AwesomeSpotlightViewDelegate {
             CoreDataHandler.addAllRecords()
             frogs = CoreDataHandler.fetchAllFrogs()
         }
-        if namesList.count == 0 {
+        if frogNamesForSearch.count == 0 {
             for ele in frogs {
-                namesList.append(ele.cname!)
+                frogNamesForSearch.append(ele.cname!)
             }
         }
     }
@@ -158,7 +158,7 @@ class HomeViewController: UIViewController, AwesomeSpotlightViewDelegate {
     }
     
     fileprivate func setUpSearchBarAndExploreButton() {
-        searchField.optionArray = namesList
+        searchField.optionArray = frogNamesForSearch
         searchField.rowBackgroundColor = #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)
         searchField.selectedRowColor = #colorLiteral(red: 0.7719962001, green: 0.1048256829, blue: 0.2892795205, alpha: 1)
         searchField.didSelect{(selectedText , index ,id) in

@@ -12,24 +12,7 @@ import AwesomeSpotlightView
 import QuickLook
 import ARKit
 
-// Structure to hold API response
-struct WeatherJsonResponse: Codable {
-    let name: String
-    let id: Int
-    let weather: [Weather]
-    let main: TempPressure
-}
 
-struct Weather: Codable {
-    let description: String
-    let icon: String
-}
-
-struct TempPressure: Codable {
-    let temp: Double
-    let pressure: Double
-    let humidity: Int
-}
 
 class FrogDetailsViewController: UIViewController, MKMapViewDelegate, AwesomeSpotlightViewDelegate, QLPreviewControllerDataSource {
 

@@ -69,6 +69,8 @@
 		DF8EAE6B252ED61D009A9038 /* FrogEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8EAE69252ED61D009A9038 /* FrogEntity+CoreDataProperties.swift */; };
 		DF8EAE6F252ED627009A9038 /* SpotLightEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8EAE6D252ED627009A9038 /* SpotLightEntity+CoreDataProperties.swift */; };
 		DF8EAE70252ED627009A9038 /* SpotLightEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8EAE6E252ED627009A9038 /* SpotLightEntity+CoreDataClass.swift */; };
+		DFA3BE95252EF47E009C742A /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA3BE94252EF47E009C742A /* Weather.swift */; };
+		DFA3BE99252EF52D009C742A /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA3BE98252EF52D009C742A /* News.swift */; };
 		EC2B8094073EF948ADA1C676 /* Pods_Hola_Frogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17543AFAD565A26F7CFD39CA /* Pods_Hola_Frogger.framework */; };
 /* End PBXBuildFile section */
 
@@ -142,6 +144,8 @@
 		DF8EAE69252ED61D009A9038 /* FrogEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FrogEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		DF8EAE6D252ED627009A9038 /* SpotLightEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SpotLightEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		DF8EAE6E252ED627009A9038 /* SpotLightEntity+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SpotLightEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		DFA3BE94252EF47E009C742A /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		DFA3BE98252EF52D009C742A /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,44 +181,29 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		574DCD142463EC8B00BA40B7 /* LottieFiles */ = {
+		574DCD142463EC8B00BA40B7 /* Other LottieFiles */ = {
 			isa = PBXGroup;
 			children = (
-				579C04B6247B78D1003EEB6D /* greenwaves.json */,
-				57441D912463F00A00BC4DE0 /* catchmeifyoucan.json */,
-				B9FD7A4D246C1F2C0058B4B3 /* 291-searchask-loop.json */,
-				B9FD7A50246C1F2D0058B4B3 /* 336-search.json */,
 				B9FD7A4F246C1F2D0058B4B3 /* 8878-done.json */,
-				B98A407C24725007006C2F2A /* award.json */,
-				B9FD7A4E246C1F2C0058B4B3 /* 10548-forest.json */,
 				B9FD7A51246C1F2D0058B4B3 /* 13005-refresh.json */,
-				B9FD7A4C246C1F2C0058B4B3 /* 13357-route-finder.json */,
-				B9FD7A4B246C1F2C0058B4B3 /* 20301-newspaper-open.json */,
-				570D1C1B24705E5200B9FB22 /* confetti1.json */,
 				570D1C1924705E5200B9FB22 /* confetti2.json */,
 				570D1C1824705E5100B9FB22 /* nonetwork.json */,
 				570D1C1A24705E5200B9FB22 /* sad1.json */,
-				570D1C1724705E5100B9FB22 /* sad2.json */,
 			);
-			path = LottieFiles;
+			path = "Other LottieFiles";
 			sourceTree = "<group>";
 		};
 		579B45492447441200EACA4B /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				DF0FD6C1252ED39600FE17FE /* Onboarding */,
-				5757F98924639E3600F8D75C /* HomeViewController.swift */,
-				57A3B8A0244315230011F674 /* FrogListController.swift */,
+				DFA3BE8D252EEBD5009C742A /* Home */,
 				579EE7AE2444D96A00321C7E /* FrogDetailsViewController.swift */,
 				57A3B8A2244315230011F674 /* IdentifyViewController.swift */,
-				574A3C2924505E840022CCB3 /* MapViewController.swift */,
-				579EE7A82444763000321C7E /* NewsViewController.swift */,
-				579EE7AC2444CB2D00321C7E /* DetailsViewController.swift */,
-				574A3C2B245066060022CCB3 /* FrogAnnotation.swift */,
+				DFA3BE8F252EEC14009C742A /* Frog */,
+				DFA3BE8E252EEBFE009C742A /* News */,
 				57C098BD246A49BD0041C235 /* ChallengeViewController.swift */,
 				570D1C13247015E500B9FB22 /* VisitedViewController.swift */,
-				B9FD7A3F246C11CB0058B4B3 /* ChallengeCell.swift */,
-				B98A407E24725DE6006C2F2A /* FrogCell.swift */,
 				57F877E324741A9800D5501F /* ARViewController.swift */,
 			);
 			path = ViewControllers;
@@ -260,9 +249,12 @@
 		57A3B89B244315230011F674 /* Hola Frogger */ = {
 			isa = PBXGroup;
 			children = (
+				DFA3BE97252EF50C009C742A /* Extension */,
 				57A3B89C244315230011F674 /* AppDelegate.swift */,
 				57A3B89E244315230011F674 /* SceneDelegate.swift */,
 				579B455324477DF300EACA4B /* Inferface */,
+				DFA3BE91252EED2F009C742A /* View */,
+				DFA3BE93252EF455009C742A /* Model */,
 				579B45492447441200EACA4B /* ViewControllers */,
 				DF0FD6C3252ED4E000FE17FE /* CoreData+Entity+Handler */,
 				DF0FD6C0252ED29E00FE17FE /* Support files */,
@@ -288,7 +280,7 @@
 			isa = PBXGroup;
 			children = (
 				57A3B8AA244315270011F674 /* Assets.xcassets */,
-				574DCD142463EC8B00BA40B7 /* LottieFiles */,
+				DFA3BE8C252EE5EE009C742A /* LottieFiles */,
 				57F877E724741BD300D5501F /* AR files */,
 				577AA1A2247159E100B85AF6 /* GPX files (To simulate Locations) */,
 				579B454A2447442600EACA4B /* Core ML */,
@@ -347,6 +339,76 @@
 				DF8EAE64252ED60B009A9038 /* UnSightedFrogEntity+CoreDataProperties.swift */,
 			);
 			path = UnSighted;
+			sourceTree = "<group>";
+		};
+		DFA3BE8C252EE5EE009C742A /* LottieFiles */ = {
+			isa = PBXGroup;
+			children = (
+				579C04B6247B78D1003EEB6D /* greenwaves.json */,
+				57441D912463F00A00BC4DE0 /* catchmeifyoucan.json */,
+				B98A407C24725007006C2F2A /* award.json */,
+				B9FD7A50246C1F2D0058B4B3 /* 336-search.json */,
+				B9FD7A4E246C1F2C0058B4B3 /* 10548-forest.json */,
+				B9FD7A4D246C1F2C0058B4B3 /* 291-searchask-loop.json */,
+				B9FD7A4C246C1F2C0058B4B3 /* 13357-route-finder.json */,
+				B9FD7A4B246C1F2C0058B4B3 /* 20301-newspaper-open.json */,
+				570D1C1B24705E5200B9FB22 /* confetti1.json */,
+				570D1C1724705E5100B9FB22 /* sad2.json */,
+				574DCD142463EC8B00BA40B7 /* Other LottieFiles */,
+			);
+			path = LottieFiles;
+			sourceTree = "<group>";
+		};
+		DFA3BE8D252EEBD5009C742A /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				5757F98924639E3600F8D75C /* HomeViewController.swift */,
+				57A3B8A0244315230011F674 /* FrogListController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		DFA3BE8E252EEBFE009C742A /* News */ = {
+			isa = PBXGroup;
+			children = (
+				579EE7A82444763000321C7E /* NewsViewController.swift */,
+				579EE7AC2444CB2D00321C7E /* DetailsViewController.swift */,
+			);
+			path = News;
+			sourceTree = "<group>";
+		};
+		DFA3BE8F252EEC14009C742A /* Frog */ = {
+			isa = PBXGroup;
+			children = (
+				574A3C2924505E840022CCB3 /* MapViewController.swift */,
+				574A3C2B245066060022CCB3 /* FrogAnnotation.swift */,
+			);
+			path = Frog;
+			sourceTree = "<group>";
+		};
+		DFA3BE91252EED2F009C742A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B9FD7A3F246C11CB0058B4B3 /* ChallengeCell.swift */,
+				B98A407E24725DE6006C2F2A /* FrogCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DFA3BE93252EF455009C742A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DFA3BE94252EF47E009C742A /* Weather.swift */,
+				DFA3BE98252EF52D009C742A /* News.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DFA3BE97252EF50C009C742A /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		E71D97BDF56D4843DF18292D /* Pods */ = {
@@ -526,12 +588,14 @@
 				57320A7C245344BC00ADE06C /* FrogImageClassification 3.mlmodel in Sources */,
 				DF310DF0252EDD2F00A0F7A6 /* WelcomeViewController.swift in Sources */,
 				DF8EAE66252ED60B009A9038 /* UnSightedFrogEntity+CoreDataProperties.swift in Sources */,
+				DFA3BE95252EF47E009C742A /* Weather.swift in Sources */,
 				B9FD7A44246C1B150058B4B3 /* GuideViewController.swift in Sources */,
 				B9FD7A46246C1C7D0058B4B3 /* Page.swift in Sources */,
 				57A3B8A9244315230011F674 /* TabView.xcdatamodeld in Sources */,
 				B9FD7A40246C11CB0058B4B3 /* ChallengeCell.swift in Sources */,
 				DF8EAE70252ED627009A9038 /* SpotLightEntity+CoreDataClass.swift in Sources */,
 				57A3B89F244315230011F674 /* SceneDelegate.swift in Sources */,
+				DFA3BE99252EF52D009C742A /* News.swift in Sources */,
 				B9FD7A4A246C1D210058B4B3 /* OnboardingDoneCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

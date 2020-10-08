@@ -187,6 +187,7 @@ class VisitedViewController: UIViewController, CLLocationManagerDelegate, Awesom
         var spotlight = AwesomeSpotlight()
         var properDevice = false
         print(screenSize.width)
+        
         if screenSize.width == 414.0 {
             spotlightMain = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 200, y: 77, width: 0, height: 0), shape: .circle, text: "\n\n\n\n\n\n\n\n\n\n\nCongratulations on visiting frog's habitat", isAllowPassTouchesThroughSpotlight: false)
             spotlightMain1 = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 200, y: 77, width: 0, height: 0), shape: .circle, text: "\n\n\n\n\n\n\n\n\n\n\nNow to try to sight the frog", isAllowPassTouchesThroughSpotlight: false)
