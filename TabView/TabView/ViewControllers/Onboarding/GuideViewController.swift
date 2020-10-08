@@ -264,7 +264,7 @@ class GuideViewController: UIViewController, UICollectionViewDataSource, UIColle
 
 }
 
-//some methods for add layout constraint
+// methods for add layout constraint
 extension UIView {
     
     func anchorToTop(top: NSLayoutYAxisAnchor? = nil, left: NSLayoutXAxisAnchor? = nil, bottom: NSLayoutYAxisAnchor? = nil, right: NSLayoutXAxisAnchor? = nil) {

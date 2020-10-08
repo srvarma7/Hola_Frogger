@@ -2,27 +2,23 @@ PODS:
   - AwesomeSpotlightView (0.1.10)
   - iOSDropDown (0.3.4)
   - lottie-ios (3.1.8)
-  - RAMReel (4.1.0)
 
 DEPENDENCIES:
   - AwesomeSpotlightView
   - iOSDropDown
   - lottie-ios
-  - RAMReel
 
 SPEC REPOS:
   trunk:
     - AwesomeSpotlightView
     - iOSDropDown
     - lottie-ios
-    - RAMReel
 
 SPEC CHECKSUMS:
   AwesomeSpotlightView: 7dc307f796ecc86ce0cfec36c9b9b14336e6ea83
   iOSDropDown: c10a761f9a00c3f1cc9d3bce43ae504628e2f692
   lottie-ios: 48fac6be217c76937e36e340e2d09cf7b10b7f5f
-  RAMReel: 198e41f62d65f54c44797679ade03b4a1cef9709
 
-PODFILE CHECKSUM: a81ad278eba7912a493779ae2b58251636eab5f6
+PODFILE CHECKSUM: 5baacb77942c879c07768c09ea535b2a928e3692
 
-COCOAPODS: 1.9.1
+COCOAPODS: 1.9.3

@@ -198,13 +198,11 @@ fi
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/AwesomeSpotlightView/AwesomeSpotlightView.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/RAMReel/RAMReel.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/iOSDropDown/iOSDropDown.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/AwesomeSpotlightView/AwesomeSpotlightView.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/RAMReel/RAMReel.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/iOSDropDown/iOSDropDown.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework"
 fi

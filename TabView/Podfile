@@ -5,7 +5,7 @@ target 'TabView' do
   use_frameworks!
 
   # Pods for TabView
-  pod 'RAMReel'
+#  pod 'RAMReel'
   pod 'iOSDropDown'
   pod 'lottie-ios'
   pod 'AwesomeSpotlightView'

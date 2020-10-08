@@ -18,8 +18,6 @@
 		570D1C232470EA0C00B9FB22 /* frog.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 570D1C222470EA0C00B9FB22 /* frog.mp3 */; };
 		570D1C252470EBA700B9FB22 /* sad.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 570D1C242470EBA700B9FB22 /* sad.mp3 */; };
 		570D1C272470EBE100B9FB22 /* confetti.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 570D1C262470EBE000B9FB22 /* confetti.mp3 */; };
-		571996DD2473917700EEF512 /* SpotLightEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571996DB2473917700EEF512 /* SpotLightEntity+CoreDataClass.swift */; };
-		571996DE2473917700EEF512 /* SpotLightEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571996DC2473917700EEF512 /* SpotLightEntity+CoreDataProperties.swift */; };
 		57320A7C245344BC00ADE06C /* FrogImageClassification 3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 57320A7B245344BC00ADE06C /* FrogImageClassification 3.mlmodel */; };
 		57320A7F2453477900ADE06C /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57320A7E2453477900ADE06C /* WebKit.framework */; };
 		57320A8124535A4300ADE06C /* FrogImageClassification Refined.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 57320A8024535A4300ADE06C /* FrogImageClassification Refined.mlmodel */; };
@@ -31,8 +29,6 @@
 		576F294B247AD3D90078EC67 /* FrogScaledUsdz.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 576F294A247AD3D90078EC67 /* FrogScaledUsdz.usdz */; };
 		577AA1A3247159E100B85AF6 /* GPX files (To simulate Locations) in Resources */ = {isa = PBXBuildFile; fileRef = 577AA1A2247159E100B85AF6 /* GPX files (To simulate Locations) */; };
 		579B45472447084200EACA4B /* CoreDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579B45462447084200EACA4B /* CoreDataHandler.swift */; };
-		579B45512447460900EACA4B /* FrogEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579B454F2447460900EACA4B /* FrogEntity+CoreDataClass.swift */; };
-		579B45522447460900EACA4B /* FrogEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579B45502447460900EACA4B /* FrogEntity+CoreDataProperties.swift */; };
 		579C04B7247B78D1003EEB6D /* greenwaves.json in Resources */ = {isa = PBXBuildFile; fileRef = 579C04B6247B78D1003EEB6D /* greenwaves.json */; };
 		579EE7A724433BCC00321C7E /* BearBottle.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 579EE7A624433BCC00321C7E /* BearBottle.mlmodel */; };
 		579EE7A92444763000321C7E /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579EE7A82444763000321C7E /* NewsViewController.swift */; };
@@ -47,8 +43,6 @@
 		57A3B8AB244315270011F674 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57A3B8AA244315270011F674 /* Assets.xcassets */; };
 		57A3B8AE244315270011F674 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57A3B8AC244315270011F674 /* LaunchScreen.storyboard */; };
 		57C098BE246A49BD0041C235 /* ChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C098BD246A49BD0041C235 /* ChallengeViewController.swift */; };
-		57C098C9246A8E570041C235 /* UnSightedFrogEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C098C7246A8E570041C235 /* UnSightedFrogEntity+CoreDataClass.swift */; };
-		57C098CA246A8E570041C235 /* UnSightedFrogEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C098C8246A8E570041C235 /* UnSightedFrogEntity+CoreDataProperties.swift */; };
 		57F877E424741A9800D5501F /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F877E324741A9800D5501F /* ARViewController.swift */; };
 		57F877E624741B0100D5501F /* toy_biplane.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 57F877E524741B0100D5501F /* toy_biplane.usdz */; };
 		57F877E924763B5700D5501F /* FROG.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 57F877E824763B5700D5501F /* FROG.usdz */; };
@@ -70,6 +64,12 @@
 		B9FD7A56246C1F2D0058B4B3 /* 8878-done.json in Resources */ = {isa = PBXBuildFile; fileRef = B9FD7A4F246C1F2D0058B4B3 /* 8878-done.json */; };
 		B9FD7A57246C1F2D0058B4B3 /* 336-search.json in Resources */ = {isa = PBXBuildFile; fileRef = B9FD7A50246C1F2D0058B4B3 /* 336-search.json */; };
 		B9FD7A58246C1F2D0058B4B3 /* 13005-refresh.json in Resources */ = {isa = PBXBuildFile; fileRef = B9FD7A51246C1F2D0058B4B3 /* 13005-refresh.json */; };
+		DF8EAE65252ED60B009A9038 /* UnSightedFrogEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8EAE63252ED60B009A9038 /* UnSightedFrogEntity+CoreDataClass.swift */; };
+		DF8EAE66252ED60B009A9038 /* UnSightedFrogEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8EAE64252ED60B009A9038 /* UnSightedFrogEntity+CoreDataProperties.swift */; };
+		DF8EAE6A252ED61D009A9038 /* FrogEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8EAE68252ED61D009A9038 /* FrogEntity+CoreDataClass.swift */; };
+		DF8EAE6B252ED61D009A9038 /* FrogEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8EAE69252ED61D009A9038 /* FrogEntity+CoreDataProperties.swift */; };
+		DF8EAE6F252ED627009A9038 /* SpotLightEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8EAE6D252ED627009A9038 /* SpotLightEntity+CoreDataProperties.swift */; };
+		DF8EAE70252ED627009A9038 /* SpotLightEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8EAE6E252ED627009A9038 /* SpotLightEntity+CoreDataClass.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,8 +84,6 @@
 		570D1C222470EA0C00B9FB22 /* frog.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = frog.mp3; sourceTree = "<group>"; };
 		570D1C242470EBA700B9FB22 /* sad.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sad.mp3; sourceTree = "<group>"; };
 		570D1C262470EBE000B9FB22 /* confetti.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = confetti.mp3; sourceTree = "<group>"; };
-		571996DB2473917700EEF512 /* SpotLightEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SpotLightEntity+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
-		571996DC2473917700EEF512 /* SpotLightEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SpotLightEntity+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		57320A7B245344BC00ADE06C /* FrogImageClassification 3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = "FrogImageClassification 3.mlmodel"; sourceTree = "<group>"; };
 		57320A7E2453477900ADE06C /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		57320A8024535A4300ADE06C /* FrogImageClassification Refined.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = "FrogImageClassification Refined.mlmodel"; sourceTree = "<group>"; };
@@ -97,8 +95,6 @@
 		576F294A247AD3D90078EC67 /* FrogScaledUsdz.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = FrogScaledUsdz.usdz; sourceTree = "<group>"; };
 		577AA1A2247159E100B85AF6 /* GPX files (To simulate Locations) */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "GPX files (To simulate Locations)"; sourceTree = "<group>"; };
 		579B45462447084200EACA4B /* CoreDataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHandler.swift; sourceTree = "<group>"; };
-		579B454F2447460900EACA4B /* FrogEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "FrogEntity+CoreDataClass.swift"; path = "TabView/FrogEntity+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
-		579B45502447460900EACA4B /* FrogEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "FrogEntity+CoreDataProperties.swift"; path = "TabView/FrogEntity+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		579C04B6247B78D1003EEB6D /* greenwaves.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = greenwaves.json; sourceTree = "<group>"; };
 		579EE7A624433BCC00321C7E /* BearBottle.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = BearBottle.mlmodel; sourceTree = "<group>"; };
 		579EE7A82444763000321C7E /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
@@ -115,8 +111,6 @@
 		57A3B8AD244315270011F674 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		57A3B8AF244315270011F674 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		57C098BD246A49BD0041C235 /* ChallengeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeViewController.swift; sourceTree = "<group>"; };
-		57C098C7246A8E570041C235 /* UnSightedFrogEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UnSightedFrogEntity+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
-		57C098C8246A8E570041C235 /* UnSightedFrogEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UnSightedFrogEntity+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		57F877E324741A9800D5501F /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
 		57F877E524741B0100D5501F /* toy_biplane.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = toy_biplane.usdz; sourceTree = "<group>"; };
 		57F877E824763B5700D5501F /* FROG.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = FROG.usdz; sourceTree = "<group>"; };
@@ -126,7 +120,7 @@
 		B960A579246C3BA9003CFDE3 /* CardLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardLayout.swift; sourceTree = "<group>"; };
 		B98A407C24725007006C2F2A /* award.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = award.json; sourceTree = "<group>"; };
 		B98A407E24725DE6006C2F2A /* FrogCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrogCell.swift; sourceTree = "<group>"; };
-		B9BC1B322471912900C15461 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WelcomeViewController.swift; path = TabView/ViewControllers/WelcomeViewController.swift; sourceTree = SOURCE_ROOT; };
+		B9BC1B322471912900C15461 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WelcomeViewController.swift; path = TabView/ViewControllers/Onboarding/WelcomeViewController.swift; sourceTree = SOURCE_ROOT; };
 		B9FD7A3F246C11CB0058B4B3 /* ChallengeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeCell.swift; sourceTree = "<group>"; };
 		B9FD7A43246C1B150058B4B3 /* GuideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideViewController.swift; sourceTree = "<group>"; };
 		B9FD7A45246C1C7D0058B4B3 /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
@@ -140,6 +134,12 @@
 		B9FD7A50246C1F2D0058B4B3 /* 336-search.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "336-search.json"; sourceTree = "<group>"; };
 		B9FD7A51246C1F2D0058B4B3 /* 13005-refresh.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "13005-refresh.json"; sourceTree = "<group>"; };
 		DEF23522100C96BCBF38C1D1 /* Pods-TabView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TabView.release.xcconfig"; path = "Target Support Files/Pods-TabView/Pods-TabView.release.xcconfig"; sourceTree = "<group>"; };
+		DF8EAE63252ED60B009A9038 /* UnSightedFrogEntity+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UnSightedFrogEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		DF8EAE64252ED60B009A9038 /* UnSightedFrogEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UnSightedFrogEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		DF8EAE68252ED61D009A9038 /* FrogEntity+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FrogEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		DF8EAE69252ED61D009A9038 /* FrogEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FrogEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		DF8EAE6D252ED627009A9038 /* SpotLightEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SpotLightEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		DF8EAE6E252ED627009A9038 /* SpotLightEntity+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SpotLightEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,25 +197,10 @@
 			path = LottieFiles;
 			sourceTree = "<group>";
 		};
-		579B4548244743E100EACA4B /* CoreData */ = {
-			isa = PBXGroup;
-			children = (
-				571996DB2473917700EEF512 /* SpotLightEntity+CoreDataClass.swift */,
-				571996DC2473917700EEF512 /* SpotLightEntity+CoreDataProperties.swift */,
-				57C098C7246A8E570041C235 /* UnSightedFrogEntity+CoreDataClass.swift */,
-				57C098C8246A8E570041C235 /* UnSightedFrogEntity+CoreDataProperties.swift */,
-				579B454F2447460900EACA4B /* FrogEntity+CoreDataClass.swift */,
-				579B45502447460900EACA4B /* FrogEntity+CoreDataProperties.swift */,
-				57A3B8A7244315230011F674 /* TabView.xcdatamodeld */,
-				579B45462447084200EACA4B /* CoreDataHandler.swift */,
-			);
-			path = CoreData;
-			sourceTree = "<group>";
-		};
 		579B45492447441200EACA4B /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				B9BC1B322471912900C15461 /* WelcomeViewController.swift */,
+				DF0FD6C1252ED39600FE17FE /* Onboarding */,
 				5757F98924639E3600F8D75C /* HomeViewController.swift */,
 				57A3B8A0244315230011F674 /* FrogListController.swift */,
 				579EE7AE2444D96A00321C7E /* FrogDetailsViewController.swift */,
@@ -227,11 +212,6 @@
 				57C098BD246A49BD0041C235 /* ChallengeViewController.swift */,
 				570D1C13247015E500B9FB22 /* VisitedViewController.swift */,
 				B9FD7A3F246C11CB0058B4B3 /* ChallengeCell.swift */,
-				B9FD7A43246C1B150058B4B3 /* GuideViewController.swift */,
-				B9FD7A45246C1C7D0058B4B3 /* Page.swift */,
-				B9FD7A47246C1CB00058B4B3 /* OnboardingPageCell.swift */,
-				B9FD7A49246C1D210058B4B3 /* OnboardingDoneCell.swift */,
-				B960A579246C3BA9003CFDE3 /* CardLayout.swift */,
 				B98A407E24725DE6006C2F2A /* FrogCell.swift */,
 				57F877E324741A9800D5501F /* ARViewController.swift */,
 			);
@@ -280,15 +260,10 @@
 			children = (
 				57A3B89C244315230011F674 /* AppDelegate.swift */,
 				57A3B89E244315230011F674 /* SceneDelegate.swift */,
-				570D1C212470E9FE00B9FB22 /* Audio */,
 				579B455324477DF300EACA4B /* Inferface */,
+				DF0FD6C0252ED29E00FE17FE /* Support files */,
 				579B45492447441200EACA4B /* ViewControllers */,
-				579B4548244743E100EACA4B /* CoreData */,
-				579B454A2447442600EACA4B /* Core ML */,
-				577AA1A2247159E100B85AF6 /* GPX files (To simulate Locations) */,
-				574DCD142463EC8B00BA40B7 /* LottieFiles */,
-				57F877E724741BD300D5501F /* AR files */,
-				57A3B8AA244315270011F674 /* Assets.xcassets */,
+				DF0FD6C3252ED4E000FE17FE /* CoreData+Entity+Handler */,
 				57A3B8AF244315270011F674 /* Info.plist */,
 			);
 			path = TabView;
@@ -305,6 +280,71 @@
 				576F294A247AD3D90078EC67 /* FrogScaledUsdz.usdz */,
 			);
 			path = "AR files";
+			sourceTree = "<group>";
+		};
+		DF0FD6C0252ED29E00FE17FE /* Support files */ = {
+			isa = PBXGroup;
+			children = (
+				57A3B8AA244315270011F674 /* Assets.xcassets */,
+				574DCD142463EC8B00BA40B7 /* LottieFiles */,
+				57F877E724741BD300D5501F /* AR files */,
+				577AA1A2247159E100B85AF6 /* GPX files (To simulate Locations) */,
+				579B454A2447442600EACA4B /* Core ML */,
+				570D1C212470E9FE00B9FB22 /* Audio */,
+			);
+			path = "Support files";
+			sourceTree = "<group>";
+		};
+		DF0FD6C1252ED39600FE17FE /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				B9BC1B322471912900C15461 /* WelcomeViewController.swift */,
+				B9FD7A43246C1B150058B4B3 /* GuideViewController.swift */,
+				B9FD7A45246C1C7D0058B4B3 /* Page.swift */,
+				B9FD7A47246C1CB00058B4B3 /* OnboardingPageCell.swift */,
+				B9FD7A49246C1D210058B4B3 /* OnboardingDoneCell.swift */,
+				B960A579246C3BA9003CFDE3 /* CardLayout.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		DF0FD6C3252ED4E000FE17FE /* CoreData+Entity+Handler */ = {
+			isa = PBXGroup;
+			children = (
+				57A3B8A7244315230011F674 /* TabView.xcdatamodeld */,
+				579B45462447084200EACA4B /* CoreDataHandler.swift */,
+				DF0FD6C6252ED58000FE17FE /* UnSighted */,
+				DF0FD6C5252ED56F00FE17FE /* Frog */,
+				DF0FD6C4252ED51600FE17FE /* SpotLight */,
+			);
+			path = "CoreData+Entity+Handler";
+			sourceTree = "<group>";
+		};
+		DF0FD6C4252ED51600FE17FE /* SpotLight */ = {
+			isa = PBXGroup;
+			children = (
+				DF8EAE6E252ED627009A9038 /* SpotLightEntity+CoreDataClass.swift */,
+				DF8EAE6D252ED627009A9038 /* SpotLightEntity+CoreDataProperties.swift */,
+			);
+			path = SpotLight;
+			sourceTree = "<group>";
+		};
+		DF0FD6C5252ED56F00FE17FE /* Frog */ = {
+			isa = PBXGroup;
+			children = (
+				DF8EAE68252ED61D009A9038 /* FrogEntity+CoreDataClass.swift */,
+				DF8EAE69252ED61D009A9038 /* FrogEntity+CoreDataProperties.swift */,
+			);
+			path = Frog;
+			sourceTree = "<group>";
+		};
+		DF0FD6C6252ED58000FE17FE /* UnSighted */ = {
+			isa = PBXGroup;
+			children = (
+				DF8EAE63252ED60B009A9038 /* UnSightedFrogEntity+CoreDataClass.swift */,
+				DF8EAE64252ED60B009A9038 /* UnSightedFrogEntity+CoreDataProperties.swift */,
+			);
+			path = UnSighted;
 			sourceTree = "<group>";
 		};
 		E71D97BDF56D4843DF18292D /* Pods */ = {
@@ -465,28 +505,28 @@
 				B98A407F24725DE6006C2F2A /* FrogCell.swift in Sources */,
 				57A3B8A1244315230011F674 /* FrogListController.swift in Sources */,
 				B960A57A246C3BA9003CFDE3 /* CardLayout.swift in Sources */,
-				57C098C9246A8E570041C235 /* UnSightedFrogEntity+CoreDataClass.swift in Sources */,
 				574A3C2C245066060022CCB3 /* FrogAnnotation.swift in Sources */,
 				579EE7AD2444CB2D00321C7E /* DetailsViewController.swift in Sources */,
 				579EE7AF2444D96A00321C7E /* FrogDetailsViewController.swift in Sources */,
 				574A3C2A24505E850022CCB3 /* MapViewController.swift in Sources */,
+				DF8EAE6F252ED627009A9038 /* SpotLightEntity+CoreDataProperties.swift in Sources */,
 				57A3B89D244315230011F674 /* AppDelegate.swift in Sources */,
 				B9FD7A48246C1CB00058B4B3 /* OnboardingPageCell.swift in Sources */,
-				571996DE2473917700EEF512 /* SpotLightEntity+CoreDataProperties.swift in Sources */,
+				DF8EAE65252ED60B009A9038 /* UnSightedFrogEntity+CoreDataClass.swift in Sources */,
 				B9BC1B332471912900C15461 /* WelcomeViewController.swift in Sources */,
-				571996DD2473917700EEF512 /* SpotLightEntity+CoreDataClass.swift in Sources */,
-				57C098CA246A8E570041C235 /* UnSightedFrogEntity+CoreDataProperties.swift in Sources */,
+				DF8EAE6B252ED61D009A9038 /* FrogEntity+CoreDataProperties.swift in Sources */,
 				57C098BE246A49BD0041C235 /* ChallengeViewController.swift in Sources */,
+				DF8EAE6A252ED61D009A9038 /* FrogEntity+CoreDataClass.swift in Sources */,
 				570D1C14247015E500B9FB22 /* VisitedViewController.swift in Sources */,
 				57320A8124535A4300ADE06C /* FrogImageClassification Refined.mlmodel in Sources */,
 				579EE7A92444763000321C7E /* NewsViewController.swift in Sources */,
-				579B45522447460900EACA4B /* FrogEntity+CoreDataProperties.swift in Sources */,
 				57320A7C245344BC00ADE06C /* FrogImageClassification 3.mlmodel in Sources */,
+				DF8EAE66252ED60B009A9038 /* UnSightedFrogEntity+CoreDataProperties.swift in Sources */,
 				B9FD7A44246C1B150058B4B3 /* GuideViewController.swift in Sources */,
-				579B45512447460900EACA4B /* FrogEntity+CoreDataClass.swift in Sources */,
 				B9FD7A46246C1C7D0058B4B3 /* Page.swift in Sources */,
 				57A3B8A9244315230011F674 /* TabView.xcdatamodeld in Sources */,
 				B9FD7A40246C11CB0058B4B3 /* ChallengeCell.swift in Sources */,
+				DF8EAE70252ED627009A9038 /* SpotLightEntity+CoreDataClass.swift in Sources */,
 				57A3B89F244315230011F674 /* SceneDelegate.swift in Sources */,
 				B9FD7A4A246C1D210058B4B3 /* OnboardingDoneCell.swift in Sources */,
 			);
@@ -634,7 +674,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 366M7RZ5AD;
+				DEVELOPMENT_TEAM = 5G9HGCW6QY;
 				INFOPLIST_FILE = TabView/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -654,7 +694,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 366M7RZ5AD;
+				DEVELOPMENT_TEAM = 5G9HGCW6QY;
 				INFOPLIST_FILE = TabView/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
