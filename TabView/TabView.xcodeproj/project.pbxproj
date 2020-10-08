@@ -261,9 +261,9 @@
 				57A3B89C244315230011F674 /* AppDelegate.swift */,
 				57A3B89E244315230011F674 /* SceneDelegate.swift */,
 				579B455324477DF300EACA4B /* Inferface */,
-				DF0FD6C0252ED29E00FE17FE /* Support files */,
 				579B45492447441200EACA4B /* ViewControllers */,
 				DF0FD6C3252ED4E000FE17FE /* CoreData+Entity+Handler */,
+				DF0FD6C0252ED29E00FE17FE /* Support files */,
 				57A3B8AF244315270011F674 /* Info.plist */,
 			);
 			path = TabView;
