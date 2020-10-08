@@ -1,10 +1,10 @@
 # platform :ios, '13.0'
 
-target 'TabView' do
+target 'Hola Frogger' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
-  # Pods for TabView
+  # Pods for Hola Frogger
 #  pod 'RAMReel'
   pod 'iOSDropDown'
   pod 'lottie-ios'

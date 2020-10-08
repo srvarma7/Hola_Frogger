@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_TabViewVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_TabViewVersionString[];
+FOUNDATION_EXPORT double Pods_Hola_FroggerVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_Hola_FroggerVersionString[];
 

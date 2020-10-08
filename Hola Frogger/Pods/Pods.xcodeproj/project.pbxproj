@@ -19,7 +19,7 @@
 		16F25B4ACC45B14B8144A66A394C1181 /* InvertedMatteLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE062310828D5CEFFA9B3FAC39FA00C /* InvertedMatteLayer.swift */; };
 		16F2B118559E5283793D691EBBC9AA79 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7892AB781A4C78374298AB6116D293 /* Color.swift */; };
 		17AD9ACF6690DF6EDC3B5D56CBA45E95 /* GradientStroke.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB57DC0BDCCA68870963E8BA8B6D143F /* GradientStroke.swift */; };
-		1B18022E7B956C139939E086EB374B5E /* Pods-TabView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 81CEDD6945C08B0937E7B6487BDA33DC /* Pods-TabView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1D3DF675618B7A9750B680C18E31231B /* Pods-Hola Frogger-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B13CA8BE6961F08C81FE8D3CA7E04BF2 /* Pods-Hola Frogger-dummy.m */; };
 		1D7F48845A5C5B0B8CE33CDDCAB00C7E /* GradientStrokeRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A0C39BEF43639481C196C1409EF28A /* GradientStrokeRenderer.swift */; };
 		1DB1D3B6C2277C62E7800391ADD15F93 /* CompatibleAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C366CBA260C81A2D17EB1BEB9F8F937 /* CompatibleAnimationView.swift */; };
 		201B15060B87EA23F9B516A58F5952D6 /* AwesomeTabButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE62FC482955E04AFE87D02BEF4D0C32 /* AwesomeTabButton.swift */; };
@@ -51,7 +51,6 @@
 		46DD08FB7D6071E99E75ECDBA47E90C1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56DE6DFF52489DACAF66A82BFD0FE2CA /* UIKit.framework */; };
 		47BD9F0AC7BED5E512833F422AADF0BE /* VectorsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75320CEE555DE83F4D94AC55EFB88463 /* VectorsExtensions.swift */; };
 		4A4CE175F7935768B34E2F8EC1C0D475 /* AnimationKeypath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C0FD87B3BC98D842089E1823ABDB38 /* AnimationKeypath.swift */; };
-		4C2A572538226BAE570D484F49B3025D /* Pods-TabView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C093BA5B1D7753D3B8D0E957AFA7560F /* Pods-TabView-dummy.m */; };
 		4CE99B6F88E1F663A633C5E273B0DBA7 /* KeyedDecodingContainerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69AF871CAA07D2F8C3C6C7708189A4AC /* KeyedDecodingContainerExtensions.swift */; };
 		4EC87E51E5464D46D95018D788EF5BE5 /* Transform.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C34CC0C6C8B313869997223A278173 /* Transform.swift */; };
 		4F716BEA16685B97F3E148E8E9199B61 /* AwesomeSpotlightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230A59E69933CB99A463448E18B27D1C /* AwesomeSpotlightView.swift */; };
@@ -82,7 +81,6 @@
 		6908EA3D9E70189438CE488ECB181688 /* AnyNodeProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933DA765AA125FB5039FC05B889E71D8 /* AnyNodeProperty.swift */; };
 		6916C066364EAB3A23E1BCF1F449BC7F /* AnimatedSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05369280DF63948A470759D90097693 /* AnimatedSwitch.swift */; };
 		6ADFB626C34AA35AC883469526699F8D /* iOSDropDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE456A18A10E3B6FA9BB7D0990C819D /* iOSDropDown.swift */; };
-		6C043024B17F6D0F76C222AF02899656 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 762C973A19DDE5A5AD81F317CEA5461F /* Foundation.framework */; };
 		6C982242F96CBAE15ABD5CF5F147CD7F /* Repeater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DDECC26FE263BC75BB641EA71996A65 /* Repeater.swift */; };
 		6FDEA13D84E7966CA543C315FCDE7477 /* AnimationKeypathExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE7D5212DAEB394867AC397F0FD02D1 /* AnimationKeypathExtension.swift */; };
 		7444F9A464148E2AF88CF3654F7184A7 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33774A371944882382A139ABAE027B6 /* UIColorExtension.swift */; };
@@ -154,32 +152,34 @@
 		F8C737DF6DC941405614BF2886B1DD4D /* ImageLayerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDFA2851AD0DF694E5A1864FD6D9F1F /* ImageLayerModel.swift */; };
 		FB1A59DAD92E574036C966A2CD221FAB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 762C973A19DDE5A5AD81F317CEA5461F /* Foundation.framework */; };
 		FB7E4B3BFB5B9E4DFBFA56AFDF061226 /* TextAnimatorNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D3DD778DC981D8E7E1FD27A30B0C4C /* TextAnimatorNode.swift */; };
+		FBB1B8983A4ABDC6494B01C099328443 /* Pods-Hola Frogger-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D53446B2E7C561E3280439DAD513F26 /* Pods-Hola Frogger-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FD35B0F6BC475DD6F238E05D55AFED88 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 762C973A19DDE5A5AD81F317CEA5461F /* Foundation.framework */; };
 		FD410BFE43E21D9B20E8D5B532236B1E /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5374A513E10DD28E571DF3153C0826B5 /* Font.swift */; };
 		FEBB2F0A8C4F5E943B120484DFABFD72 /* PreCompLayerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F9FA660A51AEE76AF1AD2385915EA8 /* PreCompLayerModel.swift */; };
 		FFE261B887C4B4BF7D241F2EE4A811D3 /* CompoundBezierPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9925E74D5E0FFA7BC31725CBB5C97665 /* CompoundBezierPath.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		6390BCA04E2A2F87551BC763DF7290C2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 3C76CE6CD60B1CE55A174F03CC59AE17;
-			remoteInfo = iOSDropDown;
-		};
-		810AF586447735F208B43D98605C1015 /* PBXContainerItemProxy */ = {
+		0F7AF3AF4DB948B143BCAB28336DDBCB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 14FC0C9E4E078AC230B149162CB0E219;
 			remoteInfo = AwesomeSpotlightView;
 		};
-		BB94FEE063214F8A7982D3F1510186B6 /* PBXContainerItemProxy */ = {
+		8C8E31BE53AC79D363787A1AA927AA98 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 0B967D7F8561D42493EE289EC8D450D1;
 			remoteInfo = "lottie-ios";
+		};
+		8D3ECCEFB72FCE61C69A4A75AC35DA04 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3C76CE6CD60B1CE55A174F03CC59AE17;
+			remoteInfo = iOSDropDown;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -197,13 +197,12 @@
 		0FC1F7D4BD7B8F93982D07112D577BC0 /* AnimatorNode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnimatorNode.swift; path = "lottie-swift/src/Private/NodeRenderSystem/Protocols/AnimatorNode.swift"; sourceTree = "<group>"; };
 		106A39BCB76723693BCF91AC797DA807 /* BundleImageProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BundleImageProvider.swift; path = "lottie-swift/src/Public/iOS/BundleImageProvider.swift"; sourceTree = "<group>"; };
 		134E6A7B4B23CDA088B0F575E8D947CC /* lottie-ios-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "lottie-ios-Info.plist"; sourceTree = "<group>"; };
-		13F8C8CC5B5534724E51301AF197C54E /* Pods-TabView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TabView.release.xcconfig"; sourceTree = "<group>"; };
 		15D4413249C09B9EC47C59E015041460 /* EllipseNode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EllipseNode.swift; path = "lottie-swift/src/Private/NodeRenderSystem/Nodes/PathNodes/EllipseNode.swift"; sourceTree = "<group>"; };
 		17D2E67C0B6CABF2D52FC94BD08E415D /* AwesomeSpotlightView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AwesomeSpotlightView-umbrella.h"; sourceTree = "<group>"; };
+		1D53446B2E7C561E3280439DAD513F26 /* Pods-Hola Frogger-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Hola Frogger-umbrella.h"; sourceTree = "<group>"; };
 		20A7DACB743F2A39BC0D9C0E317842D5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
 		230A59E69933CB99A463448E18B27D1C /* AwesomeSpotlightView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AwesomeSpotlightView.swift; path = AwesomeSpotlightView/Classes/AwesomeSpotlightView.swift; sourceTree = "<group>"; };
 		263A3B3A50F2D7E1FD00656B0BDE8604 /* GroupNode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GroupNode.swift; path = "lottie-swift/src/Private/NodeRenderSystem/Nodes/RenderContainers/GroupNode.swift"; sourceTree = "<group>"; };
-		26E589EFC807BFE029271FF6B6563996 /* Pods-TabView-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TabView-acknowledgements.plist"; sourceTree = "<group>"; };
 		288F424F9DE85405E228E42D359D9FAF /* NullCompositionLayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NullCompositionLayer.swift; path = "lottie-swift/src/Private/LayerContainers/CompLayers/NullCompositionLayer.swift"; sourceTree = "<group>"; };
 		298837FB9A05F39B45A276F909557D3C /* AnimatorNodeDebugging.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnimatorNodeDebugging.swift; path = "lottie-swift/src/Private/Utility/Debugging/AnimatorNodeDebugging.swift"; sourceTree = "<group>"; };
 		2BB1DAF3BC04AEE3E8A37D984952A4CB /* AwesomeSpotlight.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AwesomeSpotlight.swift; path = AwesomeSpotlightView/Classes/AwesomeSpotlight.swift; sourceTree = "<group>"; };
@@ -219,8 +218,6 @@
 		3BADA41EB4D05639D65BBD55A6D095C2 /* LayerDebugging.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayerDebugging.swift; path = "lottie-swift/src/Private/Utility/Debugging/LayerDebugging.swift"; sourceTree = "<group>"; };
 		3C4D7390263BCCE1F75F124C14DE17B5 /* Animation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Animation.swift; path = "lottie-swift/src/Private/Model/Animation.swift"; sourceTree = "<group>"; };
 		402DCFF36A7594501A906715169F0922 /* Interpolatable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Interpolatable.swift; path = "lottie-swift/src/Private/Utility/Interpolatable/Interpolatable.swift"; sourceTree = "<group>"; };
-		45F6214E9F2A8A18CC6814DE0D21EF90 /* Pods-TabView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TabView.debug.xcconfig"; sourceTree = "<group>"; };
-		4686E80701467FD74E953F4356602C13 /* Pods_TabView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_TabView.framework; path = "Pods-TabView.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AB72336CEF835EA1503E080083B0B32 /* lottie-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "lottie-ios.release.xcconfig"; sourceTree = "<group>"; };
 		4C4F9FDBDCD60E194B3C4CE3D1925E0E /* lottie-ios-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "lottie-ios-umbrella.h"; sourceTree = "<group>"; };
 		4D09172435737831428466305D420E00 /* AnyValueContainer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnyValueContainer.swift; path = "lottie-swift/src/Private/NodeRenderSystem/NodeProperties/Protocols/AnyValueContainer.swift"; sourceTree = "<group>"; };
@@ -234,16 +231,15 @@
 		554516E8BC3DFD40987A8EBCCE8B74D4 /* AwesomeSpotlightView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AwesomeSpotlightView-prefix.pch"; sourceTree = "<group>"; };
 		56DE6DFF52489DACAF66A82BFD0FE2CA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		57115DF39DF2CCF8D65CC62BE2CB9765 /* MathKit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MathKit.swift; path = "lottie-swift/src/Private/Utility/Extensions/MathKit.swift"; sourceTree = "<group>"; };
-		583123A0A8B6C4F51A3BC5E881B3F176 /* Pods-TabView-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TabView-acknowledgements.markdown"; sourceTree = "<group>"; };
-		5AA5C874133A28243AEA871CCDA4E70F /* Pods-TabView-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TabView-frameworks.sh"; sourceTree = "<group>"; };
+		5959D48B9FA7D37480733B3566F225BA /* Pods_Hola_Frogger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Hola_Frogger.framework; path = "Pods-Hola Frogger.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DE062310828D5CEFFA9B3FAC39FA00C /* InvertedMatteLayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = InvertedMatteLayer.swift; path = "lottie-swift/src/Private/LayerContainers/Utility/InvertedMatteLayer.swift"; sourceTree = "<group>"; };
 		61518C8091CB72BEB9F261B878FCB8DB /* Group.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Group.swift; path = "lottie-swift/src/Private/Model/ShapeItems/Group.swift"; sourceTree = "<group>"; };
 		63A304D9E17189642769CD746CA207CF /* lottie-ios.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "lottie-ios.modulemap"; sourceTree = "<group>"; };
 		645CDD10DD34D9FB25600E166FFC99F3 /* GradientStrokeNode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GradientStrokeNode.swift; path = "lottie-swift/src/Private/NodeRenderSystem/Nodes/RenderNodes/GradientStrokeNode.swift"; sourceTree = "<group>"; };
+		666D42F163F789AD5634BBD9D44068E1 /* Pods-Hola Frogger.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Hola Frogger.modulemap"; sourceTree = "<group>"; };
 		66AA52148B91639742DCBF7C03BECA76 /* AnyValueProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnyValueProvider.swift; path = "lottie-swift/src/Public/DynamicProperties/AnyValueProvider.swift"; sourceTree = "<group>"; };
 		675FFE845118F64752CC7D3B65D157D4 /* iOSDropDown.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = iOSDropDown.modulemap; sourceTree = "<group>"; };
 		69AF871CAA07D2F8C3C6C7708189A4AC /* KeyedDecodingContainerExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeyedDecodingContainerExtensions.swift; path = "lottie-swift/src/Private/Model/Extensions/KeyedDecodingContainerExtensions.swift"; sourceTree = "<group>"; };
-		69B3DA8CE0715ECFA573F8494FFEE55B /* Pods-TabView-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TabView-Info.plist"; sourceTree = "<group>"; };
 		6A7ED9CB41B1EB25C04F7943572024BA /* ColorValueProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ColorValueProvider.swift; path = "lottie-swift/src/Public/DynamicProperties/ValueProviders/ColorValueProvider.swift"; sourceTree = "<group>"; };
 		6BDFA2851AD0DF694E5A1864FD6D9F1F /* ImageLayerModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageLayerModel.swift; path = "lottie-swift/src/Private/Model/Layers/ImageLayerModel.swift"; sourceTree = "<group>"; };
 		6EE7F712279478202CEF1D9C6CAB5A5F /* KeyframeExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeyframeExtensions.swift; path = "lottie-swift/src/Private/Utility/Interpolatable/KeyframeExtensions.swift"; sourceTree = "<group>"; };
@@ -253,6 +249,7 @@
 		743712FA2578AF2EBCF46A2DB8C3C518 /* FillRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FillRenderer.swift; path = "lottie-swift/src/Private/NodeRenderSystem/Nodes/OutputNodes/Renderables/FillRenderer.swift"; sourceTree = "<group>"; };
 		75320CEE555DE83F4D94AC55EFB88463 /* VectorsExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VectorsExtensions.swift; path = "lottie-swift/src/Private/Utility/Primitives/VectorsExtensions.swift"; sourceTree = "<group>"; };
 		762C973A19DDE5A5AD81F317CEA5461F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		7696FE60BAB4677002CEB2EBC4D026D4 /* Pods-Hola Frogger-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Hola Frogger-acknowledgements.markdown"; sourceTree = "<group>"; };
 		77098E830B6DF9EA42A1C6491A206383 /* AwesomeSpotlightView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AwesomeSpotlightView-dummy.m"; sourceTree = "<group>"; };
 		772B4FD4A6F902310C2620D45015ACD0 /* Star.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Star.swift; path = "lottie-swift/src/Private/Model/ShapeItems/Star.swift"; sourceTree = "<group>"; };
 		77B421626B38B01E0C2BCF91689DC978 /* AssetLibrary.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AssetLibrary.swift; path = "lottie-swift/src/Private/Model/Assets/AssetLibrary.swift"; sourceTree = "<group>"; };
@@ -264,7 +261,6 @@
 		7DABC7422E93580A8CB157295E208B81 /* ShapeItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ShapeItem.swift; path = "lottie-swift/src/Private/Model/ShapeItems/ShapeItem.swift"; sourceTree = "<group>"; };
 		7DDECC26FE263BC75BB641EA71996A65 /* Repeater.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Repeater.swift; path = "lottie-swift/src/Private/Model/ShapeItems/Repeater.swift"; sourceTree = "<group>"; };
 		7F725CD3420BBFCC53F72BB6AEA8C886 /* CompositionLayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CompositionLayer.swift; path = "lottie-swift/src/Private/LayerContainers/CompLayers/CompositionLayer.swift"; sourceTree = "<group>"; };
-		81CEDD6945C08B0937E7B6487BDA33DC /* Pods-TabView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TabView-umbrella.h"; sourceTree = "<group>"; };
 		82CF5A7E5409AC8DEFA6914BAA0BA390 /* ShapeNode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ShapeNode.swift; path = "lottie-swift/src/Private/NodeRenderSystem/Nodes/PathNodes/ShapeNode.swift"; sourceTree = "<group>"; };
 		844E45490C3A9D5EDA8FFEE050AED00D /* ShapeRenderLayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ShapeRenderLayer.swift; path = "lottie-swift/src/Private/NodeRenderSystem/RenderLayers/ShapeRenderLayer.swift"; sourceTree = "<group>"; };
 		85FCE949576592938E5A85C3D9612045 /* AnimationViewInitializers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnimationViewInitializers.swift; path = "lottie-swift/src/Public/Animation/AnimationViewInitializers.swift"; sourceTree = "<group>"; };
@@ -284,6 +280,7 @@
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9F41BD3BC904DCB87778490AD3B5B962 /* Mask.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Mask.swift; path = "lottie-swift/src/Private/Model/Objects/Mask.swift"; sourceTree = "<group>"; };
 		9F8B383A56D2DF47E14A9690FAB7B8BE /* GroupOutputNode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GroupOutputNode.swift; path = "lottie-swift/src/Private/NodeRenderSystem/Nodes/OutputNodes/GroupOutputNode.swift"; sourceTree = "<group>"; };
+		A1C972D0C6EE7EE60DE27AC4AD82CE77 /* Pods-Hola Frogger-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Hola Frogger-frameworks.sh"; sourceTree = "<group>"; };
 		A2317EF4B5F08EF0CE06E924B6D97769 /* TextDocument.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TextDocument.swift; path = "lottie-swift/src/Private/Model/Text/TextDocument.swift"; sourceTree = "<group>"; };
 		A33774A371944882382A139ABAE027B6 /* UIColorExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIColorExtension.swift; path = "lottie-swift/src/Public/iOS/UIColorExtension.swift"; sourceTree = "<group>"; };
 		A40D48113FDCEE1B9716AF272B41189E /* StrokeRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StrokeRenderer.swift; path = "lottie-swift/src/Private/NodeRenderSystem/Nodes/OutputNodes/Renderables/StrokeRenderer.swift"; sourceTree = "<group>"; };
@@ -295,6 +292,7 @@
 		AC6575F65BD8A00F37F7FD65B89232B1 /* AnimationContainer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnimationContainer.swift; path = "lottie-swift/src/Private/LayerContainers/AnimationContainer.swift"; sourceTree = "<group>"; };
 		ADB5B8B01FFDB0203ABF60E247CB020A /* AwesomeSpotlightView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = AwesomeSpotlightView.modulemap; sourceTree = "<group>"; };
 		B05369280DF63948A470759D90097693 /* AnimatedSwitch.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnimatedSwitch.swift; path = "lottie-swift/src/Public/iOS/AnimatedSwitch.swift"; sourceTree = "<group>"; };
+		B13CA8BE6961F08C81FE8D3CA7E04BF2 /* Pods-Hola Frogger-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Hola Frogger-dummy.m"; sourceTree = "<group>"; };
 		B1EDFC120D57025C23EEEC9ED7EA9C88 /* iOSDropDown-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "iOSDropDown-umbrella.h"; sourceTree = "<group>"; };
 		B24218A6A33992B49520E526A07A3DA5 /* GradientFillNode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GradientFillNode.swift; path = "lottie-swift/src/Private/NodeRenderSystem/Nodes/RenderNodes/GradientFillNode.swift"; sourceTree = "<group>"; };
 		B32D5541CEAA25F61EB38A8B02E3B375 /* AnimatedButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnimatedButton.swift; path = "lottie-swift/src/Public/iOS/AnimatedButton.swift"; sourceTree = "<group>"; };
@@ -307,7 +305,6 @@
 		BE62FC482955E04AFE87D02BEF4D0C32 /* AwesomeTabButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AwesomeTabButton.swift; path = AwesomeSpotlightView/Classes/AwesomeTabButton.swift; sourceTree = "<group>"; };
 		BFFEF5B60BEF936E9D7AF4781C317DC6 /* iOSDropDown-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "iOSDropDown-prefix.pch"; sourceTree = "<group>"; };
 		C03E38D0D94202CCB739615498C68D48 /* AnimationImageProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnimationImageProvider.swift; path = "lottie-swift/src/Public/ImageProvider/AnimationImageProvider.swift"; sourceTree = "<group>"; };
-		C093BA5B1D7753D3B8D0E957AFA7560F /* Pods-TabView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TabView-dummy.m"; sourceTree = "<group>"; };
 		C140CAC5D84F2306394997904EC3B614 /* Trim.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Trim.swift; path = "lottie-swift/src/Private/Model/ShapeItems/Trim.swift"; sourceTree = "<group>"; };
 		C4D62A7A419D9D1153CC759732E0D6A6 /* PreCompositionLayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PreCompositionLayer.swift; path = "lottie-swift/src/Private/LayerContainers/CompLayers/PreCompositionLayer.swift"; sourceTree = "<group>"; };
 		C66DA635BEAE8920C2958629F2FC250B /* CompositionLayersInitializer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CompositionLayersInitializer.swift; path = "lottie-swift/src/Private/LayerContainers/Utility/CompositionLayersInitializer.swift"; sourceTree = "<group>"; };
@@ -323,7 +320,6 @@
 		D1D840133158F538BD82F217BD59D477 /* Keyframe.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Keyframe.swift; path = "lottie-swift/src/Private/Model/Keyframes/Keyframe.swift"; sourceTree = "<group>"; };
 		D1FC100AB3738D79F6822216940F1EB3 /* ImageAsset.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageAsset.swift; path = "lottie-swift/src/Private/Model/Assets/ImageAsset.swift"; sourceTree = "<group>"; };
 		D3DE16DECAF95DCE0982477D6B2C44EC /* StarNode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StarNode.swift; path = "lottie-swift/src/Private/NodeRenderSystem/Nodes/PathNodes/StarNode.swift"; sourceTree = "<group>"; };
-		D5247F8D30A7F6285D1CE1C829583408 /* Pods-TabView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-TabView.modulemap"; sourceTree = "<group>"; };
 		D6AD17DF7FD3C5FA9AD79163EB48AE90 /* PolygonNode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PolygonNode.swift; path = "lottie-swift/src/Private/NodeRenderSystem/Nodes/PathNodes/PolygonNode.swift"; sourceTree = "<group>"; };
 		D8EA56A2A052362EF4172D8C07890C8E /* iOSDropDown-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "iOSDropDown-Info.plist"; sourceTree = "<group>"; };
 		D9541E59E2B89588078501EA49626107 /* LayerTextProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayerTextProvider.swift; path = "lottie-swift/src/Private/LayerContainers/Utility/LayerTextProvider.swift"; sourceTree = "<group>"; };
@@ -334,7 +330,10 @@
 		DE6B240E37C0C9EE67FFCEE15647103F /* ShapeCompositionLayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ShapeCompositionLayer.swift; path = "lottie-swift/src/Private/LayerContainers/CompLayers/ShapeCompositionLayer.swift"; sourceTree = "<group>"; };
 		E0A0090815A42D8B5B8E6A66C14E0FDF /* ImageCompositionLayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageCompositionLayer.swift; path = "lottie-swift/src/Private/LayerContainers/CompLayers/ImageCompositionLayer.swift"; sourceTree = "<group>"; };
 		E1521712154274F1A1448ADDBCC8723B /* Ellipse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Ellipse.swift; path = "lottie-swift/src/Private/Model/ShapeItems/Ellipse.swift"; sourceTree = "<group>"; };
+		E2F3EB66DE6D481E02F6A138625076E1 /* Pods-Hola Frogger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Hola Frogger.release.xcconfig"; sourceTree = "<group>"; };
 		E35A961D1E97E8FB09521010B3503DF0 /* StringExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StringExtensions.swift; path = "lottie-swift/src/Private/Utility/Extensions/StringExtensions.swift"; sourceTree = "<group>"; };
+		E763F58D46A9F5A23D0F1432FEF24FB0 /* Pods-Hola Frogger-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Hola Frogger-acknowledgements.plist"; sourceTree = "<group>"; };
+		E90E3B46D0B89F6D2AC00785DEB66F73 /* Pods-Hola Frogger-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Hola Frogger-Info.plist"; sourceTree = "<group>"; };
 		ED7078FA9500088D2C2E92BBF08BFE03 /* GradientFill.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GradientFill.swift; path = "lottie-swift/src/Private/Model/ShapeItems/GradientFill.swift"; sourceTree = "<group>"; };
 		EDBAF9CCF91C1083342BA47AA6195DA9 /* FillNode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FillNode.swift; path = "lottie-swift/src/Private/NodeRenderSystem/Nodes/RenderNodes/FillNode.swift"; sourceTree = "<group>"; };
 		EDCF8618C2AE98252DF3951519A638B9 /* AnimationView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnimationView.swift; path = "lottie-swift/src/Public/Animation/AnimationView.swift"; sourceTree = "<group>"; };
@@ -347,6 +346,7 @@
 		F59F4F36D47F40AD59FA8A6FCCF1861D /* DashPattern.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DashPattern.swift; path = "lottie-swift/src/Private/Model/Objects/DashPattern.swift"; sourceTree = "<group>"; };
 		F7C34CC0C6C8B313869997223A278173 /* Transform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Transform.swift; path = "lottie-swift/src/Private/Model/Objects/Transform.swift"; sourceTree = "<group>"; };
 		F897B2B5F8054BD63F41E6C2AA3FB09B /* iOSDropDown-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "iOSDropDown-dummy.m"; sourceTree = "<group>"; };
+		F926E51C391E4A84B1E83920B13AE827 /* Pods-Hola Frogger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Hola Frogger.debug.xcconfig"; sourceTree = "<group>"; };
 		F9486CF8467E93ED88FC36D809792991 /* Shape.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Shape.swift; path = "lottie-swift/src/Private/Model/ShapeItems/Shape.swift"; sourceTree = "<group>"; };
 		F98A87055A6D31A678CAF36E4FEE9D2A /* KeyframeInterpolator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeyframeInterpolator.swift; path = "lottie-swift/src/Private/NodeRenderSystem/NodeProperties/ValueProviders/KeyframeInterpolator.swift"; sourceTree = "<group>"; };
 		FAC7AF5C819C5C715B4FBAF4DA22E38C /* CompatibleAnimationKeypath.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CompatibleAnimationKeypath.swift; path = "lottie-swift/src/Public/iOS/Compatibility/CompatibleAnimationKeypath.swift"; sourceTree = "<group>"; };
@@ -377,11 +377,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FB00F952AD43468A15FD01FC73283149 /* Frameworks */ = {
+		9C4BD9567E6B31785086C6D1F0461B1B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6C043024B17F6D0F76C222AF02899656 /* Foundation.framework in Frameworks */,
+				FD35B0F6BC475DD6F238E05D55AFED88 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,6 +399,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		03C1637D17467BCBEA82CDA2B8E34590 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				CB5540E02D9650A78E24A07857867227 /* Pods-Hola Frogger */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
 		0ED8A5B98BE4744989A368E7940EF607 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -600,23 +608,6 @@
 			path = "../Target Support Files/AwesomeSpotlightView";
 			sourceTree = "<group>";
 		};
-		5BE63A2AE68AB3E7939ECC490D10FC98 /* Pods-TabView */ = {
-			isa = PBXGroup;
-			children = (
-				D5247F8D30A7F6285D1CE1C829583408 /* Pods-TabView.modulemap */,
-				583123A0A8B6C4F51A3BC5E881B3F176 /* Pods-TabView-acknowledgements.markdown */,
-				26E589EFC807BFE029271FF6B6563996 /* Pods-TabView-acknowledgements.plist */,
-				C093BA5B1D7753D3B8D0E957AFA7560F /* Pods-TabView-dummy.m */,
-				5AA5C874133A28243AEA871CCDA4E70F /* Pods-TabView-frameworks.sh */,
-				69B3DA8CE0715ECFA573F8494FFEE55B /* Pods-TabView-Info.plist */,
-				81CEDD6945C08B0937E7B6487BDA33DC /* Pods-TabView-umbrella.h */,
-				45F6214E9F2A8A18CC6814DE0D21EF90 /* Pods-TabView.debug.xcconfig */,
-				13F8C8CC5B5534724E51301AF197C54E /* Pods-TabView.release.xcconfig */,
-			);
-			name = "Pods-TabView";
-			path = "Target Support Files/Pods-TabView";
-			sourceTree = "<group>";
-		};
 		6B0F4C74F06D910B34F678847A78AE71 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -632,6 +623,17 @@
 			path = "../Target Support Files/iOSDropDown";
 			sourceTree = "<group>";
 		};
+		718C9510C58BD794D2E1079A9CBCD184 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2FDA64326F46727ABC932B518465BD86 /* AwesomeSpotlightView.framework */,
+				FCEEA8BBD9DA8D0CCE0A3092B20E3FA7 /* iOSDropDown.framework */,
+				51BA97E8B5085EFFB47BC9C0B785CEA7 /* Lottie.framework */,
+				5959D48B9FA7D37480733B3566F225BA /* Pods_Hola_Frogger.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		7B6A5445058EE373EAE1876C3CCC1CB0 /* iOSDropDown */ = {
 			isa = PBXGroup;
 			children = (
@@ -642,14 +644,6 @@
 			path = iOSDropDown;
 			sourceTree = "<group>";
 		};
-		B44ED827782A298240C1F8E1D6A1C0F9 /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				5BE63A2AE68AB3E7939ECC490D10FC98 /* Pods-TabView */,
-			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
 		BA4F31F07263C99FC76E66D632A59F09 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -658,26 +652,32 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		CB5540E02D9650A78E24A07857867227 /* Pods-Hola Frogger */ = {
+			isa = PBXGroup;
+			children = (
+				666D42F163F789AD5634BBD9D44068E1 /* Pods-Hola Frogger.modulemap */,
+				7696FE60BAB4677002CEB2EBC4D026D4 /* Pods-Hola Frogger-acknowledgements.markdown */,
+				E763F58D46A9F5A23D0F1432FEF24FB0 /* Pods-Hola Frogger-acknowledgements.plist */,
+				B13CA8BE6961F08C81FE8D3CA7E04BF2 /* Pods-Hola Frogger-dummy.m */,
+				A1C972D0C6EE7EE60DE27AC4AD82CE77 /* Pods-Hola Frogger-frameworks.sh */,
+				E90E3B46D0B89F6D2AC00785DEB66F73 /* Pods-Hola Frogger-Info.plist */,
+				1D53446B2E7C561E3280439DAD513F26 /* Pods-Hola Frogger-umbrella.h */,
+				F926E51C391E4A84B1E83920B13AE827 /* Pods-Hola Frogger.debug.xcconfig */,
+				E2F3EB66DE6D481E02F6A138625076E1 /* Pods-Hola Frogger.release.xcconfig */,
+			);
+			name = "Pods-Hola Frogger";
+			path = "Target Support Files/Pods-Hola Frogger";
+			sourceTree = "<group>";
+		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				BA4F31F07263C99FC76E66D632A59F09 /* Frameworks */,
 				0ED8A5B98BE4744989A368E7940EF607 /* Pods */,
-				F47D1DB6265E33AE2870908CAA0A69A7 /* Products */,
-				B44ED827782A298240C1F8E1D6A1C0F9 /* Targets Support Files */,
+				718C9510C58BD794D2E1079A9CBCD184 /* Products */,
+				03C1637D17467BCBEA82CDA2B8E34590 /* Targets Support Files */,
 			);
-			sourceTree = "<group>";
-		};
-		F47D1DB6265E33AE2870908CAA0A69A7 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				2FDA64326F46727ABC932B518465BD86 /* AwesomeSpotlightView.framework */,
-				FCEEA8BBD9DA8D0CCE0A3092B20E3FA7 /* iOSDropDown.framework */,
-				51BA97E8B5085EFFB47BC9C0B785CEA7 /* Lottie.framework */,
-				4686E80701467FD74E953F4356602C13 /* Pods_TabView.framework */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		F4CAA7034ED6A47DB900AC30D1F9C0BA /* Resources */ = {
@@ -699,6 +699,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		403BD859F41958C42AA9C24A0294E0CE /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FBB1B8983A4ABDC6494B01C099328443 /* Pods-Hola Frogger-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		93A905842D7F38038C5AE524E9DF7789 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -712,14 +720,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD9CEB768E622AA2B732023A4AC72831 /* AwesomeSpotlightView-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F5916C418B1A0810BEE05A80662CAEED /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1B18022E7B956C139939E086EB374B5E /* Pods-TabView-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -742,6 +742,27 @@
 			name = "lottie-ios";
 			productName = "lottie-ios";
 			productReference = 51BA97E8B5085EFFB47BC9C0B785CEA7 /* Lottie.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		0E78EB5AB7B2A226634DAED5BFDD97AF /* Pods-Hola Frogger */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ABE6005D92117E9E693D3352C2AACAAA /* Build configuration list for PBXNativeTarget "Pods-Hola Frogger" */;
+			buildPhases = (
+				403BD859F41958C42AA9C24A0294E0CE /* Headers */,
+				FA7C91095614535A850FE20551711606 /* Sources */,
+				9C4BD9567E6B31785086C6D1F0461B1B /* Frameworks */,
+				8720F0283F6310B30E252B9693D679F5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B26CFEEC70A8049A3ACC934213AB29CF /* PBXTargetDependency */,
+				D1037EAF014BE8002A80CABF0E1B929B /* PBXTargetDependency */,
+				1CE56AFFAF351E1C9927C4C534E036CD /* PBXTargetDependency */,
+			);
+			name = "Pods-Hola Frogger";
+			productName = "Pods-Hola Frogger";
+			productReference = 5959D48B9FA7D37480733B3566F225BA /* Pods_Hola_Frogger.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		14FC0C9E4E078AC230B149162CB0E219 /* AwesomeSpotlightView */ = {
@@ -780,27 +801,6 @@
 			productReference = FCEEA8BBD9DA8D0CCE0A3092B20E3FA7 /* iOSDropDown.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		43FC8457780488E5A5AF96F746D094A0 /* Pods-TabView */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 2DCAAAEBF5D1E9F1020440948995BAD3 /* Build configuration list for PBXNativeTarget "Pods-TabView" */;
-			buildPhases = (
-				F5916C418B1A0810BEE05A80662CAEED /* Headers */,
-				FF04167D79BD253A5B173FBF3811B911 /* Sources */,
-				FB00F952AD43468A15FD01FC73283149 /* Frameworks */,
-				9F65B0407814DEDA801A0B1B110513F9 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				EE4A72C5D0973A6C6AE82C90C1B84847 /* PBXTargetDependency */,
-				BEB429320ED8CC865CBA232AEB240D35 /* PBXTargetDependency */,
-				527E3CE97376FF2CE2CAE63789C6F57C /* PBXTargetDependency */,
-			);
-			name = "Pods-TabView";
-			productName = "Pods-TabView";
-			productReference = 4686E80701467FD74E953F4356602C13 /* Pods_TabView.framework */;
-			productType = "com.apple.product-type.framework";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -819,14 +819,14 @@
 				Base,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = F47D1DB6265E33AE2870908CAA0A69A7 /* Products */;
+			productRefGroup = 718C9510C58BD794D2E1079A9CBCD184 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				14FC0C9E4E078AC230B149162CB0E219 /* AwesomeSpotlightView */,
 				3C76CE6CD60B1CE55A174F03CC59AE17 /* iOSDropDown */,
 				0B967D7F8561D42493EE289EC8D450D1 /* lottie-ios */,
-				43FC8457780488E5A5AF96F746D094A0 /* Pods-TabView */,
+				0E78EB5AB7B2A226634DAED5BFDD97AF /* Pods-Hola Frogger */,
 			);
 		};
 /* End PBXProject section */
@@ -846,7 +846,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9F65B0407814DEDA801A0B1B110513F9 /* Resources */ = {
+		8720F0283F6310B30E252B9693D679F5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1020,34 +1020,34 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FF04167D79BD253A5B173FBF3811B911 /* Sources */ = {
+		FA7C91095614535A850FE20551711606 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C2A572538226BAE570D484F49B3025D /* Pods-TabView-dummy.m in Sources */,
+				1D3DF675618B7A9750B680C18E31231B /* Pods-Hola Frogger-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		527E3CE97376FF2CE2CAE63789C6F57C /* PBXTargetDependency */ = {
+		1CE56AFFAF351E1C9927C4C534E036CD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "lottie-ios";
 			target = 0B967D7F8561D42493EE289EC8D450D1 /* lottie-ios */;
-			targetProxy = BB94FEE063214F8A7982D3F1510186B6 /* PBXContainerItemProxy */;
+			targetProxy = 8C8E31BE53AC79D363787A1AA927AA98 /* PBXContainerItemProxy */;
 		};
-		BEB429320ED8CC865CBA232AEB240D35 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = iOSDropDown;
-			target = 3C76CE6CD60B1CE55A174F03CC59AE17 /* iOSDropDown */;
-			targetProxy = 6390BCA04E2A2F87551BC763DF7290C2 /* PBXContainerItemProxy */;
-		};
-		EE4A72C5D0973A6C6AE82C90C1B84847 /* PBXTargetDependency */ = {
+		B26CFEEC70A8049A3ACC934213AB29CF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = AwesomeSpotlightView;
 			target = 14FC0C9E4E078AC230B149162CB0E219 /* AwesomeSpotlightView */;
-			targetProxy = 810AF586447735F208B43D98605C1015 /* PBXContainerItemProxy */;
+			targetProxy = 0F7AF3AF4DB948B143BCAB28336DDBCB /* PBXContainerItemProxy */;
+		};
+		D1037EAF014BE8002A80CABF0E1B929B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = iOSDropDown;
+			target = 3C76CE6CD60B1CE55A174F03CC59AE17 /* iOSDropDown */;
+			targetProxy = 8D3ECCEFB72FCE61C69A4A75AC35DA04 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1158,45 +1158,6 @@
 			};
 			name = Debug;
 		};
-		5061EFF1C016FEE75A77309ACB0AD5DC /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 13F8C8CC5B5534724E51301AF197C54E /* Pods-TabView.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-TabView/Pods-TabView-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-TabView/Pods-TabView.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		510B057D2E9F059C50D52DA5D90F3ACF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1254,6 +1215,45 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		6644A73E5D9E7AE140AE9B81333A1FC0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E2F3EB66DE6D481E02F6A138625076E1 /* Pods-Hola Frogger.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Hola Frogger/Pods-Hola Frogger-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Hola Frogger/Pods-Hola Frogger.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
@@ -1428,9 +1428,9 @@
 			};
 			name = Debug;
 		};
-		9EB8882A8D826C3843497174A384AA23 /* Debug */ = {
+		D9F786F8ED1CFB5B20E794B12866980D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 45F6214E9F2A8A18CC6814DE0D21EF90 /* Pods-TabView.debug.xcconfig */;
+			baseConfigurationReference = F926E51C391E4A84B1E83920B13AE827 /* Pods-Hola Frogger.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -1443,7 +1443,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-TabView/Pods-TabView-Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-Hola Frogger/Pods-Hola Frogger-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1452,7 +1452,7 @@
 					"@loader_path/Frameworks",
 				);
 				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-TabView/Pods-TabView.modulemap";
+				MODULEMAP_FILE = "Target Support Files/Pods-Hola Frogger/Pods-Hola Frogger.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -1469,15 +1469,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2DCAAAEBF5D1E9F1020440948995BAD3 /* Build configuration list for PBXNativeTarget "Pods-TabView" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				9EB8882A8D826C3843497174A384AA23 /* Debug */,
-				5061EFF1C016FEE75A77309ACB0AD5DC /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		331F1F211DAFD1B08655F78F56AB239C /* Build configuration list for PBXNativeTarget "AwesomeSpotlightView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1501,6 +1492,15 @@
 			buildConfigurations = (
 				9777F8A98343527160CF9950B9A6980B /* Debug */,
 				92111D7F4357A63D476FF4384C052E33 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ABE6005D92117E9E693D3352C2AACAAA /* Build configuration list for PBXNativeTarget "Pods-Hola Frogger" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D9F786F8ED1CFB5B20E794B12866980D /* Debug */,
+				6644A73E5D9E7AE140AE9B81333A1FC0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

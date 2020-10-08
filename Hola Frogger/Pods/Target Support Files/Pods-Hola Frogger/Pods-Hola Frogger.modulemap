@@ -1,0 +1,6 @@
+framework module Pods_Hola_Frogger {
+  umbrella header "Pods-Hola Frogger-umbrella.h"
+
+  export *
+  module * { export * }
+}

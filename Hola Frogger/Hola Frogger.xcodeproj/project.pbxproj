@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2DC7934B91BDC021A7F78B27 /* Pods_TabView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BDCD6C8E26AF54B75AEA6CA /* Pods_TabView.framework */; };
 		570D1C14247015E500B9FB22 /* VisitedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570D1C13247015E500B9FB22 /* VisitedViewController.swift */; };
 		570D1C162470551B00B9FB22 /* test.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 570D1C152470551B00B9FB22 /* test.mp3 */; };
 		570D1C1C24705E5200B9FB22 /* sad2.json in Resources */ = {isa = PBXBuildFile; fileRef = 570D1C1724705E5100B9FB22 /* sad2.json */; };
@@ -51,7 +50,6 @@
 		B960A57A246C3BA9003CFDE3 /* CardLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B960A579246C3BA9003CFDE3 /* CardLayout.swift */; };
 		B98A407D24725008006C2F2A /* award.json in Resources */ = {isa = PBXBuildFile; fileRef = B98A407C24725007006C2F2A /* award.json */; };
 		B98A407F24725DE6006C2F2A /* FrogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98A407E24725DE6006C2F2A /* FrogCell.swift */; };
-		B9BC1B332471912900C15461 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BC1B322471912900C15461 /* WelcomeViewController.swift */; };
 		B9FD7A40246C11CB0058B4B3 /* ChallengeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FD7A3F246C11CB0058B4B3 /* ChallengeCell.swift */; };
 		B9FD7A44246C1B150058B4B3 /* GuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FD7A43246C1B150058B4B3 /* GuideViewController.swift */; };
 		B9FD7A46246C1C7D0058B4B3 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FD7A45246C1C7D0058B4B3 /* Page.swift */; };
@@ -64,16 +62,18 @@
 		B9FD7A56246C1F2D0058B4B3 /* 8878-done.json in Resources */ = {isa = PBXBuildFile; fileRef = B9FD7A4F246C1F2D0058B4B3 /* 8878-done.json */; };
 		B9FD7A57246C1F2D0058B4B3 /* 336-search.json in Resources */ = {isa = PBXBuildFile; fileRef = B9FD7A50246C1F2D0058B4B3 /* 336-search.json */; };
 		B9FD7A58246C1F2D0058B4B3 /* 13005-refresh.json in Resources */ = {isa = PBXBuildFile; fileRef = B9FD7A51246C1F2D0058B4B3 /* 13005-refresh.json */; };
+		DF310DF0252EDD2F00A0F7A6 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF310DEF252EDD2F00A0F7A6 /* WelcomeViewController.swift */; };
 		DF8EAE65252ED60B009A9038 /* UnSightedFrogEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8EAE63252ED60B009A9038 /* UnSightedFrogEntity+CoreDataClass.swift */; };
 		DF8EAE66252ED60B009A9038 /* UnSightedFrogEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8EAE64252ED60B009A9038 /* UnSightedFrogEntity+CoreDataProperties.swift */; };
 		DF8EAE6A252ED61D009A9038 /* FrogEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8EAE68252ED61D009A9038 /* FrogEntity+CoreDataClass.swift */; };
 		DF8EAE6B252ED61D009A9038 /* FrogEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8EAE69252ED61D009A9038 /* FrogEntity+CoreDataProperties.swift */; };
 		DF8EAE6F252ED627009A9038 /* SpotLightEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8EAE6D252ED627009A9038 /* SpotLightEntity+CoreDataProperties.swift */; };
 		DF8EAE70252ED627009A9038 /* SpotLightEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8EAE6E252ED627009A9038 /* SpotLightEntity+CoreDataClass.swift */; };
+		EC2B8094073EF948ADA1C676 /* Pods_Hola_Frogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17543AFAD565A26F7CFD39CA /* Pods_Hola_Frogger.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2BDCD6C8E26AF54B75AEA6CA /* Pods_TabView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TabView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		17543AFAD565A26F7CFD39CA /* Pods_Hola_Frogger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hola_Frogger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		570D1C13247015E500B9FB22 /* VisitedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitedViewController.swift; sourceTree = "<group>"; };
 		570D1C152470551B00B9FB22 /* test.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = test.mp3; sourceTree = "<group>"; };
 		570D1C1724705E5100B9FB22 /* sad2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sad2.json; sourceTree = "<group>"; };
@@ -116,11 +116,12 @@
 		57F877E824763B5700D5501F /* FROG.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = FROG.usdz; sourceTree = "<group>"; };
 		57F877EA24763E9300D5501F /* DartFrog.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DartFrog.obj; sourceTree = "<group>"; };
 		57F877F0247641F900D5501F /* Frog_Hopping.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Frog_Hopping.usdz; sourceTree = "<group>"; };
+		93029B50E690F19607378EFC /* Pods-Hola Frogger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hola Frogger.release.xcconfig"; path = "Target Support Files/Pods-Hola Frogger/Pods-Hola Frogger.release.xcconfig"; sourceTree = "<group>"; };
 		ACBCC81B8DB64478F334A8A5 /* Pods-TabView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TabView.debug.xcconfig"; path = "Target Support Files/Pods-TabView/Pods-TabView.debug.xcconfig"; sourceTree = "<group>"; };
+		B728A1957D843A5C438F5737 /* Pods-Hola Frogger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hola Frogger.debug.xcconfig"; path = "Target Support Files/Pods-Hola Frogger/Pods-Hola Frogger.debug.xcconfig"; sourceTree = "<group>"; };
 		B960A579246C3BA9003CFDE3 /* CardLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardLayout.swift; sourceTree = "<group>"; };
 		B98A407C24725007006C2F2A /* award.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = award.json; sourceTree = "<group>"; };
 		B98A407E24725DE6006C2F2A /* FrogCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrogCell.swift; sourceTree = "<group>"; };
-		B9BC1B322471912900C15461 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WelcomeViewController.swift; path = TabView/ViewControllers/Onboarding/WelcomeViewController.swift; sourceTree = SOURCE_ROOT; };
 		B9FD7A3F246C11CB0058B4B3 /* ChallengeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeCell.swift; sourceTree = "<group>"; };
 		B9FD7A43246C1B150058B4B3 /* GuideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideViewController.swift; sourceTree = "<group>"; };
 		B9FD7A45246C1C7D0058B4B3 /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
@@ -134,6 +135,7 @@
 		B9FD7A50246C1F2D0058B4B3 /* 336-search.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "336-search.json"; sourceTree = "<group>"; };
 		B9FD7A51246C1F2D0058B4B3 /* 13005-refresh.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "13005-refresh.json"; sourceTree = "<group>"; };
 		DEF23522100C96BCBF38C1D1 /* Pods-TabView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TabView.release.xcconfig"; path = "Target Support Files/Pods-TabView/Pods-TabView.release.xcconfig"; sourceTree = "<group>"; };
+		DF310DEF252EDD2F00A0F7A6 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		DF8EAE63252ED60B009A9038 /* UnSightedFrogEntity+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UnSightedFrogEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		DF8EAE64252ED60B009A9038 /* UnSightedFrogEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UnSightedFrogEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		DF8EAE68252ED61D009A9038 /* FrogEntity+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FrogEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -148,7 +150,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				57320A7F2453477900ADE06C /* WebKit.framework in Frameworks */,
-				2DC7934B91BDC021A7F78B27 /* Pods_TabView.framework in Frameworks */,
+				EC2B8094073EF948ADA1C676 /* Pods_Hola_Frogger.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -170,7 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				57320A7E2453477900ADE06C /* WebKit.framework */,
-				2BDCD6C8E26AF54B75AEA6CA /* Pods_TabView.framework */,
+				17543AFAD565A26F7CFD39CA /* Pods_Hola_Frogger.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -240,7 +242,7 @@
 		57A3B890244315230011F674 = {
 			isa = PBXGroup;
 			children = (
-				57A3B89B244315230011F674 /* TabView */,
+				57A3B89B244315230011F674 /* Hola Frogger */,
 				57A3B89A244315230011F674 /* Products */,
 				57320A7D2453477800ADE06C /* Frameworks */,
 				E71D97BDF56D4843DF18292D /* Pods */,
@@ -255,7 +257,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		57A3B89B244315230011F674 /* TabView */ = {
+		57A3B89B244315230011F674 /* Hola Frogger */ = {
 			isa = PBXGroup;
 			children = (
 				57A3B89C244315230011F674 /* AppDelegate.swift */,
@@ -266,7 +268,7 @@
 				DF0FD6C0252ED29E00FE17FE /* Support files */,
 				57A3B8AF244315270011F674 /* Info.plist */,
 			);
-			path = TabView;
+			path = "Hola Frogger";
 			sourceTree = "<group>";
 		};
 		57F877E724741BD300D5501F /* AR files */ = {
@@ -298,7 +300,7 @@
 		DF0FD6C1252ED39600FE17FE /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
-				B9BC1B322471912900C15461 /* WelcomeViewController.swift */,
+				DF310DEF252EDD2F00A0F7A6 /* WelcomeViewController.swift */,
 				B9FD7A43246C1B150058B4B3 /* GuideViewController.swift */,
 				B9FD7A45246C1C7D0058B4B3 /* Page.swift */,
 				B9FD7A47246C1CB00058B4B3 /* OnboardingPageCell.swift */,
@@ -352,6 +354,8 @@
 			children = (
 				ACBCC81B8DB64478F334A8A5 /* Pods-TabView.debug.xcconfig */,
 				DEF23522100C96BCBF38C1D1 /* Pods-TabView.release.xcconfig */,
+				B728A1957D843A5C438F5737 /* Pods-Hola Frogger.debug.xcconfig */,
+				93029B50E690F19607378EFC /* Pods-Hola Frogger.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -359,9 +363,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		57A3B898244315230011F674 /* TabView */ = {
+		57A3B898244315230011F674 /* Hola Frogger */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 57A3B8B2244315270011F674 /* Build configuration list for PBXNativeTarget "TabView" */;
+			buildConfigurationList = 57A3B8B2244315270011F674 /* Build configuration list for PBXNativeTarget "Hola Frogger" */;
 			buildPhases = (
 				F1770C10371497F05260C084 /* [CP] Check Pods Manifest.lock */,
 				57A3B895244315230011F674 /* Sources */,
@@ -373,7 +377,7 @@
 			);
 			dependencies = (
 			);
-			name = TabView;
+			name = "Hola Frogger";
 			productName = TabView;
 			productReference = 57A3B899244315230011F674 /* Hola Frogger.app */;
 			productType = "com.apple.product-type.application";
@@ -393,7 +397,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 57A3B894244315230011F674 /* Build configuration list for PBXProject "TabView" */;
+			buildConfigurationList = 57A3B894244315230011F674 /* Build configuration list for PBXProject "Hola Frogger" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -406,7 +410,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				57A3B898244315230011F674 /* TabView */,
+				57A3B898244315230011F674 /* Hola Frogger */,
 			);
 		};
 /* End PBXProject section */
@@ -466,7 +470,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-TabView-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Hola Frogger-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -479,15 +483,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TabView/Pods-TabView-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Hola Frogger/Pods-Hola Frogger-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TabView/Pods-TabView-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Hola Frogger/Pods-Hola Frogger-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TabView/Pods-TabView-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Hola Frogger/Pods-Hola Frogger-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -513,7 +517,6 @@
 				57A3B89D244315230011F674 /* AppDelegate.swift in Sources */,
 				B9FD7A48246C1CB00058B4B3 /* OnboardingPageCell.swift in Sources */,
 				DF8EAE65252ED60B009A9038 /* UnSightedFrogEntity+CoreDataClass.swift in Sources */,
-				B9BC1B332471912900C15461 /* WelcomeViewController.swift in Sources */,
 				DF8EAE6B252ED61D009A9038 /* FrogEntity+CoreDataProperties.swift in Sources */,
 				57C098BE246A49BD0041C235 /* ChallengeViewController.swift in Sources */,
 				DF8EAE6A252ED61D009A9038 /* FrogEntity+CoreDataClass.swift in Sources */,
@@ -521,6 +524,7 @@
 				57320A8124535A4300ADE06C /* FrogImageClassification Refined.mlmodel in Sources */,
 				579EE7A92444763000321C7E /* NewsViewController.swift in Sources */,
 				57320A7C245344BC00ADE06C /* FrogImageClassification 3.mlmodel in Sources */,
+				DF310DF0252EDD2F00A0F7A6 /* WelcomeViewController.swift in Sources */,
 				DF8EAE66252ED60B009A9038 /* UnSightedFrogEntity+CoreDataProperties.swift in Sources */,
 				B9FD7A44246C1B150058B4B3 /* GuideViewController.swift in Sources */,
 				B9FD7A46246C1C7D0058B4B3 /* Page.swift in Sources */,
@@ -670,12 +674,12 @@
 		};
 		57A3B8B3244315270011F674 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = ACBCC81B8DB64478F334A8A5 /* Pods-TabView.debug.xcconfig */;
+			baseConfigurationReference = B728A1957D843A5C438F5737 /* Pods-Hola Frogger.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5G9HGCW6QY;
-				INFOPLIST_FILE = TabView/Info.plist;
+				INFOPLIST_FILE = "Hola Frogger/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -690,12 +694,12 @@
 		};
 		57A3B8B4244315270011F674 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DEF23522100C96BCBF38C1D1 /* Pods-TabView.release.xcconfig */;
+			baseConfigurationReference = 93029B50E690F19607378EFC /* Pods-Hola Frogger.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5G9HGCW6QY;
-				INFOPLIST_FILE = TabView/Info.plist;
+				INFOPLIST_FILE = "Hola Frogger/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -711,7 +715,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		57A3B894244315230011F674 /* Build configuration list for PBXProject "TabView" */ = {
+		57A3B894244315230011F674 /* Build configuration list for PBXProject "Hola Frogger" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				57A3B8B0244315270011F674 /* Debug */,
@@ -720,7 +724,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		57A3B8B2244315270011F674 /* Build configuration list for PBXNativeTarget "TabView" */ = {
+		57A3B8B2244315270011F674 /* Build configuration list for PBXNativeTarget "Hola Frogger" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				57A3B8B3244315270011F674 /* Debug */,
