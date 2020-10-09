@@ -16,7 +16,7 @@ class HomeViewController: UIViewController, AwesomeSpotlightViewDelegate {
     
     var frogNamesForSearch: [String] = []
     var selectedFrog: String = ""
-    let magnitude = -20
+    let magnitude = -200
     let animationView = AnimationView(name: "catchmeifyoucan")
     let wavesAnimationView = AnimationView(name: "greenwaves")
     
@@ -28,6 +28,8 @@ class HomeViewController: UIViewController, AwesomeSpotlightViewDelegate {
     // set frame
     let  searchField = DropDown(frame: CGRect(x: 10, y: 0, width: 350, height: 50))
     var spotlightView = AwesomeSpotlightView()
+    
+    var button = UIButton()
  
     @IBOutlet weak var exploreBtn: UIButton!
     
@@ -37,7 +39,6 @@ class HomeViewController: UIViewController, AwesomeSpotlightViewDelegate {
         lottieAnimation()
         initializeSearch()
         checkForSpotLight()
-        applyParallaxEffect()
         AudioServicesPlaySystemSound(1520)
         searchField.textAlignment = .center
     }
@@ -90,11 +91,6 @@ class HomeViewController: UIViewController, AwesomeSpotlightViewDelegate {
         _ = searchField.anchor(animationView.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, topConstant: 270, leftConstant: 20, bottomConstant: 0, rightConstant: 20, widthConstant: 350, heightConstant: 50)
     }
     
-    func applyParallaxEffect() {
-        applyMotionEffect(toView: searchField, magnitude: Float(magnitude))
-        applyMotionEffect(toView: exploreBtn, magnitude: Float(-magnitude))
-    }
-    
     fileprivate func setUpSearchBarAndExploreButton() {
         
         searchField.optionArray = frogNamesForSearch
@@ -117,8 +113,6 @@ class HomeViewController: UIViewController, AwesomeSpotlightViewDelegate {
 
     }
     
-    
-
     // Dismiss Keyboard when tapped on View
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
@@ -221,49 +215,18 @@ extension HomeViewController {
         })
     }
     
-    // Parallax effect for SearchBar
-    func applyMotionEffect (toView view: DropDown, magnitude: Float) {
-        let xMotion = UIInterpolatingMotionEffect(keyPath: "center.x", type: .tiltAlongHorizontalAxis)
-        xMotion.minimumRelativeValue = -magnitude
-        xMotion.maximumRelativeValue = magnitude
-        let yMotion = UIInterpolatingMotionEffect(keyPath: "center.y", type: .tiltAlongVerticalAxis)
-        yMotion.minimumRelativeValue = -magnitude
-        yMotion.maximumRelativeValue = magnitude
-        
-        let group = UIMotionEffectGroup()
-        group.motionEffects = [xMotion, yMotion]
-        
-        view.addMotionEffect(group)
-    }
-    
-    // Parallax effect for Button
-    func applyMotionEffect (toView view: UIButton, magnitude: Float) {
-        let xMotion = UIInterpolatingMotionEffect(keyPath: "center.x", type: .tiltAlongHorizontalAxis)
-        xMotion.minimumRelativeValue = -magnitude
-        xMotion.maximumRelativeValue = magnitude
-        let yMotion = UIInterpolatingMotionEffect(keyPath: "center.y", type: .tiltAlongVerticalAxis)
-        yMotion.minimumRelativeValue = -magnitude
-        yMotion.maximumRelativeValue = magnitude
-        
-        let group = UIMotionEffectGroup()
-        group.motionEffects = [xMotion, yMotion]
-        
-        view.addMotionEffect(group)
-    }
-    
-    // Parallax effect for Image
-    func applyMotionEffect (toView view: UIImageView, magnitude:Float) {
-        let xMotion = UIInterpolatingMotionEffect(keyPath: "center.x", type: .tiltAlongHorizontalAxis)
-        xMotion.minimumRelativeValue = -magnitude
-        xMotion.maximumRelativeValue = magnitude
-        
-        let yMotion = UIInterpolatingMotionEffect(keyPath: "center.y", type: .tiltAlongVerticalAxis)
-        yMotion.minimumRelativeValue = -magnitude
-        yMotion.maximumRelativeValue = magnitude
-        
-        let group = UIMotionEffectGroup()
-        group.motionEffects = [xMotion, yMotion]
-        
-        view.addMotionEffect(group)
-    }
+//    // Apply parallaxEffect
+//    func applyParallaxEffect<T: UIView> (toView view: T, magnitude: Float) {
+//        let xMotion = UIInterpolatingMotionEffect(keyPath: "center.x", type: .tiltAlongHorizontalAxis)
+//        xMotion.minimumRelativeValue = -magnitude
+//        xMotion.maximumRelativeValue = magnitude
+//        let yMotion = UIInterpolatingMotionEffect(keyPath: "center.y", type: .tiltAlongVerticalAxis)
+//        yMotion.minimumRelativeValue = -magnitude
+//        yMotion.maximumRelativeValue = magnitude
+//
+//        let group = UIMotionEffectGroup()
+//        group.motionEffects = [xMotion, yMotion]
+//
+//        view.addMotionEffect(group)
+//    }
 }
