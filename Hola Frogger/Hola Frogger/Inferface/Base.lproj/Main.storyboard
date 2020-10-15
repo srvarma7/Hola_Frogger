@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Yxx-iZ-Imt">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Yxx-iZ-Imt">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -33,14 +35,14 @@
                                 <color key="backgroundColor" red="0.7086630464" green="0.18603375550000001" blue="0.29804116489999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="weather condition" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H9W-S0-c3D">
-                                <rect key="frame" x="6" y="57" width="143" height="20"/>
+                                <rect key="frame" x="6" y="57" width="143" height="19"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Humidity" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C6s-Zw-kvT">
-                                <rect key="frame" x="246" y="57" width="146" height="21"/>
+                                <rect key="frame" x="246" y="57" width="146" height="20"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -68,7 +70,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Getting weather...." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oIA-Uo-JYg">
-                                <rect key="frame" x="21" y="7" width="338" height="24"/>
+                                <rect key="frame" x="21" y="7" width="338" height="23"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -131,9 +133,9 @@
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="vtx-zN-UwC">
                                         <rect key="frame" x="16" y="33" width="349" height="198"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <string key="text">Their physique comprises of light shades ranging from light greenish or light greyish to light red or light brownish along with dark and vivid yellow patterns on their armpits. They can be of different colours such as clear brown , clear black , clear yellow , clear green and clear grey .They belong to jungle habitats , open spaces , exposed grasslands. They serve on insects.</string>
-                                        <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" systemColor="labelColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
@@ -163,8 +165,8 @@
                                 <viewLayoutGuide key="frameLayoutGuide" id="ljF-rP-6Tn"/>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="uY5-3H-rvJ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="ROj-ZU-yEe"/>
                     <connections>
@@ -199,7 +201,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wM5-3w-XVg">
                                 <rect key="frame" x="0.0" y="140" width="375" height="589"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="frogCell" rowHeight="100" id="HVW-1y-egf" customClass="FrogCell" customModule="Hola_Frogger" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="100"/>
@@ -242,14 +244,14 @@
                                 </prototypes>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="wM5-3w-XVg" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" id="Jqb-bO-Z7i"/>
                             <constraint firstItem="wM5-3w-XVg" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" id="LQ4-7e-zYT"/>
                             <constraint firstItem="wM5-3w-XVg" firstAttribute="bottom" secondItem="PQr-Ze-W5v" secondAttribute="bottom" id="a1r-al-DIU"/>
                             <constraint firstItem="wM5-3w-XVg" firstAttribute="trailing" secondItem="PQr-Ze-W5v" secondAttribute="trailing" id="rAn-yC-EVG"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
                     <navigationItem key="navigationItem" title="Frogs" id="D3u-AS-xIx">
                         <barButtonItem key="rightBarButtonItem" title="Item" style="plain" id="EHo-07-SVf">
@@ -343,7 +345,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="KiM-YK-AiN" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" constant="29" id="29u-Vj-z0z"/>
                             <constraint firstItem="XWi-gi-pIm" firstAttribute="baseline" secondItem="GvV-wH-qFR" secondAttribute="baseline" id="2tk-qI-MId"/>
@@ -376,7 +379,6 @@
                             <constraint firstItem="Mb7-AV-uaH" firstAttribute="top" secondItem="KiM-YK-AiN" secondAttribute="bottom" constant="35" id="x7W-UL-ba3"/>
                             <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="0lZ-F0-MBf" secondAttribute="trailing" constant="28" id="xRG-w5-Av2"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Classification" id="JuE-7j-2r6"/>
                     <connections>
@@ -405,7 +407,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="DLJ-yb-C1W">
                                 <rect key="frame" x="0.0" y="88" width="375" height="641"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="XLE-cx-ZvE" imageView="Lpe-gi-q9g" rowHeight="100" style="IBUITableViewCellStyleDefault" id="zjj-mj-o7a">
                                         <rect key="frame" x="0.0" y="28" width="375" height="100"/>
@@ -415,14 +417,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="XLE-cx-ZvE">
-                                                    <rect key="frame" x="54" y="0.0" width="306" height="100"/>
+                                                    <rect key="frame" x="55" y="0.0" width="304" height="100"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="greaterthan.circle.fill" catalog="system" id="Lpe-gi-q9g">
-                                                    <rect key="frame" x="17.166666666666668" y="40.666666666666664" width="19.666666666666664" height="19"/>
+                                                    <rect key="frame" x="18.166666666666668" y="40.666666666666664" width="19.666666666666664" height="19"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </imageView>
                                             </subviews>
@@ -435,14 +437,14 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="9Vx-wn-gDG"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="9Vx-wn-gDG" firstAttribute="trailing" secondItem="DLJ-yb-C1W" secondAttribute="trailing" id="31l-uz-YQE"/>
                             <constraint firstItem="DLJ-yb-C1W" firstAttribute="leading" secondItem="9Vx-wn-gDG" secondAttribute="leading" id="J5j-MI-LiZ"/>
                             <constraint firstItem="DLJ-yb-C1W" firstAttribute="top" secondItem="9Vx-wn-gDG" secondAttribute="top" id="LrW-1l-5Ge"/>
                             <constraint firstItem="9Vx-wn-gDG" firstAttribute="bottom" secondItem="DLJ-yb-C1W" secondAttribute="bottom" id="TIG-VS-73o"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="9Vx-wn-gDG"/>
                     </view>
                     <navigationItem key="navigationItem" title="News" id="R4Y-I6-BvU"/>
                     <connections>
@@ -460,8 +462,8 @@
                     <view key="view" contentMode="scaleToFill" id="cl8-dK-kUQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6dG-qe-Hi2"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zEb-V7-xXP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -500,21 +502,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="za7-8D-sCO">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="za7-8D-sCO">
                                 <rect key="frame" x="0.0" y="552" width="375" height="177"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="24"/>
                                 <state key="normal" title="Explore all Frogs">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleShadowColor" systemColor="darkTextColor"/>
                                 </state>
                                 <connections>
                                     <segue destination="9pv-A4-QxB" kind="show" id="41E-ZX-WcK"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="Wu6-rO-kCl"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="Hola Frogger" id="YBN-pW-DJr"/>
                     <connections>
@@ -583,7 +585,7 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="5Yi-qt-M9n">
                                 <rect key="frame" x="16" y="199" width="343" height="308"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewLayout key="collectionViewLayout" id="hHR-kL-t1g" customClass="CardLayout" customModule="Hola_Frogger" customModuleProvider="target"/>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="h90-wj-TCB" customClass="ChallengeCell" customModule="Hola_Frogger" customModuleProvider="target">
@@ -627,7 +629,7 @@
                                                 </imageView>
                                             </subviews>
                                         </collectionViewCellContentView>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <size key="customSize" width="220" height="280"/>
                                         <connections>
                                             <outlet property="cname" destination="Fac-kn-mva" id="XDo-mc-kFQ"/>
@@ -684,8 +686,8 @@
                                 </connections>
                             </segmentedControl>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="P90-rF-x30"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="Challenges" id="eRn-IO-71b"/>
                     <connections>
@@ -756,14 +758,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Zhc-Nf-vaW"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Zhc-Nf-vaW" firstAttribute="trailing" secondItem="cDn-Jh-Wn4" secondAttribute="trailing" id="3Bi-I3-SPW"/>
                             <constraint firstItem="cDn-Jh-Wn4" firstAttribute="top" secondItem="3ye-33-sXE" secondAttribute="top" id="Ifc-ql-zAK"/>
                             <constraint firstItem="cDn-Jh-Wn4" firstAttribute="leading" secondItem="Zhc-Nf-vaW" secondAttribute="leading" id="c5I-Si-FbF"/>
                             <constraint firstItem="Zhc-Nf-vaW" firstAttribute="bottom" secondItem="cDn-Jh-Wn4" secondAttribute="bottom" id="u2A-U0-GM8"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="Zhc-Nf-vaW"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Locations" image="map" catalog="system" id="83a-Xk-AJb"/>
                     <connections>
@@ -798,14 +800,14 @@
                                 <color key="color" red="0.7086630464" green="0.18603375550000001" blue="0.29804116489999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </activityIndicatorView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="r8z-7P-7TS"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="g8Z-FR-PhW" firstAttribute="leading" secondItem="r8z-7P-7TS" secondAttribute="leading" id="2MH-vu-vxh"/>
                             <constraint firstItem="r8z-7P-7TS" firstAttribute="bottom" secondItem="g8Z-FR-PhW" secondAttribute="bottom" id="INm-qa-Fdt"/>
                             <constraint firstItem="g8Z-FR-PhW" firstAttribute="centerX" secondItem="1jK-cT-0yG" secondAttribute="centerX" id="XiZ-26-p24"/>
                             <constraint firstItem="g8Z-FR-PhW" firstAttribute="top" secondItem="r8z-7P-7TS" secondAttribute="top" id="lrX-3R-4TS"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="r8z-7P-7TS"/>
                     </view>
                     <navigationItem key="navigationItem" id="hxK-nn-9bN"/>
                     <connections>
@@ -884,11 +886,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ZVP-rq-kok">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="320"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="319"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </mapView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pi" translatesAutoresizingMaskIntoConstraints="NO" id="aUl-fj-KhA">
-                                <rect key="frame" x="107" y="232" width="161" height="172"/>
+                                <rect key="frame" x="107" y="232" width="161" height="171"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Common Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BeU-1B-nYd">
@@ -906,7 +908,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hurray!!! Looks like you have entered a Frog's habitat" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NgD-8a-C37">
-                                <rect key="frame" x="23" y="472" width="329" height="72"/>
+                                <rect key="frame" x="23" y="471" width="329" height="72"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -920,7 +922,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1o9-cI-zzI">
-                                <rect key="frame" x="331" y="279" width="31" height="28"/>
+                                <rect key="frame" x="331" y="278" width="31" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" red="0.7086630464" green="0.18603375550000001" blue="0.29804116489999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" backgroundImage="location.fill" catalog="system">
@@ -931,7 +933,7 @@
                                 </connections>
                             </button>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="H7u-ah-zlQ">
-                                <rect key="frame" x="97" y="589" width="182" height="32"/>
+                                <rect key="frame" x="97" y="588" width="182" height="32"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <segments>
                                     <segment title="No"/>
@@ -942,8 +944,8 @@
                                 </connections>
                             </segmentedControl>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="CiN-f4-bLh"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="hFE-WR-13m"/>
                     <connections>
@@ -966,8 +968,8 @@
                     <view key="view" contentMode="scaleToFill" id="b8T-qq-0yF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="c2z-w4-m8r"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="VIew" id="xYj-0d-UmE"/>
                     <navigationItem key="navigationItem" id="Upf-tr-XCQ"/>
@@ -983,8 +985,8 @@
                     <view key="view" contentMode="scaleToFill" id="BVc-1x-fCQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="HNj-tf-fWN"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="83I-KF-Y56" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -993,13 +995,22 @@
         </scene>
     </scenes>
     <resources>
-        <image name="camera.viewfinder" catalog="system" width="128" height="114"/>
+        <image name="camera.viewfinder" catalog="system" width="128" height="115"/>
         <image name="dot.radiowaves.left.and.right" catalog="system" width="128" height="89"/>
-        <image name="gamecontroller" catalog="system" width="128" height="82"/>
+        <image name="gamecontroller" catalog="system" width="128" height="80"/>
         <image name="greaterthan.circle.fill" catalog="system" width="128" height="121"/>
-        <image name="house" catalog="system" width="128" height="110"/>
-        <image name="location.fill" catalog="system" width="128" height="115"/>
-        <image name="map" catalog="system" width="128" height="113"/>
+        <image name="house" catalog="system" width="128" height="106"/>
+        <image name="location.fill" catalog="system" width="128" height="121"/>
+        <image name="map" catalog="system" width="128" height="110"/>
         <image name="pi" width="1000" height="890"/>
+        <systemColor name="darkTextColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

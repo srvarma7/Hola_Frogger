@@ -76,14 +76,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CAAnimationDelegate {
             }
         }
     }
-    
-    // MARK: - Adding data to core data
-    func addTestData() {
-        
-        //guard let entity = NSEntityDescription.entity(forEntityName: "FrogEntity", in: )
-    }
-
-    
 
 }
 
