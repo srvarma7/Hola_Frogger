@@ -6,8 +6,10 @@
 //  Copyright © 2020 Varma. All rights reserved.
 //
 
+import Foundation
+
 // Structure to hold the News data.
-struct JsonResponse: Codable {
+struct NewsJsonResponse: Codable {
     let articleCount: Int
     let articles: [Article]
 }
@@ -24,4 +26,11 @@ struct Article: Codable {
 struct Source: Codable {
     let name: String
     let url: String
+}
+
+extension NewsJsonResponse {
+    static var all: Resource<NewsJsonResponse> = {
+        let url = URL(string: "https://gnews.io/api/v3/search?q=endangered+frog&country=au&token=2e90adf5b191d077e1ae0d79a862cbcb")!
+        return Resource(url: url)
+    }()
 }
