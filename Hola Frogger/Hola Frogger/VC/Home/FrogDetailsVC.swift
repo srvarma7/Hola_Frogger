@@ -383,6 +383,7 @@ extension FrogDetailsVC {
     
 }
 
+// MARK:- Weather fetching protocol
 extension FrogDetailsVC: WeatherProtocol {
     
     func convertLatLonToString(latitude: Double, longitude: Double) -> (String, String) {

@@ -20,11 +20,9 @@ class NewsViewModel {
     func fetchNews() {
         WebService.getDataFromAPI(resource: NewsJsonResponse.all, completion: { [weak self] parsedData in
             switch parsedData {
-            case .failure(let error):
-                print("Error -> ", error)
-            case .success(let data):
-                self?.news = data!.articles
-                self?.fetchNewsDelegate?.didFinishFetchingNews()
+                case .success(let data):    self?.news = data!.articles
+                    self?.fetchNewsDelegate?.didFinishFetchingNews()
+                case .failure(let error):   print("Error -> ", error)
             }
             
         })

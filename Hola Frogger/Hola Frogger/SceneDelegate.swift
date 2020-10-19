@@ -12,23 +12,25 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     var window: UIWindow?
     
+    private var storyboard: Bool    = false
+    private var fullAPP: Bool       = true
+    private var selecetedVC         = FrogDetailsVC()
+    
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         
-        guard let windowScene = (scene as? UIWindowScene) else { return }
-//
-//        let homeNavC = UINavigationController(rootViewController: HomeVC())
-//        let newsNavC = UINavigationController(rootViewController: NewsVC())
-//
-//        let tabBar = UITabBarController()
-//        tabBar.viewControllers = [homeNavC, newsNavC]
         
-        window = UIWindow(frame: windowScene.coordinateSpace.bounds)
-        window?.windowScene         = windowScene
-        // Directing to navigation controlller
-        window?.rootViewController  = createTabBar()
-//        window?.rootViewController  = NewsDetailedVC()
-        window?.makeKeyAndVisible()
+        if !storyboard {
+            // Open application via code
+            
+            guard let windowScene = (scene as? UIWindowScene) else { return }
+                        window = UIWindow(frame: windowScene.coordinateSpace.bounds)
+            window?.windowScene         = windowScene
+//            window?.rootViewController  = createTabBar()
+            window?.rootViewController  = fullAPP ? createTabBar() : selecetedVC
+            window?.makeKeyAndVisible()
+        }
+        
         
     }
     
@@ -58,7 +60,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     private func createTabBar() -> UITabBarController {
         let tabBar = UITabBarController()
         tabBar.viewControllers = [createHomeNavC(), createNewsNavC()]
-        UITabBar.appearance().tintColor = UIColor.raspberryTint()
+        UITabBar.appearance().tintColor = UIColor.raspberryPieTint()
         return tabBar
     }
     

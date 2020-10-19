@@ -18,6 +18,7 @@ class NewsDetailedVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationItem.largeTitleDisplayMode = .never
         webView.navigationDelegate = self
         
         configureViews()
@@ -31,7 +32,7 @@ class NewsDetailedVC: UIViewController {
         addViewConstrians()
         
         activityIndicator.startAnimating()
-        activityIndicator.color = UIColor.raspberryTint()
+        activityIndicator.color = UIColor.raspberryPieTint()
         activityIndicator.style = .large
     }
     
@@ -42,7 +43,7 @@ class NewsDetailedVC: UIViewController {
                           right: view.rightAnchor, paddingRight: 0,
                           width: 0, height: 0, enableInsets: true)
     
-        webView.backgroundColor = .raspberryTint()
+        webView.backgroundColor = .raspberryPieTint()
         
         activityIndicator.addAnchor(top: webView.topAnchor, paddingTop: 400,
                                     left: webView.leftAnchor, paddingLeft: 100,

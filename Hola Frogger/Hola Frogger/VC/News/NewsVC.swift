@@ -23,8 +23,8 @@ class NewsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         newsViewModel.fetchNewsDelegate = self
-        navigationController?.navigationBar.prefersLargeTitles = true
-        
+        navigationController?.navigationItem.largeTitleDisplayMode = .always
+
         #warning("Enable fetch method after final")
 //        newsViewModel.fetchNews()
         
@@ -41,14 +41,14 @@ class NewsVC: UIViewController {
     
     private func setupActivityIndicator() {
         view.addSubview(activityIndicator)
-        activityIndicator.color = UIColor.raspberryTint()
+        activityIndicator.color = UIColor.raspberryPieTint()
         activityIndicator.style = .large
         activityIndicator.startAnimating()
     }
     
     private func setupRefreshControl() {
         refreshControl.attributedTitle  = NSAttributedString(string: "Pull to refresh")
-        refreshControl.tintColor        = UIColor.raspberryTint()
+        refreshControl.tintColor        = UIColor.raspberryPieTint()
         refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
         
         tableView.addSubview(refreshControl)

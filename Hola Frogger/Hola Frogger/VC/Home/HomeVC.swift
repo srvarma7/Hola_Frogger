@@ -17,7 +17,7 @@ class HomeVC: UIViewController {
         
         #warning("Uncomment")
         setupExploreFrogsButton()
-        view.backgroundColor = .white
+        view.backgroundColor = .systemBackground
         
     }
     
@@ -35,13 +35,13 @@ class HomeVC: UIViewController {
     
     @objc func exploreFrogsButtonTapped() {
         #warning("Replace")
-//        let frogsListVC = FrogsListVC()
-//        frogsListVC.title = "Explore"
-//        navigationController?.pushViewController(frogsListVC, animated: true)
+        let frogsListVC = FrogsListVC()
+        frogsListVC.title = "Explore"
+        navigationController?.pushViewController(frogsListVC, animated: true)
         #warning("till here")
         
-        let frogDetails = FrogDetailsVC()
-        navigationController?.pushViewController(frogDetails, animated: true)
+//        let frogDetails = FrogDetailsVC()
+//        navigationController?.pushViewController(frogDetails, animated: true)
         
     }
     

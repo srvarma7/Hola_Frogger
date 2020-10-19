@@ -42,7 +42,7 @@ class NewsViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let url = URL(string: "https://gnews.io/api/v3/search?q=endangered+frog&country=au&token=2e90adf5b191d077e1ae0d79a862cbcb")
         URLSession.shared.dataTask(with: url!) { data, _, _ in
             if let data = data {
-                let jsonResp = try? JSONDecoder().decode(JsonResponse.self, from: data)
+                let jsonResp = try? JSONDecoder().decode(NewsJsonResponse.self, from: data)
                 self.articles = jsonResp!.articles
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
