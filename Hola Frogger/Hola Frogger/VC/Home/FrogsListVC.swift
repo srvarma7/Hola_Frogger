@@ -57,4 +57,10 @@ extension FrogsListVC: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let frogDetails = FrogDetailsVC()
+        frogDetails.frogItem = frogsListViewModel.frogsList[indexPath.row]
+        self.present(frogDetails, animated: true)
+    }
+    
 }
