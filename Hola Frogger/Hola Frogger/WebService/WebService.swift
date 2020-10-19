@@ -43,18 +43,19 @@ class WebService {
     }
     
     //Gets image data from the API and sets the icon into image view for location's weather
-    func makeGetRequestImage(icon: String){
+    static func getImage(icon: String, completion: @escaping (Result<Data?, NetworkError>) -> Void) {
         let url : String = "https://openweathermap.org/img/wn/" + icon + "@2x.png"
-        let request : NSMutableURLRequest = NSMutableURLRequest()
-        request.url = NSURL(string: url) as URL?
+        let urlLink = URL(string: url)!
+        var request : URLRequest = URLRequest(url: urlLink)
         request.httpMethod = "GET"
-        request.timeoutInterval = 60
-        NSURLConnection.sendAsynchronousRequest(request as URLRequest, queue: OperationQueue(), completionHandler:{ (response:URLResponse!, data: Data!, error: Error!) -> Void in
-            DispatchQueue.main.async {
-//                self.wImage.backgroundColor = .clear
-//                self.wImage.image = UIImage(data: data)
+        
+        URLSession.shared.dataTask(with: request as URLRequest) { data, response, error in
+            if let receivedData = data, error == nil {
+                DispatchQueue.main.async {
+                    completion(.success(receivedData))
+                }
             }
-        })
+        }.resume()
     }
     
 }
