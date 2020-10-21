@@ -81,7 +81,7 @@ class CoreDataHandler: NSObject {
     }
     
     class func updateSpotLight(attribute: String, boolean: Bool) {
-        print("UPDATING MAIN")
+//        print("UPDATING MAIN")
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         
         let context = appDelegate.persistentContainer.viewContext
@@ -168,7 +168,7 @@ class CoreDataHandler: NSObject {
     
     /// Method to update frog's visited and favourite status
     class func updateFrog(frog: FrogEntity, isVisited: Bool, isFavourite: Bool) {
-        print("UPDATING MAIN")
+//        print("UPDATING MAIN")
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         
         let context = appDelegate.persistentContainer.viewContext
@@ -240,7 +240,7 @@ class CoreDataHandler: NSObject {
     }
     
     //MARK:- Save new FROG
-    class func addAllRecords() {
+    class func addAllFrogRecordsToDatabase() {
         CoreDataHandler.saveFrog(entityName: "FrogEntity", sname: "Crinia parinsignifera", frogcount: 319, cname: "Eastern Sign-bearing Froglet", desc: "Their physique is white, grainy or grey-skinned with marks which are black near their abdominal area. They can be of different colours such as clear brown, clear black, clear green, clear white, clear grey and clear red. They belong to woods or marshlands. The froglet habits swamps and ponds, and is often found under debris at the edge.", latitude: -37.7401, longitude: 141.091, uncertainty: 294, threatnedStatus: "Not endangered", isVisited: true, isFavourite: false)
         
         CoreDataHandler.saveFrog(entityName: "FrogEntity", sname: "Crinia signifera", frogcount:2284, cname: "Eastern Common Froglet", desc: "Their physique is grainy white or grainy grey along with black marks near the belly.The colour of the ventral surface is similar to the dorsal surface, but mottled with white spots. They are found near water pools, streams, moist lands where they can take refuge. The frog is of extremely variable markings, with great variety usually found within confined populations.", latitude: -37.6803, longitude:140.972, uncertainty: 3, threatnedStatus: "Not endangered", isVisited: true, isFavourite: false)

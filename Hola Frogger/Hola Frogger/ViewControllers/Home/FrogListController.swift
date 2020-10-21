@@ -127,7 +127,7 @@ class FrogListController: UIViewController, UITableViewDataSource, UITableViewDe
         favFrogs = CoreDataHandler.fetchOnlyFav()
         // If the appliation is opened for the first time then the records are added to the database
         if(frogs.count == 0) {
-            CoreDataHandler.addAllRecords()
+            CoreDataHandler.addAllFrogRecordsToDatabase()
             frogs = CoreDataHandler.fetchAllFrogs()
             favFrogs = CoreDataHandler.fetchOnlyFav()
         }

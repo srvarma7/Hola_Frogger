@@ -28,9 +28,7 @@ class HomeViewController: UIViewController, AwesomeSpotlightViewDelegate {
     // set frame
     let  searchField = DropDown(frame: CGRect(x: 10, y: 0, width: 350, height: 50))
     var spotlightView = AwesomeSpotlightView()
-    
-    var button = UIButton()
- 
+     
     @IBOutlet weak var exploreBtn: UIButton!
     
     override func viewDidLoad() {
@@ -69,7 +67,7 @@ class HomeViewController: UIViewController, AwesomeSpotlightViewDelegate {
         
         // If the appliation is opened, Add records to database
         if(frogs.count == 0) {
-            CoreDataHandler.addAllRecords()
+            CoreDataHandler.addAllFrogRecordsToDatabase()
             frogs = CoreDataHandler.fetchAllFrogs()
         }
         
@@ -139,7 +137,6 @@ extension HomeViewController {
         animationView.contentMode = .scaleAspectFit
         view.addSubview(animationView)
         animationView.loopMode = .loop
-        _ = animationView.anchor(view.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, topConstant: 20, leftConstant: 20, bottomConstant: 0, rightConstant: 20, widthConstant: 150, heightConstant: 150)
         wavesAnimationView.frame = CGRect(x: 0, y: 0, width: 510, height: 510)
         wavesAnimationView.center.x = self.view.center.x
         wavesAnimationView.contentMode = .scaleAspectFit

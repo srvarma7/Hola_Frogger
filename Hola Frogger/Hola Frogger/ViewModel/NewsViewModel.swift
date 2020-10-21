@@ -24,7 +24,6 @@ class NewsViewModel {
                     self?.fetchNewsDelegate?.didFinishFetchingNews()
                 case .failure(let error):   print("Error -> ", error)
             }
-            
         })
         
     }
