@@ -22,6 +22,7 @@ class FrogDetailsVC: UIViewController {
     
     // Middle
     private var mapView = MKMapView()
+    #warning("Mapview not complete")
     
     // Body
     private var frogImageView           = UIImageView()
@@ -43,9 +44,11 @@ class FrogDetailsVC: UIViewController {
     // Foot
     private var closeButton = UIButton()
     
+    // Varibles
     var frogDetailsViewModel = FrogDetailsViewModel()
     var frogItem: FrogEntity?
-
+    var favouriteStatus: Bool = false
+    
     // Main
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,14 +62,17 @@ class FrogDetailsVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         animateCloseButton()
+        
     }
+    
+    
     
     private func animateCloseButton() {
         UIView.animate(withDuration: 0.5,
                        delay: 0.25,
                        options: .curveEaseInOut,
                        animations: {
-                        self.closeButton.transform = CGAffineTransform(translationX: 0, y: -30)
+                        self.closeButton.transform = CGAffineTransform(translationX: 0, y: -50)
                        }
         )
     }
@@ -74,14 +80,18 @@ class FrogDetailsVC: UIViewController {
     private func setFrogDetails() {
         if let frogData = frogItem {
             
-            frogCommonNameLabel.text = frogData.cname
-            frogScientificNameLabel.text = frogData.sname
-            frogDetailsLabel.text = frogData.desc
-            locationUncertaintyLabel.text = "\(frogData.uncertainty)"
-            threatenedLabel.text = frogData.threatnedStatus
-            frogCountLabel.text = "\(frogData.frogcount)"
-            sightedLabel.text = frogData.isVisited ? "Yes" : "No"
-            
+            frogCommonNameLabel.text        = frogData.cname
+            frogScientificNameLabel.text    = frogData.sname
+            frogDetailsLabel.text           = frogData.desc
+            locationUncertaintyLabel.text   = "\(frogData.uncertainty)"
+            threatenedLabel.text            = frogData.threatnedStatus
+            frogCountLabel.text             = "\(frogData.frogcount)"
+            sightedLabel.text               = frogData.isVisited ? "Yes" : "No"
+            frogImageView.image             = UIImage(named: frogData.sname!)
+            favouriteStatus                 = frogData.isFavourite
+            frogImageView.backgroundColor   = .clear
+            favouriteButton.setBackgroundImage(UIImage(systemName: favouriteStatus ? "suit.heart.fill" : "suit.heart"), for: UIControl.State.normal)
+
             #warning("Enable API call at the end")
 //            frogDetailsViewModel.weatherDelegate = self
 //            let latLonInString = convertLatLonToString(latitude: frogData.latitude, longitude: frogData.longitude)
@@ -105,29 +115,7 @@ extension FrogDetailsVC {
         addFootView()
     }
     
-    fileprivate func addFootView() {
-        view.addSubview(closeButton)
-        
-        closeButton.addAnchor(top: nil, paddingTop: 0,
-                              left: nil, paddingLeft: 0,
-                              bottom: view.bottomAnchor, paddingBottom: 0,
-                              right: nil, paddingRight: 0,
-                              width: 50, height: 50,
-                              enableInsets: true)
-        closeButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        
-        closeButton.setBackgroundImage(UIImage(systemName: "xmark.circle.fill"), for: UIControl.State.normal)
-        closeButton.tintColor = UIColor.red
-        closeButton.addTarget(self, action: #selector(closeButtonAction), for: .touchUpInside)
-    
-        
-    }
-    
-    @objc func closeButtonAction(sender: UIButton!) {
-        // Dismisses the current controller.
-        dismiss(animated: true)
-    }
-    
+    // MARK:- Header views
     fileprivate func addHeaderViews() {
         view.addSubview(weatherView)
         addWeatherViewConstriants()
@@ -154,13 +142,13 @@ extension FrogDetailsVC {
                               left: view.leftAnchor, paddingLeft: 0,
                               bottom: nil, paddingBottom: 0,
                               right: view.rightAnchor, paddingRight: 0,
-                              width: 0, height: 100, enableInsets: true)
+                              width: 0, height: 65, enableInsets: true)
         
         weatherView.backgroundColor = .raspberryPieTint()
     }
     
     private func addLocationLabelConstriants() {
-        locationLabel.addAnchor(top: weatherView.topAnchor, paddingTop: 5,
+        locationLabel.addAnchor(top: weatherView.topAnchor, paddingTop: 3,
                                 left: nil, paddingLeft: 0,
                                 bottom: nil, paddingBottom: 0,
                                 right: nil, paddingRight: 0,
@@ -169,24 +157,23 @@ extension FrogDetailsVC {
         
         locationLabel.centerXAnchor.constraint(equalTo: weatherView.centerXAnchor).isActive = true
         locationLabel.text      = "Location name"
-        locationLabel.font      = UIFont.systemFont(ofSize: 25, weight: .bold)
+        locationLabel.font      = UIFont.systemFont(ofSize: 18, weight: .bold)
         locationLabel.textColor = .white
     }
     
     private func addTempImageViewConstriants() {
         temperatureImageView.addAnchor(top: nil, paddingTop: 0,
                                        left: nil, paddingLeft: 0,
-                                       bottom: weatherView.bottomAnchor, paddingBottom: 5,
+                                       bottom: weatherView.bottomAnchor, paddingBottom: -8,
                                        right: nil, paddingRight: 0,
                                        width: 60, height: 60,
                                        enableInsets: true)
         
         temperatureImageView.centerXAnchor.constraint(equalTo: weatherView.centerXAnchor).isActive = true
-        temperatureImageView.backgroundColor = .raspberryPieTint()
     }
 
     private func addTemperatureLabelConstriants() {
-        temperatureLabel.addAnchor(top: locationLabel.bottomAnchor, paddingTop: 1,
+        temperatureLabel.addAnchor(top: locationLabel.bottomAnchor, paddingTop: -5,
                                    left: weatherView.leftAnchor, paddingLeft: 20,
                                    bottom: nil, paddingBottom: 0,
                                    right: temperatureImageView.leftAnchor, paddingRight: 20,
@@ -195,27 +182,27 @@ extension FrogDetailsVC {
         
         temperatureLabel.text           = "30 C"
         temperatureLabel.textAlignment  = .center
-        temperatureLabel.font           = UIFont.systemFont(ofSize: 30, weight: .bold)
+        temperatureLabel.font           = UIFont.systemFont(ofSize: 17, weight: .medium)
         temperatureLabel.textColor      = .white
     }
     
     private func addHumidityLabelConstriants() {
-        humidityLabel.addAnchor(top: locationLabel.bottomAnchor, paddingTop: 1,
+        humidityLabel.addAnchor(top: locationLabel.bottomAnchor, paddingTop: -5,
                                 left: temperatureImageView.rightAnchor, paddingLeft: 20,
                                 bottom: nil, paddingBottom: 0,
                                 right: weatherView.rightAnchor, paddingRight: 20,
                                 width: 0, height: 0,
                                 enableInsets: true)
         
-        humidityLabel.text = "00"
+        humidityLabel.text          = "00"
         humidityLabel.textAlignment = .center
-        humidityLabel.font          = UIFont.systemFont(ofSize: 30, weight: .bold)
+        humidityLabel.font          = UIFont.systemFont(ofSize: 17, weight: .medium)
         humidityLabel.textColor     = .white
     }
     
     
     private func addStatusConstriants() {
-        temperatureStatusLabel.addAnchor(top: temperatureLabel.bottomAnchor, paddingTop: 1,
+        temperatureStatusLabel.addAnchor(top: temperatureLabel.bottomAnchor, paddingTop: 0,
                                          left: weatherView.leftAnchor, paddingLeft: 20,
                                          bottom: nil, paddingBottom: 0,
                                          right: temperatureImageView.leftAnchor, paddingRight: 20,
@@ -225,8 +212,10 @@ extension FrogDetailsVC {
         temperatureStatusLabel.text             = "Description"
         temperatureStatusLabel.textAlignment    = .center
         temperatureStatusLabel.textColor        = .white
+        temperatureStatusLabel.font             = UIFont.systemFont(ofSize: 16, weight: .light)
+
         
-        humidityStatusLabel.addAnchor(top: humidityLabel.bottomAnchor, paddingTop: 1,
+        humidityStatusLabel.addAnchor(top: humidityLabel.bottomAnchor, paddingTop: 0,
                                       left: temperatureImageView.rightAnchor, paddingLeft: 20,
                                       bottom: nil, paddingBottom: 0,
                                       right: weatherView.rightAnchor, paddingRight: 20,
@@ -236,8 +225,10 @@ extension FrogDetailsVC {
         humidityStatusLabel.text            = "Humidity"
         humidityStatusLabel.textAlignment   = .center
         humidityStatusLabel.textColor       = .white
+        humidityStatusLabel.font            = UIFont.systemFont(ofSize: 16, weight: .light)
     }
     
+    // MARK:- Map view
     private func addMapViewConstriants() {
         mapView.addAnchor(top: weatherView.bottomAnchor, paddingTop: 0,
                           left: view.leftAnchor, paddingLeft: 0,
@@ -246,6 +237,7 @@ extension FrogDetailsVC {
                           width: 0, height: 200, enableInsets: true)
     }
     
+    // MARK:- Body views
     private func addBodyViews() {
         let leftRightPadding: CGFloat   = 15
         let sectionPadding: CGFloat     = 6
@@ -253,14 +245,17 @@ extension FrogDetailsVC {
         
         view.addSubViews(views: frogImageView, favouriteButton, frogCommonNameLabel, frogScientificNameLabel, descriptionHeading, frogDetailsLabel, locationUncertaintyHeading, locationUncertaintyLabel, threatenedHeading, threatenedLabel, frogCountHeading, frogCountLabel, sightedHeading, sightedLabel)
         
-        frogImageView.addAnchor(top: mapView.bottomAnchor, paddingTop: -40,
+        frogImageView.addAnchor(top: mapView.bottomAnchor, paddingTop: -100,
                                 left: nil, paddingLeft: 0,
                                 bottom: nil, paddingBottom: 0,
                                 right: nil, paddingRight: 0,
-                                width: 80, height: 80, enableInsets: true)
+                                width: 160, height: 160, enableInsets: true)
         
         frogImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         frogImageView.backgroundColor = .red
+        let tap = UITapGestureRecognizer(target: self, action: #selector(frogImageDidTapped))
+        frogImageView.addGestureRecognizer(tap)
+        frogImageView.isUserInteractionEnabled = true
         
         favouriteButton.addAnchor(top: mapView.bottomAnchor, paddingTop: -20,
                                   left: nil, paddingLeft: 0,
@@ -269,8 +264,10 @@ extension FrogDetailsVC {
                                   width: 40, height: 40, enableInsets: true)
         favouriteButton.setBackgroundImage(UIImage(systemName: "suit.heart.fill"), for: UIControl.State.normal)
         favouriteButton.tintColor = .raspberryPieTint()
+        // Adding tap gesture action
+        favouriteButton.addTarget(self, action: #selector(favouriteButtonDidTapped), for: .touchUpInside)
         
-        frogCommonNameLabel.addAnchor(top: frogImageView.bottomAnchor, paddingTop: sectionPadding,
+        frogCommonNameLabel.addAnchor(top: mapView.bottomAnchor, paddingTop: 50,
                                       left: nil, paddingLeft: 0,
                                       bottom: nil, paddingBottom: 0,
                                       right: nil, paddingRight: 0,
@@ -307,7 +304,7 @@ extension FrogDetailsVC {
                                    bottom: nil, paddingBottom: 0,
                                    right: view.rightAnchor, paddingRight: leftRightPadding,
                                    width: 0, height: 0, enableInsets: true)
-        frogDetailsLabel.text = "It is with great pride that we have built and represent a pivotal solution to so many companies who have been affected this year. URecruit is going to revolutionize the way smaller to mid tier businesses make there hires as it will offer all our stages and processes we follow to hire the best. Get in touch if you are a new business that is looking for a professional platform that has been built from the ground up not just by us but by the visionary directors with decades of combined experience in the industry."
+        frogDetailsLabel.text = ""
         frogDetailsLabel.font = UIFont.systemFont(ofSize: 18, weight: .regular)
         frogDetailsLabel.numberOfLines = 0
         frogDetailsLabel.textAlignment = .justified
@@ -381,6 +378,53 @@ extension FrogDetailsVC {
         
     }
     
+    // MARK:- Foot views
+    fileprivate func addFootView() {
+        view.addSubview(closeButton)
+        
+        closeButton.addAnchor(top: nil, paddingTop: 0,
+                              left: nil, paddingLeft: 0,
+                              bottom: view.bottomAnchor, paddingBottom: 0,
+                              right: nil, paddingRight: 0,
+                              width: 50, height: 50,
+                              enableInsets: true)
+        closeButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        
+        closeButton.setBackgroundImage(UIImage(systemName: "xmark.circle.fill"), for: UIControl.State.normal)
+        closeButton.tintColor = UIColor.red
+        closeButton.addTarget(self, action: #selector(closeButtonAction), for: .touchUpInside)
+    }
+    
+}
+
+// MARK:- Tap action methods
+extension FrogDetailsVC {
+    
+    @objc func frogImageDidTapped() {
+        let previewController = QLPreviewController()
+        previewController.dataSource = self
+        present(previewController, animated: true, completion: nil)
+    }
+    
+    @objc func favouriteButtonDidTapped() {
+        favouriteStatus.toggle()
+        // Changes the logo when tapped on it.
+        favouriteButton.setBackgroundImage(UIImage(systemName: favouriteStatus ? "suit.heart.fill" : "suit.heart"), for: UIControl.State.normal)
+        
+        // Updates the fav status of a frog in database.
+        CoreDataHandler.updateFrog(frog: frogItem!, isVisited: frogItem!.isVisited, isFavourite: favouriteStatus)
+        postNotificationForFavouriteChange()
+    }
+    
+    @objc func closeButtonAction(sender: UIButton!) {
+        // Dismisses the current controller.
+        dismiss(animated: true)
+    }
+    
+    private func postNotificationForFavouriteChange() {
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "com.favourite.button.did.tapped"), object: nil)
+    }
+
 }
 
 // MARK:- Weather fetching protocol
@@ -425,5 +469,32 @@ extension FrogDetailsVC: WeatherProtocol {
             temperatureImageView.backgroundColor = .clear
             temperatureImageView.image = UIImage(data: frogDetailsViewModel.imageData ?? Data())
         })
+    }
+}
+
+// MARK:- AR Look
+import QuickLook
+import ARKit
+
+extension FrogDetailsVC: QLPreviewControllerDataSource {
+    
+    func numberOfPreviewItems(in controller: QLPreviewController) -> Int { return 1 }
+    
+    func previewController(_ controller: QLPreviewController, previewItemAt index: Int) -> QLPreviewItem {
+        var url = [URL]()
+        let usdzNames = ["Frog1", "Frog2Color", "Frog3Main"]
+        for usdz in usdzNames {
+            guard let path = Bundle.main.path(forResource: usdz, ofType: "usdz") else { fatalError("Couldn't find the supported input file.") }
+            url.append(URL(fileURLWithPath: path))
+        }
+        
+        return url[getRandom(from: 0, to: 2)] as QLPreviewItem
+    }
+    
+    func getRandom(from: Int, to: Int) -> Int {
+        let number = Int.random(in: from..<to)
+        print(number)
+        
+        return number
     }
 }
