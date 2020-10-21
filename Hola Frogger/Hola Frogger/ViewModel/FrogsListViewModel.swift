@@ -10,14 +10,25 @@ import Foundation
 
 class FrogsListViewModel {
     
-    var frogsList = [FrogEntity]()
+    var allFrogsList        = [FrogEntity]()
+    var favouriteFrogsList  = [FrogEntity]()
     
     init() {
-        frogsList = CoreDataHandler.fetchAllFrogs()
-        if(frogsList.count == 0) {
-            CoreDataHandler.addAllRecords()
-            frogsList = CoreDataHandler.fetchAllFrogs()
+        refresh()
+    }
+    
+    func refresh() {
+        allFrogsList        = CoreDataHandler.fetchAllFrogs()
+        favouriteFrogsList  = CoreDataHandler.fetchOnlyFav()
+        if(allFrogsList.count == 0) {
+            CoreDataHandler.addAllFrogRecordsToDatabase()
+            allFrogsList        = CoreDataHandler.fetchAllFrogs()
+            favouriteFrogsList  = CoreDataHandler.fetchOnlyFav()
         }
+    }
+    
+    func updateFavouriteFrogsList() {
+        favouriteFrogsList  = CoreDataHandler.fetchOnlyFav()
     }
     
 }
