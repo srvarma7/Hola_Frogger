@@ -13,6 +13,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
     
     private var storyboard: Bool    = false
+//    private var storyboard: Bool    = true
     private var fullAPP: Bool       = true
     private var selecetedVC         = FrogDetailsVC()
     
