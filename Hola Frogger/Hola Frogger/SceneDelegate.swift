@@ -26,7 +26,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             guard let windowScene = (scene as? UIWindowScene) else { return }
                         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
             window?.windowScene         = windowScene
-//            window?.rootViewController  = createTabBar()
             window?.rootViewController  = fullAPP ? createTabBar() : selecetedVC
             window?.makeKeyAndVisible()
         }
@@ -34,34 +33,64 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
     }
     
+    private func createTabBar() -> UITabBarController {
+        let tabBar = UITabBarController()
+        tabBar.viewControllers = [
+            createMapVC(),
+                                    createHomeNavC(),
+                                    createIdentifyVC(),
+//            createMapVC(),
+//            createChallengeVC(),
+                                    createNewsNavC()
+                                ]
+        
+        UITabBar.appearance().tintColor = UIColor.raspberryPieTint()
+        return tabBar
+    }
+    
     private func createHomeNavC() -> UINavigationController {
         let homeVC          = HomeVC()
         homeVC.title        = "Home"
-        homeVC.tabBarItem   = UITabBarItem(title: "Home", image: UIImage(systemName: "house"), tag: 0)
+        homeVC.tabBarItem   = UITabBarItem(title: "Home",
+                                           image: UIImage(systemName: "house"),
+                                           tag: 0)
         
         return UINavigationController(rootViewController: homeVC)
     }
+    
+    private func createIdentifyVC() -> UIViewController {
+        let identifyVC = IdentifyVC()
+        identifyVC.tabBarItem = UITabBarItem(title: "Identify",
+                                             image: UIImage(systemName: "camera.viewfinder"),
+                                             tag: 1)
 
-    private func createNewsNavC() -> UINavigationController {
-        let homeVC          = NewsVC()
-        homeVC.title        = "News"
-        homeVC.tabBarItem   = UITabBarItem(title: "News", image: UIImage(systemName: "dot.radiowaves.left.and.right"), tag: 0)
-        return UINavigationController(rootViewController: homeVC)
+        return identifyVC
     }
     
-//    private func createsNewsNavC() -> UINavigationController {
-//        let homeVC          = NewsVC()
-//        homeVC.title        = "News"
-//        homeVC.tabBarItem   = UITabBarItem(tabBarSystemItem: .search, tag: 1)
+    private func createMapVC() -> UIViewController {
+        let mapVC = MapVC()
+        mapVC.tabBarItem = UITabBarItem(title: "Map",
+                                             image: UIImage(systemName: "map"),
+                                             tag: 2)
+
+        return mapVC
+    }
 //
-//        return UINavigationController(rootViewController: homeVC)
+//    private func createChallengeVC() -> UIViewController {
+//        let challengeVC = ChallengeVC()
+//        challengeVC.tabBarItem = UITabBarItem(title: "Challenge",
+//                                             image: UIImage(systemName: "gamecontroller"),
+//                                             tag: 3)
+//
+//        return challengeVC
 //    }
-    
-    private func createTabBar() -> UITabBarController {
-        let tabBar = UITabBarController()
-        tabBar.viewControllers = [createHomeNavC(), createNewsNavC()]
-        UITabBar.appearance().tintColor = UIColor.raspberryPieTint()
-        return tabBar
+
+    private func createNewsNavC() -> UINavigationController {
+        let newsVC          = NewsVC()
+        newsVC.title        = "News"
+        newsVC.tabBarItem   = UITabBarItem(title: "News", image: UIImage(systemName: "dot.radiowaves.left.and.right"), tag: 4)
+        
+        return UINavigationController(rootViewController: newsVC)
     }
     
 //        let nav1 = UINavigationController()

@@ -24,8 +24,8 @@
 		574A3C2A24505E850022CCB3 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574A3C2924505E840022CCB3 /* MapViewController.swift */; };
 		574A3C2C245066060022CCB3 /* FrogAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574A3C2B245066060022CCB3 /* FrogAnnotation.swift */; };
 		5757F98A24639E3600F8D75C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5757F98924639E3600F8D75C /* HomeViewController.swift */; };
-		576F2949247AD04D0078EC67 /* Frog2usdz.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 576F2948247AD04D0078EC67 /* Frog2usdz.usdz */; };
-		576F294B247AD3D90078EC67 /* FrogScaledUsdz.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 576F294A247AD3D90078EC67 /* FrogScaledUsdz.usdz */; };
+		576F2949247AD04D0078EC67 /* Frog1.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 576F2948247AD04D0078EC67 /* Frog1.usdz */; };
+		576F294B247AD3D90078EC67 /* Frog3Main.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 576F294A247AD3D90078EC67 /* Frog3Main.usdz */; };
 		577AA1A3247159E100B85AF6 /* GPX files (To simulate Locations) in Resources */ = {isa = PBXBuildFile; fileRef = 577AA1A2247159E100B85AF6 /* GPX files (To simulate Locations) */; };
 		579B45472447084200EACA4B /* CoreDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579B45462447084200EACA4B /* CoreDataHandler.swift */; };
 		579C04B7247B78D1003EEB6D /* greenwaves.json in Resources */ = {isa = PBXBuildFile; fileRef = 579C04B6247B78D1003EEB6D /* greenwaves.json */; };
@@ -43,10 +43,7 @@
 		57A3B8AE244315270011F674 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57A3B8AC244315270011F674 /* LaunchScreen.storyboard */; };
 		57C098BE246A49BD0041C235 /* ChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C098BD246A49BD0041C235 /* ChallengeViewController.swift */; };
 		57F877E424741A9800D5501F /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F877E324741A9800D5501F /* ARViewController.swift */; };
-		57F877E624741B0100D5501F /* toy_biplane.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 57F877E524741B0100D5501F /* toy_biplane.usdz */; };
-		57F877E924763B5700D5501F /* FROG.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 57F877E824763B5700D5501F /* FROG.usdz */; };
-		57F877EB24763E9300D5501F /* DartFrog.obj in Resources */ = {isa = PBXBuildFile; fileRef = 57F877EA24763E9300D5501F /* DartFrog.obj */; };
-		57F877F1247641F900D5501F /* Frog_Hopping.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 57F877F0247641F900D5501F /* Frog_Hopping.usdz */; };
+		57F877E924763B5700D5501F /* Frog2Color.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 57F877E824763B5700D5501F /* Frog2Color.usdz */; };
 		B960A57A246C3BA9003CFDE3 /* CardLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B960A579246C3BA9003CFDE3 /* CardLayout.swift */; };
 		B98A407D24725008006C2F2A /* award.json in Resources */ = {isa = PBXBuildFile; fileRef = B98A407C24725007006C2F2A /* award.json */; };
 		B98A407F24725DE6006C2F2A /* FrogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98A407E24725DE6006C2F2A /* FrogCell.swift */; };
@@ -65,6 +62,8 @@
 		DF0730DD2533AEEF002F3B31 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0730DC2533AEEF002F3B31 /* HomeVC.swift */; };
 		DF0730E12533BEC9002F3B31 /* NewsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0730E02533BEC9002F3B31 /* NewsVC.swift */; };
 		DF310DF0252EDD2F00A0F7A6 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF310DEF252EDD2F00A0F7A6 /* WelcomeViewController.swift */; };
+		DF355D81253FFB170086C806 /* IdentifyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF355D80253FFB170086C806 /* IdentifyVC.swift */; };
+		DF355D8525412A230086C806 /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF355D8425412A230086C806 /* MapVC.swift */; };
 		DF568D0B253414AD0022203E /* FrogsListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF568D0A253414AD0022203E /* FrogsListVC.swift */; };
 		DF568D0F25341E090022203E /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF568D0E25341E090022203E /* UIView+Extension.swift */; };
 		DF568D14253420250022203E /* FrogTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF568D13253420250022203E /* FrogTVCell.swift */; };
@@ -108,8 +107,8 @@
 		574A3C2924505E840022CCB3 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		574A3C2B245066060022CCB3 /* FrogAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrogAnnotation.swift; sourceTree = "<group>"; };
 		5757F98924639E3600F8D75C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		576F2948247AD04D0078EC67 /* Frog2usdz.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Frog2usdz.usdz; sourceTree = "<group>"; };
-		576F294A247AD3D90078EC67 /* FrogScaledUsdz.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = FrogScaledUsdz.usdz; sourceTree = "<group>"; };
+		576F2948247AD04D0078EC67 /* Frog1.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Frog1.usdz; sourceTree = "<group>"; };
+		576F294A247AD3D90078EC67 /* Frog3Main.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Frog3Main.usdz; sourceTree = "<group>"; };
 		577AA1A2247159E100B85AF6 /* GPX files (To simulate Locations) */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "GPX files (To simulate Locations)"; sourceTree = "<group>"; };
 		579B45462447084200EACA4B /* CoreDataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHandler.swift; sourceTree = "<group>"; };
 		579C04B6247B78D1003EEB6D /* greenwaves.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = greenwaves.json; sourceTree = "<group>"; };
@@ -129,10 +128,7 @@
 		57A3B8AF244315270011F674 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		57C098BD246A49BD0041C235 /* ChallengeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeViewController.swift; sourceTree = "<group>"; };
 		57F877E324741A9800D5501F /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
-		57F877E524741B0100D5501F /* toy_biplane.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = toy_biplane.usdz; sourceTree = "<group>"; };
-		57F877E824763B5700D5501F /* FROG.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = FROG.usdz; sourceTree = "<group>"; };
-		57F877EA24763E9300D5501F /* DartFrog.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DartFrog.obj; sourceTree = "<group>"; };
-		57F877F0247641F900D5501F /* Frog_Hopping.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Frog_Hopping.usdz; sourceTree = "<group>"; };
+		57F877E824763B5700D5501F /* Frog2Color.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Frog2Color.usdz; sourceTree = "<group>"; };
 		93029B50E690F19607378EFC /* Pods-Hola Frogger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hola Frogger.release.xcconfig"; path = "Target Support Files/Pods-Hola Frogger/Pods-Hola Frogger.release.xcconfig"; sourceTree = "<group>"; };
 		ACBCC81B8DB64478F334A8A5 /* Pods-TabView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TabView.debug.xcconfig"; path = "Target Support Files/Pods-TabView/Pods-TabView.debug.xcconfig"; sourceTree = "<group>"; };
 		B728A1957D843A5C438F5737 /* Pods-Hola Frogger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hola Frogger.debug.xcconfig"; path = "Target Support Files/Pods-Hola Frogger/Pods-Hola Frogger.debug.xcconfig"; sourceTree = "<group>"; };
@@ -155,6 +151,8 @@
 		DF0730DC2533AEEF002F3B31 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		DF0730E02533BEC9002F3B31 /* NewsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsVC.swift; sourceTree = "<group>"; };
 		DF310DEF252EDD2F00A0F7A6 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		DF355D80253FFB170086C806 /* IdentifyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifyVC.swift; sourceTree = "<group>"; };
+		DF355D8425412A230086C806 /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
 		DF568D0A253414AD0022203E /* FrogsListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrogsListVC.swift; sourceTree = "<group>"; };
 		DF568D0E25341E090022203E /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		DF568D13253420250022203E /* FrogTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrogTVCell.swift; sourceTree = "<group>"; };
@@ -279,10 +277,11 @@
 		57A3B89B244315230011F674 /* Hola Frogger */ = {
 			isa = PBXGroup;
 			children = (
+				DF568D0D25341DEE0022203E /* Extension */,
+				DF8FA408253EBC3400C917E2 /* Constants */,
 				DFE187EA25369DEA003D772F /* Protocol */,
 				DFE187E625358F70003D772F /* WebService */,
 				DF568D1925357D1A0022203E /* ViewModel */,
-				DF568D0D25341DEE0022203E /* Extension */,
 				DFA3BE91252EED2F009C742A /* View */,
 				DF568D0325340D120022203E /* VC */,
 				57A3B89C244315230011F674 /* AppDelegate.swift */,
@@ -300,12 +299,9 @@
 		57F877E724741BD300D5501F /* AR files */ = {
 			isa = PBXGroup;
 			children = (
-				57F877F0247641F900D5501F /* Frog_Hopping.usdz */,
-				576F2948247AD04D0078EC67 /* Frog2usdz.usdz */,
-				57F877E824763B5700D5501F /* FROG.usdz */,
-				57F877E524741B0100D5501F /* toy_biplane.usdz */,
-				57F877EA24763E9300D5501F /* DartFrog.obj */,
-				576F294A247AD3D90078EC67 /* FrogScaledUsdz.usdz */,
+				576F2948247AD04D0078EC67 /* Frog1.usdz */,
+				57F877E824763B5700D5501F /* Frog2Color.usdz */,
+				576F294A247AD3D90078EC67 /* Frog3Main.usdz */,
 			);
 			path = "AR files";
 			sourceTree = "<group>";
@@ -375,10 +371,28 @@
 			path = UnSighted;
 			sourceTree = "<group>";
 		};
+		DF355D7F253FFAF40086C806 /* Identify */ = {
+			isa = PBXGroup;
+			children = (
+				DF355D80253FFB170086C806 /* IdentifyVC.swift */,
+			);
+			path = Identify;
+			sourceTree = "<group>";
+		};
+		DF355D8325412A060086C806 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				DF355D8425412A230086C806 /* MapVC.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
 		DF568D0325340D120022203E /* VC */ = {
 			isa = PBXGroup;
 			children = (
 				DF568D0425340D2B0022203E /* Home */,
+				DF355D7F253FFAF40086C806 /* Identify */,
+				DF355D8325412A060086C806 /* Map */,
 				DF568D0625340D390022203E /* News */,
 			);
 			path = VC;
@@ -429,6 +443,13 @@
 				DFE187F82537D6F8003D772F /* FrogDetailsViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		DF8FA408253EBC3400C917E2 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 		DFA3BE8C252EE5EE009C742A /* LottieFiles */ = {
@@ -587,10 +608,8 @@
 				57441D922463F00A00BC4DE0 /* catchmeifyoucan.json in Resources */,
 				570D1C1E24705E5200B9FB22 /* confetti2.json in Resources */,
 				B98A407D24725008006C2F2A /* award.json in Resources */,
-				576F2949247AD04D0078EC67 /* Frog2usdz.usdz in Resources */,
+				576F2949247AD04D0078EC67 /* Frog1.usdz in Resources */,
 				570D1C1F24705E5200B9FB22 /* sad1.json in Resources */,
-				57F877F1247641F900D5501F /* Frog_Hopping.usdz in Resources */,
-				57F877EB24763E9300D5501F /* DartFrog.obj in Resources */,
 				B9FD7A58246C1F2D0058B4B3 /* 13005-refresh.json in Resources */,
 				579C04B7247B78D1003EEB6D /* greenwaves.json in Resources */,
 				B9FD7A56246C1F2D0058B4B3 /* 8878-done.json in Resources */,
@@ -598,8 +617,7 @@
 				570D1C252470EBA700B9FB22 /* sad.mp3 in Resources */,
 				570D1C1D24705E5200B9FB22 /* nonetwork.json in Resources */,
 				B9FD7A54246C1F2D0058B4B3 /* 291-searchask-loop.json in Resources */,
-				57F877E924763B5700D5501F /* FROG.usdz in Resources */,
-				57F877E624741B0100D5501F /* toy_biplane.usdz in Resources */,
+				57F877E924763B5700D5501F /* Frog2Color.usdz in Resources */,
 				B9FD7A55246C1F2D0058B4B3 /* 10548-forest.json in Resources */,
 				B9FD7A52246C1F2D0058B4B3 /* 20301-newspaper-open.json in Resources */,
 				57A3B8AB244315270011F674 /* Assets.xcassets in Resources */,
@@ -611,7 +629,7 @@
 				570D1C2024705E5200B9FB22 /* confetti1.json in Resources */,
 				577AA1A3247159E100B85AF6 /* GPX files (To simulate Locations) in Resources */,
 				570D1C272470EBE100B9FB22 /* confetti.mp3 in Resources */,
-				576F294B247AD3D90078EC67 /* FrogScaledUsdz.usdz in Resources */,
+				576F294B247AD3D90078EC67 /* Frog3Main.usdz in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -674,10 +692,12 @@
 				B98A407F24725DE6006C2F2A /* FrogCell.swift in Sources */,
 				57A3B8A1244315230011F674 /* FrogListController.swift in Sources */,
 				B960A57A246C3BA9003CFDE3 /* CardLayout.swift in Sources */,
+				DF355D8525412A230086C806 /* MapVC.swift in Sources */,
 				574A3C2C245066060022CCB3 /* FrogAnnotation.swift in Sources */,
 				579EE7AD2444CB2D00321C7E /* DetailsViewController.swift in Sources */,
 				579EE7AF2444D96A00321C7E /* FrogDetailsViewController.swift in Sources */,
 				DF568D0F25341E090022203E /* UIView+Extension.swift in Sources */,
+				DF355D81253FFB170086C806 /* IdentifyVC.swift in Sources */,
 				574A3C2A24505E850022CCB3 /* MapViewController.swift in Sources */,
 				DF8EAE6F252ED627009A9038 /* SpotLightEntity+CoreDataProperties.swift in Sources */,
 				57A3B89D244315230011F674 /* AppDelegate.swift in Sources */,
