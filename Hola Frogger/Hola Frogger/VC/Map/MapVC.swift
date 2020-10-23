@@ -60,17 +60,31 @@ extension MapVC: MKMapViewDelegate {
             view.canShowCallout = true
             view.calloutOffset = CGPoint(x: 0, y: 15)
             
-            let button = UIButton()
-//            button.backgroundColor = .raspberryPieTint()
-            button.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
-            button.addTarget(nil, action: #selector(annotationDidTapped), for: .touchUpInside)
-            button.setImage(UIImage(named: annotation.subtitle!), for: .normal)
-            view.rightCalloutAccessoryView = button
+            let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+            imageView.image = UIImage(named: annotation.subtitle!)
+            view.leftCalloutAccessoryView = imageView
+            
+            
+//            let button = UIButton()
+//            button.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
+//            button.addTarget(nil, action: #selector(annotationDidTapped), for: .touchUpInside)
+//            button.setImage(UIImage(named: annotation.subtitle!), for: .normal)
+//            view.rightCalloutAccessoryView = button
+            
+            view.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
         }
         return view
     }
     
     func mapViewDidFinishLoadingMap(_ mapView: MKMapView) {
+    }
+    
+    // Pop-up annotation when tapped on a annotation.
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        if (control == view.rightCalloutAccessoryView || control == view.leftCalloutAccessoryView) {
+            mapViewModel.selectedAnnotationTitle = (view.annotation?.title!)!
+            annotationDidTapped()
+        }
     }
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {

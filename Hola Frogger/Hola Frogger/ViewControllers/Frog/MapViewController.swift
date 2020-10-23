@@ -249,34 +249,25 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
 // Custom annotaion.
 /// Reference - https://www.raywenderlich.com/7738344-mapkit-tutorial-getting-started
 extension MapViewController {
-    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        guard let annotation = annotation as? FrogAnnotation else {
-            return nil
-        }
-        let identifier = ""
-        var view: MKMarkerAnnotationView
-        if let dequeuedView = mapView.dequeueReusableAnnotationView(
-            withIdentifier: identifier) as? MKMarkerAnnotationView {
-            dequeuedView.annotation = annotation
-            view = dequeuedView
-        } else {
-            view = MKMarkerAnnotationView(
-                annotation: annotation,
-                reuseIdentifier: identifier)
-            view.canShowCallout = true
-            view.calloutOffset = CGPoint(x: -5, y: 5)
-            let button = UIButton()
-            button.backgroundColor = .green
-            button.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
-            button.addTarget(nil, action: #selector(focusOnUserLocationDidTapped), for: .touchUpInside)
-            
-            view.rightCalloutAccessoryView = button
-        }
-        return view
+  func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+    guard let annotation = annotation as? FrogAnnotation else {
+      return nil
     }
-    
-    @objc private func focusOnUserLocationDidTapped() {
-        print("Tapped")
+    let identifier = "frogDetails"
+    var view: MKMarkerAnnotationView
+    if let dequeuedView = mapView.dequeueReusableAnnotationView(
+      withIdentifier: identifier) as? MKMarkerAnnotationView {
+      dequeuedView.annotation = annotation
+      view = dequeuedView
+    } else {
+      view = MKMarkerAnnotationView(
+        annotation: annotation,
+        reuseIdentifier: identifier)
+      view.canShowCallout = true
+      view.calloutOffset = CGPoint(x: -5, y: 5)
+      view.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
     }
+    return view
+  }
 }
 
