@@ -29,10 +29,10 @@ class MapViewModel {
         }
     }
     
-    func getFrogByName() -> FrogEntity {
+    func getFrogByName(commonName: String?) -> FrogEntity {
         var foundFrog: FrogEntity!
         for frog in allFrogsList {
-            if frog.cname == selectedAnnotationTitle {
+            if frog.cname == commonName {
                 foundFrog = frog
             }
         }
