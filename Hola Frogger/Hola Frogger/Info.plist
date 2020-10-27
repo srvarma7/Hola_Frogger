@@ -26,15 +26,13 @@
 		<true/>
 	</dict>
 	<key>NSCameraUsageDescription</key>
-	<string>Give access to use camera for classification</string>
-	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>Grant location permission to show your location</string>
+	<string>Hola Frogger requires camera access to Identify frog</string>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>Grant location permission to show your location</string>
-	<key>NSLocationUsageDescription</key>
-	<string>Grant location permission to show your location</string>
+	<string>This application requires your location to send notifications, when you enter a frog&apos;s habitat</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>This application requires your location to send notifications, when you enter a frog&apos;s habitat</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Grant location permission to show your location</string>
+	<string>This application requires your location to send notifications, when you enter a frog&apos;s habitat</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

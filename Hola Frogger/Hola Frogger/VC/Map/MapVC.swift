@@ -32,7 +32,7 @@ class MapVC: UIViewController {
         
         addViews()
         configureMapView()
-        loadAnnotations()
+//        loadAnnotations()
         
         checkLocationServices()
         
@@ -173,6 +173,10 @@ extension MapVC {
 
 // MARK: - Annotations
 extension MapVC: MKMapViewDelegate {
+    func mapViewDidFinishRenderingMap(_ mapView: MKMapView, fullyRendered: Bool) {
+        loadAnnotations()
+    }
+    
     func loadAnnotations() {
         //removing annotations and geofencing if any
         mapView.removeAnnotations(mapView.annotations)

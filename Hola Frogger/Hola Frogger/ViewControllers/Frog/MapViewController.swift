@@ -140,8 +140,8 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         mapView.showsUserLocation = true
 
 
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert]) {
-            (granted, error) in if !granted {
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert]) { (granted, error) in
+            if !granted {
                 print("Permission rejected")
                 return
             }
@@ -151,7 +151,8 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     func stopFencing() {
         for region in locationMgr.monitoredRegions {
             guard let circularRegion = region as? CLCircularRegion,
-              circularRegion.identifier == region.identifier else { continue }
+                      circularRegion.identifier == region.identifier else { continue }
+            
             locationMgr.stopMonitoring(for: circularRegion)
         }
         

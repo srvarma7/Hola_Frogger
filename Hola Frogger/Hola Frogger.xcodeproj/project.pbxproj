@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -76,6 +76,7 @@
 		DF8EAE6B252ED61D009A9038 /* FrogEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8EAE69252ED61D009A9038 /* FrogEntity+CoreDataProperties.swift */; };
 		DF8EAE6F252ED627009A9038 /* SpotLightEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8EAE6D252ED627009A9038 /* SpotLightEntity+CoreDataProperties.swift */; };
 		DF8EAE70252ED627009A9038 /* SpotLightEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8EAE6E252ED627009A9038 /* SpotLightEntity+CoreDataClass.swift */; };
+		DF90D7032543A3C300E5E511 /* StatusAlert in Frameworks */ = {isa = PBXBuildFile; productRef = DF90D7022543A3C300E5E511 /* StatusAlert */; };
 		DFA3BE95252EF47E009C742A /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA3BE94252EF47E009C742A /* Weather.swift */; };
 		DFA3BE99252EF52D009C742A /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA3BE98252EF52D009C742A /* News.swift */; };
 		DFE187E125358C34003D772F /* NewsTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE187E025358C34003D772F /* NewsTVCell.swift */; };
@@ -186,6 +187,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				57320A7F2453477900ADE06C /* WebKit.framework in Frameworks */,
+				DF90D7032543A3C300E5E511 /* StatusAlert in Frameworks */,
 				EC2B8094073EF948ADA1C676 /* Pods_Hola_Frogger.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -568,6 +570,9 @@
 			dependencies = (
 			);
 			name = "Hola Frogger";
+			packageProductDependencies = (
+				DF90D7022543A3C300E5E511 /* StatusAlert */,
+			);
 			productName = TabView;
 			productReference = 57A3B899244315230011F674 /* Hola Frogger.app */;
 			productType = "com.apple.product-type.application";
@@ -596,6 +601,9 @@
 				Base,
 			);
 			mainGroup = 57A3B890244315230011F674;
+			packageReferences = (
+				DF90D7012543A3C200E5E511 /* XCRemoteSwiftPackageReference "StatusAlert" */,
+			);
 			productRefGroup = 57A3B89A244315230011F674 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -942,6 +950,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DF90D7012543A3C200E5E511 /* XCRemoteSwiftPackageReference "StatusAlert" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/LowKostKustomz/StatusAlert.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DF90D7022543A3C300E5E511 /* StatusAlert */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DF90D7012543A3C200E5E511 /* XCRemoteSwiftPackageReference "StatusAlert" */;
+			productName = StatusAlert;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		57A3B8A7244315230011F674 /* TabView.xcdatamodeld */ = {

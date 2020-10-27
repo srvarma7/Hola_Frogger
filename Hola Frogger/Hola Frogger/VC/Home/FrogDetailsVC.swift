@@ -57,15 +57,13 @@ class FrogDetailsVC: UIViewController {
         addViews()
         
         setFrogDetails()
+        setFrogAnnotationOnMap()
         closeButton.transform = CGAffineTransform(translationX: 0, y: 100)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         animateCloseButton()
-        
     }
-    
-    
     
     private func animateCloseButton() {
         UIView.animate(withDuration: 0.5,
@@ -97,6 +95,30 @@ class FrogDetailsVC: UIViewController {
 //            let latLonInString = convertLatLonToString(latitude: frogData.latitude, longitude: frogData.longitude)
 //            fetchWeather(latitude: latLonInString.0, longitude: latLonInString.1)
         }
+    }
+    
+}
+
+// MARK:- Add views and constriants
+extension FrogDetailsVC: MKMapViewDelegate {
+    private func setFrogAnnotationOnMap() {
+        mapView.delegate = self
+        let focusLocation = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: self.frogItem!.latitude,
+                                                                              longitude: self.frogItem!.longitude),
+                                               latitudinalMeters: 1000,
+                                               longitudinalMeters: 1000)
+        
+        
+        
+        mapView.setRegion(focusLocation, animated: true)
+    }
+    
+    func mapViewDidFinishRenderingMap(_ mapView: MKMapView, fullyRendered: Bool) {
+        let annotaion = FrogAnnotation(title: frogItem!.cname!,
+                                       subtitle: frogItem!.sname!,
+                                       latitude: frogItem!.latitude,
+                                       longitude: frogItem!.longitude)
+        mapView.addAnnotation(annotaion)
     }
     
 }
