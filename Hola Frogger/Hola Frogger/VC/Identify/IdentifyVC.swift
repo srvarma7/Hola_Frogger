@@ -14,28 +14,63 @@ import Vision
 class IdentifyVC: UIViewController {
 
     // UI Elements
-    private var topView = UIView()
-    private var bottomView = UIView()
+    private lazy var topView = UIView()
+    private lazy var bottomView = UIView()
     
-    private var vcHeadingLabel = UILabel()
+    private lazy var vcHeadingLabel = UILabel()
     
-    private var resultsHeadingLabel = UILabel()
-    private var resultStatusLabel = UILabel()
+    private lazy var resultsHeadingLabel = UILabel()
+    private lazy var resultStatusLabel = UILabel()
     
-    private var firstPredictionName = UILabel()
-    private var firstPredictionPercentage = UILabel()
-    private var secondPredictionName = UILabel()
-    private var secondPredictionPercentage = UILabel()
-    private var thirdPredictionName = UILabel()
-    private var thirdPredictionPercentage = UILabel()
+    private lazy var firstPredictionName = UILabel()
+    private lazy var firstPredictionPercentage = UILabel()
+    private lazy var secondPredictionName = UILabel()
+    private lazy var secondPredictionPercentage = UILabel()
+    private lazy var thirdPredictionName = UILabel()
+    private lazy var thirdPredictionPercentage = UILabel()
     
-    private let captureSession = AVCaptureSession()
-    private var circleView = UIView()
+    private lazy var captureSession = AVCaptureSession()
+    private lazy var circleView = UIView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         
+//        showFeatureUnavailable()
+        if TARGET_OS_SIMULATOR != 0 {
+            // Detected simulator
+            showFeatureUnavailable()
+            debugPrint("Simulator detected, disabling features")
+        } else {
+            // Detected physical device
+            makeIdentifyReady()
+        }
+        
+    }
+  
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if !(TARGET_OS_SIMULATOR != 0) {
+            // Device is not simulator
+            animateCircle(toCircle: true, rotate: true)
+            debugPrint("Starting capture session")
+            captureSession.startRunning()
+        }
+        
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        if !(TARGET_OS_SIMULATOR != 0) {
+            // Device is not simulator
+            debugPrint("Stopping capture session")
+            captureSession.stopRunning()
+        }
+        // When the view controller is closed or dismissed, the identification process is stopped to stop the battery consumption.
+        
+    }
+    
+    private func makeIdentifyReady() {
         let viewWidth: CGFloat  = 350
         let viewHeight: CGFloat = 350
         let circleViewYPosition: CGFloat = 130
@@ -43,27 +78,53 @@ class IdentifyVC: UIViewController {
         setupCircleViewForCameraPreview(yPosition: circleViewYPosition ,width: viewWidth, height: viewHeight)
         setupPreview(width: viewWidth, height: viewHeight)
         
-        
         addBottomView()
-        
-    }
-  
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        animateCircle(toCircle: true, rotate: true)
-        debugPrint("Starting capture session")
-        captureSession.startRunning()
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
+    private func showFeatureUnavailable() {
+        let errorView = UIView()
+        view.addSubview(errorView)
+        errorView.backgroundColor = .raspberryPieTint()
+        errorView.layer.cornerRadius = 30
+        errorView.clipsToBounds = true
         
-        // When the view controller is closed or dismissed, the identification process is stopped to stop the battery consumption.
-        debugPrint("Stopping capture session")
-        captureSession.stopRunning()
-    }
+        let safeArea = view.safeAreaLayoutGuide
+        errorView.addAnchor(top: safeArea.topAnchor, paddingTop: 200,
+                            left: safeArea.leftAnchor, paddingLeft: 20,
+                            bottom: nil, paddingBottom: 0,
+                            right: safeArea.rightAnchor, paddingRight: 20,
+                            width: 0, height: 0, enableInsets: true)
+        errorView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
     
+        let errorLabel = UILabel()
+        errorView.addSubview(errorLabel)
+        errorLabel.textColor        = .white
+        errorLabel.font             = UIFont.boldSystemFont(ofSize: 25)
+        errorLabel.textAlignment    = .center
+        errorLabel.numberOfLines    = 0
+        
+        errorLabel.addAnchor(top: errorView.topAnchor, paddingTop: 20,
+                             left: errorView.leftAnchor, paddingLeft: 20,
+                             bottom: errorView.bottomAnchor, paddingBottom: 20,
+                             right: errorView.rightAnchor, paddingRight: 20,
+                             width: 0, height: 0, enableInsets: true)
+        
+        let heading: NSAttributedString = NSAttributedString(string: "Looks like you are on a Simulator!\n\n",
+                                                             attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 20), NSAttributedString.Key.underlineStyle: NSUnderlineStyle.thick.rawValue])
+        let body: NSAttributedString    = NSAttributedString(string: "To use Identify feature, please use a physical device to access camera for identifying frog species",
+                                                             attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 18)])
+        
+//        let urlKeyWord = "Click here"
+//        let url = "http://www.google.com"
+//        let demoMessage = "Click here to watch a demo of frog classification"
+//        let demo: NSAttributedString    = NSAttributedString.makeHyperLink(url: url, string: demoMessage, substring: urlKeyWord)
+
+        let message = NSMutableAttributedString()
+        message.append(heading)
+        message.append(body)
+        errorLabel.attributedText = message
+        
+    }
     
 }
 
@@ -172,7 +233,7 @@ extension IdentifyVC {
                              enableInsets: true)
         
         bottomView.addSubview(resultsHeadingLabel)
-        resultsHeadingLabel.text = "Results"
+        resultsHeadingLabel.text           = "Results"
         resultsHeadingLabel.font           = UIFont.systemFont(ofSize: 24, weight: .bold)
         resultsHeadingLabel.textColor      = .white
         resultsHeadingLabel.textAlignment  = .center
