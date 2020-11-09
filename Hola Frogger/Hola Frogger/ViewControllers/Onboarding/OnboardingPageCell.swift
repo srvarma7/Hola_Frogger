@@ -88,13 +88,13 @@ class OnboardingPageCell: UICollectionViewCell {
        }()
     
     func setupView(){
-        
+        let screen = UIScreen.main.bounds
         addSubview(animationView)
         addSubview(textView)
         
-        _ = animationView.anchor(topAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, topConstant: 100, leftConstant: 39, bottomConstant: 0, rightConstant: 39, widthConstant: 335, heightConstant: 322)
+        _ = animationView.anchor(topAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, topConstant: 30, leftConstant: 30, bottomConstant: 0, rightConstant: 30, widthConstant: screen.width * 0.70, heightConstant: screen.width * 0.70)
         
-        _ = textView.anchor(animationView.bottomAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, topConstant: 20, leftConstant: 42, bottomConstant: 0, rightConstant: 42, widthConstant: 330, heightConstant: 250)
+        _ = textView.anchor(animationView.bottomAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, topConstant: 10, leftConstant: 40, bottomConstant: 0, rightConstant: 40, widthConstant: 0, heightConstant: 250)
         
     }
     

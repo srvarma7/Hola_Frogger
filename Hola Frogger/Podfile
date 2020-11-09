@@ -5,7 +5,6 @@ target 'Hola Frogger' do
   use_frameworks!
 
   # Pods for Hola Frogger
-#  pod 'RAMReel'
   pod 'iOSDropDown'
   pod 'lottie-ios'
   pod 'AwesomeSpotlightView'

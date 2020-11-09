@@ -13,9 +13,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
     
     private var storyboard: Bool    = false
-//    private var storyboard: Bool    = true
+    //    private var storyboard: Bool    = true
+    
     private var fullAPP: Bool       = true
-    private var selecetedVC         = FrogDetailsVC()
+//        private var fullAPP: Bool       = false
+    
+    private var selecetedVC         = GuideViewController()
     
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
@@ -25,98 +28,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             // Open application via code
             
             guard let windowScene = (scene as? UIWindowScene) else { return }
-                        window = UIWindow(frame: windowScene.coordinateSpace.bounds)
+            window = UIWindow(frame: windowScene.coordinateSpace.bounds)
             window?.windowScene         = windowScene
-            window?.rootViewController  = fullAPP ? createTabBar() : selecetedVC
+            window?.rootViewController  = fullAPP ? WelcomeViewController() : selecetedVC
             window?.makeKeyAndVisible()
         }
         
         
     }
-    
-    private func createTabBar() -> UITabBarController {
-        let tabBar = UITabBarController()
-        tabBar.viewControllers = [
-            createMapVC(),
-                                    createHomeNavC(),
-                                    createIdentifyVC(),
-//            createMapVC(),
-//            createChallengeVC(),
-                                    createNewsNavC()
-                                ]
-        
-        UITabBar.appearance().tintColor = UIColor.raspberryPieTint()
-        return tabBar
-    }
-    
-    private func createHomeNavC() -> UINavigationController {
-        let homeVC          = HomeVC()
-        homeVC.title        = "Home"
-        homeVC.tabBarItem   = UITabBarItem(title: "Home",
-                                           image: UIImage(systemName: "house"),
-                                           tag: 0)
-        
-        return UINavigationController(rootViewController: homeVC)
-    }
-    
-    private func createIdentifyVC() -> UIViewController {
-        let identifyVC = IdentifyVC()
-        identifyVC.tabBarItem = UITabBarItem(title: "Identify",
-                                             image: UIImage(systemName: "camera.viewfinder"),
-                                             tag: 1)
-
-        return identifyVC
-    }
-    
-    private func createMapVC() -> UIViewController {
-        let mapVC = MapVC()
-        mapVC.tabBarItem = UITabBarItem(title: "Map",
-                                             image: UIImage(systemName: "map"),
-                                             tag: 2)
-
-        return mapVC
-    }
-//
-//    private func createChallengeVC() -> UIViewController {
-//        let challengeVC = ChallengeVC()
-//        challengeVC.tabBarItem = UITabBarItem(title: "Challenge",
-//                                             image: UIImage(systemName: "gamecontroller"),
-//                                             tag: 3)
-//
-//        return challengeVC
-//    }
-
-    private func createNewsNavC() -> UINavigationController {
-        let newsVC          = NewsVC()
-        newsVC.title        = "News"
-        newsVC.tabBarItem   = UITabBarItem(title: "News", image: UIImage(systemName: "dot.radiowaves.left.and.right"), tag: 4)
-        
-        return UINavigationController(rootViewController: newsVC)
-    }
-    
-//        let nav1 = UINavigationController()
-//           let mainView = ViewController(nibName: nil, bundle: nil) //ViewController = Name of your controller
-//           nav1.viewControllers = [mainView]
-//           self.window!.rootViewController = nav1
-        
-        //change the layout for the first time using this application
-        // guard let windowScene = (scene as? UIWindowScene) else { return }
-        
-        //  let infoDictionary = Bundle.main.infoDictionary
-        //  let currentAppVersion = infoDictionary!["CFBundleShortVersionString"] as! String
-        
-        //get version number
-        //   let userDefaults = UserDefaults.standard
-        //  let appVersion = userDefaults.string(forKey: "appVersion")
-        
-        //  if appVersion == nil || appVersion != currentAppVersion {
-        //save the latest version number
-        //     userDefaults.setValue(currentAppVersion, forKey: "appVersion")
-        
-        //     self.window = UIWindow(windowScene: windowScene)
-        //    window?.rootViewController = GuideViewController()
-        //      window?.makeKeyAndVisible()
-        //   }
     
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.

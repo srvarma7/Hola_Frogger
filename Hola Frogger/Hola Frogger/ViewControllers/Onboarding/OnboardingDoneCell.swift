@@ -23,7 +23,7 @@ class OnboardingDoneCell: UICollectionViewCell {
     }()
     let descriptionTextView: UITextView = {
            let title = UITextView()
-        title.text = "You are almost there to explore and locate Frogs around you. Click on the \"Done\" button to go to the homescreen."
+        title.text = "You are almost there to explore and locate Frogs around you. Click on the \"Finish\" button to go to the homescreen."
         title.textAlignment = NSTextAlignment.center
            title.font = UIFont.systemFont(ofSize: 16)
            title.isEditable = false
@@ -36,7 +36,7 @@ class OnboardingDoneCell: UICollectionViewCell {
         button.layer.borderWidth = 1
         button.layer.borderColor = UIColor(red: 187/255, green: 187/255, blue: 187/255, alpha: 1.0).cgColor
         button.backgroundColor = UIColor(red: 139/255, green: 195/255, blue: 74/255, alpha: 1.0)
-           button.setTitle("Done", for: .normal)
+           button.setTitle("Finish", for: .normal)
            button.setTitleColor(.white, for: .normal)
            button.addTarget(self, action: #selector(done), for: .touchDown)
            return button
@@ -90,6 +90,7 @@ class OnboardingDoneCell: UICollectionViewCell {
            setupViews()
        }
     func setupViews() {
+        let screen = UIScreen.main.bounds
         animationView1.animation = Animation.named("8878-done")
         animationView1.frame = CGRect(x: 0, y: 0, width: 300, height: 300)
         animationView1.backgroundColor = .white
@@ -108,20 +109,26 @@ class OnboardingDoneCell: UICollectionViewCell {
         addSubview(reverseAnimationButton)
       
         //add layout constraint
-        _ = animationView1.anchor(topAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, topConstant: 70, leftConstant: 41, bottomConstant: 0, rightConstant: 41, widthConstant: 335, heightConstant: 335)
+        _ = animationView1.anchor(topAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, topConstant: 30,
+                                  leftConstant: 41, bottomConstant: 0, rightConstant: 41, widthConstant: screen.width * 0.70, heightConstant: screen.width * 0.70)
         
+        _ = doneButton.anchor(animationView1.bottomAnchor, left: leftAnchor, bottom: nil, right: rightAnchor,
+                              topConstant: 5, leftConstant: 142, bottomConstant: 0, rightConstant: 142, widthConstant: 129, heightConstant: 48)
         
-        _ = doneButton.anchor(animationView1.bottomAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, topConstant: 52, leftConstant: 142, bottomConstant: 0, rightConstant: 142, widthConstant: 129, heightConstant: 48)
-        
-        _ = titleTextView.anchor(doneButton.bottomAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, topConstant: 25, leftConstant: 73, bottomConstant: 0, rightConstant: 73, widthConstant: 268, heightConstant: 41)
+        _ = titleTextView.anchor(doneButton.bottomAnchor, left: leftAnchor, bottom: nil, right: rightAnchor,
+                                 topConstant: 20, leftConstant: 73, bottomConstant: 0, rightConstant: 73, widthConstant: 268, heightConstant: 41)
        
-        _ = descriptionTextView.anchor(titleTextView.bottomAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, topConstant: 18, leftConstant: 42, bottomConstant: 0, rightConstant: 42, widthConstant: 330, heightConstant: 70)
+        _ = descriptionTextView.anchor(titleTextView.bottomAnchor, left: leftAnchor, bottom: nil, right: rightAnchor,
+                                       topConstant: 5, leftConstant: 42, bottomConstant: 0, rightConstant: 42, widthConstant: 330, heightConstant: 70)
         
-        _ = animationView2.anchor(descriptionTextView.bottomAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, topConstant: 20, leftConstant: 150, bottomConstant: 0, rightConstant: 150, widthConstant: 50, heightConstant: 50)
+        _ = animationView2.anchor(descriptionTextView.bottomAnchor, left: leftAnchor, bottom: nil, right: rightAnchor,
+                                  topConstant: 10, leftConstant: 150, bottomConstant: 0, rightConstant: 150, widthConstant: 50, heightConstant: 50)
         
-        _ = reverseAnimationButton.anchor(descriptionTextView.bottomAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, topConstant: 20, leftConstant: 150, bottomConstant: 0, rightConstant: 150, widthConstant: 50, heightConstant: 50)
+        _ = reverseAnimationButton.anchor(descriptionTextView.bottomAnchor, left: leftAnchor, bottom: nil, right: rightAnchor,
+                                          topConstant: 5, leftConstant: 150, bottomConstant: 0, rightConstant: 150, widthConstant: 50, heightConstant: 50)
                
-         _ = reverseButton.anchor(animationView2.bottomAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, topConstant: 16, leftConstant: 110, bottomConstant: 0, rightConstant: 110, widthConstant: 160, heightConstant: 35)
+         _ = reverseButton.anchor(animationView2.bottomAnchor, left: leftAnchor, bottom: nil, right: rightAnchor,
+                                  topConstant: 16, leftConstant: 110, bottomConstant: 0, rightConstant: 110, widthConstant: 160, heightConstant: 35)
        
     }
     

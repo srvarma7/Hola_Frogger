@@ -33,7 +33,7 @@ class GuideViewController: UIViewController, UICollectionViewDataSource, UIColle
     
     let pages: [Page] = {
         let firstPage = Page(title: "Search", message: "Search for your favourite frogs using both scientific or common names. Get live suggestion based on your text!", animationName: "336-search")
-        let secondPage = Page(title: "Frog Names", message: "Our application provides both scientific as well as common names for you to recognize your favourite frog. We have carefully laid out colour-coded icons(V - Vulnerable, E - Endangered, N - Non - Vulnerable) to highlight the species based on their population.", animationName: "10548-forest")
+        let secondPage = Page(title: "Frog Names", message: "Our application provides both scientific as well as common names for you to recognize your favourite frog. We have carefully laid out colour-coded icons (V - Vulnerable, E - Endangered, N - Non - Vulnerable) to highlight the species based on their population.", animationName: "10548-forest")
         let thirdPage = Page(title: "Identify", message: "Hola Frogger is equipped with lens feature to identify a frog species and provide the correct name for frog through our self machine-learned data. Just point to the Frog and Magic!!", animationName: "291-searchask-loop")
         let fourthPage = Page(title: "Locate Frog on Maps", message: "Our data provides hotspot across Victoria to sight particular frog species. Just find the annotation on the map, along with our correct weather information will give you an edge of sighting the frog in wild.", animationName: "13357-route-finder")
         let fifthPage = Page(title: "News", message: "Stay up-to date with latest news on frogs from multiple trusted sources across the web. Just curated for your need.", animationName: "20301-newspaper-open")
@@ -46,7 +46,7 @@ class GuideViewController: UIViewController, UICollectionViewDataSource, UIColle
         let pc = UIPageControl();
         pc.pageIndicatorTintColor = .lightGray
         //point color
-        pc.currentPageIndicatorTintColor = UIColor(red: 139/255, green: 195/255, blue: 74/255, alpha: 0.78)
+        pc.currentPageIndicatorTintColor = .raspberryPieTint()
         pc.numberOfPages = 5
         return pc
     }()
@@ -157,11 +157,14 @@ class GuideViewController: UIViewController, UICollectionViewDataSource, UIColle
     
     //method for done button
     @objc func done() {
-        let sb = UIStoryboard(name: "Main", bundle: nil)
-        let homePage = sb.instantiateViewController(withIdentifier: "tabController") as! UITabBarController
-        
-        homePage.modalPresentationStyle = .fullScreen
-        self.present(homePage, animated: true, completion: nil)
+//        let sb = UIStoryboard(name: "Main", bundle: nil)
+//        let homePage = sb.instantiateViewController(withIdentifier: "tabController") as! UITabBarController
+//
+//        homePage.modalPresentationStyle = .fullScreen
+//        self.present(homePage, animated: true, completion: nil)
+        let vc = TabBarView.createTabBar()
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true, completion: nil)
     
     }
     

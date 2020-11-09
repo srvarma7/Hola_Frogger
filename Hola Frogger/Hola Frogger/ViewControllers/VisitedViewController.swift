@@ -147,8 +147,10 @@ class VisitedViewController: UIViewController, CLLocationManagerDelegate, Awesom
     }
     
     func updateSightedStatus(receivedFrog: FrogEntity, isVisited: Bool) {
-        CoreDataHandler.updateFrog(frog: receivedFrog, isVisited: isVisited, isFavourite: receivedFrog.isFavourite)
-        CoreDataHandler.updateUnSightedFrog(unsightedFrog: receivedFrog.cname!, isVisited: receivedFrog.isVisited, isFavourite: receivedFrog.isFavourite)
+        #warning("CORE DATA OLD VERSION")
+
+//        CoreDataHandler.updateFrog(frog: receivedFrog, isVisited: isVisited, isFavourite: receivedFrog.isFavourite)
+//        CoreDataHandler.updateUnSightedFrog(unsightedFrog: receivedFrog.cname!, isVisited: receivedFrog.isVisited, isFavourite: receivedFrog.isFavourite)
     }
 
     @IBAction func segmentedCtrlDidSelect(_ sender: Any) {

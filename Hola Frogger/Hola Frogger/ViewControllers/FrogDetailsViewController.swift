@@ -185,7 +185,8 @@ class FrogDetailsViewController: UIViewController, MKMapViewDelegate, AwesomeSpo
             favButton.tintColor = #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)
         }
         // Updates the fav status of a frog in database.
-        CoreDataHandler.updateFrog(frog: receivedFrog!, isVisited: receivedFrog!.isVisited, isFavourite: localIsFav)
+        #warning("CORE DATA OLD VERSION")
+//        CoreDataHandler.updateFrog(frog: receivedFrog!, isVisited: receivedFrog!.isVisited, isFavourite: localIsFav)
     }
     
     // MARK: - Weather
@@ -246,13 +247,21 @@ class FrogDetailsViewController: UIViewController, MKMapViewDelegate, AwesomeSpo
     func numberOfPreviewItems(in controller: QLPreviewController) -> Int { return 1 }
     
     func previewController(_ controller: QLPreviewController, previewItemAt index: Int) -> QLPreviewItem {
-        //guard let path = Bundle.main.path(forResource: "FrogCartoon", ofType: "usdz") else { fatalError("Couldn't find the supported input file.") }
-        //guard let path = Bundle.main.path(forResource: "Frog_Hopping", ofType: "usdz") else { fatalError("Couldn't find the supported input file.") }
-        //guard let path = Bundle.main.path(forResource: "DartFrog", ofType: "obj") else { fatalError("Couldn't find the supported input file.") }
-        //guard let path = Bundle.main.path(forResource: "toy_biplane", ofType: "usdz") else { fatalError("Couldn't find the supported input file.") }
-        guard let path = Bundle.main.path(forResource: "FrogScaledUsdz", ofType: "usdz") else { fatalError("Couldn't find the supported input file.") }
-        let url = URL(fileURLWithPath: path)
-        return url as QLPreviewItem
+        var url = [URL]()
+        let usdzNames = ["Frog1", "Frog2Color", "Frog3Main"]
+        for usdz in usdzNames {
+            guard let path = Bundle.main.path(forResource: usdz, ofType: "usdz") else { fatalError("Couldn't find the supported input file.") }
+            url.append(URL(fileURLWithPath: path))
+        }
+        
+        return url[getRandom(from: 0, to: 2)] as QLPreviewItem
+    }
+    
+    func getRandom(from: Int, to: Int) -> Int {
+        let number = Int.random(in: from..<to)
+        print(number)
+        
+        return number
     }
 }
 
