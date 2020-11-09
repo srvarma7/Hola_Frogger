@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 
 class FrogDetailsVC: UIViewController {
-    
+        
     // Header view
     private var weatherView             = UIView()
     private var locationLabel           = UILabel()
@@ -22,7 +22,6 @@ class FrogDetailsVC: UIViewController {
     
     // Middle
     private var mapView = MKMapView()
-    #warning("Mapview not complete")
     
     // Body
     private var frogImageView           = UIImageView()
@@ -49,6 +48,8 @@ class FrogDetailsVC: UIViewController {
     var frogItem: FrogEntity?
     var favouriteStatus: Bool = false
     
+    private let screen = UIScreen.main.bounds
+    
     // Main
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,9 +71,8 @@ class FrogDetailsVC: UIViewController {
                        delay: 0.25,
                        options: .curveEaseInOut,
                        animations: {
-                        self.closeButton.transform = CGAffineTransform(translationX: 0, y: -50)
-                       }
-        )
+                        self.closeButton.transform = CGAffineTransform(translationX: 0, y: -25)
+                       })
     }
     
     private func setFrogDetails() {
@@ -90,10 +90,9 @@ class FrogDetailsVC: UIViewController {
             frogImageView.backgroundColor   = .clear
             favouriteButton.setBackgroundImage(UIImage(systemName: favouriteStatus ? "suit.heart.fill" : "suit.heart"), for: UIControl.State.normal)
 
-            #warning("Enable API call at the end")
-//            frogDetailsViewModel.weatherDelegate = self
-//            let latLonInString = convertLatLonToString(latitude: frogData.latitude, longitude: frogData.longitude)
-//            fetchWeather(latitude: latLonInString.0, longitude: latLonInString.1)
+            frogDetailsViewModel.weatherDelegate = self
+            let latLonInString = convertLatLonToString(latitude: frogData.latitude, longitude: frogData.longitude)
+            fetchWeather(latitude: latLonInString.0, longitude: latLonInString.1)
         }
     }
     
@@ -127,13 +126,14 @@ extension FrogDetailsVC: MKMapViewDelegate {
 extension FrogDetailsVC {
     
     private func addViews() {
+//        let safeArea = view.safeAreaLayoutGuide
         addHeaderViews()
         
         view.addSubview(mapView)
         addMapViewConstriants()
-        
+
         addBodyViews()
-        
+//
         addFootView()
     }
     
@@ -164,7 +164,7 @@ extension FrogDetailsVC {
                               left: view.leftAnchor, paddingLeft: 0,
                               bottom: nil, paddingBottom: 0,
                               right: view.rightAnchor, paddingRight: 0,
-                              width: 0, height: 65, enableInsets: true)
+                              width: view.frame.width, height: 65, enableInsets: true)
         
         weatherView.backgroundColor = .raspberryPieTint()
     }
@@ -247,7 +247,8 @@ extension FrogDetailsVC {
         humidityStatusLabel.text            = "Humidity"
         humidityStatusLabel.textAlignment   = .center
         humidityStatusLabel.textColor       = .white
-        humidityStatusLabel.font            = UIFont.systemFont(ofSize: 16, weight: .light)
+        humidityStatusLabel.font            = UIFont.systemFont(ofSize: 16,
+                                                                weight: .light)
     }
     
     // MARK:- Map view
@@ -256,7 +257,8 @@ extension FrogDetailsVC {
                           left: view.leftAnchor, paddingLeft: 0,
                           bottom: nil, paddingBottom: 0,
                           right: view.rightAnchor, paddingRight: 0,
-                          width: 0, height: 200, enableInsets: true)
+                          width: 0, height: screen.height * 0.25,
+                          enableInsets: true)
     }
     
     // MARK:- Body views
@@ -264,17 +266,24 @@ extension FrogDetailsVC {
         let leftRightPadding: CGFloat   = 15
         let sectionPadding: CGFloat     = 6
         let bodyPadding: CGFloat        = 1
+        let fontBodySize: CGFloat = 18
+        let fontSubBodySize: CGFloat = 16
         
-        view.addSubViews(views: frogImageView, favouriteButton, frogCommonNameLabel, frogScientificNameLabel, descriptionHeading, frogDetailsLabel, locationUncertaintyHeading, locationUncertaintyLabel, threatenedHeading, threatenedLabel, frogCountHeading, frogCountLabel, sightedHeading, sightedLabel)
+        view.addSubViews(views: frogImageView, favouriteButton,
+                               frogCommonNameLabel, frogScientificNameLabel,
+                               descriptionHeading, frogDetailsLabel,
+                               locationUncertaintyHeading, locationUncertaintyLabel,
+                               threatenedHeading, threatenedLabel,
+                               frogCountHeading, frogCountLabel,
+                               sightedHeading, sightedLabel)
         
-        frogImageView.addAnchor(top: mapView.bottomAnchor, paddingTop: -100,
+        frogImageView.addAnchor(top: mapView.bottomAnchor, paddingTop: -((screen.width * 0.30)/2),
                                 left: nil, paddingLeft: 0,
                                 bottom: nil, paddingBottom: 0,
                                 right: nil, paddingRight: 0,
-                                width: 160, height: 160, enableInsets: true)
+                                width: screen.width * 0.30, height: screen.width * 0.30, enableInsets: true)
         
         frogImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        frogImageView.backgroundColor = .red
         let tap = UITapGestureRecognizer(target: self, action: #selector(frogImageDidTapped))
         frogImageView.addGestureRecognizer(tap)
         frogImageView.isUserInteractionEnabled = true
@@ -289,14 +298,14 @@ extension FrogDetailsVC {
         // Adding tap gesture action
         favouriteButton.addTarget(self, action: #selector(favouriteButtonDidTapped), for: .touchUpInside)
         
-        frogCommonNameLabel.addAnchor(top: mapView.bottomAnchor, paddingTop: 50,
+        frogCommonNameLabel.addAnchor(top: frogImageView.bottomAnchor, paddingTop: -10,
                                       left: nil, paddingLeft: 0,
                                       bottom: nil, paddingBottom: 0,
                                       right: nil, paddingRight: 0,
                                       width: 0, height: 0, enableInsets: true)
         frogCommonNameLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         frogCommonNameLabel.text = "frog Common Name Label"
-        frogCommonNameLabel.font = UIFont.systemFont(ofSize: 22, weight: .bold)
+        frogCommonNameLabel.font = UIFont.systemFont(ofSize: fontBodySize, weight: .bold)
 
         
         frogScientificNameLabel.addAnchor(top: frogCommonNameLabel.bottomAnchor, paddingTop: bodyPadding,
@@ -305,7 +314,7 @@ extension FrogDetailsVC {
                                           right: nil, paddingRight: 0,
                                           width: 0, height: 0, enableInsets: true)
         frogScientificNameLabel.text = "frog scientific Name Label"
-        frogScientificNameLabel.font = UIFont.systemFont(ofSize: 20, weight: .medium)
+        frogScientificNameLabel.font = UIFont.systemFont(ofSize: 17, weight: .medium)
         frogScientificNameLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         frogScientificNameLabel.textColor = .secondaryLabel
 
@@ -318,7 +327,7 @@ extension FrogDetailsVC {
                                      width: 0, height: 0, enableInsets: true)
         descriptionHeading.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         descriptionHeading.text = "Description"
-        descriptionHeading.font = UIFont.systemFont(ofSize: 18, weight: .bold)
+        descriptionHeading.font = UIFont.systemFont(ofSize: fontSubBodySize, weight: .bold)
 
         
         frogDetailsLabel.addAnchor(top: descriptionHeading.bottomAnchor, paddingTop: bodyPadding,
@@ -327,7 +336,7 @@ extension FrogDetailsVC {
                                    right: view.rightAnchor, paddingRight: leftRightPadding,
                                    width: 0, height: 0, enableInsets: true)
         frogDetailsLabel.text = ""
-        frogDetailsLabel.font = UIFont.systemFont(ofSize: 18, weight: .regular)
+        frogDetailsLabel.font = UIFont.systemFont(ofSize: fontSubBodySize, weight: .regular)
         frogDetailsLabel.numberOfLines = 0
         frogDetailsLabel.textAlignment = .justified
         frogDetailsLabel.textColor = .secondaryLabel
@@ -340,7 +349,7 @@ extension FrogDetailsVC {
                                              right: nil, paddingRight: 0,
                                              width: 0, height: 0, enableInsets: true)
         locationUncertaintyHeading.text = "Location uncertainty"
-        locationUncertaintyHeading.font = UIFont.systemFont(ofSize: 18, weight: .bold)
+        locationUncertaintyHeading.font = UIFont.systemFont(ofSize: fontSubBodySize, weight: .bold)
         
         locationUncertaintyLabel.addAnchor(top: frogDetailsLabel.bottomAnchor, paddingTop: sectionPadding,
                                            left: nil, paddingLeft: 0,
@@ -348,7 +357,7 @@ extension FrogDetailsVC {
                                            right: view.rightAnchor, paddingRight: leftRightPadding,
                                            width: 0, height: 0, enableInsets: true)
         locationUncertaintyLabel.text = "100 meters"
-        locationUncertaintyLabel.font = UIFont.systemFont(ofSize: 18, weight: .regular)
+        locationUncertaintyLabel.font = UIFont.systemFont(ofSize: fontSubBodySize, weight: .regular)
         
         threatenedHeading.addAnchor(top: locationUncertaintyLabel.bottomAnchor, paddingTop: bodyPadding,
                                              left: view.leftAnchor, paddingLeft: leftRightPadding,
@@ -364,7 +373,7 @@ extension FrogDetailsVC {
                                            right: view.rightAnchor, paddingRight: leftRightPadding,
                                            width: 0, height: 0, enableInsets: true)
         threatenedLabel.text = "Endabgered"
-        threatenedLabel.font = UIFont.systemFont(ofSize: 18, weight: .regular)
+        threatenedLabel.font = UIFont.systemFont(ofSize: fontSubBodySize, weight: .regular)
 
         frogCountHeading.addAnchor(top: threatenedLabel.bottomAnchor, paddingTop: bodyPadding,
                                              left: view.leftAnchor, paddingLeft: leftRightPadding,
@@ -372,7 +381,7 @@ extension FrogDetailsVC {
                                              right: nil, paddingRight: 0,
                                              width: 0, height: 0, enableInsets: true)
         frogCountHeading.text = "Frog count"
-        frogCountHeading.font = UIFont.systemFont(ofSize: 18, weight: .bold)
+        frogCountHeading.font = UIFont.systemFont(ofSize: fontSubBodySize, weight: .bold)
         
         frogCountLabel.addAnchor(top: threatenedLabel.bottomAnchor, paddingTop: bodyPadding,
                                            left: nil, paddingLeft: 0,
@@ -380,7 +389,7 @@ extension FrogDetailsVC {
                                            right: view.rightAnchor, paddingRight: leftRightPadding,
                                            width: 0, height: 0, enableInsets: true)
         frogCountLabel.text = "6"
-        frogCountLabel.font = UIFont.systemFont(ofSize: 18, weight: .regular)
+        frogCountLabel.font = UIFont.systemFont(ofSize: fontSubBodySize, weight: .regular)
         
         sightedHeading.addAnchor(top: frogCountLabel.bottomAnchor, paddingTop: bodyPadding,
                                              left: view.leftAnchor, paddingLeft: leftRightPadding,
@@ -388,7 +397,7 @@ extension FrogDetailsVC {
                                              right: nil, paddingRight: 0,
                                              width: 0, height: 0, enableInsets: true)
         sightedHeading.text = "Sighted"
-        sightedHeading.font = UIFont.systemFont(ofSize: 18, weight: .bold)
+        sightedHeading.font = UIFont.systemFont(ofSize: fontSubBodySize, weight: .bold)
         
         sightedLabel.addAnchor(top: frogCountLabel.bottomAnchor, paddingTop: bodyPadding,
                                            left: nil, paddingLeft: 0,
@@ -396,7 +405,7 @@ extension FrogDetailsVC {
                                            right: view.rightAnchor, paddingRight: leftRightPadding,
                                            width: 0, height: 0, enableInsets: true)
         sightedLabel.text = "No"
-        sightedLabel.font = UIFont.systemFont(ofSize: 18, weight: .regular)
+        sightedLabel.font = UIFont.systemFont(ofSize: fontSubBodySize, weight: .regular)
         
     }
     
@@ -434,7 +443,7 @@ extension FrogDetailsVC {
         favouriteButton.setBackgroundImage(UIImage(systemName: favouriteStatus ? "suit.heart.fill" : "suit.heart"), for: UIControl.State.normal)
         
         // Updates the fav status of a frog in database.
-        CoreDataHandler.updateFrog(frog: frogItem!, isVisited: frogItem!.isVisited, isFavourite: favouriteStatus)
+        CoreDataHandler.updateFrog(frogCommonName: frogItem!.cname!, isVisited: frogItem!.isVisited, isFavourite: favouriteStatus)
         postNotificationForFavouriteChange()
     }
     
@@ -483,7 +492,6 @@ extension FrogDetailsVC: WeatherProtocol {
             humidityLabel.text = "\(String(describing: weatherData.main.humidity))"
             humidityStatusLabel.text = "Humidity"
         }
-        
     }
     
     private func updateWeatherIcon() {

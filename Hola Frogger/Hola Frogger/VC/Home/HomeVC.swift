@@ -9,6 +9,7 @@
 import UIKit
 import Lottie
 import iOSDropDown
+import AwesomeSpotlightView
 
 class HomeVC: UIViewController {
     
@@ -28,16 +29,24 @@ class HomeVC: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
 
+        UINavigationBar.appearance().tintColor = .raspberryPieTint()
         fetchFrogsFromDatabase()
         setupViews()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(true, animated: animated)
-        
         // Resuming lottie animation when screen is appearing
         frogAnimationView.play()
         wavesAnimationView.play()
+        
+//        AudioService().playSound()
+        
+//        LocalStorage().homeScreenDemoComplete = false
+//        if !LocalStorage().homeScreenDemoComplete {
+//
+//            LocalStorage().homeScreenDemoComplete = true
+//        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -61,6 +70,31 @@ class HomeVC: UIViewController {
         }
     }
     
+    
+}
+
+// Action methods
+extension HomeVC {
+    // Opening VC when selected a frog in SearchBar
+    private func presentFrogDetailsVCAtIndex(index: Int) {
+        let selectedFrogItem: FrogEntity = self.frogsList[index]
+        let frogDetailsVC = FrogDetailsVC()
+        frogDetailsVC.frogItem = selectedFrogItem
+        self.present(frogDetailsVC, animated: true, completion: nil)
+    }
+    
+    @objc func exploreFrogsButtonDidTapped() {
+        #warning("Replace")
+        let frogsListVC = FrogsListVC()
+        frogsListVC.title = "Explore"
+        navigationController?.pushViewController(frogsListVC, animated: true)
+        #warning("till here")
+    }
+}
+
+// Layout constriants
+extension HomeVC {
+    
     private func setupViews() {
         setupHolaFroggerLabel()
         setupAnimationView()
@@ -71,6 +105,48 @@ class HomeVC: UIViewController {
         addConstriants()
     }
     
+    private func addConstriants() {
+        let safeAreaView = self.view.safeAreaLayoutGuide
+        
+        holaFroggerLabel.addAnchor(top: safeAreaView.topAnchor, paddingTop: 10,
+                                   left: safeAreaView.leftAnchor, paddingLeft: 0,
+                                   bottom: nil, paddingBottom: 0,
+                                   right: safeAreaView.rightAnchor, paddingRight: 0,
+                                   width: 0, height: 0, enableInsets: true)
+        
+        frogAnimationView.addAnchor(top: holaFroggerLabel.bottomAnchor, paddingTop: 5,
+                                    left: safeAreaView.leftAnchor, paddingLeft: 50,
+                                    bottom: nil, paddingBottom: 0,
+                                    right: safeAreaView.rightAnchor, paddingRight: 50,
+                                    width: 0, height: 200, enableInsets: true)
+        
+        searchFieldView.addAnchor(top: frogAnimationView.bottomAnchor, paddingTop: 5,
+                                  left: safeAreaView.leftAnchor, paddingLeft: 20,
+                                  bottom: nil, paddingBottom: 0,
+                                  right: safeAreaView.rightAnchor, paddingRight: 20,
+                                  width: 0, height: 50,
+                                  enableInsets: true)
+        
+        wavesAnimationView.addAnchor(top: nil, paddingTop: 0,
+                                     left: view.leftAnchor, paddingLeft: 0,
+                                     bottom: view.bottomAnchor, paddingBottom: 0,
+                                     right: view.rightAnchor, paddingRight: 0,
+                                     width: 0, height: UIScreen.main.bounds.height/2,
+                                     enableInsets: true)
+        
+        exploreFrogsButton.addAnchor(top: nil, paddingTop: 0,
+                                     left: safeAreaView.leftAnchor, paddingLeft: 20,
+                                     bottom: safeAreaView.bottomAnchor, paddingBottom: 75,
+                                     right: safeAreaView.rightAnchor, paddingRight: 20,
+                                     width: 0, height: 30,
+                                     enableInsets: true)
+        
+        view.sendSubviewToBack(wavesAnimationView)
+    }
+}
+
+// MARK: - Views configurations
+extension HomeVC {
     private func setupHolaFroggerLabel() {
         view.addSubview(holaFroggerLabel)
         
@@ -161,65 +237,3 @@ class HomeVC: UIViewController {
         
     }
 }
-
-// Action methods
-extension HomeVC {
-    // Opening VC when selected a frog in SearchBar
-    private func presentFrogDetailsVCAtIndex(index: Int) {
-        let selectedFrogItem: FrogEntity = self.frogsList[index]
-        let frogDetailsVC = FrogDetailsVC()
-        frogDetailsVC.frogItem = selectedFrogItem
-        self.present(frogDetailsVC, animated: true, completion: nil)
-    }
-    
-    @objc func exploreFrogsButtonDidTapped() {
-        #warning("Replace")
-        let frogsListVC = FrogsListVC()
-        frogsListVC.title = "Explore"
-        navigationController?.pushViewController(frogsListVC, animated: true)
-        #warning("till here")
-    }
-}
-
-// Layout constriants
-extension HomeVC {
-    private func addConstriants() {
-        let safeAreaView = self.view.safeAreaLayoutGuide
-        
-        holaFroggerLabel.addAnchor(top: safeAreaView.topAnchor, paddingTop: 10,
-                                   left: safeAreaView.leftAnchor, paddingLeft: 0,
-                                   bottom: nil, paddingBottom: 0,
-                                   right: safeAreaView.rightAnchor, paddingRight: 0,
-                                   width: 0, height: 0, enableInsets: true)
-        
-        frogAnimationView.addAnchor(top: holaFroggerLabel.bottomAnchor, paddingTop: 20,
-                                    left: safeAreaView.leftAnchor, paddingLeft: 50,
-                                    bottom: nil, paddingBottom: 0,
-                                    right: safeAreaView.rightAnchor, paddingRight: 50,
-                                    width: 0, height: 200, enableInsets: true)
-        
-        searchFieldView.addAnchor(top: frogAnimationView.bottomAnchor, paddingTop: 15,
-                                  left: safeAreaView.leftAnchor, paddingLeft: 20,
-                                  bottom: nil, paddingBottom: 0,
-                                  right: safeAreaView.rightAnchor, paddingRight: 20,
-                                  width: 0, height: 50,
-                                  enableInsets: true)
-        
-        wavesAnimationView.addAnchor(top: nil, paddingTop: 0,
-                                     left: view.leftAnchor, paddingLeft: 0,
-                                     bottom: view.bottomAnchor, paddingBottom: 0,
-                                     right: view.rightAnchor, paddingRight: 0,
-                                     width: 0, height: 500,
-                                     enableInsets: true)
-        
-        exploreFrogsButton.addAnchor(top: nil, paddingTop: 0,
-                                     left: safeAreaView.leftAnchor, paddingLeft: 20,
-                                     bottom: safeAreaView.bottomAnchor, paddingBottom: 75,
-                                     right: safeAreaView.rightAnchor, paddingRight: 20,
-                                     width: 0, height: 30,
-                                     enableInsets: true)
-        
-        view.sendSubviewToBack(wavesAnimationView)
-    }
-}
-
