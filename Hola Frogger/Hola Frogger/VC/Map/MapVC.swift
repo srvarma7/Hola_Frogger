@@ -32,7 +32,6 @@ class MapVC: UIViewController {
         
         addViews()
         configureMapView()
-//        loadAnnotations()
         
         checkLocationServices()
         
@@ -43,12 +42,13 @@ class MapVC: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
+        print("Enabling geofencing in MapVC")
+        startGeofencing()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        
+        print("Disabling geofencing in MapVC")
         stopGeoFencing()
     }
     
@@ -110,13 +110,30 @@ class MapVC: UIViewController {
     }
     
     private func zoomInToUserLocation() {
-        var userRegion = MKCoordinateRegion()
-        userRegion = MKCoordinateRegion(center: userLocationCenter, latitudinalMeters: zoomScale, longitudinalMeters: zoomScale)
-        mapView.setRegion(userRegion, animated: true)
+        if TARGET_OS_SIMULATOR != 0 {
+            showSimulatorUserLocationError()
+        } else {
+            var userRegion = MKCoordinateRegion()
+            userRegion = MKCoordinateRegion(center: userLocationCenter, latitudinalMeters: zoomScale, longitudinalMeters: zoomScale)
+            mapView.setRegion(userRegion, animated: true)
+        }
     }
     
     private func showZoomInToUserLocation(status: Bool) {
         userLocationView.isHidden = status
+    }
+    
+    private func showSimulatorUserLocationError() {
+        let statusAlert = StatusAlert()
+        statusAlert.image = UIImage(systemName: "exclamationmark.triangle.fill")
+        statusAlert.title = "Error!!!"
+        statusAlert.message = "User location is not determined,\nplease use a physical device to get you Location"
+        statusAlert.canBePickedOrDismissed = true
+        statusAlert.alertShowingDuration = TimeInterval(20)
+        statusAlert.showsLargeContentViewer = true
+
+        // Presenting created instance
+        statusAlert.showInKeyWindow()
     }
 }
 
