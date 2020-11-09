@@ -24,6 +24,7 @@ class NewsVC: UIViewController {
         super.viewDidLoad()
         newsViewModel.fetchNewsDelegate = self
         navigationController?.navigationItem.largeTitleDisplayMode = .always
+        UINavigationBar.appearance().barTintColor = .systemBackground
 
         #warning("Enable fetch method after final")
 //        newsViewModel.fetchNews()
@@ -43,7 +44,6 @@ class NewsVC: UIViewController {
         view.addSubview(activityIndicator)
         activityIndicator.color = UIColor.raspberryPieTint()
         activityIndicator.style = .large
-        activityIndicator.startAnimating()
     }
     
     private func setupRefreshControl() {
@@ -59,12 +59,16 @@ class NewsVC: UIViewController {
     }
 
     private func addConstriants() {
-        activityIndicator.addAnchor(top: tableView.topAnchor, paddingTop: 200,
-                                    left: tableView.leftAnchor, paddingLeft: 200,
-                                    bottom: tableView.bottomAnchor, paddingBottom: 200,
-                                    right: tableView.rightAnchor, paddingRight: 200,
-                                    width: 0, height: 0, enableInsets: true)
-        
+        activityIndicator.addAnchor(top: nil, paddingTop: 0,
+                                    left: nil, paddingLeft: 0,
+                                    bottom: nil, paddingBottom: 0,
+                                    right: nil, paddingRight: 0,
+                                    width: 30, height: 30, enableInsets: true)
+//
+//        activityIndicator.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+        activityIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        activityIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        activityIndicator.startAnimating()
     }
 }
 
