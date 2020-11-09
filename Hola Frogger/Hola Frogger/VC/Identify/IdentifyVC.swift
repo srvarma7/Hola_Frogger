@@ -52,7 +52,18 @@ class IdentifyVC: UIViewController {
         super.viewWillAppear(animated)
         if !(TARGET_OS_SIMULATOR != 0) {
             // Device is not simulator
-            animateCircle(toCircle: true, rotate: true)
+            UIView.animate(withDuration: 2,
+                           delay: 5,
+                           options: .curveEaseInOut,
+                           animations: {
+                            self.circleView.transform = self.circleView.transform.rotated(by: CGFloat.pi)
+                            self.circleView.transform = self.circleView.transform.rotated(by: CGFloat.pi)
+                            self.circleView.layer.cornerRadius = self.circleView.frame.size.width/2
+                            self.circleView.clipsToBounds = true
+                           }, completion: { _ in
+                            self.circleView.clipsToBounds = true
+                           })
+//            animateCircle(toCircle: true, rotate: true)
             debugPrint("Starting capture session")
             captureSession.startRunning()
         }
@@ -206,13 +217,9 @@ extension IdentifyVC {
                        delay: 0,
                        options: .curveEaseInOut,
                        animations: { [self] in
-                        if rotate {
                             circleView.transform = circleView.transform.rotated(by: CGFloat.pi)
                             circleView.transform = circleView.transform.rotated(by: CGFloat.pi)
-                        }
-                        if toCircle {
                             circleView.layer.cornerRadius = circleView.frame.size.width/2
-                        }
                        }, completion: { _ in
                         self.circleView.clipsToBounds = true
                         
@@ -226,10 +233,10 @@ extension IdentifyVC {
         bottomView.clipsToBounds        = true
         bottomView.backgroundColor      = .raspberryPieTint()
         bottomView.addAnchor(top: nil, paddingTop: 0,
-                             left: view.leftAnchor, paddingLeft: 0,
-                             bottom: view.bottomAnchor, paddingBottom: 0,
-                             right: view.rightAnchor, paddingRight: 0,
-                             width: 0, height: 290,
+                             left: view.leftAnchor, paddingLeft: 5,
+                             bottom: view.safeAreaLayoutGuide.bottomAnchor, paddingBottom: 5,
+                             right: view.rightAnchor, paddingRight: 5,
+                             width: 0, height: 200,
                              enableInsets: true)
         
         bottomView.addSubview(resultsHeadingLabel)

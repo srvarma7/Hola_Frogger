@@ -9,6 +9,7 @@
 import UIKit
 import Lottie
 import CoreLocation
+import MapKit
 
 class ChallengeVC: UIViewController {
     
@@ -43,6 +44,7 @@ class ChallengeVC: UIViewController {
     private var locationManager     = CLLocationManager()
     private var geoFencingRegion    = CLCircularRegion()
     private var userLocationCenter  = CLLocationCoordinate2D()
+    private let mapView             = MKMapView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -110,11 +112,11 @@ extension ChallengeVC: CLLocationManagerDelegate {
     
     private func checkLocationServices() {
         if CLLocationManager.locationServicesEnabled() {
-            print("Enabled")
+            print("Enabled loaction service")
             configureLocationManager()
             checkLocationAuthorization()
         } else {
-            print("Disabled")
+            print("Disabled loaction service")
         }
     }
     
@@ -160,7 +162,6 @@ extension ChallengeVC: CLLocationManagerDelegate {
                 
                 locationManager.startMonitoring(for: geoFencingRegion)
             }
-            
         }
     }
     
@@ -249,7 +250,7 @@ extension ChallengeVC {
     }
     
     private func addBottomViews() {
-        let screen = UIScreen.main.bounds
+        //let screen = UIScreen.main.bounds
         view.addSubview(statsBottomViewHolder)
         
         statsBottomViewHolder.layer.cornerRadius   = 20
@@ -259,7 +260,7 @@ extension ChallengeVC {
                                         left: view.leftAnchor, paddingLeft: 5,
                                         bottom: view.safeAreaLayoutGuide.bottomAnchor, paddingBottom: 5,
                                         right: view.rightAnchor, paddingRight: 5,
-                                        width: 0, height: screen.height/4.3,
+                                        width: 0, height: 155,
                                         enableInsets: true)
         
         view.addSubview(statsHeading)

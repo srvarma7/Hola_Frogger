@@ -154,12 +154,6 @@ extension HomeVC {
         holaFroggerLabel.font           = UIFont.systemFont(ofSize: 30, weight: .heavy)
         holaFroggerLabel.textColor      = .black
         holaFroggerLabel.textAlignment  = .center
-        
-        holaFroggerLabel.layer.shadowRadius   = 15
-        holaFroggerLabel.layer.shadowColor    = UIColor.white.cgColor
-        holaFroggerLabel.layer.shadowOffset   = CGSize(width: 6, height: 6)
-        holaFroggerLabel.layer.shadowOpacity  = 1
-        holaFroggerLabel.layer.masksToBounds  = false
     }
     
     private func setupAnimationView() {

@@ -21,14 +21,7 @@ class ChallengeCVCell: UICollectionViewCell {
             contentView.backgroundColor = frog.isVisited ?
                 UIColor(red: 0, green: 0.6, blue: 0, alpha: 0.7) :
                 UIColor(red: 0.8, green: 0, blue: 0, alpha: 0.7)
-            
-            /*
-            //get location and cacluate
-            let frogLocation = CLLocation(latitude: frog.latitude, longitude: frog.longitude)
-
-            let distance: CLLocationDistance = currentLocation.distance(from: frogLocation)/1000
-            cell.location.text = "\(String(ceil(distance))) Kms away from you"
-             */
+            location.text = "Frog count - \(frog.frogcount)"
         }
     }
     
@@ -45,7 +38,7 @@ class ChallengeCVCell: UICollectionViewCell {
         contentView.backgroundColor = .green
         addViews()
         addCorner()
-        addShadow()
+//        addShadow()
     }
     
     required init?(coder: NSCoder) {
@@ -57,7 +50,7 @@ extension ChallengeCVCell {
     
     private func addViews() {
         contentView.addSubview(frogImage)
-        frogImage.addAnchor(top: contentView.topAnchor, paddingTop: 3,
+        frogImage.addAnchor(top: contentView.topAnchor, paddingTop: 0,
                             left: nil, paddingLeft: 0,
                             bottom: nil, paddingBottom: 0,
                             right: nil, paddingRight: 0,
@@ -70,7 +63,7 @@ extension ChallengeCVCell {
         commonName.font = UIFont.systemFont(ofSize: 22, weight: .bold)
         commonName.textColor = .white
         commonName.numberOfLines = 0
-        commonName.addAnchor(top: frogImage.bottomAnchor, paddingTop: 5,
+        commonName.addAnchor(top: frogImage.bottomAnchor, paddingTop: 0,
                              left: contentView.leftAnchor, paddingLeft: 20,
                              bottom: nil, paddingBottom: 0,
                              right: contentView.rightAnchor, paddingRight: 20,
@@ -82,7 +75,7 @@ extension ChallengeCVCell {
         scientificName.font = UIFont.boldSystemFont(ofSize: 18)
         scientificName.textColor = .white
         scientificName.numberOfLines = 0
-        scientificName.addAnchor(top: commonName.bottomAnchor, paddingTop: 5,
+        scientificName.addAnchor(top: commonName.bottomAnchor, paddingTop: 0,
                                  left: commonName.leftAnchor, paddingLeft: 0,
                                  bottom: nil, paddingBottom: 0,
                                  right: commonName.rightAnchor, paddingRight: 0,

@@ -43,24 +43,22 @@ class WelcomeViewController: UIViewController {
     }
     
     fileprivate func setConstraints() {
-        animationView.addAnchor(top: view.topAnchor, paddingTop: 100,
+        let screen = view.bounds
+        animationView.addAnchor(top: view.topAnchor, paddingTop: (screen.height * 0.4) - 150,
                                 left: view.leftAnchor, paddingLeft: 0,
                                 bottom: nil, paddingBottom: 0,
                                 right: view.rightAnchor, paddingRight: 0,
                                 width: 150, height: 150, enableInsets: true)
-        textView.addAnchor(top: animationView.bottomAnchor, paddingTop: -100,
+        
+        textView.addAnchor(top: animationView.topAnchor, paddingTop: 50,
                            left: view.leftAnchor, paddingLeft: 0,
                            bottom: nil, paddingBottom: 0,
                            right: view.rightAnchor, paddingRight: 0,
                            width: 0, height: 0, enableInsets: true)
-//
-//        _ = animationView.anchor(view.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, topConstant: 250, leftConstant: 20, bottomConstant: 0, rightConstant: 20, widthConstant: 150, heightConstant: 150)
-//
-//        _ = textView.anchor(animationView.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, topConstant: -100, leftConstant: 20, bottomConstant: 0, rightConstant: 20, widthConstant: 0, heightConstant: 0)
     }
     
     fileprivate func navigateToNextScreen() {
-        // Do any additional setup after loading the view.
+//        // Do any additional setup after loading the view.
 //        DispatchQueue.main.asyncAfter(deadline: .now()+3) {
 //            let sb = UIStoryboard(name: "Main", bundle: nil)
 //            let infoDictionary = Bundle.main.infoDictionary
@@ -69,7 +67,7 @@ class WelcomeViewController: UIViewController {
 //            let userDefaults = UserDefaults.standard
 //            let appVersion = userDefaults.string(forKey: "appVersion")
 //            if appVersion == nil || appVersion != currentAppVersion {
-//                //save the latest version number
+//                // save the latest version number
 //                userDefaults.setValue(currentAppVersion, forKey: "appVersion")
 //                let homePage = sb.instantiateViewController(withIdentifier: "Guide") as! GuideViewController
 //                homePage.modalPresentationStyle = .fullScreen
