@@ -44,6 +44,7 @@ class MapVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         print("Enabling geofencing in MapVC")
         startGeofencing()
+        SpotLight.showForMap(view: view, vc: self)
     }
     
     override func viewDidDisappear(_ animated: Bool) {

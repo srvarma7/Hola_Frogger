@@ -30,6 +30,7 @@ class NewsVC: UIViewController {
 //        newsViewModel.fetchNews()
         
         setupViews()
+        SpotLight.showForNews(view: view, vc: self)
     }
     
     private func setupViews() {

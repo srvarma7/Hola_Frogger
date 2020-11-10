@@ -67,7 +67,7 @@ class IdentifyVC: UIViewController {
             debugPrint("Starting capture session")
             captureSession.startRunning()
         }
-        
+        SpotLight.showForIdentify(view: view, vc: self)
     }
     
     override func viewWillDisappear(_ animated: Bool) {

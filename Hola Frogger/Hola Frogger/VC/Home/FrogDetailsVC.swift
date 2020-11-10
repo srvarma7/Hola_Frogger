@@ -47,7 +47,7 @@ class FrogDetailsVC: UIViewController {
     var frogDetailsViewModel = FrogDetailsViewModel()
     var frogItem: FrogEntity?
     var favouriteStatus: Bool = false
-    
+
     private let screen = UIScreen.main.bounds
     
     // Main
@@ -64,6 +64,7 @@ class FrogDetailsVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         animateCloseButton()
+        SpotLight.showForDetails(view: view, vc: self)
     }
     
     private func animateCloseButton() {

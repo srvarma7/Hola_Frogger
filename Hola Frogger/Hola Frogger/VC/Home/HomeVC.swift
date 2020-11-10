@@ -9,7 +9,6 @@
 import UIKit
 import Lottie
 import iOSDropDown
-import AwesomeSpotlightView
 
 class HomeVC: UIViewController {
     
@@ -39,6 +38,7 @@ class HomeVC: UIViewController {
         // Resuming lottie animation when screen is appearing
         frogAnimationView.play()
         wavesAnimationView.play()
+        SpotLight.showForHomeScreen(view: view, vc: self)
         
 //        AudioService().playSound()
         
@@ -69,8 +69,6 @@ class HomeVC: UIViewController {
             frogsList = CoreDataHandler.fetchAllFrogs()
         }
     }
-    
-    
 }
 
 // Action methods
@@ -84,11 +82,9 @@ extension HomeVC {
     }
     
     @objc func exploreFrogsButtonDidTapped() {
-        #warning("Replace")
         let frogsListVC = FrogsListVC()
         frogsListVC.title = "Explore"
         navigationController?.pushViewController(frogsListVC, animated: true)
-        #warning("till here")
     }
 }
 
@@ -162,7 +158,6 @@ extension HomeVC {
         frogAnimationView.contentMode   = .scaleAspectFit
         frogAnimationView.loopMode      = .loop
         
-        #warning("Home background ok?")
         view.backgroundColor = .lottieTint()
     }
     

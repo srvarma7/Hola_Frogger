@@ -63,6 +63,7 @@ class ChallengeVC: UIViewController {
         showRespectiveView()
         updateStatLabels()
         startGeofencing()
+        SpotLight.showForChallenges(view: view, vc: self)
     }
     
     override func viewWillDisappear(_ animated: Bool) {

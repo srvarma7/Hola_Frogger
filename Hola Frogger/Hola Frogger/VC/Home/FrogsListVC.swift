@@ -39,7 +39,7 @@ class FrogsListVC: UIViewController {
         
         return label
     }()
-    
+
     enum CellIdentifier: String {
         case frogTVCell = "frogTVCell"
     }
@@ -52,6 +52,10 @@ class FrogsListVC: UIViewController {
         
         // Adding views to the VC and configuring
         setupViews()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        SpotLight.showForExplore(view: view, vc: self)
     }
     
     deinit {
