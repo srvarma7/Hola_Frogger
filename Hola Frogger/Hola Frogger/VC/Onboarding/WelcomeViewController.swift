@@ -79,9 +79,9 @@ class WelcomeViewController: UIViewController {
 //            }
 //        }
         DispatchQueue.main.asyncAfter(deadline: .now()+3) {
-            let hasLaunchedApp = AppStorage().hasLaunchedAppForFirstTime
+            let hasLaunchedApp = AppStorage.hasLaunchedAppForFirstTime
             if !hasLaunchedApp {
-                AppStorage().hasLaunchedAppForFirstTime = true
+                AppStorage.hasLaunchedAppForFirstTime = true
             }
             let vc = hasLaunchedApp ? TabBarView.createTabBar() : GuideViewController()
             vc.modalPresentationStyle = .fullScreen

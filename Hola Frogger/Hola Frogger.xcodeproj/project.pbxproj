@@ -81,6 +81,8 @@
 		DFA3BE95252EF47E009C742A /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA3BE94252EF47E009C742A /* Weather.swift */; };
 		DFA3BE99252EF52D009C742A /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA3BE98252EF52D009C742A /* News.swift */; };
 		DFA9FF7025523F6A000CE4D5 /* AudioService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA9FF6F25523F6A000CE4D5 /* AudioService.swift */; };
+		DFBCCDD725591903008284CF /* SpotLight.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBCCDD625591903008284CF /* SpotLight.swift */; };
+		DFBCCDDB25592904008284CF /* Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBCCDDA25592904008284CF /* Size.swift */; };
 		DFD264D6254949F0000FF9DF /* ChallengeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD264D5254949EF000FF9DF /* ChallengeProtocol.swift */; };
 		DFD264D925494BAD000FF9DF /* EnteredFrogsHabitatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD264D825494BAD000FF9DF /* EnteredFrogsHabitatVC.swift */; };
 		DFD264DF254FD258000FF9DF /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD264DE254FD258000FF9DF /* Storage.swift */; };
@@ -177,6 +179,8 @@
 		DFA3BE94252EF47E009C742A /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		DFA3BE98252EF52D009C742A /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
 		DFA9FF6F25523F6A000CE4D5 /* AudioService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioService.swift; sourceTree = "<group>"; };
+		DFBCCDD625591903008284CF /* SpotLight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotLight.swift; sourceTree = "<group>"; };
+		DFBCCDDA25592904008284CF /* Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Size.swift; sourceTree = "<group>"; };
 		DFD264D5254949EF000FF9DF /* ChallengeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeProtocol.swift; sourceTree = "<group>"; };
 		DFD264D825494BAD000FF9DF /* EnteredFrogsHabitatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnteredFrogsHabitatVC.swift; sourceTree = "<group>"; };
 		DFD264DE254FD258000FF9DF /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
@@ -236,7 +240,6 @@
 		579B45492447441200EACA4B /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				DF0FD6C1252ED39600FE17FE /* Onboarding */,
 				DFA3BE8D252EEBD5009C742A /* Home */,
 				579EE7AE2444D96A00321C7E /* FrogDetailsViewController.swift */,
 				57A3B8A2244315230011F674 /* IdentifyViewController.swift */,
@@ -287,6 +290,7 @@
 		57A3B89B244315230011F674 /* Hola Frogger */ = {
 			isa = PBXGroup;
 			children = (
+				DFBCCDD9255928E4008284CF /* Constants */,
 				DF568D0D25341DEE0022203E /* Extension */,
 				DF8FA408253EBC3400C917E2 /* Storage */,
 				DFE187EA25369DEA003D772F /* Protocol */,
@@ -418,6 +422,7 @@
 		DF568D0325340D120022203E /* VC */ = {
 			isa = PBXGroup;
 			children = (
+				DF0FD6C1252ED39600FE17FE /* Onboarding */,
 				DF568D0425340D2B0022203E /* Home */,
 				DF355D7F253FFAF40086C806 /* Identify */,
 				DF44BED32547FF96004811F7 /* Challenge */,
@@ -460,9 +465,8 @@
 			isa = PBXGroup;
 			children = (
 				DF390A4025527A2400592256 /* TabBar */,
-				DF568D13253420250022203E /* FrogTVCell.swift */,
-				DFE187E025358C34003D772F /* NewsTVCell.swift */,
-				DF44BED8254808D9004811F7 /* ChallengeCVCell.swift */,
+				DFBCCDD525591873008284CF /* Cells */,
+				DFBCCDD625591903008284CF /* SpotLight.swift */,
 			);
 			path = Programmatic;
 			sourceTree = "<group>";
@@ -574,6 +578,24 @@
 				570D1C1724705E5100B9FB22 /* sad2.json */,
 			);
 			path = Other;
+			sourceTree = "<group>";
+		};
+		DFBCCDD525591873008284CF /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				DF568D13253420250022203E /* FrogTVCell.swift */,
+				DFE187E025358C34003D772F /* NewsTVCell.swift */,
+				DF44BED8254808D9004811F7 /* ChallengeCVCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		DFBCCDD9255928E4008284CF /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				DFBCCDDA25592904008284CF /* Size.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 		DFE187E625358F70003D772F /* Service */ = {
@@ -771,6 +793,7 @@
 				DF8EAE6F252ED627009A9038 /* SpotLightEntity+CoreDataProperties.swift in Sources */,
 				57A3B89D244315230011F674 /* AppDelegate.swift in Sources */,
 				DFE187F32536ACEB003D772F /* UIColor+Extension.swift in Sources */,
+				DFBCCDDB25592904008284CF /* Size.swift in Sources */,
 				DF568D14253420250022203E /* FrogTVCell.swift in Sources */,
 				B9FD7A48246C1CB00058B4B3 /* OnboardingPageCell.swift in Sources */,
 				DF8EAE65252ED60B009A9038 /* UnSightedFrogEntity+CoreDataClass.swift in Sources */,
@@ -798,6 +821,7 @@
 				B9FD7A44246C1B150058B4B3 /* GuideViewController.swift in Sources */,
 				DF355D8C254130860086C806 /* MapViewModel.swift in Sources */,
 				B9FD7A46246C1C7D0058B4B3 /* Page.swift in Sources */,
+				DFBCCDD725591903008284CF /* SpotLight.swift in Sources */,
 				DF3EBFE32547F8F10059F1D6 /* NSAttributedString+Extension.swift in Sources */,
 				DFD264D6254949F0000FF9DF /* ChallengeProtocol.swift in Sources */,
 				57A3B8A9244315230011F674 /* TabView.xcdatamodeld in Sources */,

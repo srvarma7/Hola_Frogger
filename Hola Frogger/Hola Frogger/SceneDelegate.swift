@@ -18,7 +18,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     private var fullAPP: Bool       = true
 //        private var fullAPP: Bool       = false
     
-    private var selecetedVC         = GuideViewController()
+    private var selecetedVC         = HomeVC()
     
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {

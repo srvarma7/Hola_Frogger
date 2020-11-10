@@ -21,7 +21,7 @@ class ChallengeCVCell: UICollectionViewCell {
             contentView.backgroundColor = frog.isVisited ?
                 UIColor(red: 0, green: 0.6, blue: 0, alpha: 0.7) :
                 UIColor(red: 0.8, green: 0, blue: 0, alpha: 0.7)
-            location.text = "Frog count - \(frog.frogcount)"
+            location.text = "Estimated frog count - \(frog.frogcount)"
         }
     }
     

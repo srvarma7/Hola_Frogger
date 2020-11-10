@@ -10,8 +10,6 @@ import UIKit
 
 class GuideViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
  
-    
-    
     //add the collectionView
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -95,14 +93,10 @@ class GuideViewController: UIViewController, UICollectionViewDataSource, UIColle
             UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
                            self.view.layoutIfNeeded()
                        }, completion: nil)
-            
-            
         }
         let indexPath = IndexPath(item: pageControl.currentPage - 1, section: 0)
         collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
         pageControl.currentPage -= 1
-        
-        
     }
         
     //method for nextButton
@@ -157,15 +151,9 @@ class GuideViewController: UIViewController, UICollectionViewDataSource, UIColle
     
     //method for done button
     @objc func done() {
-//        let sb = UIStoryboard(name: "Main", bundle: nil)
-//        let homePage = sb.instantiateViewController(withIdentifier: "tabController") as! UITabBarController
-//
-//        homePage.modalPresentationStyle = .fullScreen
-//        self.present(homePage, animated: true, completion: nil)
         let vc = TabBarView.createTabBar()
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true, completion: nil)
-    
     }
     
    
