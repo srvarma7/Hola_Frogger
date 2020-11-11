@@ -26,13 +26,13 @@
 		<true/>
 	</dict>
 	<key>NSCameraUsageDescription</key>
-	<string>Hola Frogger requires camera access to Identify frog</string>
+	<string>Requires camera access to Identify frog species</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>This application requires your location to send notifications, when you enter a frog's habitat</string>
+	<string>Allow location updates to keep you notified when entering a frog's habitat and complete challenges.</string>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>This application requires your location to send notifications, when you enter a frog's habitat</string>
+	<string>Allow background location updates to keep you notified when entering a frog habitat and complete challenges.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>This application requires your location to send notifications, when you enter a frog's habitat</string>
+	<string>Requires current location to send notifications, when entering a frog's habitat</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -75,9 +75,6 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationPortraitUpsideDown</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
