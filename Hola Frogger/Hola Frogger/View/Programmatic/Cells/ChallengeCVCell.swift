@@ -108,7 +108,7 @@ extension ChallengeCVCell {
     }
     
     private func addCorner() {
-        contentView.layer.cornerRadius = 4.0
+        contentView.layer.cornerRadius = 12.0
         contentView.layer.borderWidth = 1.0
         contentView.layer.borderColor = UIColor.clear.cgColor
         contentView.layer.masksToBounds = true

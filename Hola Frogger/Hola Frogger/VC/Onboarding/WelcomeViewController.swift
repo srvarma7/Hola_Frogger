@@ -78,7 +78,7 @@ class WelcomeViewController: UIViewController {
 //                self.present(homePage, animated: true, completion: nil)
 //            }
 //        }
-        DispatchQueue.main.asyncAfter(deadline: .now()+3) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             let hasLaunchedApp = AppStorage.hasLaunchedAppForFirstTime
             if !hasLaunchedApp {
                 AppStorage.hasLaunchedAppForFirstTime = true

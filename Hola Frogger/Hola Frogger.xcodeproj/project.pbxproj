@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		570D1C14247015E500B9FB22 /* VisitedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570D1C13247015E500B9FB22 /* VisitedViewController.swift */; };
 		570D1C1C24705E5200B9FB22 /* sad2.json in Resources */ = {isa = PBXBuildFile; fileRef = 570D1C1724705E5100B9FB22 /* sad2.json */; };
 		570D1C1D24705E5200B9FB22 /* nonetwork.json in Resources */ = {isa = PBXBuildFile; fileRef = 570D1C1824705E5100B9FB22 /* nonetwork.json */; };
 		570D1C1E24705E5200B9FB22 /* confetti2.json in Resources */ = {isa = PBXBuildFile; fileRef = 570D1C1924705E5200B9FB22 /* confetti2.json */; };
@@ -18,27 +17,18 @@
 		57320A7F2453477900ADE06C /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57320A7E2453477900ADE06C /* WebKit.framework */; };
 		57320A8124535A4300ADE06C /* FrogImageClassification Refined.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 57320A8024535A4300ADE06C /* FrogImageClassification Refined.mlmodel */; };
 		57441D922463F00A00BC4DE0 /* catchmeifyoucan.json in Resources */ = {isa = PBXBuildFile; fileRef = 57441D912463F00A00BC4DE0 /* catchmeifyoucan.json */; };
-		574A3C2A24505E850022CCB3 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574A3C2924505E840022CCB3 /* MapViewController.swift */; };
 		574A3C2C245066060022CCB3 /* FrogAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574A3C2B245066060022CCB3 /* FrogAnnotation.swift */; };
-		5757F98A24639E3600F8D75C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5757F98924639E3600F8D75C /* HomeViewController.swift */; };
 		576F2949247AD04D0078EC67 /* Frog1.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 576F2948247AD04D0078EC67 /* Frog1.usdz */; };
 		576F294B247AD3D90078EC67 /* Frog3Main.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 576F294A247AD3D90078EC67 /* Frog3Main.usdz */; };
 		577AA1A3247159E100B85AF6 /* GPX files (To simulate Locations) in Resources */ = {isa = PBXBuildFile; fileRef = 577AA1A2247159E100B85AF6 /* GPX files (To simulate Locations) */; };
 		579B45472447084200EACA4B /* CoreDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579B45462447084200EACA4B /* CoreDataHandler.swift */; };
 		579C04B7247B78D1003EEB6D /* greenwaves.json in Resources */ = {isa = PBXBuildFile; fileRef = 579C04B6247B78D1003EEB6D /* greenwaves.json */; };
-		579EE7A92444763000321C7E /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579EE7A82444763000321C7E /* NewsViewController.swift */; };
-		579EE7AD2444CB2D00321C7E /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579EE7AC2444CB2D00321C7E /* DetailsViewController.swift */; };
-		579EE7AF2444D96A00321C7E /* FrogDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579EE7AE2444D96A00321C7E /* FrogDetailsViewController.swift */; };
 		57A3B89D244315230011F674 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A3B89C244315230011F674 /* AppDelegate.swift */; };
 		57A3B89F244315230011F674 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A3B89E244315230011F674 /* SceneDelegate.swift */; };
-		57A3B8A1244315230011F674 /* FrogListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A3B8A0244315230011F674 /* FrogListController.swift */; };
-		57A3B8A3244315230011F674 /* IdentifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A3B8A2244315230011F674 /* IdentifyViewController.swift */; };
 		57A3B8A6244315230011F674 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57A3B8A4244315230011F674 /* Main.storyboard */; };
 		57A3B8A9244315230011F674 /* TabView.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 57A3B8A7244315230011F674 /* TabView.xcdatamodeld */; };
 		57A3B8AB244315270011F674 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57A3B8AA244315270011F674 /* Assets.xcassets */; };
 		57A3B8AE244315270011F674 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57A3B8AC244315270011F674 /* LaunchScreen.storyboard */; };
-		57C098BE246A49BD0041C235 /* ChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C098BD246A49BD0041C235 /* ChallengeViewController.swift */; };
-		57F877E424741A9800D5501F /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F877E324741A9800D5501F /* ARViewController.swift */; };
 		57F877E924763B5700D5501F /* Frog2Color.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 57F877E824763B5700D5501F /* Frog2Color.usdz */; };
 		B960A57A246C3BA9003CFDE3 /* CardLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B960A579246C3BA9003CFDE3 /* CardLayout.swift */; };
 		B98A407D24725008006C2F2A /* award.json in Resources */ = {isa = PBXBuildFile; fileRef = B98A407C24725007006C2F2A /* award.json */; };
@@ -75,8 +65,6 @@
 		DF8EAE66252ED60B009A9038 /* UnSightedFrogEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8EAE64252ED60B009A9038 /* UnSightedFrogEntity+CoreDataProperties.swift */; };
 		DF8EAE6A252ED61D009A9038 /* FrogEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8EAE68252ED61D009A9038 /* FrogEntity+CoreDataClass.swift */; };
 		DF8EAE6B252ED61D009A9038 /* FrogEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8EAE69252ED61D009A9038 /* FrogEntity+CoreDataProperties.swift */; };
-		DF8EAE6F252ED627009A9038 /* SpotLightEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8EAE6D252ED627009A9038 /* SpotLightEntity+CoreDataProperties.swift */; };
-		DF8EAE70252ED627009A9038 /* SpotLightEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8EAE6E252ED627009A9038 /* SpotLightEntity+CoreDataClass.swift */; };
 		DF90D7032543A3C300E5E511 /* StatusAlert in Frameworks */ = {isa = PBXBuildFile; productRef = DF90D7022543A3C300E5E511 /* StatusAlert */; };
 		DFA3BE95252EF47E009C742A /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA3BE94252EF47E009C742A /* Weather.swift */; };
 		DFA3BE99252EF52D009C742A /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA3BE98252EF52D009C742A /* News.swift */; };
@@ -100,7 +88,6 @@
 
 /* Begin PBXFileReference section */
 		17543AFAD565A26F7CFD39CA /* Pods_Hola_Frogger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hola_Frogger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		570D1C13247015E500B9FB22 /* VisitedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitedViewController.swift; sourceTree = "<group>"; };
 		570D1C1724705E5100B9FB22 /* sad2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sad2.json; sourceTree = "<group>"; };
 		570D1C1824705E5100B9FB22 /* nonetwork.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = nonetwork.json; sourceTree = "<group>"; };
 		570D1C1924705E5200B9FB22 /* confetti2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = confetti2.json; sourceTree = "<group>"; };
@@ -111,29 +98,20 @@
 		57320A7E2453477900ADE06C /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		57320A8024535A4300ADE06C /* FrogImageClassification Refined.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = "FrogImageClassification Refined.mlmodel"; sourceTree = "<group>"; };
 		57441D912463F00A00BC4DE0 /* catchmeifyoucan.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = catchmeifyoucan.json; sourceTree = "<group>"; };
-		574A3C2924505E840022CCB3 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		574A3C2B245066060022CCB3 /* FrogAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrogAnnotation.swift; sourceTree = "<group>"; };
-		5757F98924639E3600F8D75C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		576F2948247AD04D0078EC67 /* Frog1.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Frog1.usdz; sourceTree = "<group>"; };
 		576F294A247AD3D90078EC67 /* Frog3Main.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Frog3Main.usdz; sourceTree = "<group>"; };
 		577AA1A2247159E100B85AF6 /* GPX files (To simulate Locations) */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "GPX files (To simulate Locations)"; sourceTree = "<group>"; };
 		579B45462447084200EACA4B /* CoreDataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHandler.swift; sourceTree = "<group>"; };
 		579C04B6247B78D1003EEB6D /* greenwaves.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = greenwaves.json; sourceTree = "<group>"; };
-		579EE7A82444763000321C7E /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
-		579EE7AC2444CB2D00321C7E /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
-		579EE7AE2444D96A00321C7E /* FrogDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrogDetailsViewController.swift; sourceTree = "<group>"; };
 		57A3B899244315230011F674 /* Hola Frogger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hola Frogger.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		57A3B89C244315230011F674 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		57A3B89E244315230011F674 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; usesTabs = 0; };
-		57A3B8A0244315230011F674 /* FrogListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrogListController.swift; sourceTree = "<group>"; };
-		57A3B8A2244315230011F674 /* IdentifyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifyViewController.swift; sourceTree = "<group>"; };
 		57A3B8A5244315230011F674 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		57A3B8A8244315230011F674 /* TabView.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TabView.xcdatamodel; sourceTree = "<group>"; };
 		57A3B8AA244315270011F674 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		57A3B8AD244315270011F674 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		57A3B8AF244315270011F674 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		57C098BD246A49BD0041C235 /* ChallengeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeViewController.swift; sourceTree = "<group>"; };
-		57F877E324741A9800D5501F /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
 		57F877E824763B5700D5501F /* Frog2Color.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Frog2Color.usdz; sourceTree = "<group>"; };
 		93029B50E690F19607378EFC /* Pods-Hola Frogger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hola Frogger.release.xcconfig"; path = "Target Support Files/Pods-Hola Frogger/Pods-Hola Frogger.release.xcconfig"; sourceTree = "<group>"; };
 		ACBCC81B8DB64478F334A8A5 /* Pods-TabView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TabView.debug.xcconfig"; path = "Target Support Files/Pods-TabView/Pods-TabView.debug.xcconfig"; sourceTree = "<group>"; };
@@ -174,8 +152,6 @@
 		DF8EAE64252ED60B009A9038 /* UnSightedFrogEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UnSightedFrogEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		DF8EAE68252ED61D009A9038 /* FrogEntity+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FrogEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		DF8EAE69252ED61D009A9038 /* FrogEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FrogEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		DF8EAE6D252ED627009A9038 /* SpotLightEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SpotLightEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		DF8EAE6E252ED627009A9038 /* SpotLightEntity+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SpotLightEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		DFA3BE94252EF47E009C742A /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		DFA3BE98252EF52D009C742A /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
 		DFA9FF6F25523F6A000CE4D5 /* AudioService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioService.swift; sourceTree = "<group>"; };
@@ -237,21 +213,6 @@
 			path = More;
 			sourceTree = "<group>";
 		};
-		579B45492447441200EACA4B /* ViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-				DFA3BE8D252EEBD5009C742A /* Home */,
-				579EE7AE2444D96A00321C7E /* FrogDetailsViewController.swift */,
-				57A3B8A2244315230011F674 /* IdentifyViewController.swift */,
-				DFA3BE8F252EEC14009C742A /* Frog */,
-				DFA3BE8E252EEBFE009C742A /* News */,
-				57C098BD246A49BD0041C235 /* ChallengeViewController.swift */,
-				570D1C13247015E500B9FB22 /* VisitedViewController.swift */,
-				57F877E324741A9800D5501F /* ARViewController.swift */,
-			);
-			path = ViewControllers;
-			sourceTree = "<group>";
-		};
 		579B454A2447442600EACA4B /* Core ML */ = {
 			isa = PBXGroup;
 			children = (
@@ -302,7 +263,6 @@
 				57A3B89E244315230011F674 /* SceneDelegate.swift */,
 				579B455324477DF300EACA4B /* Inferface */,
 				DFA3BE93252EF455009C742A /* Model */,
-				579B45492447441200EACA4B /* ViewControllers */,
 				DF0FD6C3252ED4E000FE17FE /* CoreData+Entity+Handler */,
 				DF0FD6C0252ED29E00FE17FE /* Support files */,
 				57A3B8AF244315270011F674 /* Info.plist */,
@@ -353,18 +313,8 @@
 				579B45462447084200EACA4B /* CoreDataHandler.swift */,
 				DF0FD6C6252ED58000FE17FE /* UnSighted */,
 				DF0FD6C5252ED56F00FE17FE /* Frog */,
-				DF0FD6C4252ED51600FE17FE /* SpotLight */,
 			);
 			path = "CoreData+Entity+Handler";
-			sourceTree = "<group>";
-		};
-		DF0FD6C4252ED51600FE17FE /* SpotLight */ = {
-			isa = PBXGroup;
-			children = (
-				DF8EAE6E252ED627009A9038 /* SpotLightEntity+CoreDataClass.swift */,
-				DF8EAE6D252ED627009A9038 /* SpotLightEntity+CoreDataProperties.swift */,
-			);
-			path = SpotLight;
 			sourceTree = "<group>";
 		};
 		DF0FD6C5252ED56F00FE17FE /* Frog */ = {
@@ -500,32 +450,6 @@
 				574DCD142463EC8B00BA40B7 /* More */,
 			);
 			path = LottieFiles;
-			sourceTree = "<group>";
-		};
-		DFA3BE8D252EEBD5009C742A /* Home */ = {
-			isa = PBXGroup;
-			children = (
-				5757F98924639E3600F8D75C /* HomeViewController.swift */,
-				57A3B8A0244315230011F674 /* FrogListController.swift */,
-			);
-			path = Home;
-			sourceTree = "<group>";
-		};
-		DFA3BE8E252EEBFE009C742A /* News */ = {
-			isa = PBXGroup;
-			children = (
-				579EE7A82444763000321C7E /* NewsViewController.swift */,
-				579EE7AC2444CB2D00321C7E /* DetailsViewController.swift */,
-			);
-			path = News;
-			sourceTree = "<group>";
-		};
-		DFA3BE8F252EEC14009C742A /* Frog */ = {
-			isa = PBXGroup;
-			children = (
-				574A3C2924505E840022CCB3 /* MapViewController.swift */,
-			);
-			path = Frog;
 			sourceTree = "<group>";
 		};
 		DFA3BE91252EED2F009C742A /* View */ = {
@@ -771,26 +695,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				57A3B8A3244315230011F674 /* IdentifyViewController.swift in Sources */,
 				DF355D8925412F040086C806 /* FrogRecordsSevice.swift in Sources */,
 				DF0730DD2533AEEF002F3B31 /* HomeVC.swift in Sources */,
 				DF568D1B25357D360022203E /* FrogsListViewModel.swift in Sources */,
 				DF44BED9254808D9004811F7 /* ChallengeCVCell.swift in Sources */,
 				579B45472447084200EACA4B /* CoreDataHandler.swift in Sources */,
-				57F877E424741A9800D5501F /* ARViewController.swift in Sources */,
-				5757F98A24639E3600F8D75C /* HomeViewController.swift in Sources */,
 				B98A407F24725DE6006C2F2A /* FrogCell.swift in Sources */,
-				57A3B8A1244315230011F674 /* FrogListController.swift in Sources */,
 				DF44BED52547FFB8004811F7 /* ChallengeVC.swift in Sources */,
 				B960A57A246C3BA9003CFDE3 /* CardLayout.swift in Sources */,
 				DF355D8525412A230086C806 /* MapVC.swift in Sources */,
 				574A3C2C245066060022CCB3 /* FrogAnnotation.swift in Sources */,
-				579EE7AD2444CB2D00321C7E /* DetailsViewController.swift in Sources */,
-				579EE7AF2444D96A00321C7E /* FrogDetailsViewController.swift in Sources */,
 				DF568D0F25341E090022203E /* UIView+Extension.swift in Sources */,
 				DF355D81253FFB170086C806 /* IdentifyVC.swift in Sources */,
-				574A3C2A24505E850022CCB3 /* MapViewController.swift in Sources */,
-				DF8EAE6F252ED627009A9038 /* SpotLightEntity+CoreDataProperties.swift in Sources */,
 				57A3B89D244315230011F674 /* AppDelegate.swift in Sources */,
 				DFE187F32536ACEB003D772F /* UIColor+Extension.swift in Sources */,
 				DFBCCDDB25592904008284CF /* Size.swift in Sources */,
@@ -804,12 +720,9 @@
 				DF8EAE6B252ED61D009A9038 /* FrogEntity+CoreDataProperties.swift in Sources */,
 				DFE187E125358C34003D772F /* NewsTVCell.swift in Sources */,
 				DFE187FC2537D72F003D772F /* WeatherProtocol.swift in Sources */,
-				57C098BE246A49BD0041C235 /* ChallengeViewController.swift in Sources */,
 				DF8EAE6A252ED61D009A9038 /* FrogEntity+CoreDataClass.swift in Sources */,
 				DFE187E425358F3B003D772F /* NewsViewModel.swift in Sources */,
-				570D1C14247015E500B9FB22 /* VisitedViewController.swift in Sources */,
 				57320A8124535A4300ADE06C /* FrogImageClassification Refined.mlmodel in Sources */,
-				579EE7A92444763000321C7E /* NewsViewController.swift in Sources */,
 				DFE187F62536DF36003D772F /* FrogDetailsVC.swift in Sources */,
 				DF390A4225527A5700592256 /* TabBarView.swift in Sources */,
 				DF310DF0252EDD2F00A0F7A6 /* WelcomeViewController.swift in Sources */,
@@ -827,7 +740,6 @@
 				57A3B8A9244315230011F674 /* TabView.xcdatamodeld in Sources */,
 				B9FD7A40246C11CB0058B4B3 /* ChallengeCell.swift in Sources */,
 				DF568D0B253414AD0022203E /* FrogsListVC.swift in Sources */,
-				DF8EAE70252ED627009A9038 /* SpotLightEntity+CoreDataClass.swift in Sources */,
 				57A3B89F244315230011F674 /* SceneDelegate.swift in Sources */,
 				DFD264DF254FD258000FF9DF /* Storage.swift in Sources */,
 				DFA3BE99252EF52D009C742A /* News.swift in Sources */,
@@ -908,7 +820,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -962,7 +874,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -988,7 +900,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Monash.TabView.Pro;
 				PRODUCT_NAME = "Hola Frogger";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1008,7 +920,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Monash.TabView.Pro;
 				PRODUCT_NAME = "Hola Frogger";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

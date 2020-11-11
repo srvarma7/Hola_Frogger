@@ -82,15 +82,4 @@ extension NewsDetailedVC: WKNavigationDelegate {
     func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
         activityIndicator.startAnimating()
     }
-    
-    #warning("Remove this test method")
-//    private func testWeb() {
-//        let url = URL(string: "https://www.google.com/?client=safari")
-//        let request = URLRequest(url: url!)
-//        webView.load(request)
-//        webView.navigationDelegate = self
-//        // Starts animation when website is loading.
-//        activityIndicator.startAnimating()
-//        activityIndicator.hidesWhenStopped = true
-//    }
 }

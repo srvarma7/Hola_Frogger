@@ -35,7 +35,6 @@ class MapVC: UIViewController {
         
         checkLocationServices()
         
-        #warning("Enable this in production")
 //        if TARGET_OS_SIMULATOR != 0 {
 //            showZoomInToUserLocation(status: true)
 //        }

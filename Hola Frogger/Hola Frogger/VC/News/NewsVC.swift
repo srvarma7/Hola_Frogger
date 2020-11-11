@@ -26,8 +26,7 @@ class NewsVC: UIViewController {
         navigationController?.navigationItem.largeTitleDisplayMode = .always
         UINavigationBar.appearance().barTintColor = .systemBackground
 
-        #warning("Enable fetch method after final")
-//        newsViewModel.fetchNews()
+        newsViewModel.fetchNews()
         
         setupViews()
         SpotLight.showForNews(view: view, vc: self)

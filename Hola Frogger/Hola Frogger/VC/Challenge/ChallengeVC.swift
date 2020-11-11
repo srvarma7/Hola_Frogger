@@ -205,7 +205,7 @@ extension ChallengeVC: ChallengeProtocol {
 extension ChallengeVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.width/1.5, height: collectionView.frame.height)
+        return CGSize(width: view.frame.width/1.2, height: collectionView.frame.height)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
