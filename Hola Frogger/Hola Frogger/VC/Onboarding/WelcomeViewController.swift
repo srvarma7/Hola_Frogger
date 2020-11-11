@@ -58,26 +58,7 @@ class WelcomeViewController: UIViewController {
     }
     
     fileprivate func navigateToNextScreen() {
-//        // Do any additional setup after loading the view.
-//        DispatchQueue.main.asyncAfter(deadline: .now()+3) {
-//            let sb = UIStoryboard(name: "Main", bundle: nil)
-//            let infoDictionary = Bundle.main.infoDictionary
-//            let currentAppVersion = infoDictionary!["CFBundleShortVersionString"] as! String
-//            //get version number
-//            let userDefaults = UserDefaults.standard
-//            let appVersion = userDefaults.string(forKey: "appVersion")
-//            if appVersion == nil || appVersion != currentAppVersion {
-//                // save the latest version number
-//                userDefaults.setValue(currentAppVersion, forKey: "appVersion")
-//                let homePage = sb.instantiateViewController(withIdentifier: "Guide") as! GuideViewController
-//                homePage.modalPresentationStyle = .fullScreen
-//                self.present(homePage, animated: true, completion: nil)
-//            } else {
-//                let homePage = sb.instantiateViewController(withIdentifier: "tabController") as! UITabBarController
-//                homePage.modalPresentationStyle = .fullScreen
-//                self.present(homePage, animated: true, completion: nil)
-//            }
-//        }
+        // Do any additional setup after loading the view.
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             let hasLaunchedApp = AppStorage.hasLaunchedAppForFirstTime
             if !hasLaunchedApp {

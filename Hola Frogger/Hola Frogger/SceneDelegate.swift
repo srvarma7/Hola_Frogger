@@ -12,29 +12,19 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     var window: UIWindow?
     
-    private var storyboard: Bool    = false
-    //    private var storyboard: Bool    = true
-    
     private var fullAPP: Bool       = true
-//        private var fullAPP: Bool       = false
+    //        private var fullAPP: Bool       = false
     
     private var selecetedVC         = HomeVC()
     
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         
-        
-        if !storyboard {
-            // Open application via code
-            
-            guard let windowScene = (scene as? UIWindowScene) else { return }
-            window = UIWindow(frame: windowScene.coordinateSpace.bounds)
-            window?.windowScene         = windowScene
-            window?.rootViewController  = fullAPP ? WelcomeViewController() : selecetedVC
-            window?.makeKeyAndVisible()
-        }
-        
-        
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+        window = UIWindow(frame: windowScene.coordinateSpace.bounds)
+        window?.windowScene         = windowScene
+        window?.rootViewController  = fullAPP ? WelcomeViewController() : selecetedVC
+        window?.makeKeyAndVisible()
     }
     
     func sceneDidDisconnect(_ scene: UIScene) {

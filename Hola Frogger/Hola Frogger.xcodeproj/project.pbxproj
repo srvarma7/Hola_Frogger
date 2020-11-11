@@ -25,7 +25,6 @@
 		579C04B7247B78D1003EEB6D /* greenwaves.json in Resources */ = {isa = PBXBuildFile; fileRef = 579C04B6247B78D1003EEB6D /* greenwaves.json */; };
 		57A3B89D244315230011F674 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A3B89C244315230011F674 /* AppDelegate.swift */; };
 		57A3B89F244315230011F674 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A3B89E244315230011F674 /* SceneDelegate.swift */; };
-		57A3B8A6244315230011F674 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57A3B8A4244315230011F674 /* Main.storyboard */; };
 		57A3B8A9244315230011F674 /* TabView.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 57A3B8A7244315230011F674 /* TabView.xcdatamodeld */; };
 		57A3B8AB244315270011F674 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57A3B8AA244315270011F674 /* Assets.xcassets */; };
 		57A3B8AE244315270011F674 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57A3B8AC244315270011F674 /* LaunchScreen.storyboard */; };
@@ -107,7 +106,6 @@
 		57A3B899244315230011F674 /* Hola Frogger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hola Frogger.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		57A3B89C244315230011F674 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		57A3B89E244315230011F674 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; usesTabs = 0; };
-		57A3B8A5244315230011F674 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		57A3B8A8244315230011F674 /* TabView.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TabView.xcdatamodel; sourceTree = "<group>"; };
 		57A3B8AA244315270011F674 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		57A3B8AD244315270011F674 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -224,7 +222,6 @@
 		579B455324477DF300EACA4B /* Inferface */ = {
 			isa = PBXGroup;
 			children = (
-				57A3B8A4244315230011F674 /* Main.storyboard */,
 				57A3B8AC244315270011F674 /* LaunchScreen.storyboard */,
 			);
 			path = Inferface;
@@ -251,6 +248,8 @@
 		57A3B89B244315230011F674 /* Hola Frogger */ = {
 			isa = PBXGroup;
 			children = (
+				57A3B89C244315230011F674 /* AppDelegate.swift */,
+				57A3B89E244315230011F674 /* SceneDelegate.swift */,
 				DFBCCDD9255928E4008284CF /* Constants */,
 				DF568D0D25341DEE0022203E /* Extension */,
 				DF8FA408253EBC3400C917E2 /* Storage */,
@@ -259,8 +258,6 @@
 				DF568D1925357D1A0022203E /* ViewModel */,
 				DFA3BE91252EED2F009C742A /* View */,
 				DF568D0325340D120022203E /* VC */,
-				57A3B89C244315230011F674 /* AppDelegate.swift */,
-				57A3B89E244315230011F674 /* SceneDelegate.swift */,
 				579B455324477DF300EACA4B /* Inferface */,
 				DFA3BE93252EF455009C742A /* Model */,
 				DF0FD6C3252ED4E000FE17FE /* CoreData+Entity+Handler */,
@@ -638,7 +635,6 @@
 				570D1C232470EA0C00B9FB22 /* frog.mp3 in Resources */,
 				570D1C1C24705E5200B9FB22 /* sad2.json in Resources */,
 				B9FD7A57246C1F2D0058B4B3 /* 336-search.json in Resources */,
-				57A3B8A6244315230011F674 /* Main.storyboard in Resources */,
 				570D1C2024705E5200B9FB22 /* confetti1.json in Resources */,
 				577AA1A3247159E100B85AF6 /* GPX files (To simulate Locations) in Resources */,
 				570D1C272470EBE100B9FB22 /* confetti.mp3 in Resources */,
@@ -751,14 +747,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		57A3B8A4244315230011F674 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				57A3B8A5244315230011F674 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		57A3B8AC244315270011F674 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
