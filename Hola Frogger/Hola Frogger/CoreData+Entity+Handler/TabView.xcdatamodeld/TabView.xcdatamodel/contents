@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19E287" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17192" systemVersion="19H15" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="FrogEntity" representedClassName="FrogEntity" syncable="YES">
         <attribute name="cname" optional="YES" attributeType="String"/>
         <attribute name="desc" optional="YES" attributeType="String"/>
@@ -11,17 +11,6 @@
         <attribute name="sname" optional="YES" attributeType="String"/>
         <attribute name="threatnedStatus" optional="YES" attributeType="String"/>
         <attribute name="uncertainty" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
-    </entity>
-    <entity name="SpotLightEntity" representedClassName="SpotLightEntity" syncable="YES">
-        <attribute name="challenges" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
-        <attribute name="frogdetails" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
-        <attribute name="frogList" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
-        <attribute name="home" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
-        <attribute name="id" optional="YES" attributeType="String"/>
-        <attribute name="identity" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
-        <attribute name="location" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
-        <attribute name="news" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
-        <attribute name="visited" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
     </entity>
     <entity name="UnSightedFrogEntity" representedClassName="UnSightedFrogEntity" syncable="YES">
         <attribute name="cname" optional="YES" attributeType="String"/>
@@ -37,7 +26,6 @@
     </entity>
     <elements>
         <element name="FrogEntity" positionX="-63" positionY="-18" width="128" height="193"/>
-        <element name="SpotLightEntity" positionX="-63" positionY="90" width="128" height="178"/>
         <element name="UnSightedFrogEntity" positionX="-63" positionY="54" width="128" height="193"/>
     </elements>
 </model>
