@@ -56,6 +56,7 @@
 		DF44BED52547FFB8004811F7 /* ChallengeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF44BED42547FFB8004811F7 /* ChallengeVC.swift */; };
 		DF44BED9254808D9004811F7 /* ChallengeCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF44BED8254808D9004811F7 /* ChallengeCVCell.swift */; };
 		DF44BEDC254822CE004811F7 /* ChallengeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF44BEDB254822CE004811F7 /* ChallengeViewModel.swift */; };
+		DF456CC0255CCE99002CE848 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DF456CBF255CCE99002CE848 /* GoogleService-Info.plist */; };
 		DF568D0B253414AD0022203E /* FrogsListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF568D0A253414AD0022203E /* FrogsListVC.swift */; };
 		DF568D0F25341E090022203E /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF568D0E25341E090022203E /* UIView+Extension.swift */; };
 		DF568D14253420250022203E /* FrogTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF568D13253420250022203E /* FrogTVCell.swift */; };
@@ -142,6 +143,7 @@
 		DF44BED42547FFB8004811F7 /* ChallengeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeVC.swift; sourceTree = "<group>"; };
 		DF44BED8254808D9004811F7 /* ChallengeCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeCVCell.swift; sourceTree = "<group>"; };
 		DF44BEDB254822CE004811F7 /* ChallengeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeViewModel.swift; sourceTree = "<group>"; };
+		DF456CBF255CCE99002CE848 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DF568D0A253414AD0022203E /* FrogsListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrogsListVC.swift; sourceTree = "<group>"; };
 		DF568D0E25341E090022203E /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		DF568D13253420250022203E /* FrogTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrogTVCell.swift; sourceTree = "<group>"; };
@@ -263,6 +265,7 @@
 				DF0FD6C3252ED4E000FE17FE /* CoreData+Entity+Handler */,
 				DF0FD6C0252ED29E00FE17FE /* Support files */,
 				57A3B8AF244315270011F674 /* Info.plist */,
+				DF456CBF255CCE99002CE848 /* GoogleService-Info.plist */,
 			);
 			path = "Hola Frogger";
 			sourceTree = "<group>";
@@ -562,6 +565,7 @@
 				57A3B896244315230011F674 /* Frameworks */,
 				57A3B897244315230011F674 /* Resources */,
 				FD78217FC0CD21DBE1B855C5 /* [CP] Embed Pods Frameworks */,
+				DF456CC3255CD1B0002CE848 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -633,6 +637,7 @@
 				B9FD7A52246C1F2D0058B4B3 /* 20301-newspaper-open.json in Resources */,
 				57A3B8AB244315270011F674 /* Assets.xcassets in Resources */,
 				570D1C232470EA0C00B9FB22 /* frog.mp3 in Resources */,
+				DF456CC0255CCE99002CE848 /* GoogleService-Info.plist in Resources */,
 				570D1C1C24705E5200B9FB22 /* sad2.json in Resources */,
 				B9FD7A57246C1F2D0058B4B3 /* 336-search.json in Resources */,
 				570D1C2024705E5200B9FB22 /* confetti1.json in Resources */,
@@ -645,6 +650,25 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		DF456CC3255CD1B0002CE848 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${TARGET_NAME}",
+				"$(SRCROOT)/$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
+		};
 		F1770C10371497F05260C084 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -791,7 +815,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -885,7 +909,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Monash.TabView.Pro;
+				PRODUCT_BUNDLE_IDENTIFIER = com.SwiftINY.Studio.HolaFrogger;
 				PRODUCT_NAME = "Hola Frogger";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -905,7 +929,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Monash.TabView.Pro;
+				PRODUCT_BUNDLE_IDENTIFIER = com.SwiftINY.Studio.HolaFrogger;
 				PRODUCT_NAME = "Hola Frogger";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

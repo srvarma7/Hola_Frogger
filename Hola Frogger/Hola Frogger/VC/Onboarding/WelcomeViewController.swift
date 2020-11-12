@@ -48,7 +48,7 @@ class WelcomeViewController: UIViewController {
                                 left: view.leftAnchor, paddingLeft: 0,
                                 bottom: nil, paddingBottom: 0,
                                 right: view.rightAnchor, paddingRight: 0,
-                                width: 150, height: 150, enableInsets: true)
+                                width: 0, height: 150, enableInsets: true)
         
         textView.addAnchor(top: animationView.topAnchor, paddingTop: 50,
                            left: view.leftAnchor, paddingLeft: 0,

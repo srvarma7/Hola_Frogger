@@ -8,5 +8,7 @@ target 'Hola Frogger' do
   pod 'iOSDropDown'
   pod 'lottie-ios'
   pod 'AwesomeSpotlightView'
-
+  pod 'Firebase/Crashlytics'
+  pod 'Firebase/Analytics'
+  
 end

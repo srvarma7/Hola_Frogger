@@ -28,11 +28,11 @@
 	<key>NSCameraUsageDescription</key>
 	<string>Requires camera access to Identify frog species</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>Allow location updates to keep you notified when entering a frog&apos;s habitat and complete challenges.</string>
+	<string>Allow location updates to keep you notified when entering a frog's habitat and complete challenges.</string>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>Allow background location updates to keep you notified when entering a frog habitat and complete challenges.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Requires current location to send notifications, when entering a frog&apos;s habitat</string>
+	<string>Requires current location to send notifications, when entering a frog's habitat</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
