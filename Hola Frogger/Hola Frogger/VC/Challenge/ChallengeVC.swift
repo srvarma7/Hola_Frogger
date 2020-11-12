@@ -10,6 +10,7 @@ import UIKit
 import Lottie
 import CoreLocation
 import MapKit
+import AudioToolbox
 
 class ChallengeVC: UIViewController {
     
@@ -80,6 +81,7 @@ class ChallengeVC: UIViewController {
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [weak self] in
                 self?.animationView.isHidden = false
                 self?.animationView.play()
+                AudioServicesPlaySystemSound(1520)
             }
             
         } else {
@@ -176,6 +178,7 @@ extension ChallengeVC: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
         let id = region.identifier
         print(id, "didEnterRegion")
+        AudioServicesPlaySystemSound(3000)
         let frogItem = challengeViewModel.getFrogByName(commonName: id)
         
         let enteredFrogHabitatVC = EnteredFrogsHabitatVC()

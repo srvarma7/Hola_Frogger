@@ -10,6 +10,7 @@ import UIKit
 
 import AVKit
 import Vision
+import AudioToolbox
 
 class IdentifyVC: UIViewController {
 
@@ -125,11 +126,6 @@ class IdentifyVC: UIViewController {
         let body: NSAttributedString    = NSAttributedString(string: "To use Identify feature, please use a physical device to access camera for identifying frog species",
                                                              attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 18)])
         
-//        let urlKeyWord = "Click here"
-//        let url = "http://www.google.com"
-//        let demoMessage = "Click here to watch a demo of frog classification"
-//        let demo: NSAttributedString    = NSAttributedString.makeHyperLink(url: url, string: demoMessage, substring: urlKeyWord)
-
         let message = NSMutableAttributedString()
         message.append(heading)
         message.append(body)
@@ -185,7 +181,11 @@ extension IdentifyVC: AVCaptureVideoDataOutputSampleBufferDelegate {
             self.resultStatusLabel.text = firstOb.identifier
             if !(firstOb.identifier == "Point the camera to a Forg") {
                 self.firstPredictionName.text = firstOb.identifier
-                self.firstPredictionPercentage.text = "\(Int(firstOb.confidence * 100))%"
+                let firstPercentage = Int(firstOb.confidence * 100)
+                if firstPercentage > 80 {
+                    AudioServicesPlaySystemSound(1520)
+                }
+                self.firstPredictionPercentage.text = "\(firstPercentage)%"
                 self.secondPredictionName.text = secOb.identifier
                 self.secondPredictionPercentage.text = "\(Int(secOb.confidence * 100))%"
                 self.thirdPredictionName.text = thirdOb.identifier
@@ -281,7 +281,7 @@ extension IdentifyVC {
         firstPredictionPercentage.font          = UIFont.systemFont(ofSize: fontSize, weight: fontWeight)
         firstPredictionPercentage.textColor     = .white
         firstPredictionPercentage.textAlignment = .right
-        firstPredictionPercentage.addAnchor(top: resultStatusLabel.bottomAnchor, paddingTop: 10,
+        firstPredictionPercentage.addAnchor(top: resultStatusLabel.bottomAnchor, paddingTop: 20,
                                       left: nil, paddingLeft: 0,
                                       bottom: nil, paddingBottom: 0,
                                       right: bottomView.rightAnchor, paddingRight: leftRightPadding,

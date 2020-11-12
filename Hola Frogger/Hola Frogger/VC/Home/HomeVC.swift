@@ -9,6 +9,7 @@
 import UIKit
 import Lottie
 import iOSDropDown
+import AudioToolbox
 
 class HomeVC: UIViewController {
     
@@ -31,6 +32,7 @@ class HomeVC: UIViewController {
         UINavigationBar.appearance().tintColor = .raspberryPieTint()
         fetchFrogsFromDatabase()
         setupViews()
+        AudioServicesPlaySystemSound(1520)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -39,7 +41,7 @@ class HomeVC: UIViewController {
         frogAnimationView.play()
         wavesAnimationView.play()
         SpotLight.showForHomeScreen(view: view, vc: self)
-        
+//        fatalError()
 //        AudioService().playSound()
         
 //        LocalStorage().homeScreenDemoComplete = false

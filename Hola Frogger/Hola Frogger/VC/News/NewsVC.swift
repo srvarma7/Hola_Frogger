@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AudioToolbox
 
 class NewsVC: UIViewController {
     
@@ -77,6 +78,7 @@ extension NewsVC: NewsProtocol {
     func didFinishFetchingNews() {
         tableView.reloadData()
         activityIndicator.stopAnimating()
+        AudioServicesPlaySystemSound(1519)
         refreshControl.endRefreshing()
     }
 }

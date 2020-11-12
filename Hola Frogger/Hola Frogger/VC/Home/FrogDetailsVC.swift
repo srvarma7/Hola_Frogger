@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import AudioToolbox
 
 class FrogDetailsVC: UIViewController {
         
@@ -433,6 +434,8 @@ extension FrogDetailsVC {
 extension FrogDetailsVC {
     
     @objc func frogImageDidTapped() {
+        AudioServicesPlaySystemSound(3000)
+        
         let previewController = QLPreviewController()
         previewController.dataSource = self
         present(previewController, animated: true, completion: nil)
