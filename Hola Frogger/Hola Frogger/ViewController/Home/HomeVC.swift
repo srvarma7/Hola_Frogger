@@ -70,16 +70,11 @@ class HomeVC: UIViewController {
 // MARK:- Application review on App Store
 extension HomeVC {
     private func appStoreReview() {
-        let time: Int = 0
-        let delaySec = DispatchTime.now() + .seconds(time)
-        
-        DispatchQueue.main.asyncAfter(deadline: delaySec) {
-            ReviewService.shared.start(vc: self)
-        }
+        ReviewService.shared.start(vc: self)
     }
 }
 
-// Action methods
+// MARK:- Action methods
 extension HomeVC {
     // Opening VC when selected a frog in SearchBar
     private func presentFrogDetailsVCAtIndex(index: Int) {
@@ -96,7 +91,7 @@ extension HomeVC {
     }
 }
 
-// Layout constriants
+// MARK:- Layout constriants
 extension HomeVC {
     
     private func setupViews() {

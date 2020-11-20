@@ -23,15 +23,20 @@ class ReviewService {
         print("\nApplication opened count - \(openCount)")
         if checkCount(currentCount: openCount) {
             print("Requesting app review")
-            showReviewAlert(vc: vc)
+            let time: Int = 2
+            let delaySec = DispatchTime.now() + .seconds(time)
+            
+            DispatchQueue.main.asyncAfter(deadline: delaySec) { [weak self] in
+                self?.showReviewAlert(vc: vc)
+            }
         }
     }
     
     func showReviewAlert(vc: UIViewController) {
         let alert = UIAlertController(title: "Write a review on App Store?",
-                                      message: "Would really appriciate and will be helpful for the developer in creating new content",
+                                      message: "Love what Hola Frogger is doing, please take a moment to rate it. Thanks for your support!",
                                       preferredStyle: .actionSheet)
-
+        
         alert.addAction(UIAlertAction(title: "Yay, Hell ya!!",
                                       style: .default,
                                       handler: { _ in
@@ -41,7 +46,7 @@ class ReviewService {
         alert.addAction(UIAlertAction(title: "Nah! Not now",
                                       style: .destructive,
                                       handler: nil))
-
+        
         vc.present(alert, animated: true)
     }
     
@@ -55,16 +60,16 @@ class ReviewService {
         let nextReview = AppStorage.nextReviewCount
         
         switch nextReview {
-            case 0:
-                                AppStorage.nextReviewCount = initialCount
-                                print("Adding initail next review to \(initialCount)")
-                                break
-            case currentCount:
-                                AppStorage.nextReviewCount += increaseBy
-                                print("Increasing next review count by \(increaseBy)")
-                                break
-            default:
-                                break
+        case 0:
+            AppStorage.nextReviewCount = initialCount
+            print("Adding initail next review to \(initialCount)")
+            break
+        case currentCount:
+            AppStorage.nextReviewCount += increaseBy
+            print("Increasing next review count by \(increaseBy)")
+            break
+        default:
+            break
         }
         print("Next review if count is \(AppStorage.nextReviewCount)")
         return nextReview

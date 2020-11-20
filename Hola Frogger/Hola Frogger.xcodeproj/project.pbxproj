@@ -257,7 +257,7 @@
 				DFE187E625358F70003D772F /* Service */,
 				DF568D1925357D1A0022203E /* ViewModel */,
 				DFA3BE91252EED2F009C742A /* View */,
-				DF568D0325340D120022203E /* VC */,
+				DF568D0325340D120022203E /* ViewController */,
 				579B455324477DF300EACA4B /* Inferface */,
 				DFA3BE93252EF455009C742A /* Model */,
 				DF0FD6C3252ED4E000FE17FE /* CoreData+Entity+Handler */,
@@ -367,7 +367,7 @@
 			path = Challenge;
 			sourceTree = "<group>";
 		};
-		DF568D0325340D120022203E /* VC */ = {
+		DF568D0325340D120022203E /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
 				DF0FD6C1252ED39600FE17FE /* Onboarding */,
@@ -377,7 +377,7 @@
 				DF355D8325412A060086C806 /* Map */,
 				DF568D0625340D390022203E /* News */,
 			);
-			path = VC;
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		DF568D0425340D2B0022203E /* Home */ = {
