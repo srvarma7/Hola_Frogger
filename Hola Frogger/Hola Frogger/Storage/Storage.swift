@@ -94,4 +94,32 @@ struct AppStorage {
             defaults.set(newValue, forKey: Keys.newsScreenDemoComplete)
         }
     }
+    
+}
+
+extension Keys {
+    static let appOpenedCount = "com.appOpenedCount"
+    static let nextReviewCount = "com.nextReviewCount"
+}
+
+extension AppStorage {
+    
+    static var appOpenedCount: Int {
+        get {
+            return defaults.integer(forKey: Keys.appOpenedCount)
+        }
+        set {
+            defaults.set(newValue, forKey: Keys.appOpenedCount)
+        }
+    }
+    
+    static var nextReviewCount: Int {
+        get {
+            return defaults.integer(forKey: Keys.nextReviewCount)
+        }
+        set {
+            defaults.set(newValue, forKey: Keys.nextReviewCount)
+        }
+    }
+    
 }

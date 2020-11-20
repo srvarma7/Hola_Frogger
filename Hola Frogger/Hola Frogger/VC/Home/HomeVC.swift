@@ -41,14 +41,8 @@ class HomeVC: UIViewController {
         frogAnimationView.play()
         wavesAnimationView.play()
         SpotLight.showForHomeScreen(view: view, vc: self)
-//        fatalError()
-//        AudioService().playSound()
         
-//        LocalStorage().homeScreenDemoComplete = false
-//        if !LocalStorage().homeScreenDemoComplete {
-//
-//            LocalStorage().homeScreenDemoComplete = true
-//        }
+        appStoreReview()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -69,6 +63,18 @@ class HomeVC: UIViewController {
         if frogsList.count == 0 {
             CoreDataHandler.addAllFrogRecordsToDatabase()
             frogsList = CoreDataHandler.fetchAllFrogs()
+        }
+    }
+}
+
+// MARK:- Application review on App Store
+extension HomeVC {
+    private func appStoreReview() {
+        let time: Int = 0
+        let delaySec = DispatchTime.now() + .seconds(time)
+        
+        DispatchQueue.main.asyncAfter(deadline: delaySec) {
+            ReviewService.shared.start(vc: self)
         }
     }
 }
