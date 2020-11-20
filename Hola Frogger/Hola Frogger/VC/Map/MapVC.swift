@@ -23,7 +23,7 @@ class MapVC: UIViewController {
     private var locationManager     = CLLocationManager()
     private var geoFencingRegion    = CLCircularRegion()
     
-    private var userLocationCenter = CLLocationCoordinate2D()
+    private var userLocationCenter  = CLLocationCoordinate2D()
     
     private let zoomScale: CLLocationDistance = 1000
 

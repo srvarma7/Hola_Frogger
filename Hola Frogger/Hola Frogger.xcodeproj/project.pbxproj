@@ -31,8 +31,6 @@
 		57F877E924763B5700D5501F /* Frog2Color.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 57F877E824763B5700D5501F /* Frog2Color.usdz */; };
 		B960A57A246C3BA9003CFDE3 /* CardLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B960A579246C3BA9003CFDE3 /* CardLayout.swift */; };
 		B98A407D24725008006C2F2A /* award.json in Resources */ = {isa = PBXBuildFile; fileRef = B98A407C24725007006C2F2A /* award.json */; };
-		B98A407F24725DE6006C2F2A /* FrogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98A407E24725DE6006C2F2A /* FrogCell.swift */; };
-		B9FD7A40246C11CB0058B4B3 /* ChallengeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FD7A3F246C11CB0058B4B3 /* ChallengeCell.swift */; };
 		B9FD7A44246C1B150058B4B3 /* GuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FD7A43246C1B150058B4B3 /* GuideViewController.swift */; };
 		B9FD7A46246C1C7D0058B4B3 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FD7A45246C1C7D0058B4B3 /* Page.swift */; };
 		B9FD7A48246C1CB00058B4B3 /* OnboardingPageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FD7A47246C1CB00058B4B3 /* OnboardingPageCell.swift */; };
@@ -46,6 +44,7 @@
 		B9FD7A58246C1F2D0058B4B3 /* 13005-refresh.json in Resources */ = {isa = PBXBuildFile; fileRef = B9FD7A51246C1F2D0058B4B3 /* 13005-refresh.json */; };
 		DF0730DD2533AEEF002F3B31 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0730DC2533AEEF002F3B31 /* HomeVC.swift */; };
 		DF0730E12533BEC9002F3B31 /* NewsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0730E02533BEC9002F3B31 /* NewsVC.swift */; };
+		DF087F9025676E3B00B338EB /* ReviewService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF087F8F25676E3B00B338EB /* ReviewService.swift */; };
 		DF310DF0252EDD2F00A0F7A6 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF310DEF252EDD2F00A0F7A6 /* WelcomeViewController.swift */; };
 		DF355D81253FFB170086C806 /* IdentifyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF355D80253FFB170086C806 /* IdentifyVC.swift */; };
 		DF355D8525412A230086C806 /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF355D8425412A230086C806 /* MapVC.swift */; };
@@ -117,8 +116,6 @@
 		B728A1957D843A5C438F5737 /* Pods-Hola Frogger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hola Frogger.debug.xcconfig"; path = "Target Support Files/Pods-Hola Frogger/Pods-Hola Frogger.debug.xcconfig"; sourceTree = "<group>"; };
 		B960A579246C3BA9003CFDE3 /* CardLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardLayout.swift; sourceTree = "<group>"; };
 		B98A407C24725007006C2F2A /* award.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = award.json; sourceTree = "<group>"; };
-		B98A407E24725DE6006C2F2A /* FrogCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrogCell.swift; sourceTree = "<group>"; };
-		B9FD7A3F246C11CB0058B4B3 /* ChallengeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeCell.swift; sourceTree = "<group>"; };
 		B9FD7A43246C1B150058B4B3 /* GuideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideViewController.swift; sourceTree = "<group>"; };
 		B9FD7A45246C1C7D0058B4B3 /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
 		B9FD7A47246C1CB00058B4B3 /* OnboardingPageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageCell.swift; sourceTree = "<group>"; };
@@ -133,6 +130,7 @@
 		DEF23522100C96BCBF38C1D1 /* Pods-TabView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TabView.release.xcconfig"; path = "Target Support Files/Pods-TabView/Pods-TabView.release.xcconfig"; sourceTree = "<group>"; };
 		DF0730DC2533AEEF002F3B31 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		DF0730E02533BEC9002F3B31 /* NewsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsVC.swift; sourceTree = "<group>"; };
+		DF087F8F25676E3B00B338EB /* ReviewService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewService.swift; sourceTree = "<group>"; };
 		DF310DEF252EDD2F00A0F7A6 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		DF355D80253FFB170086C806 /* IdentifyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifyVC.swift; sourceTree = "<group>"; };
 		DF355D8425412A230086C806 /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
@@ -411,16 +409,6 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
-		DF568D1225341FED0022203E /* Programmatic */ = {
-			isa = PBXGroup;
-			children = (
-				DF390A4025527A2400592256 /* TabBar */,
-				DFBCCDD525591873008284CF /* Cells */,
-				DFBCCDD625591903008284CF /* SpotLight.swift */,
-			);
-			path = Programmatic;
-			sourceTree = "<group>";
-		};
 		DF568D1925357D1A0022203E /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -455,9 +443,9 @@
 		DFA3BE91252EED2F009C742A /* View */ = {
 			isa = PBXGroup;
 			children = (
-				DF568D1225341FED0022203E /* Programmatic */,
-				B9FD7A3F246C11CB0058B4B3 /* ChallengeCell.swift */,
-				B98A407E24725DE6006C2F2A /* FrogCell.swift */,
+				DF390A4025527A2400592256 /* TabBar */,
+				DFBCCDD525591873008284CF /* Cells */,
+				DFBCCDD625591903008284CF /* SpotLight.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -528,6 +516,7 @@
 				DFE187E725358F93003D772F /* WebService.swift */,
 				DF355D8825412F040086C806 /* FrogRecordsSevice.swift */,
 				DFA9FF6F25523F6A000CE4D5 /* AudioService.swift */,
+				DF087F8F25676E3B00B338EB /* ReviewService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -716,11 +705,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF355D8925412F040086C806 /* FrogRecordsSevice.swift in Sources */,
+				DF087F9025676E3B00B338EB /* ReviewService.swift in Sources */,
 				DF0730DD2533AEEF002F3B31 /* HomeVC.swift in Sources */,
 				DF568D1B25357D360022203E /* FrogsListViewModel.swift in Sources */,
 				DF44BED9254808D9004811F7 /* ChallengeCVCell.swift in Sources */,
 				579B45472447084200EACA4B /* CoreDataHandler.swift in Sources */,
-				B98A407F24725DE6006C2F2A /* FrogCell.swift in Sources */,
 				DF44BED52547FFB8004811F7 /* ChallengeVC.swift in Sources */,
 				B960A57A246C3BA9003CFDE3 /* CardLayout.swift in Sources */,
 				DF355D8525412A230086C806 /* MapVC.swift in Sources */,
@@ -758,7 +747,6 @@
 				DF3EBFE32547F8F10059F1D6 /* NSAttributedString+Extension.swift in Sources */,
 				DFD264D6254949F0000FF9DF /* ChallengeProtocol.swift in Sources */,
 				57A3B8A9244315230011F674 /* TabView.xcdatamodeld in Sources */,
-				B9FD7A40246C11CB0058B4B3 /* ChallengeCell.swift in Sources */,
 				DF568D0B253414AD0022203E /* FrogsListVC.swift in Sources */,
 				57A3B89F244315230011F674 /* SceneDelegate.swift in Sources */,
 				DFD264DF254FD258000FF9DF /* Storage.swift in Sources */,
@@ -902,6 +890,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1.1;
 				DEVELOPMENT_TEAM = 5G9HGCW6QY;
 				INFOPLIST_FILE = "Hola Frogger/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
@@ -909,7 +898,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.SwiftINY.Studio.HolaFrogger;
+				PRODUCT_BUNDLE_IDENTIFIER = com.SwiftINYStudio.HolaFrogger;
 				PRODUCT_NAME = "Hola Frogger";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -922,6 +911,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1.1;
 				DEVELOPMENT_TEAM = 5G9HGCW6QY;
 				INFOPLIST_FILE = "Hola Frogger/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
@@ -929,7 +919,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.SwiftINY.Studio.HolaFrogger;
+				PRODUCT_BUNDLE_IDENTIFIER = com.SwiftINYStudio.HolaFrogger;
 				PRODUCT_NAME = "Hola Frogger";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

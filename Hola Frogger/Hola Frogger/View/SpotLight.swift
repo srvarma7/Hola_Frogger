@@ -373,15 +373,15 @@ class SpotLight {
                 debugPrint("11 Pro Max, Xs Max, 11, Xr")
                 spotlightMain   = AwesomeSpotlight(withRect: CGRect(x: 10, y: 77, width: 0, height: 0),
                                                    shape: .circle,
-                                                   text: "\n\n\n\n\n\n\nOur classification feature can recognise 18 types of frog from Victoria using our own ML model",
+                                                   text: "\n\n\n\n\n\n\nClassification feature can recognise 18 types of frogs using machine learning model",
                                                    isAllowPassTouchesThroughSpotlight: false)
                 camera          = AwesomeSpotlight(withRect: CGRect(x: 13, y: 112, width: 390, height: 390),
                                                    shape: .circle,
-                                                   text: "Point the camera to a frog in the view here and watch the magic below",
+                                                   text: "Point the camera towards a frog and watch the magic below",
                                                    isAllowPassTouchesThroughSpotlight: false)
                 bottom          = AwesomeSpotlight(withRect: CGRect(x: 10, y: 620, width: 395, height: 168),
                                                    shape: .roundRectangle,
-                                                   text: "\n\n\nIdentified frogs results with their prediction are shown below",
+                                                   text: "\n\n\nIdentified frog results with their prediction are shown below",
                                                    isAllowPassTouchesThroughSpotlight: false)
                 properDevice = true
                 
@@ -391,15 +391,15 @@ class SpotLight {
                 debugPrint("11 Pro, X, Xs")
                 spotlightMain   = AwesomeSpotlight(withRect: CGRect(x: 10, y: 77, width: 0, height: 0),
                                                    shape: .circle,
-                                                   text: "\n\n\n\n\n\n\nOur classification feature can recognise 18 types of frog from Victoria using our own ML model",
+                                                   text: "\n\n\n\n\n\n\nClassification feature can recognise 18 types of frogs using machine learning model",
                                                    isAllowPassTouchesThroughSpotlight: false)
                 camera          = AwesomeSpotlight(withRect: CGRect(x: 13, y: 112, width: 0, height: 0),
                                                    shape: .circle,
-                                                   text: "Point the camera to a frog in the view here and watch the magic below",
+                                                   text: "Point the camera towards a frog and watch the magic below",
                                                    isAllowPassTouchesThroughSpotlight: false)
                 bottom          = AwesomeSpotlight(withRect: CGRect(x: 10, y: 220, width: 0, height: 0),
                                                    shape: .roundRectangle,
-                                                   text: "\n\n\nIdentified frogs results with their prediction are shown below",
+                                                   text: "\n\n\nIdentified frog results with their prediction are shown below",
                                                    isAllowPassTouchesThroughSpotlight: false)
                 properDevice = true
                 
@@ -409,15 +409,15 @@ class SpotLight {
                 debugPrint("Spotlight - 6+, 6s+, 7+, 8+")
                 spotlightMain   = AwesomeSpotlight(withRect: CGRect(x: 10, y: 77, width: 0, height: 0),
                                                    shape: .circle,
-                                                   text: "\n\n\n\n\n\n\nOur classification feature can recognise 18 types of frog from Victoria using our own ML model",
+                                                   text: "\n\n\n\n\n\n\nClassification feature can recognise 18 types of frogs using machine learning model",
                                                    isAllowPassTouchesThroughSpotlight: false)
                 camera          = AwesomeSpotlight(withRect: CGRect(x: 13, y: 112, width: 0, height: 0),
                                                    shape: .circle,
-                                                   text: "Point the camera to a frog in the view here and watch the magic below",
+                                                   text: "Point the camera towards a frog and watch the magic below",
                                                    isAllowPassTouchesThroughSpotlight: false)
                 bottom          = AwesomeSpotlight(withRect: CGRect(x: 10, y: 220, width: 0, height: 0),
                                                    shape: .roundRectangle,
-                                                   text: "\n\n\nIdentified frogs results with their prediction are shown below",
+                                                   text: "\n\n\nIdentified frog results with their prediction are shown below",
                                                    isAllowPassTouchesThroughSpotlight: false)
                 properDevice = true
                 break
@@ -426,15 +426,15 @@ class SpotLight {
                 debugPrint("Spotligh - 6, 6s, 7, 8")
                 spotlightMain   = AwesomeSpotlight(withRect: CGRect(x: 10, y: 77, width: 0, height: 0),
                                                    shape: .circle,
-                                                   text: "\n\n\n\nOur classification feature can recognise 18 types of frog from Victoria using our own ML model",
+                                                   text: "\n\n\n\nClassification feature can recognise 18 types of frogs using machine learning model",
                                                    isAllowPassTouchesThroughSpotlight: false)
                 camera          = AwesomeSpotlight(withRect: CGRect(x: 13, y: 112, width: 0, height: 0),
                                                    shape: .circle,
-                                                   text: "Point the camera to a frog in the view here and watch the magic below",
+                                                   text: "Point the camera towards a frog and watch the magic below",
                                                    isAllowPassTouchesThroughSpotlight: false)
                 bottom          = AwesomeSpotlight(withRect: CGRect(x: 10, y: 220, width: 0, height: 0),
                                                    shape: .roundRectangle,
-                                                   text: "\n\n\nIdentified frogs results with their prediction are shown below",
+                                                   text: "\n\n\nIdentified frog results with their prediction are shown below",
                                                    isAllowPassTouchesThroughSpotlight: false)
                 properDevice = true
                 break
@@ -473,7 +473,7 @@ class SpotLight {
                 debugPrint("11 Pro Max, Xs Max, 11, Xr")
                 spotlightMain   = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 200, y: 77, width: 0, height: 0),
                                                    shape: .circle,
-                                                   text: "\n\n\n\n\n\n\n\n\nWelcome to the challenges",
+                                                   text: "\n\n\n\n\n\n\n\n\nWelcome to challenges",
                                                    isAllowPassTouchesThroughSpotlight: false)
                 info1           = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 200, y: 77, width: 0, height: 0),
                                                    shape: .circle,
@@ -507,7 +507,7 @@ class SpotLight {
                 debugPrint("11 Pro, X, Xs")
                 spotlightMain   = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 200, y: 77, width: 0, height: 0),
                                                    shape: .circle,
-                                                   text: "\n\n\n\n\n\n\n\n\nWelcome to the challenges",
+                                                   text: "\n\n\n\n\n\n\n\n\nWelcome to challenges",
                                                    isAllowPassTouchesThroughSpotlight: false)
                 info1           = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 200, y: 77, width: 0, height: 0),
                                                    shape: .circle,
@@ -541,7 +541,7 @@ class SpotLight {
                 debugPrint("Spotlight  - 6+, 6s+, 7+, 8+")
                 spotlightMain   = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 200, y: 77, width: 0, height: 0),
                                                    shape: .circle,
-                                                   text: "\n\n\n\n\n\n\n\n\nWelcome to the challenges",
+                                                   text: "\n\n\n\n\n\n\n\n\nWelcome to challenges",
                                                    isAllowPassTouchesThroughSpotlight: false)
                 info1           = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 200, y: 77, width: 0, height: 0),
                                                    shape: .circle,
@@ -574,7 +574,7 @@ class SpotLight {
                 debugPrint("Spotlight  - 6, 6s, 7, 8")
                 spotlightMain   = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 200, y: 77, width: 0, height: 0),
                                                    shape: .circle,
-                                                   text: "\n\n\n\n\n\n\n\n\nWelcome to the challenges",
+                                                   text: "\n\n\n\n\n\n\n\n\nWelcome to challenges",
                                                    isAllowPassTouchesThroughSpotlight: false)
                 info1           = AwesomeSpotlight(withRect: CGRect(x: view.frame.minY + 200, y: 77, width: 0, height: 0),
                                                    shape: .circle,
