@@ -179,8 +179,10 @@
     //MARK:- Save new FROG
     class func addAllFrogRecordsToDatabase() {
         
-        let testingVisitStatus      = false
+        let testingVisitStatus      = true
         let testingFavouriteStatus  = false
+        
+        CoreDataHandler.saveFrog(entityName: "FrogEntity", sname: "Litoria raniformis", frogcount: 19, cname: "Growling Grass Frog", desc: "Their physique comprises of spots which are golden or brown coloured with body colour being vivid green. They can be of different colours such as clear brown, clear white, clear green and clear purple. They are found near slow-flowing streams.",latitude: -37, longitude:141.2, uncertainty:10000, threatnedStatus: "Endangered", isVisited: !testingVisitStatus, isFavourite: testingFavouriteStatus)
         
         CoreDataHandler.saveFrog(entityName: "FrogEntity", sname: "Crinia parinsignifera", frogcount: 319, cname: "Eastern Sign-bearing Froglet", desc: "Their physique is white, grainy or grey-skinned with marks which are black near their abdominal area. They can be of different colours such as clear brown, clear black, clear green, clear white, clear grey and clear red. They belong to woods or marshlands. The froglet habits swamps and ponds, and is often found under debris at the edge.", latitude: -37.7401, longitude: 141.091, uncertainty: 294, threatnedStatus: "Not endangered", isVisited: testingVisitStatus, isFavourite: testingFavouriteStatus)
         
@@ -204,8 +206,6 @@
         CoreDataHandler.saveFrog(entityName: "FrogEntity", sname: "Litoria paraewingi", frogcount: 27, cname: "Plains Brown Tree Frog", desc: "The plains brown tree frog or Victorian frog is a species of frog in the family Pelodryadidae. It is endemic to Australia. Its natural habitats are subtropical or tropical dry forests, rivers, freshwater lakes, freshwater marshes, water storage areas, ponds, and canals and ditches.",latitude: -37.53, longitude:145.336, uncertainty: 65, threatnedStatus: "Not endangered", isVisited: testingVisitStatus, isFavourite: testingFavouriteStatus)
         
         CoreDataHandler.saveFrog(entityName: "FrogEntity", sname: "Litoria peronii", frogcount: 246, cname: "Peron's Tree Frog", desc:"Their physique comprises of light shades ranging from light greenish or light greyish to light red or light brownish along with dark and vivid yellow patterns on their armpits. They can be of different colours such as clear brown, clear black, clear yellow, clear green and clear grey.",latitude: -37.7238, longitude:142.015, uncertainty: 19, threatnedStatus: "Not endangered", isVisited: testingVisitStatus, isFavourite: testingFavouriteStatus)
-        
-        CoreDataHandler.saveFrog(entityName: "FrogEntity", sname: "Litoria raniformis", frogcount: 19, cname: "Growling Grass Frog", desc: "Their physique comprises of spots which are golden or brown coloured with body colour being vivid green. They can be of different colours such as clear brown, clear white, clear green and clear purple. They are found near slow-flowing streams.",latitude: -37, longitude:141.2, uncertainty:10000, threatnedStatus: "Endangered", isVisited: testingVisitStatus, isFavourite: testingFavouriteStatus)
         
         CoreDataHandler.saveFrog(entityName: "FrogEntity", sname: "Litoria verreauxii", frogcount: 71, cname: "Whistling Tree Frog", desc: "Their physique comprises of soft brown with darker shades near legs. They can be of different colours such as clear brown, clear green, clear grey and clear white. They are found near wet plantation areas. The alpine tree frog is restricted to the southern alps of New South Wales and Victoria.",latitude: -38.4184222863879, longitude:145.07485814356, uncertainty:24, threatnedStatus: "Not endangered", isVisited: testingVisitStatus, isFavourite: testingFavouriteStatus)
         
