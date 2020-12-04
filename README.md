@@ -1,27 +1,47 @@
 # Hola Frogger
 
-#### What's happing now - Moving from storybord to 100% programmatic UI in progress
+#### What's new - Moved from storybording UI to 100% programmatic UI.
 
-###	Hola Frogger, a one-stop iOS application for Frog enthusiasts and curious people
+## About the project
+
+Frogs are one of the most important species on earth. They play an important role in the food chain as both predators and prey, research, and many more.
+
+Nowadays, the population of our tiny friends are being drastically declined due to global changes to air and water quality, and climate change. Alongside, humans are also the main reason for the decline of frog's count by using too many chemicals, not taking care or cleaning their gear while entering a frog's habitat or by not taking necessary precautions.
+
+So, what happens when there are no frogs left?
+No cure or treatment for diseases. No insect control - means files carrying malaria, zika, West Nile virus, dengue fever, Lyme disease, Encephalitis, leishmaniasis and etc.
+Increased greenhouse emissions. Crumble in the food chain. Tadpoles keep the water clean. Less research and testing.
+
+Hola Frogger solves a few of the issues and helps our tiny friends to live longer and save the planet.
+
+[![Generic badge](https://img.shields.io/badge/Swift-5.0-orange.svg)](https://shields.io/) 
+[![Generic badge](https://img.shields.io/badge/iOS-13.0+-blue.svg)](https://shields.io/) 
+[![Generic badge](https://img.shields.io/badge/Version-1.3-orange.svg)](https://shields.io/) 
+[![Generic badge](https://img.shields.io/badge/Platform-iOS-green.svg)](https://shields.io/)
+
+## Promotional video
+To watch the application promo, please click [here](https://www.youtube.com/watch?v=eiUdJElxNBA).
+
+### Features -
+1. Explore endangered/threatened frog species whereabouts like its image, scientific name, description, location, live weather details, frog count. 
+2. Identify frog in realtime using the camera. Just point the camera at the frog and watch the magic
+3. To make this learning fun, complete challenges to get an award. 
+4. Get notified when entering a frog’s habitat to take precautions like sanitising yourself and equipment.
+5. Stay updated to the latest news just filtered.
+6. One last thing, find the easter feature hidden within the app. 
+Let's see, if you can find it. ;p
+
+Let's join the frog army and become a frogger. 
+Save frogs = Helps save the environment, food, research, many more.
+
+###	Technologies -
 -	Alert feature, the user gets notified when entering a Frog's habitat. So, users can keep the frog's habitat and themselves safe and clean
 -	Machine Learning feature, the user can identify the frog species along with the prediction percentage real-time using the built-in camera by leveraging on device in-house built models
 -	Keeps the user engaged with weekly challenges and help them learn about frogs
 -	Keeps user updated with the latest news using API. Adapts to Dark/Light mode.
 -	The application was developed using several Apple frameworks like Core Data, Core Location, Map Kit, Web Kit, Vision, AR Kit, AV Foundation, Audio ToolBox and Quick Look and CocoaPods like Lottie, AwesomeSpotlightView, iOSDropDown
 
-
-[![Generic badge](https://img.shields.io/badge/Swift-5.0-orange.svg)](https://shields.io/) 
-[![Generic badge](https://img.shields.io/badge/iOS-13.0+-blue.svg)](https://shields.io/) 
-[![Generic badge](https://img.shields.io/badge/Version-1.3-orange.svg)](https://shields.io/) 
-[![Generic badge](https://img.shields.io/badge/Platform-iOS-green.svg)](https://shields.io/) 
-
-## Promo
-To watch the application promo, please click [here](https://www.youtube.com/watch?v=eiUdJElxNBA).
-
-## Experience app on online simulator
-To experience Hola Frogger on an online simulator, please click [here](https://appetize.io/embed/9kg20fnkh6nm005bn3v5pu9x60?device=iphone11pro&scale=75&orientation=portrait&osVersion=13.3)
-
-## New Features (Iteration 2).
+## Iteration 2 (Features) -
 - Welcome Screen with animation.
 - OnBoarding Screen a tour of application features, when the application is opened for the first time.
 - Home Screen with Search feature. Helps your find specific Frog easily.
@@ -31,8 +51,7 @@ To experience Hola Frogger on an online simulator, please click [here](https://a
 - Shows challenges.
 - Gives you statics of the achievements.
 
-
-## Key Features (Iteration 1)
+## Iteration 1 (Features) - 
 - Frogs with threatened status.
 - Get detailed information of each Frog.
 - Can [favourite or unfavourite](https://youtu.be/KeNd2owf86I) a Frog to access later.
@@ -46,22 +65,13 @@ To experience Hola Frogger on an online simulator, please click [here](https://a
 
 ## Requirements
 - Swift 5.0
-- iOS 13.0+ 
-- To access Identification feature, please install the application on a physical device which has camera.
-- Internet Connection for loading Maps.
+- iOS 12.0+ 
+- To access Identification feature, please install the application on a physical device to access camera.
+- Internet connection for loading Maps.
 
-## Steps to Install
-- If you do not have Xcode installed on you Mac, please open App Store and search for Xcode and install. 
-- Unzip the download file.
-- Navigate to TabView folder.
-- Open `TabView.xcodeproj` file.
-- Select iPhone 11 Pro as a target device under simulator.
-- Build and Run the application by tapping on Play button or hit 'Cmd + R' on keyboard.
-- If you encounter any saying `Signing for "TabView" requires a development team.`, try signing in with your apple id, and select it under Team in Target.
-- Viola!!
-- If you still experience any issues, please reachout at srvarma7@gmail.com
-- Still having issues? For more detailed instructions click [here](https://monashuni-my.sharepoint.com/:w:/g/personal/ckal0008_student_monash_edu/EeZ5h4O-92lJlpw4KS6f9U8Bg1zQfz7Pc7z5GCPMvJWsdw?e=VjRiNh).
+## Contact me
+- If you like this project, please reachout to me at srvarma7@gmail.com and share your views.
 
 ## Credits
 * [Creating and Training Machine Learning model](https://developer.apple.com/videos/play/wwdc2018/717).
-* [Adding custom Annotation](https://www.raywenderlich.com/7738344-mapkit-tutorial-getting-started).
+* [Custom Annotation](https://www.raywenderlich.com/7738344-mapkit-tutorial-getting-started).
