@@ -44,9 +44,9 @@ Stay updated with latest news <br>
 
 ![](demo/7.gif) ![](demo/8.gif) ![](demo/9.gif) ![](demo/10.gif)
 
-
-Find the hidden easter feature<br>
-![](demo/6.gif) 
+Project the frog 3d model in real world and interact with it
+<br>*Hidden easter feature, you gotta find it to play with it*<br>
+![](demo/6.gif)
  </div>
 
 ### Features -
