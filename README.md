@@ -14,6 +14,9 @@ Increased greenhouse emissions. Crumble in the food chain. Tadpoles keep the wa
 
 Hola Frogger solves a few of the issues and helps our tiny friends to live longer and save the planet.
 
+<a href="https://apps.apple.com/au/app/hola-frogger/id1541117337"><img src="https://github.com/srvarma7/Hola_Frogger/blob/master/demo/applebadge.png" align="left" height="60" width="184" ></a>
+<br><br><br>
+
 [![Generic badge](https://img.shields.io/badge/Swift-5.0-orange.svg)](https://shields.io/) 
 [![Generic badge](https://img.shields.io/badge/iOS-13.0+-blue.svg)](https://shields.io/) 
 [![Generic badge](https://img.shields.io/badge/Version-1.3-orange.svg)](https://shields.io/) 
@@ -21,6 +24,17 @@ Hola Frogger solves a few of the issues and helps our tiny friends to live longe
 
 ## Promotional video
 To watch the application promo, please click [here](https://www.youtube.com/watch?v=eiUdJElxNBA).
+
+## Demo
+<div align="center"> 
+  
+![](demo/1.gif) ![](demo/2.gif) 
+
+![](demo/3.gif) ![](demo/4.gif) ![](demo/5.gif) ![](demo/6.gif) 
+
+![](demo/7.gif) ![](demo/8.gif) ![](demo/9.gif) ![](demo/10.gif)
+
+ </div>
 
 ### Features -
 1. Explore endangered/threatened frog species whereabouts like its image, scientific name, description, location, live weather details, frog count. 
@@ -71,7 +85,3 @@ Save frogs = Helps save the environment, food, research, many more.
 
 ## Contact me
 - If you like this project, please reachout to me at srvarma7@gmail.com and share your views.
-
-## Credits
-* [Creating and Training Machine Learning model](https://developer.apple.com/videos/play/wwdc2018/717).
-* [Custom Annotation](https://www.raywenderlich.com/7738344-mapkit-tutorial-getting-started).
