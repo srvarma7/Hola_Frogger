@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "StatusAlert",
+        "repositoryURL": "https://github.com/LowKostKustomz/StatusAlert.git",
+        "state": {
+          "branch": "master",
+          "revision": "9997022d9fe4ba30e01175b52fde7a1e2b1cd5d7",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}

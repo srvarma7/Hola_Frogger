@@ -55,7 +55,6 @@
 		DF44BED52547FFB8004811F7 /* ChallengeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF44BED42547FFB8004811F7 /* ChallengeVC.swift */; };
 		DF44BED9254808D9004811F7 /* ChallengeCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF44BED8254808D9004811F7 /* ChallengeCVCell.swift */; };
 		DF44BEDC254822CE004811F7 /* ChallengeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF44BEDB254822CE004811F7 /* ChallengeViewModel.swift */; };
-		DF456CC0255CCE99002CE848 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DF456CBF255CCE99002CE848 /* GoogleService-Info.plist */; };
 		DF568D0B253414AD0022203E /* FrogsListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF568D0A253414AD0022203E /* FrogsListVC.swift */; };
 		DF568D0F25341E090022203E /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF568D0E25341E090022203E /* UIView+Extension.swift */; };
 		DF568D14253420250022203E /* FrogTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF568D13253420250022203E /* FrogTVCell.swift */; };
@@ -73,6 +72,7 @@
 		DFD264D6254949F0000FF9DF /* ChallengeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD264D5254949EF000FF9DF /* ChallengeProtocol.swift */; };
 		DFD264D925494BAD000FF9DF /* EnteredFrogsHabitatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD264D825494BAD000FF9DF /* EnteredFrogsHabitatVC.swift */; };
 		DFD264DF254FD258000FF9DF /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD264DE254FD258000FF9DF /* Storage.swift */; };
+		DFDF14EB25679A1D008BADF3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DFDF14EA25679A1D008BADF3 /* GoogleService-Info.plist */; };
 		DFE187E125358C34003D772F /* NewsTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE187E025358C34003D772F /* NewsTVCell.swift */; };
 		DFE187E425358F3B003D772F /* NewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE187E325358F3B003D772F /* NewsViewModel.swift */; };
 		DFE187E825358F93003D772F /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE187E725358F93003D772F /* WebService.swift */; };
@@ -141,7 +141,6 @@
 		DF44BED42547FFB8004811F7 /* ChallengeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeVC.swift; sourceTree = "<group>"; };
 		DF44BED8254808D9004811F7 /* ChallengeCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeCVCell.swift; sourceTree = "<group>"; };
 		DF44BEDB254822CE004811F7 /* ChallengeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeViewModel.swift; sourceTree = "<group>"; };
-		DF456CBF255CCE99002CE848 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DF568D0A253414AD0022203E /* FrogsListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrogsListVC.swift; sourceTree = "<group>"; };
 		DF568D0E25341E090022203E /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		DF568D13253420250022203E /* FrogTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrogTVCell.swift; sourceTree = "<group>"; };
@@ -158,6 +157,7 @@
 		DFD264D5254949EF000FF9DF /* ChallengeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeProtocol.swift; sourceTree = "<group>"; };
 		DFD264D825494BAD000FF9DF /* EnteredFrogsHabitatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnteredFrogsHabitatVC.swift; sourceTree = "<group>"; };
 		DFD264DE254FD258000FF9DF /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		DFDF14EA25679A1D008BADF3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DFE187E025358C34003D772F /* NewsTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTVCell.swift; sourceTree = "<group>"; };
 		DFE187E325358F3B003D772F /* NewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewModel.swift; sourceTree = "<group>"; };
 		DFE187E725358F93003D772F /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
@@ -263,7 +263,7 @@
 				DF0FD6C3252ED4E000FE17FE /* CoreData+Entity+Handler */,
 				DF0FD6C0252ED29E00FE17FE /* Support files */,
 				57A3B8AF244315270011F674 /* Info.plist */,
-				DF456CBF255CCE99002CE848 /* GoogleService-Info.plist */,
+				DFDF14EA25679A1D008BADF3 /* GoogleService-Info.plist */,
 			);
 			path = "Hola Frogger";
 			sourceTree = "<group>";
@@ -626,7 +626,7 @@
 				B9FD7A52246C1F2D0058B4B3 /* 20301-newspaper-open.json in Resources */,
 				57A3B8AB244315270011F674 /* Assets.xcassets in Resources */,
 				570D1C232470EA0C00B9FB22 /* frog.mp3 in Resources */,
-				DF456CC0255CCE99002CE848 /* GoogleService-Info.plist in Resources */,
+				DFDF14EB25679A1D008BADF3 /* GoogleService-Info.plist in Resources */,
 				570D1C1C24705E5200B9FB22 /* sad2.json in Resources */,
 				B9FD7A57246C1F2D0058B4B3 /* 336-search.json in Resources */,
 				570D1C2024705E5200B9FB22 /* confetti1.json in Resources */,
