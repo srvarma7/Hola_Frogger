@@ -27,13 +27,26 @@ To watch the application promo, please click [here](https://www.youtube.com/watc
 
 ## Demo
 <div align="center"> 
+Onboarding screen
   
 ![](demo/1.gif) ![](demo/2.gif) 
 
-![](demo/3.gif) ![](demo/4.gif) ![](demo/5.gif) ![](demo/6.gif) 
+Search/Explore frogs<br>
+Dark and Light mode ready<br>
+Showrtlist favourite frogs for later<br>
+
+![](demo/3.gif) ![](demo/4.gif) ![](demo/5.gif) 
+
+Hero feature, Identify frogs using ML<br>
+Visit and sight the frogs to complete the challenges<br>
+Get Alerts when entering frogs habitats<br>
+Stay updated with latest news <br>
 
 ![](demo/7.gif) ![](demo/8.gif) ![](demo/9.gif) ![](demo/10.gif)
 
+
+Find the hidden easter feature<br>
+![](demo/6.gif) 
  </div>
 
 ### Features -
