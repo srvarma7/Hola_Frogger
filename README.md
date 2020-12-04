@@ -4,6 +4,7 @@
 
 ## About the project
 
+<p align="justify">
 Frogs are one of the most important species on earth. They play an important role in the food chain as both predators and prey, research, and many more.
 
 Nowadays, the population of our tiny friends are being drastically declined due to global changes to air and water quality, and climate change. Alongside, humans are also the main reason for the decline of frog's count by using too many chemicals, not taking care or cleaning their gear while entering a frog's habitat or by not taking necessary precautions.
@@ -13,6 +14,7 @@ No cure or treatment for diseases. No insect control - means files carrying mala
 Increased greenhouse emissions. Crumble in the food chain. Tadpoles keep the water clean. Less research and testing.
 
 Hola Frogger solves a few of the issues and helps our tiny friends to live longer and save the planet.
+</p>
 
 <a href="https://apps.apple.com/au/app/hola-frogger/id1541117337"><img src="https://github.com/srvarma7/Hola_Frogger/blob/master/demo/applebadge.png" align="left" height="60" width="184" ></a>
 <br><br><br>
