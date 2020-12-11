@@ -25,7 +25,8 @@ Hola Frogger solves a few of the issues and helps our tiny friends to live longe
 [![Generic badge](https://img.shields.io/badge/Platform-iOS-green.svg)](https://shields.io/)
 
 ## Promotional video
-To watch the application promo, please click [here](https://www.youtube.com/watch?v=eiUdJElxNBA).
+To watch the application promo, please click [here](https://youtu.be/vnZOkW9vnIw).
+<a href="https://youtu.be/vnZOkW9vnIw"><img src="https://github.com/srvarma7/Hola_Frogger/blob/master/demo/yt.png" align="center"></a>
 
 ## Demo
 <div align="center"> 
