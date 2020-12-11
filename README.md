@@ -79,7 +79,7 @@ Save frogs = Helps save the environment, food, research, many more.
 - Improved Map functionalities.
 - All new Challenges screen.
 - Shows challenges.
-- Gives you statics of the achievements.
+- Gives you statistics of the achievements.
 
 ## Iteration 1 (Features) - 
 - Frogs with threatened status.
